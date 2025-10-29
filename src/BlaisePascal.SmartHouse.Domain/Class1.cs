@@ -1,7 +1,7 @@
 ﻿namespace BlaisePascal.SmartHouse.Domain
 {
-    public class Class1
+    public class Lamp
     {
-        
+        public bool IsOn { get; private set; }
     }
 }
