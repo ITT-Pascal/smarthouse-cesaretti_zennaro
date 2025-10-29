@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\morgan.zennaro\\Desktop\\repos\\",
+  "WorkspaceRootPath": "C:\\Users\\zenna\\Desktop\\repos\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{30EB9C6B-CB6C-4F77-8B1C-2D21AA339C3C}|src\\BlaisePascal.SmartHouse.Domain\\BlaisePascal.SmartHouse.Domain.csproj|c:\\users\\morgan.zennaro\\desktop\\repos\\src\\blaisepascal.smarthouse.domain\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{30EB9C6B-CB6C-4F77-8B1C-2D21AA339C3C}|src\\BlaisePascal.SmartHouse.Domain\\BlaisePascal.SmartHouse.Domain.csproj|solutionrelative:src\\blaisepascal.smarthouse.domain\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{30EB9C6B-CB6C-4F77-8B1C-2D21AA339C3C}|src\\BlaisePascal.SmartHouse.Domain\\BlaisePascal.SmartHouse.Domain.csproj|c:\\users\\zenna\\desktop\\repos\\src\\blaisepascal.smarthouse.domain\\lamp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30EB9C6B-CB6C-4F77-8B1C-2D21AA339C3C}|src\\BlaisePascal.SmartHouse.Domain\\BlaisePascal.SmartHouse.Domain.csproj|solutionrelative:src\\blaisepascal.smarthouse.domain\\lamp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{77F3931D-443F-4559-ADBE-1C5D0EADE762}|test\\BlaisePascal.SmartHouse.TestDomain\\BlaisePascal.SmartHouse.TestDomain.csproj|c:\\users\\morgan.zennaro\\desktop\\repos\\test\\blaisepascal.smarthouse.testdomain\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{77F3931D-443F-4559-ADBE-1C5D0EADE762}|test\\BlaisePascal.SmartHouse.TestDomain\\BlaisePascal.SmartHouse.TestDomain.csproj|c:\\users\\zenna\\desktop\\repos\\test\\blaisepascal.smarthouse.testdomain\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{77F3931D-443F-4559-ADBE-1C5D0EADE762}|test\\BlaisePascal.SmartHouse.TestDomain\\BlaisePascal.SmartHouse.TestDomain.csproj|solutionrelative:test\\blaisepascal.smarthouse.testdomain\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -18,8 +18,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
@@ -32,11 +36,11 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "UnitTest1.cs",
-              "DocumentMoniker": "C:\\Users\\morgan.zennaro\\Desktop\\repos\\test\\BlaisePascal.SmartHouse.TestDomain\\UnitTest1.cs",
+              "DocumentMoniker": "C:\\Users\\zenna\\Desktop\\repos\\test\\BlaisePascal.SmartHouse.TestDomain\\UnitTest1.cs",
               "RelativeDocumentMoniker": "test\\BlaisePascal.SmartHouse.TestDomain\\UnitTest1.cs",
-              "ToolTip": "C:\\Users\\morgan.zennaro\\Desktop\\repos\\test\\BlaisePascal.SmartHouse.TestDomain\\UnitTest1.cs",
+              "ToolTip": "C:\\Users\\zenna\\Desktop\\repos\\test\\BlaisePascal.SmartHouse.TestDomain\\UnitTest1.cs",
               "RelativeToolTip": "test\\BlaisePascal.SmartHouse.TestDomain\\UnitTest1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-29T09:23:38.96Z",
               "EditorCaption": ""
@@ -44,12 +48,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\morgan.zennaro\\Desktop\\repos\\src\\BlaisePascal.SmartHouse.Domain\\Class1.cs",
-              "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Domain\\Class1.cs",
-              "ToolTip": "C:\\Users\\morgan.zennaro\\Desktop\\repos\\src\\BlaisePascal.SmartHouse.Domain\\Class1.cs",
-              "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Domain\\Class1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAoAAAAAAAAAA==",
+              "Title": "Lamp.cs",
+              "DocumentMoniker": "C:\\Users\\zenna\\Desktop\\repos\\src\\BlaisePascal.SmartHouse.Domain\\Lamp.cs",
+              "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Domain\\Lamp.cs",
+              "ToolTip": "C:\\Users\\zenna\\Desktop\\repos\\src\\BlaisePascal.SmartHouse.Domain\\Lamp.cs",
+              "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Domain\\Lamp.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-29T09:10:51.571Z",
               "EditorCaption": ""
