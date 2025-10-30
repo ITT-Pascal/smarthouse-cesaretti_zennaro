@@ -4,12 +4,38 @@
     {
         public bool IsOn { get; private set; }
         public int BrightnessPercentage { get; private set; }
-        public Lamp(bool isOn, int brightness)
+        public Lamp(int brightness)
         {
-            IsOn = isOn;
+            IsOn = true;
             BrightnessPercentage = LampValidator.BrightnessValidator(brightness);
         }
-        public void SwitchOn_Off() => IsOn = !IsOn;
-        public void ChangeBrightness(int newBrightness) => BrightnessPercentage = LampValidator.BrightnessValidator(newBrightness);
+
+        public Lamp()
+        {
+            IsOn = false;
+            BrightnessPercentage = 0;
+        }
+
+
+        public void SwitchOn_Off()
+        {
+            if (IsOn) 
+            {
+                IsOn = false;
+                BrightnessPercentage = 0;
+            } else
+            {
+                IsOn = true;
+            }
+
+        }
+        public void ChangeBrightness(int newBrightness)
+        {
+            if(IsOn == true)
+            {
+                BrightnessPercentage = LampValidator.BrightnessValidator(newBrightness);
+            }
+            
+        }
     }
 }
