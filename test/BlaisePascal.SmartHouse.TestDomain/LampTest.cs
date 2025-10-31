@@ -4,26 +4,17 @@ namespace BlaisePascal.SmartHouse.TestDomain
 {
     public class LampTest
     {
-
         [Fact]
-        public void Constructor_WhenAfterCreationTheLampIsOffTheBrigthnessPercentageIsZero()
+        public void Constructor_WhenAfterCreationTheLampIsOnItHasABrightnessPercentage()
         {
-            Lamp lamp = new Lamp();
-            Assert.False(lamp.IsOn);
-            Assert.Equal(0, lamp.BrightnessPercentage);
-        }
-
-        [Fact]
-        public void Constructor_WhenAfterCreationTheLampIsOnItHasABrightnessPercentage() 
-        {
-            Lamp lamp = new Lamp(50);
+            StandardLamp lamp = new StandardLamp(50);
             Assert.True(lamp.IsOn);
             Assert.Equal(50, lamp.BrightnessPercentage);
         }
         [Fact]
         public void SwitchOn_Off_WhenTheLampIsOnAfterSwitchOn_OffItWillTurnOffAndTheBrigthnessPercentageWillBeZero()
         {
-            Lamp lamp = new Lamp(52);
+            StandardLamp lamp = new StandardLamp(52);
             lamp.SwitchOn_Off();
             Assert.False(lamp.IsOn);
             Assert.Equal(0, lamp.BrightnessPercentage);
@@ -32,30 +23,30 @@ namespace BlaisePascal.SmartHouse.TestDomain
         [Fact]
         public void SwitchOn_Off_WhenTheLampIsOffAfterSwitchOn_OffItWillTurnOnAndTheBrightnessPercentageWillBe100()
         {
-            Lamp lamp = new Lamp();
+            StandardLamp lamp = new StandardLamp();
             lamp.SwitchOn_Off();
             Assert.True(lamp.IsOn);
             Assert.Equal(100, lamp.BrightnessPercentage);
         }
 
         [Fact]
-        public void ChaangeBrightness_CannotChangeBrightnessPercentageInAValueLowerThanZero()
+        public void ChangeBrightness_CannotChangeBrightnessPercentageInAValueLowerThanZero()
         {
-            Lamp lamp = new Lamp(100);
-            Assert.Throws<ArgumentException>(() =>lamp.ChangeBrightness(-10));
+            StandardLamp lamp = new StandardLamp(100);
+            Assert.Throws<ArgumentException>(() => lamp.ChangeBrightness(-10));
         }
 
         [Fact]
-        public void ChaangeBrightness_CannotChangeBrightnessPercentageInAValueGreaterThan100()
+        public void ChangeBrightness_CannotChangeBrightnessPercentageInAValueGreaterThan100()
         {
-            Lamp lamp = new Lamp(100);
+            StandardLamp lamp = new StandardLamp(100);
             Assert.Throws<ArgumentException>(() => lamp.ChangeBrightness(105));
         }
 
         [Fact]
         public void ChangeBrightness_CannotChangeBrightnessWhenTheLampIsOff()
         {
-            Lamp lamp = new Lamp();
+            StandardLamp lamp = new StandardLamp();
             lamp.ChangeBrightness(66);
             Assert.Equal(0, lamp.BrightnessPercentage);
         }
@@ -63,19 +54,18 @@ namespace BlaisePascal.SmartHouse.TestDomain
         [Fact]
         public void ChangeBrightness_WhenTheLampIsOnAndTheNewBrightnessValueIs66TheBritghnessPercentageWillBeSetAt66()
         {
-            Lamp lamp = new Lamp(52);
+            StandardLamp lamp = new StandardLamp(52);
             lamp.ChangeBrightness(66);
             Assert.Equal(66, lamp.BrightnessPercentage);
         }
+
         [Fact]
         public void ChangeBrightness_WhenTheLampIsOnAndTheNewBrightnessValueIs0TheBritghnessPercentageWillBeSetAt0AndTheLumpWillTurnOff()
         {
-            Lamp lamp = new Lamp(52);
+            StandardLamp lamp = new StandardLamp(52);
             lamp.ChangeBrightness(0);
             Assert.Equal(0, lamp.BrightnessPercentage);
             Assert.False(lamp.IsOn);
         }
-
-
     }
 }

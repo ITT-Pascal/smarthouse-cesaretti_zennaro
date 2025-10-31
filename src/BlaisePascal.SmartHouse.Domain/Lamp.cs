@@ -1,46 +1,18 @@
-﻿namespace BlaisePascal.SmartHouse.Domain
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BlaisePascal.SmartHouse.Domain
 {
-    public class Lamp
+    public abstract class Lamp
     {
-        public bool IsOn { get; private set; }
-        public int BrightnessPercentage { get; private set; }
-        public Lamp(int brightness)
-        {
-            IsOn = true;
-            ChangeBrightness(brightness);
-        }
+        public bool IsOn { get; protected set; }
+        public int BrightnessPercentage { get; protected set; }
 
-        public Lamp()
-        {
-            IsOn = false;
-            BrightnessPercentage = 0;
-        }
+        public abstract void SwitchOn_Off();
 
-
-        public void SwitchOn_Off()
-        {
-            if (IsOn) 
-            {
-                IsOn = false;
-                BrightnessPercentage = 0;
-            } else
-            {
-                IsOn = true;
-                ChangeBrightness(100);
-            }
-
-        }
-        public void ChangeBrightness(int newBrightness)
-        {
-            if (IsOn == true)
-            {
-                BrightnessPercentage = LampValidator.BrightnessValidator(newBrightness);
-                if (BrightnessPercentage == 0)
-                {
-                    IsOn = false;
-                }
-            }
-            
-        }
+        public abstract void ChangeBrightness(int newBrightness);
     }
 }
