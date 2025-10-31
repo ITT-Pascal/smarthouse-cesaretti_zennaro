@@ -7,7 +7,7 @@
         public Lamp(int brightness)
         {
             IsOn = true;
-            BrightnessPercentage = LampValidator.BrightnessValidator(brightness);
+            ChangeBrightness(brightness);
         }
 
         public Lamp()
@@ -26,14 +26,19 @@
             } else
             {
                 IsOn = true;
+                ChangeBrightness(100);
             }
 
         }
         public void ChangeBrightness(int newBrightness)
         {
-            if(IsOn == true)
+            if (IsOn == true)
             {
                 BrightnessPercentage = LampValidator.BrightnessValidator(newBrightness);
+                if (BrightnessPercentage == 0)
+                {
+                    IsOn = false;
+                }
             }
             
         }
