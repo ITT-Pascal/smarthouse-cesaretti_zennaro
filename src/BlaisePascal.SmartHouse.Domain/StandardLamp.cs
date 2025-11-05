@@ -3,10 +3,10 @@
     public class StandardLamp : AbstractLamp
     {
 
-        public StandardLamp(int brigthness) 
+        public StandardLamp(int brightness) 
         {
             IsOn = true;
-            ChangeBrightness(brigthness);
+            ChangeBrightness(brightness);
         } 
 
         public StandardLamp()
@@ -17,49 +17,19 @@
 
         public override void SwitchOn_Off()
         {
-            if (IsOn) 
-            {
-                IsOn = false;
-                BrightnessPercentage = 0;
-            } else
-            {
-                IsOn = true;
-                ChangeBrightness(100);
-            }
-
+            IsOn = !IsOn;
         }
         public override void ChangeBrightness(int newBrightness)
         {
-            if (BritghnessValidator(newBrightness))
-            {
-                if (IsOn == true)
-                {
-                    if (newBrightness == 0)
-                    {
-                        BrightnessPercentage = newBrightness;
-                        IsOn = false;
-                    }
-                    else
-                    {
-                        BrightnessPercentage = newBrightness;
-                    }
-                }
-            }
-        
-
+            if (IsOn)
+                BrightnessPercentage = BrightnessValidator(newBrightness);
         }
 
-        public override bool BritghnessValidator(int newBrightness)
+        public override int BrightnessValidator(int newBrightness)
         {
             if (newBrightness < 0 || newBrightness > 100)
                 throw new ArgumentException("Brightness not valid");
-            else
-            {
-                return true;
-            }
+            return newBrightness;
         }
-
-
-
     }
 }

@@ -17,7 +17,6 @@ namespace BlaisePascal.SmartHouse.TestDomain
             StandardLamp lamp = new StandardLamp(52);
             lamp.SwitchOn_Off();
             Assert.False(lamp.IsOn);
-            Assert.Equal(0, lamp.BrightnessPercentage);
         }
 
         [Fact]
@@ -26,7 +25,6 @@ namespace BlaisePascal.SmartHouse.TestDomain
             StandardLamp lamp = new StandardLamp();
             lamp.SwitchOn_Off();
             Assert.True(lamp.IsOn);
-            Assert.Equal(100, lamp.BrightnessPercentage);
         }
 
         [Fact]
@@ -60,12 +58,11 @@ namespace BlaisePascal.SmartHouse.TestDomain
         }
 
         [Fact]
-        public void ChangeBrightness_WhenTheLampIsOnAndTheNewBrightnessValueIs0TheBritghnessPercentageWillBeSetAt0AndTheLumpWillTurnOff()
+        public void ChangeBrightness_WhenTheLampIsOnAndTheNewBrightnessValueIs0_TheBritghnessPercentageWillBeSetAt0()
         {
             StandardLamp lamp = new StandardLamp(52);
             lamp.ChangeBrightness(0);
             Assert.Equal(0, lamp.BrightnessPercentage);
-            Assert.False(lamp.IsOn);
         }
     }
 }
