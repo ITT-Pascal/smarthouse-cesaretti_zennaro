@@ -1,6 +1,6 @@
 ﻿namespace BlaisePascal.SmartHouse.Domain
 {
-    public class StandardLamp : Lamp
+    public class StandardLamp : AbstractLamp
     {
 
         public StandardLamp(int brigthness) 
@@ -30,20 +30,36 @@
         }
         public override void ChangeBrightness(int newBrightness)
         {
-            if (newBrightness < 0 || newBrightness > 100)
-                throw new ArgumentException("Brightness not valid");
-            if (IsOn == true)
+            if (BritghnessValidator(newBrightness))
             {
-                if(newBrightness == 0)
+                if (IsOn == true)
                 {
-                    BrightnessPercentage = newBrightness;
-                    IsOn = false;
-                } else
-                {
-                    BrightnessPercentage = newBrightness;
+                    if (newBrightness == 0)
+                    {
+                        BrightnessPercentage = newBrightness;
+                        IsOn = false;
+                    }
+                    else
+                    {
+                        BrightnessPercentage = newBrightness;
+                    }
                 }
             }
+        
 
         }
+
+        public override bool BritghnessValidator(int newBrightness)
+        {
+            if (newBrightness < 0 || newBrightness > 100)
+                throw new ArgumentException("Brightness not valid");
+            else
+            {
+                return true;
+            }
+        }
+
+
+
     }
 }
