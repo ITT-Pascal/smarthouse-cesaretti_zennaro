@@ -8,7 +8,9 @@ namespace BlaisePascal.SmartHouse.Domain
 {
     public class EcoLamp : AbstractLamp
     {
-        // TODO: make this Lamp Eco.
+        public TimeSpan Timer { get; set; }
+        public DateTime StartHour { get; set; }
+        public DateTime EndHour { get; set; }
         public EcoLamp(int brightness)
         {
             IsOn = true;
@@ -20,6 +22,20 @@ namespace BlaisePascal.SmartHouse.Domain
             IsOn = false;
             BrightnessPercentage = 0;
         }
+        public void EcoSwitchOn(TimeSpan timer)
+        {
+            if (!IsOn)
+            {
+                IsOn = true;
+                Timer = timer;
+                EndHour = DateTime.UtcNow.Add(Timer);
+            }
+            while (DateTime.UtcNow <= EndHour)
+            {
+                if (DateTime.UtcNow == EndHour)
+                    IsOn = false;
+            }
+        }
 
         public override void SwitchOn_Off()
         {
@@ -29,6 +45,16 @@ namespace BlaisePascal.SmartHouse.Domain
         {
             if (IsOn)
                 BrightnessPercentage = BrightnessValidator(newBrightness);
+        }
+        public override void IncreaseBrightness(int increaseBy)
+        {
+            if (IsOn)
+                BrightnessPercentage = BrightnessValidator(BrightnessPercentage + increaseBy);
+        }
+        public override void DecreaseBrightness(int decreaseBy)
+        {
+            if (IsOn)
+                BrightnessPercentage = BrightnessValidator(BrightnessPercentage - decreaseBy);
         }
 
         public override int BrightnessValidator(int newBrightness)

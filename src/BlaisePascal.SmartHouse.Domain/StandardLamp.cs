@@ -24,6 +24,16 @@
             if (IsOn)
                 BrightnessPercentage = BrightnessValidator(newBrightness);
         }
+        public override void IncreaseBrightness(int increaseBy)
+        {
+            if (IsOn)
+                BrightnessPercentage = BrightnessValidator(BrightnessPercentage + increaseBy);
+        }
+        public override void DecreaseBrightness(int decreaseBy)
+        {
+            if (IsOn)
+                BrightnessPercentage = BrightnessValidator(BrightnessPercentage - decreaseBy);
+        }
 
         public override int BrightnessValidator(int newBrightness)
         {
