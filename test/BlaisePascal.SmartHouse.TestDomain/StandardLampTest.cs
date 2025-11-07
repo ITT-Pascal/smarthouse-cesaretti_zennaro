@@ -16,7 +16,7 @@ namespace BlaisePascal.SmartHouse.TestDomain
             Assert.True(lamp.IsOn);
             Assert.Equal(50, lamp.BrightnessPercentage);
         }
-
+        [Fact]
         public void Constructor_AfterCreationTheLampIsOffAndTheBrightnessPercentageIs0()
         {
             StandardLamp lamp = new StandardLamp(0);

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace BlaisePascal.SmartHouse.Domain
 {
-    public class LampsManager
+    public class LampsRow
     {
         public List<AbstractLamp> Lamps { get; private set; }
-        public LampsManager()
+        public LampsRow()
         {
             Lamps = new List<AbstractLamp>();
         }
