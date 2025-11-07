@@ -45,7 +45,7 @@ namespace BlaisePascal.SmartHouse.Domain
                 throw new ArgumentException("Lamp number not valid");
             Lamps[lampNumber].ChangeBrightness(newBrightness);
         }
-        public void ChangeBothLampsBrightness(int newBrightness)
+        public void ChangeAllLampsBrightness(int newBrightness)
         {
             for (int i = 0; i < Lamps.Count; i++)
             {
@@ -64,14 +64,14 @@ namespace BlaisePascal.SmartHouse.Domain
                 throw new ArgumentException("Lamp number not valid");
             Lamps[lampNumber].DecreaseBrightness(decreaseBy);
         }
-        public void IncreaseBothLampsBrightness(int increaseBy)
+        public void IncreaseAllLampsBrightness(int increaseBy)
         {
             for (int i = 0; i < Lamps.Count; i++)
             {
                 Lamps[i].IncreaseBrightness(increaseBy);
             }
         }
-        public void DecreaseBothLampsBrightness(int decreaseBy)
+        public void DecreaseAllLampsBrightness(int decreaseBy)
         {
             for (int i = 0; i < Lamps.Count; i++)
             {
@@ -86,6 +86,14 @@ namespace BlaisePascal.SmartHouse.Domain
                     ecoLamp.EcoSwitchOn(timer);
                 else if (!Lamps[i].IsOn)
                     Lamps[i].SwitchOn_Off();
+            }
+        }
+        public void ExclusiveEcoSwitchOnLamps(TimeSpan timer)
+        {
+            for (int i = 0; i < Lamps.Count; i++)
+            {
+                if (Lamps[i] is EcoLamp ecoLamp)
+                    ecoLamp.EcoSwitchOn(timer);
             }
         }
     }

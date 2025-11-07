@@ -8,6 +8,8 @@ namespace BlaisePascal.SmartHouse.Domain
 {
     public class EcoLamp : AbstractLamp
     {
+        private const int MaxBrightness = 100;
+        private const int MinBrightness = 0;
         public TimeSpan Timer { get; set; }
         public DateTime EndHour { get; set; }
        
@@ -59,7 +61,7 @@ namespace BlaisePascal.SmartHouse.Domain
 
         public override int BrightnessValidator(int newBrightness)
         {
-            if (newBrightness < 0 || newBrightness > 100)
+            if (newBrightness < MinBrightness || newBrightness > MaxBrightness)
                 throw new ArgumentException("Brightness not valid");
             return newBrightness;
         }

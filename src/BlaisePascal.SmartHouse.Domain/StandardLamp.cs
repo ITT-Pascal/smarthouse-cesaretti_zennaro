@@ -2,7 +2,8 @@
 {
     public class StandardLamp : AbstractLamp
     {
-
+        private const int MaxBrightness = 100;
+        private const int MinBrightness = 0;
         public StandardLamp(int brightness) 
         {
             IsOn = true;
@@ -37,7 +38,7 @@
 
         public override int BrightnessValidator(int newBrightness)
         {
-            if (newBrightness < 0 || newBrightness > 100)
+            if (newBrightness < MinBrightness || newBrightness > MaxBrightness)
                 throw new ArgumentException("Brightness not valid");
             return newBrightness;
         }

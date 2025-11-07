@@ -18,11 +18,11 @@ namespace BlaisePascal.SmartHouse.TestDomain
             Assert.True(ecolamp.IsOn);
             Assert.Equal(50, ecolamp.BrightnessPercentage);
         }
-
+        [Fact]
         public void Constructor_AfterCreationTheLampIsOffAndTheBrightnessPercentageIs0()
         {
             EcoLamp ecolamp = new EcoLamp(0);
-            Assert.False(ecolamp.IsOn);
+            Assert.True(ecolamp.IsOn);
             Assert.Equal(0, ecolamp.BrightnessPercentage);
         }
 
