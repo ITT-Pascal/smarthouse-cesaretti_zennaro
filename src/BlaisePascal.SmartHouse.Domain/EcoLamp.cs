@@ -9,7 +9,6 @@ namespace BlaisePascal.SmartHouse.Domain
     public class EcoLamp : AbstractLamp
     {
         public TimeSpan Timer { get; set; }
-        public DateTime StartHour { get; set; }
         public DateTime EndHour { get; set; }
        
         public EcoLamp(int brightness)
