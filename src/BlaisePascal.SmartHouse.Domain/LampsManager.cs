@@ -13,6 +13,10 @@ namespace BlaisePascal.SmartHouse.Domain
         {
             Lamps = new List<AbstractLamp>();
         }
+        public void RemoveLamp(int lampNumber)
+        {
+            Lamps.RemoveAt(lampNumber);
+        }
         public void AddLamp(AbstractLamp lamp)
         {
             Lamps.Add(lamp);

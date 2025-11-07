@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\morgan.zennaro\\Desktop\\SmartHouse\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BD3CE539-BB8C-42C5-BED9-B633FB38BCC7}|test\\BlaisePascal.SmartHouse.TestDomain\\BlaisePascal.SmartHouse.TestDomain.csproj|c:\\users\\morgan.zennaro\\desktop\\smarthouse\\test\\blaisepascal.smarthouse.testdomain\\ecolamptest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD3CE539-BB8C-42C5-BED9-B633FB38BCC7}|test\\BlaisePascal.SmartHouse.TestDomain\\BlaisePascal.SmartHouse.TestDomain.csproj|solutionrelative:test\\blaisepascal.smarthouse.testdomain\\ecolamptest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{30EB9C6B-CB6C-4F77-8B1C-2D21AA339C3C}|src\\BlaisePascal.SmartHouse.Domain\\BlaisePascal.SmartHouse.Domain.csproj|c:\\users\\morgan.zennaro\\desktop\\smarthouse\\src\\blaisepascal.smarthouse.domain\\lampsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{30EB9C6B-CB6C-4F77-8B1C-2D21AA339C3C}|src\\BlaisePascal.SmartHouse.Domain\\BlaisePascal.SmartHouse.Domain.csproj|solutionrelative:src\\blaisepascal.smarthouse.domain\\lampsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{30EB9C6B-CB6C-4F77-8B1C-2D21AA339C3C}|src\\BlaisePascal.SmartHouse.Domain\\BlaisePascal.SmartHouse.Domain.csproj|c:\\users\\morgan.zennaro\\desktop\\smarthouse\\src\\blaisepascal.smarthouse.domain\\ecolamp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{30EB9C6B-CB6C-4F77-8B1C-2D21AA339C3C}|src\\BlaisePascal.SmartHouse.Domain\\BlaisePascal.SmartHouse.Domain.csproj|solutionrelative:src\\blaisepascal.smarthouse.domain\\ecolamp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD3CE539-BB8C-42C5-BED9-B633FB38BCC7}|test\\BlaisePascal.SmartHouse.TestDomain\\BlaisePascal.SmartHouse.TestDomain.csproj|c:\\users\\morgan.zennaro\\desktop\\smarthouse\\test\\blaisepascal.smarthouse.testdomain\\ecolamptest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD3CE539-BB8C-42C5-BED9-B633FB38BCC7}|test\\BlaisePascal.SmartHouse.TestDomain\\BlaisePascal.SmartHouse.TestDomain.csproj|solutionrelative:test\\blaisepascal.smarthouse.testdomain\\ecolamptest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{30EB9C6B-CB6C-4F77-8B1C-2D21AA339C3C}|src\\BlaisePascal.SmartHouse.Domain\\BlaisePascal.SmartHouse.Domain.csproj|c:\\users\\morgan.zennaro\\desktop\\smarthouse\\src\\blaisepascal.smarthouse.domain\\standardlamp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
@@ -60,13 +60,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "LampsManager.cs",
               "DocumentMoniker": "C:\\Users\\morgan.zennaro\\Desktop\\SmartHouse\\src\\BlaisePascal.SmartHouse.Domain\\LampsManager.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Domain\\LampsManager.cs",
               "ToolTip": "C:\\Users\\morgan.zennaro\\Desktop\\SmartHouse\\src\\BlaisePascal.SmartHouse.Domain\\LampsManager.cs",
               "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Domain\\LampsManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAWwA4AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-07T07:46:01.264Z",
               "EditorCaption": ""
@@ -111,7 +111,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "EcoLampTest.cs",
               "DocumentMoniker": "C:\\Users\\morgan.zennaro\\Desktop\\SmartHouse\\test\\BlaisePascal.SmartHouse.TestDomain\\EcoLampTest.cs",
               "RelativeDocumentMoniker": "test\\BlaisePascal.SmartHouse.TestDomain\\EcoLampTest.cs",
@@ -124,13 +124,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "EcoLamp.cs",
               "DocumentMoniker": "C:\\Users\\morgan.zennaro\\Desktop\\SmartHouse\\src\\BlaisePascal.SmartHouse.Domain\\EcoLamp.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Domain\\EcoLamp.cs",
               "ToolTip": "C:\\Users\\morgan.zennaro\\Desktop\\SmartHouse\\src\\BlaisePascal.SmartHouse.Domain\\EcoLamp.cs",
               "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Domain\\EcoLamp.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAcwD8AAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAD8AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-06T22:15:03.802Z",
               "EditorCaption": ""
