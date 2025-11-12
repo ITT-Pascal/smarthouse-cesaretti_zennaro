@@ -16,5 +16,12 @@ namespace BlaisePascal.SmartHouse.Domain
                 throw new ArgumentException("Brightness not valid");
             return newBrightness;
         }
+
+        public static int Value(int value)
+        {
+            if (value <= 0)
+                throw new ArgumentException("value must be greater than 0");
+            return value;
+        }
     }
 }

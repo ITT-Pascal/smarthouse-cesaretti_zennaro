@@ -26,12 +26,30 @@
         public override void IncreaseBrightness(int increaseBy)
         {
             if (IsOn)
-                BrightnessPercentage = Validator.Brightness(BrightnessPercentage + increaseBy);
+            {
+                if(BrightnessPercentage + increaseBy > MaxBrightness)
+                {
+                    BrightnessPercentage = MaxBrightness;
+                } else
+                {
+                    BrightnessPercentage += Validator.Value(increaseBy);
+                }
+            }
+                
         }
         public override void DecreaseBrightness(int decreaseBy)
         {
             if (IsOn)
-                BrightnessPercentage = Validator.Brightness(BrightnessPercentage - decreaseBy);
+            {
+                if(BrightnessPercentage - decreaseBy < MinBrightness)
+                {
+                    BrightnessPercentage = MinBrightness;
+                } else
+                {
+                    BrightnessPercentage -= Validator.Value(decreaseBy);
+                }
+            }
+                
         }
     }
 }

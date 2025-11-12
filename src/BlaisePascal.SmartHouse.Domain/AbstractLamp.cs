@@ -10,6 +10,8 @@ namespace BlaisePascal.SmartHouse.Domain
     {
         public bool IsOn { get; protected set; }
         public int BrightnessPercentage { get; protected set; }
+        public const int MaxBrightness = 100;
+        public const int MinBrightness = 0;
 
         public abstract void SwitchOn_Off();
         public abstract void ChangeBrightness(int newBrightness);
