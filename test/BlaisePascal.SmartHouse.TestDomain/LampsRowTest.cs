@@ -9,5 +9,6 @@ namespace BlaisePascal.SmartHouse.TestDomain
     public class LampsRowTest
     {
         // TODO: Add tests
+        // Comment
     }
 }
