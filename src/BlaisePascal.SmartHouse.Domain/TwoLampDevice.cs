@@ -8,10 +8,10 @@ namespace BlaisePascal.SmartHouse.Domain
 {
     public class TwoLampDevice
     {
-        public AbstractLamp[] Lamps { get; private set; }
-        public TwoLampDevice(AbstractLamp firstLamp, AbstractLamp secondLamp)
+        public Lamp[] Lamps { get; private set; }
+        public TwoLampDevice(Lamp firstLamp, Lamp secondLamp)
         {
-            Lamps = new AbstractLamp[3];
+            Lamps = new Lamp[3];
             Lamps[1] = firstLamp;
             Lamps[2] = secondLamp;
         }

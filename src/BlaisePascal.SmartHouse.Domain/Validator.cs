@@ -12,9 +12,12 @@ namespace BlaisePascal.SmartHouse.Domain
         private const int MinBrightness = 0;
         public static int Brightness(int newBrightness)
         {
-            if (newBrightness < MinBrightness || newBrightness > MaxBrightness)
-                throw new ArgumentException("Brightness not valid");
-            return newBrightness;
+            if (newBrightness < MinBrightness)
+                return MinBrightness;
+            else if (newBrightness > MaxBrightness)
+                return MaxBrightness;
+            else
+                return newBrightness;
         }
 
         public static int Value(int value)

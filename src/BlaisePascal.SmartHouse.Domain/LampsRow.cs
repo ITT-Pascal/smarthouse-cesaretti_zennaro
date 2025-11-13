@@ -8,16 +8,16 @@ namespace BlaisePascal.SmartHouse.Domain
 {
     public class LampsRow
     {
-        public List<AbstractLamp> Lamps { get; private set; }
+        public List<Lamp> Lamps { get; private set; }
         public LampsRow()
         {
-            Lamps = new List<AbstractLamp>();
+            Lamps = new List<Lamp>();
         }
         public void RemoveLamp(int lampNumber)
         {
             Lamps.RemoveAt(lampNumber);
         }
-        public void AddLamp(AbstractLamp lamp)
+        public void AddLamp(Lamp lamp)
         {
             Lamps.Add(lamp);
         }

@@ -45,29 +45,6 @@ namespace BlaisePascal.SmartHouse.TestDomain
         }
 
         [Fact]
-        public void BrightnessValidator_NewBritghnessCannotBeLowerThan0()
-        {
-            EcoLamp ecolamp = new EcoLamp(50);
-            Assert.Throws<ArgumentException>(() => Validator.Brightness(-1));
-        }
-
-
-        [Fact]
-        public void BrightnessValidator_NewBritghnessCannotBeGreaterThan100()
-        {
-            EcoLamp ecoLamp = new EcoLamp(50);
-            Assert.Throws<ArgumentException>(() => Validator.Brightness(101));
-        }
-
-
-        [Fact]
-        public void BrigthnessValidator_NewBrigthnessCanBeBetween0And100()
-        {
-            EcoLamp ecolamp = new EcoLamp(50);
-            Assert.Equal(30, Validator.Brightness(30));
-        }
-
-        [Fact]
         public void ChangeBrightness_WhenTheLampIsOnTheNewBrigthnessWillBeSet()
         {
             EcoLamp ecolamp = new EcoLamp(50);
