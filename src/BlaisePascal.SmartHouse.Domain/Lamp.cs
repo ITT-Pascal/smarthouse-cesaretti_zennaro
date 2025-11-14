@@ -16,20 +16,29 @@
             BrightnessPercentage = 0;
         }
 
-        public void SwitchOn_Off()
+        public void SwitchOn()
         {
-            IsOn = !IsOn;
+            if (!IsOn)
+                IsOn = true;   
+        }
+
+        public void SwitchOff()
+        {
+            if (IsOn)
+                IsOn = false;
         }
         public void ChangeBrightness(int newBrightness)
         {
             if (IsOn)
-                BrightnessPercentage = Validator.Brightness(newBrightness);
+                BrightnessPercentage = Validator.BritghnessValue(newBrightness);
         }
         public void IncreaseBrightness(int increaseBy)
         {
             if (IsOn)
             {
-                BrightnessPercentage = Validator.Brightness(BrightnessPercentage + Validator.Value(increaseBy));
+                BrightnessPercentage += Validator.Value(increaseBy);
+                if(BrightnessPercentage > 100)
+                    BrightnessPercentage = 100;
             }
                 
         }
@@ -37,7 +46,9 @@
         {
             if (IsOn)
             {
-                BrightnessPercentage = Validator.Brightness(BrightnessPercentage - Validator.Value(decreaseBy));
+                BrightnessPercentage -= Validator.Value(decreaseBy);
+                if (BrightnessPercentage < 0)
+                    BrightnessPercentage = 0;
             }
                 
         }

@@ -8,83 +8,105 @@ namespace BlaisePascal.SmartHouse.Domain
 {
     public class TwoLampDevice
     {
-        public Lamp[] Lamps { get; private set; }
+        public Lamp FirstLamp { get; private set; }
+        public Lamp SecondLamp { get; private set; }
+
         public TwoLampDevice(Lamp firstLamp, Lamp secondLamp)
         {
-            Lamps = new Lamp[3];
-            Lamps[1] = firstLamp;
-            Lamps[2] = secondLamp;
+            if(firstLamp is EcoLamp)
+            {
+                FirstLamp = (EcoLamp)firstLamp;
+            } else
+            {
+                FirstLamp = firstLamp; 
+            }
+
+            if(secondLamp is EcoLamp)
+            {
+                SecondLamp = (EcoLamp)secondLamp;
+            } else
+            {
+                SecondLamp = secondLamp;
+            }
         }
+
+
         public void TurnLampsOn()
         {
-            for (int i = 1; i < Lamps.Length; i++)
+            if(FirstLamp is EcoLamp)
             {
-                if (!Lamps[i].IsOn)
-                    Lamps[i].SwitchOn_Off();
+                FirstLamp.EcoSwitchOn();
             }
+            FirstLamp.SwitchOn();
+            SecondLamp.SwitchOn();  
         }
+
         public void TurnLampsOff()
         {
-            for (int i = 1; i < Lamps.Length; i++)
-            {
-                if (Lamps[i].IsOn)
-                    Lamps[i].SwitchOn_Off();
-            }
+            FirstLamp.SwitchOff();
+            SecondLamp.SwitchOff();
         }
-        public void SwitchLamp(int lampNumber)
-        {
-            if (lampNumber < 1 || lampNumber >= Lamps.Length)
-                throw new ArgumentException("Lamp number not valid");
-            Lamps[lampNumber].SwitchOn_Off();
-        }
+
+
+     
         public void ChangeLampBrightness(int lampNumber, int newBrightness)
         {
-            if (lampNumber < 1 || lampNumber >= Lamps.Length)
-                throw new ArgumentException("Lamp number not valid");
-            Lamps[lampNumber].ChangeBrightness(newBrightness);
+            if(Validator.LampNumberValidator(lampNumber) == 1)
+            {
+                FirstLamp.ChangeBrightness(newBrightness);
+            }
+            else
+            {
+                SecondLamp.ChangeBrightness(newBrightness);
+            }
         }
+
+
         public void ChangeBothLampsBrightness(int newBrightness)
         {
-            for (int i = 1; i < Lamps.Length; i++)
-            {
-                Lamps[i].ChangeBrightness(newBrightness);
-            }
+            FirstLamp.ChangeBrightness(newBrightness);
+            SecondLamp.ChangeBrightness(newBrightness);
         }
         public void IncreaseLampBrightness(int lampNumber, int increaseBy)
         {
-            if (lampNumber < 1 || lampNumber >= Lamps.Length)
-                throw new ArgumentException("Lamp number not valid");
-            Lamps[lampNumber].IncreaseBrightness(increaseBy);
+            if(Validator.LampNumberValidator(lampNumber) == 1)
+            {
+                FirstLamp.IncreaseBrightness(increaseBy);
+            } else
+            {
+                SecondLamp.IncreaseBrightness(increaseBy);
+            }
         }
+
+
         public void DecreaseLampBrightness(int lampNumber, int decreaseBy)
         {
-            if (lampNumber < 1 || lampNumber >= Lamps.Length)
-                throw new ArgumentException("Lamp number not valid");
-            Lamps[lampNumber].DecreaseBrightness(decreaseBy);
+
+            if (Validator.LampNumberValidator(lampNumber) == 1)
+            {
+                FirstLamp.DecreaseBrightness(decreaseBy);
+            }
+            else
+            {
+                SecondLamp.DecreaseBrightness(decreaseBy);
+            }
         }
+
+
         public void IncreaseBothLampsBrightness(int increaseBy)
         {
-            for (int i = 1; i < Lamps.Length; i++)
-            {
-                Lamps[i].IncreaseBrightness(increaseBy);
-            }
+            FirstLamp.IncreaseBrightness(increaseBy);
+            SecondLamp.IncreaseBrightness(increaseBy);
         }
+
+
         public void DecreaseBothLampsBrightness(int decreaseBy)
         {
-            for (int i = 1; i < Lamps.Length; i++)
-            {
-                Lamps[i].DecreaseBrightness(decreaseBy);
-            }
+            FirstLamp.DecreaseBrightness(decreaseBy);
+            SecondLamp.DecreaseBrightness(decreaseBy);
         }
-        public void EcoSwitchOnLamps(TimeSpan timer)
-        {
-            for (int i = 1; i < Lamps.Length; i++)
-            {
-                if (Lamps[i] is EcoLamp ecoLamp)
-                    ecoLamp.EcoSwitchOn(timer);
-                else if (!Lamps[i].IsOn)
-                    Lamps[i].SwitchOn_Off();
-            }
-        }
+
+
+       
     }
 }
