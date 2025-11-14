@@ -11,10 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlaisePascal.SmartHouse.Dom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlaisePascal.SmartHouse.TestDomain", "test\BlaisePascal.SmartHouse.TestDomain\BlaisePascal.SmartHouse.TestDomain.csproj", "{BD3CE539-BB8C-42C5-BED9-B633FB38BCC7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{D0E619D1-BFE8-4592-A21B-E9F13ABCB8A3}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\Docs_Template_SmarthHouse_Editable.docx = ..\..\Docs_Template_SmarthHouse_Editable.docx
-	EndProjectSection
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{245657F9-0AEC-4057-A982-AC7B5532D96A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
