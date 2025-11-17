@@ -1,56 +1,45 @@
 ﻿namespace BlaisePascal.SmartHouse.Domain
 {
-    public class Lamp
+    public class Lamp : AbstractLamp
     {
-        public bool IsOn { get; set; }
-        public int BrightnessPercentage { get; set; }
-        public Lamp(int brightness) 
+        public Lamp(string name) : base(name) { }
+        public override void SwitchOn()
         {
-            IsOn = true;
-            ChangeBrightness(brightness);
-        } 
+            if (Status == DeviceStatus.Off)
+            {
+                Status = DeviceStatus.On;
+                LastModified = DateTime.Now;
+            } else
+            {
+                throw new InvalidOperationException("the lamp is already on");
+            } 
+        }
+        
 
-        public Lamp()
+        public override void SwitchOff()
         {
-            IsOn = false;
-            BrightnessPercentage = 0;
+            if (Status == DeviceStatus.On)
+            {
+                Status = DeviceStatus.Off;
+                LastModified = DateTime.Now;
+            } else
+            {
+                throw new InvalidOperationException("the lamp is already off");
+            }
+                
         }
 
-        public void SwitchOn()
-        {
-            if (!IsOn)
-                IsOn = true;   
-        }
 
-        public void SwitchOff()
+        public override void ChangeBrightness(int newBrightness)
         {
-            if (IsOn)
-                IsOn = false;
-        }
-        public void ChangeBrightness(int newBrightness)
-        {
-            if (IsOn)
+            if (Status == DeviceStatus.On)
+            {
                 BrightnessPercentage = Validator.BritghnessValue(newBrightness);
-        }
-        public void IncreaseBrightness(int increaseBy)
-        {
-            if (IsOn)
+                LastModified = DateTime.Now;
+            } else
             {
-                BrightnessPercentage += Validator.Value(increaseBy);
-                if(BrightnessPercentage > 100)
-                    BrightnessPercentage = 100;
+                throw new InvalidOperationException("cannot change brightness when the lamp is off");
             }
-                
-        }
-        public void DecreaseBrightness(int decreaseBy)
-        {
-            if (IsOn)
-            {
-                BrightnessPercentage -= Validator.Value(decreaseBy);
-                if (BrightnessPercentage < 0)
-                    BrightnessPercentage = 0;
-            }
-                
-        }
+        } 
     }
 }

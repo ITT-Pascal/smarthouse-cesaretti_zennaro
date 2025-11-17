@@ -8,38 +8,38 @@ namespace BlaisePascal.SmartHouse.Domain
 {
     public class TwoLampDevice
     {
-        public Lamp FirstLamp { get; private set; }
-        public Lamp SecondLamp { get; private set; }
+        public AbstractLamp FirstLamp { get; private set; }
+        public AbstractLamp SecondLamp { get; private set; }
 
-        public TwoLampDevice(Lamp firstLamp, Lamp secondLamp)
+        public TwoLampDevice(AbstractLamp firstLamp, AbstractLamp secondLamp)
         {
-            if(firstLamp is EcoLamp)
-            {
-                FirstLamp = (EcoLamp)firstLamp;
-            } else
-            {
-                FirstLamp = firstLamp; 
-            }
-
-            if(secondLamp is EcoLamp)
-            {
-                SecondLamp = (EcoLamp)secondLamp;
-            } else
-            {
-                SecondLamp = secondLamp;
-            }
+            FirstLamp = firstLamp;
+            SecondLamp = secondLamp;
         }
 
 
         public void TurnLampsOn()
         {
-            if(FirstLamp is EcoLamp)
-            {
-                FirstLamp.EcoSwitchOn();
-            }
             FirstLamp.SwitchOn();
             SecondLamp.SwitchOn();  
         }
+
+        public void TurnLampsOn(Guid id)
+        {
+            if (FirstLamp.Id == id) 
+            {
+                FirstLamp.SwitchOn();
+            }
+            else if(SecondLamp.Id == id)
+            {
+                SecondLamp.SwitchOn();
+            } else
+            {
+
+            }
+        }
+
+
 
         public void TurnLampsOff()
         {
@@ -67,43 +67,45 @@ namespace BlaisePascal.SmartHouse.Domain
             FirstLamp.ChangeBrightness(newBrightness);
             SecondLamp.ChangeBrightness(newBrightness);
         }
-        public void IncreaseLampBrightness(int lampNumber, int increaseBy)
+
+
+        public void IncreaseLampBrightness(int lampNumber, int value)
         {
             if(Validator.LampNumberValidator(lampNumber) == 1)
             {
-                FirstLamp.IncreaseBrightness(increaseBy);
+                FirstLamp.IncreaseBy(value);
             } else
             {
-                SecondLamp.IncreaseBrightness(increaseBy);
+                SecondLamp.IncreaseBy(value);
             }
         }
 
 
-        public void DecreaseLampBrightness(int lampNumber, int decreaseBy)
+        public void DecreaseLampBrightness(int lampNumber, int value)
         {
 
             if (Validator.LampNumberValidator(lampNumber) == 1)
             {
-                FirstLamp.DecreaseBrightness(decreaseBy);
+                FirstLamp.DecreaseBy(value);
             }
             else
             {
-                SecondLamp.DecreaseBrightness(decreaseBy);
+                SecondLamp.DecreaseBy(value);
             }
         }
 
 
-        public void IncreaseBothLampsBrightness(int increaseBy)
+        public void IncreaseBothLampsBrightness(int value)
         {
-            FirstLamp.IncreaseBrightness(increaseBy);
-            SecondLamp.IncreaseBrightness(increaseBy);
+            FirstLamp.IncreaseBy(value);
+            SecondLamp.IncreaseBy(value);
         }
 
 
         public void DecreaseBothLampsBrightness(int decreaseBy)
         {
-            FirstLamp.DecreaseBrightness(decreaseBy);
-            SecondLamp.DecreaseBrightness(decreaseBy);
+            FirstLamp.DecreaseBy(decreaseBy);
+            SecondLamp.DecreaseBy(decreaseBy);
         }
 
 

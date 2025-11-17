@@ -8,25 +8,76 @@ namespace BlaisePascal.SmartHouse.Domain
 {
     public class EcoLamp : Lamp
     {
-        public TimeSpan Timer { get; set; }
-        public DateTime EndHour { get; set; }
+        DateTime EndHour { get; set; }
+        TimeSpan Timer { get; set; }
        
-        public EcoLamp(int brightness) : base(brightness) { }
-
-        public EcoLamp() : base() { }
-        public void EcoSwitchOn(TimeSpan timer)
+       
+        public EcoLamp(string name, TimeSpan timer) : base(name) 
         {
-            if (!IsOn)
+            EndHour = new DateTime();
+            Timer = timer;
+        }
+
+        public void SetTimer(TimeSpan timer)
+        {
+            Timer = timer;
+        }
+
+        public override void SwitchOn()
+        {
+            if (Status == DeviceStatus.Off)
             {
-                IsOn = true;
-                Timer = timer;
-                EndHour = DateTime.UtcNow.Add(Timer);
+                Status = DeviceStatus.On;
+                EndHour = DateTime.Now.Add(Timer);
+                LastModified = DateTime.Now;
+            }
+            else
+            {
+                throw new InvalidOperationException("the lamp is already on");
             }
             while (DateTime.UtcNow <= EndHour)
             {
                 if (DateTime.UtcNow == EndHour)
-                    IsOn = false;
+                {
+                    Status = DeviceStatus.Off;
+                    LastModified = DateTime.Now;
+                }
+                    
+
             }
         }
+
+        public override void SwitchOff()
+        {
+            if (Status == DeviceStatus.On)
+            {
+                Status = DeviceStatus.Off;
+                LastModified = DateTime.Now;
+
+            } else
+            {
+                throw new InvalidOperationException("the lamp is already off");
+            }
+        }
+
+        public override void ChangeBrightness(int newBrightness)
+        {
+            if (Status == DeviceStatus.On)
+            {
+                BrightnessPercentage = Validator.BritghnessValue(newBrightness);
+                LastModified = DateTime.Now;
+            }
+            else
+            {
+                throw new InvalidOperationException("cannot change brightness when the lamp is off");
+            }
+        }
+       
+        
+    
+
+        
+
+
     }
 }
