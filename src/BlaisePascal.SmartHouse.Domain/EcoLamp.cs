@@ -64,7 +64,7 @@ namespace BlaisePascal.SmartHouse.Domain
         {
             if (Status == DeviceStatus.On)
             {
-                BrightnessPercentage = Validator.BritghnessValue(newBrightness);
+                BrightnessPercentage = LampValidator.Britghness(newBrightness);
                 LastModified = DateTime.Now;
             }
             else

@@ -12,8 +12,6 @@ namespace BlaisePascal.SmartHouse.Domain
 {
     public abstract class AbstractLamp
     {
-        protected const int MaxValue = 100;
-        protected const int MinValue = 0;
 
         public string Name { get; protected set; }
         public Guid Id { get; protected set; }
@@ -53,13 +51,7 @@ namespace BlaisePascal.SmartHouse.Domain
         {
             if(Status == DeviceStatus.On)
             {
-                if(BrightnessPercentage + Validator.Value(value) > MaxValue)
-                {
-                    BrightnessPercentage = MaxValue;
-                } else
-                {
-                    BrightnessPercentage += value;
-                }
+                BrightnessPercentage = Math.Min(BrightnessPercentage + LampValidator.Value(value), LampValidator.MaxBrightness);
 
                 LastModified = DateTime.Now;
             } else
@@ -72,14 +64,7 @@ namespace BlaisePascal.SmartHouse.Domain
         {
             if (Status == DeviceStatus.On)
             {
-                if (BrightnessPercentage - Validator.Value(value) < MinValue)
-                {
-                    BrightnessPercentage = MinValue;
-                }
-                else
-                {
-                    BrightnessPercentage -= value;
-                }
+                BrightnessPercentage = Math.Max(BrightnessPercentage - LampValidator.Value(value), LampValidator.MinBrightness);
 
                 LastModified = DateTime.Now;
             }

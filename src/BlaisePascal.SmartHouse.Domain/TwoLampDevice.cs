@@ -51,7 +51,7 @@ namespace BlaisePascal.SmartHouse.Domain
      
         public void ChangeLampBrightness(int lampNumber, int newBrightness)
         {
-            if(Validator.LampNumberValidator(lampNumber) == 1)
+            if(LampValidator.LampNumberValidator(lampNumber) == 1)
             {
                 FirstLamp.ChangeBrightness(newBrightness);
             }
@@ -71,7 +71,7 @@ namespace BlaisePascal.SmartHouse.Domain
 
         public void IncreaseLampBrightness(int lampNumber, int value)
         {
-            if(Validator.LampNumberValidator(lampNumber) == 1)
+            if(LampValidator.LampNumberValidator(lampNumber) == 1)
             {
                 FirstLamp.IncreaseBy(value);
             } else
@@ -84,7 +84,7 @@ namespace BlaisePascal.SmartHouse.Domain
         public void DecreaseLampBrightness(int lampNumber, int value)
         {
 
-            if (Validator.LampNumberValidator(lampNumber) == 1)
+            if (LampValidator.LampNumberValidator(lampNumber) == 1)
             {
                 FirstLamp.DecreaseBy(value);
             }
