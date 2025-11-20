@@ -27,6 +27,8 @@ namespace BlaisePascal.SmartHouse.Domain
             return value;
         }
 
+
+
       
     }
 }

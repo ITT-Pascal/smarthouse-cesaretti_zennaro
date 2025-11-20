@@ -13,6 +13,7 @@ namespace BlaisePascal.SmartHouse.Domain
     public abstract class AbstractLamp
     {
 
+  
         public string Name { get; protected set; }
         public Guid Id { get; protected set; }
         public DeviceStatus Status { get; protected set; }
@@ -39,7 +40,6 @@ namespace BlaisePascal.SmartHouse.Domain
             BrightnessPercentage = brightness;
             CreationHour = DateTime.Now;
             LastModified = DateTime.Now;
-            
         }
 
         public abstract void SwitchOn();
