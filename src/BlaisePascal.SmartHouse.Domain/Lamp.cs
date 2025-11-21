@@ -3,6 +3,7 @@
     public class Lamp : AbstractLamp
     {
         public Lamp(string name) : base(name) { }
+        public Lamp() : base() { }
         public override void SwitchOn()
         {
             if (Status == DeviceStatus.Off)

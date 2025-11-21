@@ -10,36 +10,29 @@ namespace BlaisePascal.SmartHouse.TestDomain
     public class LampTest
     {
         [Fact]
-        public void Constructor_WhenAfterCreationTheLampIsBeOnTheBrightnessPercentageIsSet()
-        {
-            Lamp lamp = new Lamp(50);
-            Assert.True(lamp.IsOn);
-            Assert.Equal(50, lamp.BrightnessPercentage);
-        }
-
-        [Fact]
         public void Constructor_WhenAfterCreationTheLampIsOffTheBrightnessPercentageIsSetTo0()
         {
-            Lamp lamp = new Lamp();
-            Assert.False(lamp.IsOn);
+            Lamp lamp = new();
+            Assert.True(lamp.Status == DeviceStatus.Off);
             Assert.Equal(0, lamp.BrightnessPercentage);
         }
 
         [Fact]
         public void SwitchOff_IfTheLampIsOnAfterSwitchOffItWillBeOff()
         {
-            Lamp lamp = new Lamp(50);
+            Lamp lamp = new();
+            lamp.SwitchOn();
             lamp.SwitchOff();
-            Assert.False(lamp.IsOn);
+            Assert.True(lamp.Status == DeviceStatus.Off);
             Assert.Equal(50, lamp.BrightnessPercentage);
         }
 
         [Fact]
         public void SwitchOff_IfTheLampIsOffAfterSwitchOffNothingHappen()
         {
-            Lamp lamp = new Lamp();
+            Lamp lamp = new();
             lamp.SwitchOff();
-            Assert.False(lamp.IsOn);
+            Assert.True(lamp.Status == DeviceStatus.Off);
         }
 
 
@@ -47,37 +40,38 @@ namespace BlaisePascal.SmartHouse.TestDomain
         [Fact]
         public void SwitchOn_IfTheLampIsOffAfterSwitchOnItWillBeOn()
         {
-            Lamp lamp = new Lamp();
+            Lamp lamp = new();
             lamp.SwitchOn();
-            Assert.True(lamp.IsOn);
+            Assert.True(lamp.Status == DeviceStatus.On);
             Assert.Equal(0, lamp.BrightnessPercentage);
         }
         [Fact]
         public void SwitchOn_IfTheLampIsOnAfterSwitchOnNothingHappen()
         {
-            Lamp lamp = new Lamp(50);
+            Lamp lamp = new();
             lamp.SwitchOn();
-            Assert.True(lamp.IsOn);
+            lamp.SwitchOn();
+            Assert.True(lamp.Status == DeviceStatus.On);
         }
 
         [Fact]
         public void ChangeBritghness_NewBritghnessCannotBeLowerThan0()
         {
-            Lamp lamp = new(50);
+            Lamp lamp = new();
             Assert.Throws<ArgumentException>(() => lamp.ChangeBrightness(-1));
         }
 
         [Fact]
         public void ChangeBritghness_NewBritghnessCannotBeGreaterThan100()
         {
-            Lamp lamp = new(50);
+            Lamp lamp = new();
             Assert.Throws<ArgumentException>(() => lamp.ChangeBrightness(101));
         }
 
         [Fact]
         public void ChangeBrightness_WhenTheLampIsOnAndNewBrigthnessIsBetween0And100ItWillBeSet()
         {
-            Lamp lamp = new Lamp(50);
+            Lamp lamp = new Lamp();
             lamp.ChangeBrightness(30);
             Assert.Equal(30, lamp.BrightnessPercentage);
         }
