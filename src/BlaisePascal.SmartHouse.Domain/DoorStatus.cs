@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BlaisePascal.SmartHouse.Domain
+{
+    public enum DoorStatus
+    {
+        Closed = 0,
+        Open = 1,
+        Locked = 2
+    }
+}
