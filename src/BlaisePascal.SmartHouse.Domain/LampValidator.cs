@@ -27,6 +27,17 @@ namespace BlaisePascal.SmartHouse.Domain
             return value;
         }
 
+        public static int IsValidPosition(int position, int min, int max)
+        {
+            if(position >=  min && position <= max)
+            {
+                return position;
+            } else
+            {
+                throw new ArgumentException("positon not valid");
+            }
+        }
+
 
 
       
