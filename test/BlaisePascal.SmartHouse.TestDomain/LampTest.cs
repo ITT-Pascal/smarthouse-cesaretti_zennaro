@@ -24,18 +24,14 @@ namespace BlaisePascal.SmartHouse.TestDomain
             lamp.SwitchOn();
             lamp.SwitchOff();
             Assert.True(lamp.Status == DeviceStatus.Off);
-            Assert.Equal(50, lamp.BrightnessPercentage);
         }
 
         [Fact]
-        public void SwitchOff_IfTheLampIsOffAfterSwitchOffNothingHappen()
+        public void SwitchOff_WhenTheLampIsOff_AfterSwitchOffNothingHappen()
         {
             Lamp lamp = new();
-            lamp.SwitchOff();
-            Assert.True(lamp.Status == DeviceStatus.Off);
+            Assert.Throws<InvalidOperationException>(() => lamp.SwitchOff());
         }
-
-
 
         [Fact]
         public void SwitchOn_IfTheLampIsOffAfterSwitchOnItWillBeOn()
@@ -50,51 +46,57 @@ namespace BlaisePascal.SmartHouse.TestDomain
         {
             Lamp lamp = new();
             lamp.SwitchOn();
-            lamp.SwitchOn();
-            Assert.True(lamp.Status == DeviceStatus.On);
+            Assert.Throws<InvalidOperationException>(() => lamp.SwitchOn());
         }
 
         [Fact]
         public void ChangeBritghness_NewBritghnessCannotBeLowerThan0()
         {
             Lamp lamp = new();
-            Assert.Throws<ArgumentException>(() => lamp.ChangeBrightness(-1));
+            lamp.SwitchOn();
+            lamp.ChangeBrightness(-1);
+            Assert.Equal(0, lamp.BrightnessPercentage);
         }
 
         [Fact]
         public void ChangeBritghness_NewBritghnessCannotBeGreaterThan100()
         {
             Lamp lamp = new();
-            Assert.Throws<ArgumentException>(() => lamp.ChangeBrightness(101));
+            lamp.SwitchOn();
+            lamp.ChangeBrightness(101);
+            Assert.Equal(100, lamp.BrightnessPercentage);
         }
 
         [Fact]
         public void ChangeBrightness_WhenTheLampIsOnAndNewBrigthnessIsBetween0And100ItWillBeSet()
         {
             Lamp lamp = new Lamp();
+            lamp.SwitchOn();
             lamp.ChangeBrightness(30);
             Assert.Equal(30, lamp.BrightnessPercentage);
         }
 
         [Fact]
-        public void ChangeBrightness_WhenTheLampIsOffTheNewBrigthnessWontBeSet()
+        public void ChangeBrightness_WhenTheLampIsOff_ThrowInvalidOperationException()
         {
             Lamp lamp = new Lamp();
-            lamp.ChangeBrightness(30);
-            Assert.Equal(0, lamp.BrightnessPercentage);
+            Assert.Throws<InvalidOperationException>(() => lamp.ChangeBrightness(30));
         }
-
+        [Fact]
         public void IncreaseBrightness_TheIncreaseValueCannotBeLowerThan0()
         {
-            Lamp lamp = new(50);
-            Assert.Throws<ArgumentException>(() => lamp.IncreaseBrightness(-1));
+            Lamp lamp = new();
+            lamp.SwitchOn();
+            Assert.Throws<ArgumentException>(() => lamp.IncreaseBy(-1));
         }
 
         [Fact]
         public void IncreaseBrightness_WhenTheLampIsOnAndValueIsGreaterThan0TheBrightnessWillBeIncreaseCorrectly()
         {
-            Lamp lamp = new(50);
-            lamp.IncreaseBrightness(30);
+            Lamp lamp = new();
+            lamp.SwitchOn();
+            lamp.ChangeBrightness(50);
+            lamp.IncreaseBy(30);
             Assert.Equal(80, lamp.BrightnessPercentage);
         }
 
@@ -102,47 +104,54 @@ namespace BlaisePascal.SmartHouse.TestDomain
         public void IncreaseBrightness_WhenTheLampIsOffTheBrightnessWontBeIncrease()
         {
             Lamp lamp = new();
-            lamp.IncreaseBrightness(30);
-            Assert.Equal(0, lamp.BrightnessPercentage);
+            Assert.Throws<InvalidOperationException>(() => lamp.IncreaseBy(30));
         }
-
+        [Fact]
         public void IncreaseBritghtness_WhenBrightnessIsIncreasedToAValueGreaterThan100ItWillBeSetAt100()
         {
-            Lamp lamp = new(50);
-            lamp.IncreaseBrightness(200);
+            Lamp lamp = new();
+            lamp.SwitchOn();
+            lamp.ChangeBrightness(50);
+            lamp.IncreaseBy(200);
             Assert.Equal(100, lamp.BrightnessPercentage);
         }
 
         [Fact]
         public void DecreaseBrightness_TheDecreaseValueCannotBeLowerThan0()
         {
-            Lamp lamp = new(50);
-            Assert.Throws<ArgumentException>(() => lamp.DecreaseBrightness(-1));
+            Lamp lamp = new();
+            lamp.SwitchOn();
+            Assert.Throws<ArgumentException>(() => lamp.DecreaseBy(-1));
         }
 
 
         [Fact]
         public void DecreaseBrightness_WhenTheLampIsOnAndValueIsGreaterThan0TheBrightnessWillBeDecreaseCorrectly()
         {
-            Lamp lamp = new(50);
-            lamp.DecreaseBrightness(30);
+            Lamp lamp = new();
+            lamp.SwitchOn();
+            lamp.ChangeBrightness(50);
+            lamp.DecreaseBy(30);
             Assert.Equal(20, lamp.BrightnessPercentage);
         }
 
         [Fact]
         public void DecreaseBrightness_WhenTheLampIsOffTheBrightnessWontBeDecrease()
         {
-            Lamp lamp = new(30);
+            Lamp lamp = new();
+            lamp.SwitchOn();
+            lamp.ChangeBrightness(30);
             lamp.SwitchOff();
-            lamp.DecreaseBrightness(30);
-            Assert.Equal(30, lamp.BrightnessPercentage);
+            Assert.Throws<InvalidOperationException>(() => lamp.DecreaseBy(30));
         }
 
         [Fact]
         public void DecreaseBrightness_WhenTheBrightnessIsDecreasedInAValueLowerThan0OItWllBeSetAt0()
         {
-            Lamp lamp = new(50);
-            lamp.DecreaseBrightness(300);
+            Lamp lamp = new();
+            lamp.SwitchOn();
+            lamp.ChangeBrightness(50);
+            lamp.DecreaseBy(300);
             Assert.Equal(0, lamp.BrightnessPercentage);
         }
     }
