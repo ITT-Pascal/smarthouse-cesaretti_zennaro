@@ -72,6 +72,8 @@ namespace BlaisePascal.SmartHouse.Domain
                 throw new InvalidOperationException("cannot change brightness when the lamp is off");
             }
         }
+
+       
        
         
     

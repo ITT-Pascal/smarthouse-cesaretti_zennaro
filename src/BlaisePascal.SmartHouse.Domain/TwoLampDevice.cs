@@ -10,6 +10,23 @@ namespace BlaisePascal.SmartHouse.Domain
     {
         public AbstractLamp FirstLamp { get; private set; }
         public AbstractLamp SecondLamp { get; private set; }
+        public DeviceStatus DeviceStatus
+        {
+            get
+            {
+                if (FirstLamp.Status == DeviceStatus.On || SecondLamp.Status == DeviceStatus.Off)
+                {
+                    return DeviceStatus.On;
+                }
+                else
+                {
+                    return DeviceStatus.Off;
+                }
+            }
+
+            private set { }
+        }
+
 
         public TwoLampDevice(AbstractLamp firstLamp, AbstractLamp secondLamp)
         {

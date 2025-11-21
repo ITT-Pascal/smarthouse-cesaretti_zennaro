@@ -36,6 +36,17 @@ namespace BlaisePascal.SmartHouse.Domain
             }
         }
 
+        public void SwitchOff()
+        {
+            foreach (AbstractLamp lamp in _LampsRow)
+            {
+                lamp.SwitchOn();
+
+            }
+        }
+
+
+
 
     } 
 
