@@ -31,16 +31,6 @@ namespace BlaisePascal.SmartHouse.Domain
             LastModified = DateTime.Now;
         }
 
-        public AbstractLamp()
-        {
-            Name = string.Empty;
-            Id = Guid.NewGuid();
-            Status = DeviceStatus.Off;
-            BrightnessPercentage = 0;
-            CreationHour = DateTime.Now;
-            LastModified = DateTime.Now;
-        }
-
         public AbstractLamp(int brightness, string name)
         {
             Name = name;

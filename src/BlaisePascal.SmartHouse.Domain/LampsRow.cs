@@ -3,21 +3,53 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace BlaisePascal.SmartHouse.Domain
 {
 
     public class LampsRow
     {
+        private DeviceStatus? lampsStatus;
+
         public List<AbstractLamp> Lamps { get; private set; }
-        public DeviceStatus LampStatus { get; private set; }
+        public DeviceStatus? LampsStatus
+        {
+            get
+            {
+                DeviceStatus? lampsStatus = DeviceStatus.On;
+
+                if (Lamps.Count == 0)
+                {
+                    lampsStatus = null;
+                } else
+                {
+                    foreach (AbstractLamp lamp in Lamps)
+                    {
+                        if (lamp.Status == DeviceStatus.Off)
+                        {
+                            lampsStatus = DeviceStatus.Off;
+                        }
+                    }
+                }
+                return lampsStatus;
+            }
+            private set { }
+        }
+
 
 
         public LampsRow()
         {
             Lamps = new List<AbstractLamp>();
-            LampStatus = DeviceStatus.Off;
         }
+
+        public LampsRow(List<AbstractLamp> lamps)
+        {
+            Lamps = lamps;
+        }
+
+
 
         public void SwitchOn()
         {
@@ -30,31 +62,35 @@ namespace BlaisePascal.SmartHouse.Domain
 
         public void SwitchOn(Guid id)
         {
+            bool foundLamp = false;
             foreach (AbstractLamp lamp in Lamps)
             {
-                if (lamp.Id == id && lamp.Status == DeviceStatus.Off)
+                if (lamp.Id == id)
                 {
                     lamp.SwitchOn();
+                    foundLamp = true;
                 }
-                else
-                {
-                    throw new ArgumentException("not valid id");
-                }
+            }
+            if (foundLamp == false)
+            {
+                throw new ArgumentException("not valid id");
             }
         }
 
         public void SwitchOn(string name)
         {
+            bool foundLamp = false;
             foreach (AbstractLamp lamp in Lamps)
             {
-                if (lamp.Name == name && lamp.Status == DeviceStatus.Off)
+                if (lamp.Name == name)
                 {
                     lamp.SwitchOn();
+                    foundLamp = true;
                 }
-                else
-                {
-                    throw new ArgumentException("not valid name");
-                }
+            }
+            if (foundLamp == false)
+            {
+                throw new ArgumentException("not valid name");
             }
         }
 
@@ -62,82 +98,99 @@ namespace BlaisePascal.SmartHouse.Domain
         {
             foreach (AbstractLamp lamp in Lamps)
             {
-                lamp.SwitchOn();
+                lamp.SwitchOff();
             }
         }
         public void SwitchOff(Guid id)
         {
+            bool foundLamp = false;
             foreach (AbstractLamp lamp in Lamps)
             {
-                if (lamp.Id == id && lamp.Status == DeviceStatus.Off)
+                if (lamp.Id == id)
                 {
                     lamp.SwitchOff();
+                    foundLamp = true;
                 }
-                else
-                {
-                    throw new ArgumentException("not valid id");
-                }
+            }
+            if (foundLamp == false)
+            {
+                throw new ArgumentException("not valid id");
             }
         }
 
         public void SwitchOff(string name)
         {
+            bool foundLamp = false;
             foreach (AbstractLamp lamp in Lamps)
             {
-                if (lamp.Name == name && lamp.Status == DeviceStatus.Off)
+                if (lamp.Name == name)
                 {
                     lamp.SwitchOff();
+                    foundLamp = true;
                 }
-                else
-                {
-                    throw new ArgumentException("not valid name");
-                }
+            }
+            if (foundLamp == false)
+            {
+                throw new ArgumentException("not valid name");
             }
         }
 
-        public void Addlamp(AbstractLamp lamp)
+        public void AddLamp(AbstractLamp lamp)
         {
             Lamps.Add(lamp);
         }
 
         public void AddLampInPosition(AbstractLamp lamp, int position)
         {
+
+            while (Lamps.Count < LampValidator.IsPositivePosition(position))
+            {
+                Lamps.Add(null);
+            }
+
             Lamps.Insert(position, lamp);
+            
         }
 
         public void RemoveLamp(Guid id)
         {
-            foreach (Lamp lamp in Lamps)
+            bool foundLamp = false; 
+            for (int i = 0; i < Lamps.Count; i++)
             {
-                if (lamp.Id == id)
+                if(Lamps[i].Id == id)
                 {
-                    Lamps.Remove(lamp);
+                    Lamps.RemoveAt(i);
+                    foundLamp = true;
                 }
-                else
-                {
-                    throw new ArgumentException("not valid id");
-                }
+            }
+
+            if (foundLamp == false)
+            {
+                throw new ArgumentException("not valid id");
             }
         }
 
         public void RemoveLamp(string name)
         {
-            foreach (Lamp lamp in Lamps)
+            bool foundLamp = false;
+            for (int i = 0; i < Lamps.Count; i++)
             {
-                if (lamp.Name == name)
+                if (Lamps[i].Name == name)
                 {
-                    Lamps.Remove(lamp);
+                    Lamps.RemoveAt(i);
+                    foundLamp = true;
                 }
-                else
-                {
-                    throw new ArgumentException("not valid name");
-                }
+            }
+
+            if (foundLamp == false)
+            {
+                throw new ArgumentException("not valid name");
             }
         }
 
         public void RemoveInPosition(int position)
         {
-            Lamps.RemoveAt(LampValidator.IsValidPosition(position, 0, Lamps.Count - 1));
+            Lamps.RemoveAt(LampValidator.IsPositionInMinMax(position, 0, Lamps.Count - 1));
         }
 
         public void SetIntensityForAllLamps(int newBrightness)
@@ -147,56 +200,123 @@ namespace BlaisePascal.SmartHouse.Domain
                 lamp.ChangeBrightness(newBrightness);
             }
         }
+
         public void SetIntensityForLamp(Guid id, int intensity)
         {
+            bool foundLamp = false;
             foreach (AbstractLamp lamp in Lamps)
             {
                 if (lamp.Id == id)
                 {
                     lamp.ChangeBrightness(intensity);
+                    foundLamp = true;
                 }
             }
+
+            if (foundLamp == false)
+                throw new ArgumentException("not valid id");
         }
 
         public void SetIntensityForLamp(string name, int intensity)
         {
+            bool foundLamp = false;
             foreach (AbstractLamp lamp in Lamps)
             {
                 if (lamp.Name == name)
                 {
                     lamp.ChangeBrightness(intensity);
+                    foundLamp = true;
                 }
             }
+
+            if (foundLamp == false)
+                throw new ArgumentException("not valid id");
         }
 
         public AbstractLamp? FindLampWithMaxIntensity()
         {
-             int maxLampBrightness = 0;
-             bool hasFinded = false;
-             foreach(AbstractLamp lamp in Lamps)
-             {
-                if(lamp.BrightnessPercentage > maxLampBrightness)
+            AbstractLamp? maxLamp;
+            if (Lamps.Count == 0)
+            {
+                maxLamp = null;
+            } else
+            {
+                maxLamp = Lamps[0];
+                foreach (AbstractLamp lamp in Lamps)
                 {
-                    maxLampBrightness = lamp.BrightnessPercentage;
+                    if (lamp.BrightnessPercentage > maxLamp.BrightnessPercentage)
+                    {
+                        maxLamp = lamp;
+                    }
                 }
-             }
 
-            while (hasFinded == false) 
-            { 
+            }
+            return maxLamp;
+        }
+
+        
+
+        public AbstractLamp? FindLampWithMinIntensity()
+        {
+            AbstractLamp? minLamp;
+            if (Lamps.Count == 0)
+            {
+                minLamp = null;
+            } else
+            {
+                minLamp = Lamps[0];
+                foreach (AbstractLamp lamp in Lamps)
+                {
+                    if (lamp.BrightnessPercentage < minLamp.BrightnessPercentage)
+                    {
+                        minLamp = lamp;
+                    }
+                }
             }
 
+            return minLamp;
+        }
 
-             
+        public AbstractLamp? FindLampById(Guid id)
+        {
+            AbstractLamp? lampToFind = null;
+            bool haveFoundedLamp = false;
+            if (Lamps.Count == 0)
+            {
+                lampToFind = null;
+                haveFoundedLamp = true;
+            } else
+            {
+                foreach (AbstractLamp lamp in Lamps)
+                {
+                    if (lamp.Id == id)
+                    {
+                        lampToFind = lamp;
+                        haveFoundedLamp = true; 
+                    }
+                }
+            }
+            if(haveFoundedLamp == false)
+            {
+                throw new ArgumentException("not valid id");
+            }
 
-             
+            return lampToFind;
         }
 
         public List<AbstractLamp> FindLampsByIntensityRange(int min, int max)
         {
             List<AbstractLamp> lampsInIntensityRange = new List<AbstractLamp>();
-            foreach(AbstractLamp lamp in Lamps)
+
+            LampValidator.IsInBrightnessRange(min);
+            LampValidator.IsInBrightnessRange(max);
+            if(min >=  max || max <= min)
             {
-                if(lamp.BrightnessPercentage >= min && lamp.BrightnessPercentage <= max)
+                throw new ArgumentException("value cannot be equal, min cannot be greater than max and max cannot be smaller than min");
+            }
+            foreach (AbstractLamp lamp in Lamps)
+            {
+                if(lamp.BrightnessPercentage >= min &&  lamp.BrightnessPercentage <= max)
                 {
                     lampsInIntensityRange.Add(lamp);
                 }
@@ -211,7 +331,7 @@ namespace BlaisePascal.SmartHouse.Domain
             {
                 foreach(AbstractLamp lamp in Lamps)
                 {
-                    if(lamp.Status == DeviceStatus.On)
+                    if(lamp.Status == DeviceStatus.Off)
                     {
                         lampsOn.Add(lamp);
                     }
@@ -236,33 +356,6 @@ namespace BlaisePascal.SmartHouse.Domain
 
             return lampsOff;
         }
-
-        public AbstractLamp? FindLampById(Guid id)
-        {
-            int lampToReturn = 0;
-            if(Lamps.Count == 0) 
-                return null;
-
-            foreach(AbstractLamp lamp in Lamps)
-            {
-                if (lamp.Id == id)
-                {
-                    return lamp;
-                    lampToReturn++;
-                }
-            }
-
-
-            if(Lamps.Count < 0)
-            {
-                return null;
-            }
-            
-        }
-
-
-
-
     }
 }
 

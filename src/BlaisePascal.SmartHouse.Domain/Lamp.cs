@@ -1,9 +1,11 @@
-﻿namespace BlaisePascal.SmartHouse.Domain
+﻿using System.Xml.Linq;
+
+namespace BlaisePascal.SmartHouse.Domain
 {
     public class Lamp : AbstractLamp
     {
         public Lamp(string name) : base(name) { }
-        public Lamp() : base() { }
+        public Lamp(int brightness, string name) : base(brightness, name) { }
         public override void SwitchOn()
         {
             if (Status == DeviceStatus.Off)
@@ -42,5 +44,6 @@
                 throw new InvalidOperationException("cannot change brightness when the lamp is off");
             }
         } 
+
     }
 }

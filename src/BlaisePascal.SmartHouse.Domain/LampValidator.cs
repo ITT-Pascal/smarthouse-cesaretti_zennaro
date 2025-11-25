@@ -27,7 +27,7 @@ namespace BlaisePascal.SmartHouse.Domain
             return value;
         }
 
-        public static int IsValidPosition(int position, int min, int max)
+        public static int IsPositionInMinMax(int position, int min, int max)
         {
             if(position >=  min && position <= max)
             {
@@ -37,6 +37,31 @@ namespace BlaisePascal.SmartHouse.Domain
                 throw new ArgumentException("positon not valid");
             }
         }
+
+        public static int IsPositivePosition(int position)
+        {
+            if(position < 0)
+            {
+                throw new ArgumentException("position not valid");
+            }
+            else
+            {
+                return position;
+            }
+        }
+
+        public static int IsInBrightnessRange(int value)
+        {
+            if(value >= MinBrightness && value <= MaxBrightness)
+            {
+                return value;
+            } else
+            {
+                throw new ArgumentException($"value must be in {MinBrightness} and {MaxBrightness}");
+            }
+        }
+
+     
 
 
 

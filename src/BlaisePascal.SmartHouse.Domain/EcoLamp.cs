@@ -6,44 +6,33 @@ using System.Threading.Tasks;
 
 namespace BlaisePascal.SmartHouse.Domain
 {
-    public class EcoLamp : Lamp
+    public class EcoLamp : AbstractLamp
     {
         DateTime EndHour { get; set; }
-        TimeSpan Timer { get; set; }
        
        
-        public EcoLamp(string name, TimeSpan timer) : base(name) 
+        public EcoLamp(string name) : base(name) 
         {
             EndHour = new DateTime();
-            Timer = timer;
         }
 
-        public void SetTimer(TimeSpan timer)
+        public EcoLamp(int brightness, string name) : base(brightness, name)
         {
-            Timer = timer;
+            EndHour = new DateTime();
         }
+
+
 
         public override void SwitchOn()
         {
             if (Status == DeviceStatus.Off)
             {
                 Status = DeviceStatus.On;
-                EndHour = DateTime.Now.Add(Timer);
                 LastModified = DateTime.Now;
             }
             else
             {
                 throw new InvalidOperationException("the lamp is already on");
-            }
-            while (DateTime.UtcNow <= EndHour)
-            {
-                if (DateTime.UtcNow == EndHour)
-                {
-                    Status = DeviceStatus.Off;
-                    LastModified = DateTime.Now;
-                }
-                    
-
             }
         }
 
