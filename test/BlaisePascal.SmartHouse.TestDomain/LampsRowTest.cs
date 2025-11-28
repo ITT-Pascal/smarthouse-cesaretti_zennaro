@@ -548,16 +548,82 @@ namespace BlaisePascal.SmartHouse.TestDomain
             Assert.Equal(lamp, lampsRowToTest.FindLampById(lamp.Id));
         }
 
+        [Fact]
+        public void FindLampsByIntensityRange_MinCannotBeNegative()
+        {
+            Lamp lamp = new Lamp(0, "led1");
+            EcoLamp ecoLamp = new(50, "led2");
+            lampsRowToTest.AddLamp(lamp);
+            lampsRowToTest.AddLamp(ecoLamp);
+            Assert.Throws<ArgumentException>(() => lampsRowToTest.FindLampsByIntensityRange(-2, 5));
+        }
 
+        [Fact]
+        public void FindLampsByIntensityRange_MaxCannotBeNegative()
+        {
+            Lamp lamp = new Lamp(0, "led1");
+            EcoLamp ecoLamp = new(50, "led2");
+            lampsRowToTest.AddLamp(lamp);
+            lampsRowToTest.AddLamp(ecoLamp);
+            Assert.Throws<ArgumentException>(() => lampsRowToTest.FindLampsByIntensityRange(2, -5));
+        }
 
+        [Fact]
+        public void FindLampsByIntensityRange_MinCannotGreaterThanMaxAndMaxCannotBelowerThanMin() 
+        {
+            Lamp lamp = new Lamp(0, "led1");
+            EcoLamp ecoLamp = new(50, "led2");
+            lampsRowToTest.AddLamp(lamp);
+            lampsRowToTest.AddLamp(ecoLamp);
+            Assert.Throws<ArgumentException>(() => lampsRowToTest.FindLampsByIntensityRange(5, 2));
+        }
 
+        [Fact]
+        public void FindLampsByIntensityRange_MaxAndMinCannotBeEqual()
+        {
+            Lamp lamp = new Lamp(0, "led1");
+            EcoLamp ecoLamp = new(50, "led2");
+            lampsRowToTest.AddLamp(lamp);
+            lampsRowToTest.AddLamp(ecoLamp);
+            Assert.Throws<ArgumentException>(() => lampsRowToTest.FindLampsByIntensityRange(2, 2));
+        }
 
+        [Fact]
+        public void FindLampsByIntensityRange_WhenMaxAndMinAreRightTheLampsAreCorrectlyReturn()
+        {
+            Lamp lamp = new Lamp(0, "led1");
+            EcoLamp ecoLamp = new(50, "led2");
+            lampsRowToTest.AddLamp(lamp);
+            lampsRowToTest.AddLamp(ecoLamp);
+            List<AbstractLamp> lamps = new();
+            lamps.Add(lamp);
+            Assert.Equal(lamps, lampsRowToTest.FindLampsByIntensityRange(0, 20));
+        }
 
+       [Fact]
+       public void FindAllOn_ReturnTheLampsOn()
+       {
+            Lamp lamp = new Lamp(0, "led1");
+            EcoLamp ecoLamp = new(50, "led2");
+            lampsRowToTest.AddLamp(lamp);
+            lampsRowToTest.AddLamp(ecoLamp);
+            List<AbstractLamp> lamps = new();
+            lamps.Add(lamp);
+            lamps.Add(ecoLamp);
+            Assert.Equal(lamps, lampsRowToTest.FindAllOn());
+       }
 
-
-
-
-
+        [Fact]
+        public void FindAllOn_ReturnTheLampsOff()
+        {
+            Lamp lamp = new Lamp("led1");
+            EcoLamp ecoLamp = new(50, "led2");
+            lampsRowToTest.AddLamp(lamp);
+            lampsRowToTest.AddLamp(ecoLamp);
+            List<AbstractLamp> lamps = new();
+            lamps.Add(lamp);
+            Assert.Equal(lamps, lampsRowToTest.FindAllOff());
+        }
 
 
 
@@ -567,4 +633,26 @@ namespace BlaisePascal.SmartHouse.TestDomain
 
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 }

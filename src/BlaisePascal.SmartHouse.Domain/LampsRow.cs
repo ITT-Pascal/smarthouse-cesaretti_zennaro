@@ -331,7 +331,7 @@ namespace BlaisePascal.SmartHouse.Domain
             {
                 foreach(AbstractLamp lamp in Lamps)
                 {
-                    if(lamp.Status == DeviceStatus.Off)
+                    if(lamp.Status == DeviceStatus.On)
                     {
                         lampsOn.Add(lamp);
                     }
