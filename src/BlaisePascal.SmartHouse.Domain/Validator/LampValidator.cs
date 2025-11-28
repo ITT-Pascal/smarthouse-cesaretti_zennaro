@@ -21,46 +21,31 @@ namespace BlaisePascal.SmartHouse.Domain.Validator
             return brightness;
         }
 
-        public static int IsPositive(int value)
+        public static int IsStepValid(int value)
         {
             if (value <= 0 )
-                throw new ArgumentException("value must be greater than 0");
+                throw new ArgumentException("step must be greater than 0");
+            
             return value;
         }
 
-        public static int IsPositionInMinMax(int position, int min, int max)
+        public static int IsPositionValid(int value)
         {
-            if(position >=  min && position <= max)
-            {
-                return position;
-            } else
-            {
-                throw new ArgumentException("positon not valid");
-            }
+            if(value < 0)
+                throw new ArgumentException("position must be almost 0");
+            
+
+            return value;
         }
 
-        public static int IsPositivePosition(int position)
+        public static int IsValueInMinMax(int value, int min, int max)
         {
-            if(position < 0)
-            {
-                throw new ArgumentException("position not valid");
-            }
-            else
-            {
-                return position;
-            }
-        }
+            if(value < min || value > max)
+                throw new ArgumentException("value must be in min, max");
 
-        public static int IsInBrightnessRange(int value)
-        {
-            if(value >= MinBrightness && value <= MaxBrightness)
-            {
-                return value;
-            } else
-            {
-                throw new ArgumentException($"value must be in {MinBrightness} and {MaxBrightness}");
-            }
+            return value;
         }
+       
 
      
 

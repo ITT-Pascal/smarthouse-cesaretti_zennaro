@@ -9,18 +9,20 @@ using BlaisePascal.SmartHouse.Domain.Validator;
 
 namespace BlaisePascal.SmartHouse.Domain
 {
-    public class EcoLamp : AbstractLamp
+    public class EcoLamp: AbstractLamp
     {
+
         public DateTime EndHour { get; private set; }
-       
-       
-        public EcoLamp(string name) : base(name) 
+        public TimeSpan DefaultTimer { get; private set; } = TimeSpan.FromMinutes(15);
+
+
+        public EcoLamp(string name) : base(name)
         {
             EndHour = new DateTime();
-            
+
         }
 
-        public EcoLamp(string name, int brightness) : base(name, brightness)
+        public EcoLamp(int brightness, string name) : base(brightness, name)
         {
             EndHour = new DateTime();
         }
@@ -35,5 +37,17 @@ namespace BlaisePascal.SmartHouse.Domain
                 base.SwitchOff();
             }
         }
-    
+
+        public void EcoSwitchOn(TimeSpan timer)
+        {
+            base.SwitchOn();
+            EndHour = DateTime.Now.Add(timer);
+
+            if (DateTime.Now >= EndHour)
+            {
+                base.SwitchOff();
+            }
+        }
+
+    }
 }

@@ -16,23 +16,23 @@ namespace BlaisePascal.SmartHouse.TestDomain
         LampsRow lampsRowToTest = new();
 
         [Fact]
-        public void Constructor_IfOneLampIsOffLampsStatusIsOff() 
+        public void Constructor_IfOneLampIsOnLampsStatusIsOn() 
         {
             List<AbstractLamp> LampsList = new List<AbstractLamp>();
             LampsList.Add(new EcoLamp("led1"));
             LampsList.Add(new EcoLamp(50, "led2"));
             LampsRow lampsRowTest = new(LampsList);
-            Assert.Equal(DeviceStatus.Off, lampsRowTest.LampsStatus);
+            Assert.Equal(DeviceStatus.On, lampsRowTest.LampsStatus);
         }
 
         [Fact]
-        public void Constructor_IfAllLampAreOnLampsStatusIsOn()
+        public void Constructor_IfAllLampAreOfLampsStatusIsOff()
         {
             List<AbstractLamp> LampsList = new List<AbstractLamp>();
-            LampsList.Add(new EcoLamp(50, "led1"));
-            LampsList.Add(new EcoLamp(50, "led2"));
+            LampsList.Add(new EcoLamp("led1"));
+            LampsList.Add(new EcoLamp("led2"));
             LampsRow lampsRowTest = new(LampsList);
-            Assert.Equal(DeviceStatus.On, lampsRowTest.LampsStatus);
+            Assert.Equal(DeviceStatus.Off, lampsRowTest.LampsStatus);
         }
 
         [Fact]
@@ -322,8 +322,8 @@ namespace BlaisePascal.SmartHouse.TestDomain
             lampsRowToTest.AddLamp(lamp);
             lampsRowToTest.AddLamp(ecoLamp);
             lampsRowToTest.SetIntensityForAllLamps(-1);
-            Assert.Equal(0, lamp.BrightnessPercentage);
-            Assert.Equal(0, ecoLamp.BrightnessPercentage);
+            Assert.Equal(0, lamp.Brightness);
+            Assert.Equal(0, ecoLamp.Brightness);
         }
 
         [Fact]
@@ -334,8 +334,8 @@ namespace BlaisePascal.SmartHouse.TestDomain
             lampsRowToTest.AddLamp(lamp);
             lampsRowToTest.AddLamp(ecoLamp);
             lampsRowToTest.SetIntensityForAllLamps(101);
-            Assert.Equal(100, lamp.BrightnessPercentage);
-            Assert.Equal(100, ecoLamp.BrightnessPercentage);
+            Assert.Equal(100, lamp.Brightness);
+            Assert.Equal(100, ecoLamp.Brightness);
         }
 
         [Fact]
@@ -356,8 +356,8 @@ namespace BlaisePascal.SmartHouse.TestDomain
             lampsRowToTest.AddLamp(lamp);
             lampsRowToTest.AddLamp(ecoLamp);
             lampsRowToTest.SetIntensityForAllLamps(10);
-            Assert.Equal(10, lamp.BrightnessPercentage);
-            Assert.Equal(10, ecoLamp.BrightnessPercentage);
+            Assert.Equal(10, lamp.Brightness);
+            Assert.Equal(10, ecoLamp.Brightness);
         }
 
         [Fact]
@@ -378,7 +378,7 @@ namespace BlaisePascal.SmartHouse.TestDomain
             lampsRowToTest.AddLamp(lamp);
             lampsRowToTest.AddLamp(ecoLamp);
             lampsRowToTest.SetIntensityForLamp(lamp.Id, -1);
-            Assert.Equal(0, lamp.BrightnessPercentage);
+            Assert.Equal(0, lamp.Brightness);
         }
 
         [Fact]
@@ -390,7 +390,7 @@ namespace BlaisePascal.SmartHouse.TestDomain
             lampsRowToTest.AddLamp(lamp);
             lampsRowToTest.AddLamp(ecoLamp);
             lampsRowToTest.SetIntensityForLamp(ecoLamp.Id, 101);
-            Assert.Equal(100, ecoLamp.BrightnessPercentage);
+            Assert.Equal(100, ecoLamp.Brightness);
         }
 
         [Fact]
@@ -412,7 +412,7 @@ namespace BlaisePascal.SmartHouse.TestDomain
             lampsRowToTest.AddLamp(lamp);
             lampsRowToTest.AddLamp(ecoLamp);
             lampsRowToTest.SetIntensityForLamp(ecoLamp.Id, 10);
-            Assert.Equal(10, ecoLamp.BrightnessPercentage);
+            Assert.Equal(10, ecoLamp.Brightness);
         }
 
         [Fact]
@@ -433,7 +433,7 @@ namespace BlaisePascal.SmartHouse.TestDomain
             lampsRowToTest.AddLamp(lamp);
             lampsRowToTest.AddLamp(ecoLamp);
             lampsRowToTest.SetIntensityForLamp("led1", -1);
-            Assert.Equal(0, lamp.BrightnessPercentage);
+            Assert.Equal(0, lamp.Brightness);
         }
 
         [Fact]
@@ -445,7 +445,7 @@ namespace BlaisePascal.SmartHouse.TestDomain
             lampsRowToTest.AddLamp(lamp);
             lampsRowToTest.AddLamp(ecoLamp);
             lampsRowToTest.SetIntensityForLamp("led2", 101);
-            Assert.Equal(100, ecoLamp.BrightnessPercentage);
+            Assert.Equal(100, ecoLamp.Brightness);
         }
 
         [Fact]
@@ -467,7 +467,7 @@ namespace BlaisePascal.SmartHouse.TestDomain
             lampsRowToTest.AddLamp(lamp);
             lampsRowToTest.AddLamp(ecoLamp);
             lampsRowToTest.SetIntensityForLamp("led2", 10);
-            Assert.Equal(10, ecoLamp.BrightnessPercentage);
+            Assert.Equal(10, ecoLamp.Brightness);
         }
 
         [Fact]

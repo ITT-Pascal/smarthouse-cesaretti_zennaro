@@ -16,14 +16,12 @@ namespace BlaisePascal.SmartHouse.Domain.Illumination
         {
             get
             {
+                DeviceStatus Status = DeviceStatus.Off;
+                
                 if (FirstLamp.Status == DeviceStatus.On || SecondLamp.Status == DeviceStatus.Off)
-                {
                     return DeviceStatus.On;
-                }
-                else
-                {
-                    return DeviceStatus.Off;
-                }
+
+                return Status;
             }
 
             private set { }
@@ -74,6 +72,67 @@ namespace BlaisePascal.SmartHouse.Domain.Illumination
             }
         }
 
+        public void EcoTurnLampsOn(Guid id)
+        {
+            if (FirstLamp.Id == id && FirstLamp is EcoLamp firstLamp)
+            {
+                firstLamp.EcoSwitchOn();
+            } else if(SecondLamp.Id == id && SecondLamp is EcoLamp secondLamp)
+            {
+                secondLamp.EcoSwitchOn();
+            } else
+            {
+                throw new ArgumentException("not valid id");
+            }
+        }
+
+        public void EcoTurnLampsOn(string name)
+        {
+            if (FirstLamp.Name == name && FirstLamp is EcoLamp firstLamp)
+            {
+                firstLamp.EcoSwitchOn();
+            }
+            else if (SecondLamp.Name == name && SecondLamp is EcoLamp secondLamp)
+            {
+                secondLamp.EcoSwitchOn();
+            }
+            else
+            {
+                throw new ArgumentException("not valid name");
+            }
+        }
+
+        public void EcoTurnLampsOn(Guid id, TimeSpan timer)
+        {
+            if (FirstLamp.Id == id && FirstLamp is EcoLamp firstLamp)
+            {
+                firstLamp.EcoSwitchOn(timer);
+            }
+            else if (SecondLamp.Id == id && SecondLamp is EcoLamp secondLamp)
+            {
+                secondLamp.EcoSwitchOn(timer);
+            }
+            else
+            {
+                throw new ArgumentException("not valid id");
+            }
+        }
+
+        public void EcoTurnLampsOn(string name, TimeSpan timer)
+        {
+            if (FirstLamp.Name == name && FirstLamp is EcoLamp firstLamp)
+            {
+                firstLamp.EcoSwitchOn(timer);
+            }
+            else if (SecondLamp.Name == name && SecondLamp is EcoLamp secondLamp)
+            {
+                secondLamp.EcoSwitchOn(timer);
+            }
+            else
+            {
+                throw new ArgumentException("not valid name");
+            }
+        }
         public void TurnLampsOff()
         {
             FirstLamp.SwitchOff();
@@ -114,19 +173,19 @@ namespace BlaisePascal.SmartHouse.Domain.Illumination
 
         public void ChangeBothLampsBrightness(int newBrightness)
         {
-            FirstLamp.ChangeBrightness(newBrightness);
-            SecondLamp.ChangeBrightness(newBrightness);
+            FirstLamp.SetBrightness(newBrightness);
+            SecondLamp.SetBrightness(newBrightness);
         }
 
         public void ChangeLampBrightness(Guid id, int newBrightness)
         {
             if(FirstLamp.Id == id)
             {
-                FirstLamp.ChangeBrightness(newBrightness);
+                FirstLamp.SetBrightness(newBrightness);
             }
             else if(SecondLamp.Id == id)
             {
-                SecondLamp.ChangeBrightness(newBrightness);
+                SecondLamp.SetBrightness(newBrightness);
             } else
             {
                 throw new ArgumentException("non valid id");
@@ -137,11 +196,11 @@ namespace BlaisePascal.SmartHouse.Domain.Illumination
         {
             if (FirstLamp.Name == name)
             {
-                FirstLamp.ChangeBrightness(newBrightness);
+                FirstLamp.SetBrightness(newBrightness);
             }
             else if (SecondLamp.Name == name)
             {
-                SecondLamp.ChangeBrightness(newBrightness);
+                SecondLamp.SetBrightness(newBrightness);
             }
             else
             {
@@ -149,22 +208,22 @@ namespace BlaisePascal.SmartHouse.Domain.Illumination
             }
         }
 
-        public void IncreaseLampBrightness(int value)
+        public void IncreaseLampBrightness(int step)
         {
-            FirstLamp.IncreaseBy(value);
-            SecondLamp.IncreaseBy(value);
+            FirstLamp.Brighten(step);
+            SecondLamp.Brighten(step);
         }
 
-        public void IncreaseLampBrightness(Guid id, int value)
+        public void IncreaseLampBrightness(Guid id, int step)
         {
 
             if (FirstLamp.Id == id)
             {
-                FirstLamp.IncreaseBy(value);
+                FirstLamp.Brighten(step);
             }
             else if (SecondLamp.Id == id)
             {
-                SecondLamp.IncreaseBy(value);
+                SecondLamp.Brighten(step);
             }
             else
             {
@@ -173,16 +232,16 @@ namespace BlaisePascal.SmartHouse.Domain.Illumination
         }
 
 
-        public void IncreaseLampBrightness(string name, int value)
+        public void IncreaseLampBrightness(string name, int step)
         {
 
             if (FirstLamp.Name == name)
             {
-                FirstLamp.IncreaseBy(value);
+                FirstLamp.Brighten(step);
             }
             else if (SecondLamp.Name == name)
             {
-                SecondLamp.IncreaseBy(value);
+                SecondLamp.Brighten(step);
             } else
             {
                 throw new ArgumentException("not valid name");
@@ -190,22 +249,22 @@ namespace BlaisePascal.SmartHouse.Domain.Illumination
         }
 
 
-        public void DecreaseBothLampsBrightness(int value)
+        public void DecreaseBothLampsBrightness(int step)
         {
-            FirstLamp.DecreaseBy(value);
-            SecondLamp.DecreaseBy(value);
+            FirstLamp.Dimmer(step);
+            SecondLamp.Dimmer(step);
         }
 
-        public void DecreaseLampBrightness(Guid id, int value)
+        public void DecreaseLampBrightness(Guid id, int step)
         {
 
             if (FirstLamp.Id == id)
             {
-                FirstLamp.DecreaseBy(value);
+                FirstLamp.Dimmer(step);
             }
             else if (SecondLamp.Id == id)
             {
-                SecondLamp.DecreaseBy(value);
+                SecondLamp.Dimmer(step);
             }
             else
             {
@@ -214,22 +273,24 @@ namespace BlaisePascal.SmartHouse.Domain.Illumination
         }
 
 
-        public void DecreaseLampBrightness(string name, int value)
+        public void DecreaseLampBrightness(string name, int step)
         {
 
             if (FirstLamp.Name == name)
             {
-                FirstLamp.DecreaseBy(value);
+                FirstLamp.Dimmer(step);
             }
             else if (SecondLamp.Name == name)
             {
-                SecondLamp.DecreaseBy(value);
+                SecondLamp.Dimmer(step);
             }
             else
             {
                 throw new ArgumentException("not valid name");
             }
         }
+
+      
 
 
 

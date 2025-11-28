@@ -14,12 +14,12 @@ namespace BlaisePascal.SmartHouse.Domain.Asbtraction
 {
     public abstract class AbstractLamp: AbstractDevice
     {
-        public abstract int MinBrigthness { get; protected set; }
-        public abstract int MaxBrightness { get; protected set; }
+        public int MinBrigthness { get; private set; } = 0;
+        public int MaxBrightness { get; private set; } = 100;
         public int Brightness { get; protected set; }
 
         public AbstractLamp(string name) : base(name) { }
-        public AbstractLamp(string name, int brightness) : base(name) 
+        public AbstractLamp(int brightness, string name) : base(name) 
         {
             Status = DeviceStatus.On;
             SetBrightness(brightness);
@@ -30,7 +30,7 @@ namespace BlaisePascal.SmartHouse.Domain.Asbtraction
             if (Status == DeviceStatus.Off)
                 throw new InvalidOperationException("cannot change brightness when lamp is off");
             
-            Brightness = Math.Min(MaxBrightness, Brightness + LampValidator.IsPositive(step));
+            Brightness = Math.Min(MaxBrightness, Brightness + LampValidator.IsStepValid(step));
             LastModified = DateTime.UtcNow; 
         }
 
@@ -39,7 +39,7 @@ namespace BlaisePascal.SmartHouse.Domain.Asbtraction
             if (Status == DeviceStatus.Off)
                 throw new InvalidOperationException("cannot change brightness when lamp is off");
 
-            Brightness = Math.Max(MinBrigthness, Brightness - LampValidator.IsPositive(step));
+            Brightness = Math.Max(MinBrigthness, Brightness - LampValidator.IsStepValid(step));
             LastModified = DateTime.UtcNow;
         }
 
@@ -49,6 +49,7 @@ namespace BlaisePascal.SmartHouse.Domain.Asbtraction
                 throw new InvalidOperationException("cannot change brightness when lamp is off");
 
             Brightness = LampValidator.BrightnessValidator(brightness);
+            LastModified = DateTime.UtcNow;
         }
 
 

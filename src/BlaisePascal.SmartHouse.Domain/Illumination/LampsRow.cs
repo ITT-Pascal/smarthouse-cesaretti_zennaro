@@ -13,14 +13,12 @@ namespace BlaisePascal.SmartHouse.Domain.Illumination
 
     public class LampsRow
     {
-        private DeviceStatus? lampsStatus;
-
         public List<AbstractLamp> Lamps { get; private set; }
         public DeviceStatus? LampsStatus
         {
             get
             {
-                DeviceStatus? lampsStatus = DeviceStatus.On;
+                DeviceStatus? lampsStatus = DeviceStatus.Off;
 
                 if (Lamps.Count == 0)
                 {
@@ -29,9 +27,9 @@ namespace BlaisePascal.SmartHouse.Domain.Illumination
                 {
                     foreach (AbstractLamp lamp in Lamps)
                     {
-                        if (lamp.Status == DeviceStatus.Off)
+                        if (lamp.Status == DeviceStatus.On)
                         {
-                            lampsStatus = DeviceStatus.Off;
+                            lampsStatus = DeviceStatus.On;
                         }
                     }
                 }
@@ -146,7 +144,7 @@ namespace BlaisePascal.SmartHouse.Domain.Illumination
         public void AddLampInPosition(AbstractLamp lamp, int position)
         {
 
-            while (Lamps.Count < LampValidator.IsPositivePosition(position))
+            while (Lamps.Count < LampValidator.IsPositionValid(position))
             {
                 Lamps.Add(null);
             }
@@ -193,14 +191,14 @@ namespace BlaisePascal.SmartHouse.Domain.Illumination
 
         public void RemoveInPosition(int position)
         {
-            Lamps.RemoveAt(LampValidator.IsPositionInMinMax(position, 0, Lamps.Count - 1));
+            Lamps.RemoveAt(LampValidator.IsValueInMinMax(position, 0, Lamps.Count - 1));
         }
 
         public void SetIntensityForAllLamps(int newBrightness)
         {
             foreach (AbstractLamp lamp in Lamps)
             {
-                lamp.ChangeBrightness(newBrightness);
+                lamp.SetBrightness(newBrightness);
             }
         }
 
@@ -211,7 +209,7 @@ namespace BlaisePascal.SmartHouse.Domain.Illumination
             {
                 if (lamp.Id == id)
                 {
-                    lamp.ChangeBrightness(intensity);
+                    lamp.SetBrightness(intensity);
                     foundLamp = true;
                 }
             }
@@ -227,7 +225,7 @@ namespace BlaisePascal.SmartHouse.Domain.Illumination
             {
                 if (lamp.Name == name)
                 {
-                    lamp.ChangeBrightness(intensity);
+                    lamp.SetBrightness(intensity);
                     foundLamp = true;
                 }
             }
@@ -247,7 +245,7 @@ namespace BlaisePascal.SmartHouse.Domain.Illumination
                 maxLamp = Lamps[0];
                 foreach (AbstractLamp lamp in Lamps)
                 {
-                    if (lamp.BrightnessPercentage > maxLamp.BrightnessPercentage)
+                    if (lamp.Brightness > maxLamp.Brightness)
                     {
                         maxLamp = lamp;
                     }
@@ -270,7 +268,7 @@ namespace BlaisePascal.SmartHouse.Domain.Illumination
                 minLamp = Lamps[0];
                 foreach (AbstractLamp lamp in Lamps)
                 {
-                    if (lamp.BrightnessPercentage < minLamp.BrightnessPercentage)
+                    if (lamp.Brightness < minLamp.Brightness)
                     {
                         minLamp = lamp;
                     }
@@ -311,15 +309,16 @@ namespace BlaisePascal.SmartHouse.Domain.Illumination
         {
             List<AbstractLamp> lampsInIntensityRange = new List<AbstractLamp>();
 
-            LampValidator.IsInBrightnessRange(min);
-            LampValidator.IsInBrightnessRange(max);
-            if(min >=  max || max <= min)
-            {
+            LampValidator.IsValueInMinMax(min, 0, 100);
+            LampValidator.IsValueInMinMax(max, 0, 100);
+
+            if(min >=  max || max <= min)            
                 throw new ArgumentException("value cannot be equal, min cannot be greater than max and max cannot be smaller than min");
-            }
+            
+
             foreach (AbstractLamp lamp in Lamps)
             {
-                if(lamp.BrightnessPercentage >= min &&  lamp.BrightnessPercentage <= max)
+                if(lamp.Brightness >= min &&  lamp.Brightness <= max)
                 {
                     lampsInIntensityRange.Add(lamp);
                 }
