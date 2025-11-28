@@ -1,4 +1,8 @@
 ﻿using BlaisePascal.SmartHouse.Domain;
+using BlaisePascal.SmartHouse.Domain.Asbtraction;
+using BlaisePascal.SmartHouse.Domain.DevicesStatus;
+using BlaisePascal.SmartHouse.Domain.Illumination;
+using BlaisePascal.SmartHouse.Domain.Lamps;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BlaisePascal.SmartHouse.Domain.Lamps;
 
-namespace BlaisePascal.SmartHouse.Domain
+namespace BlaisePascal.SmartHouse.Domain.Validator
 {
     public static class LampValidator
     {
         public const int MaxBrightness = 100;
         public const int MinBrightness = 0;
 
-        public static int Britghness(int brightness)
+        public static int BrightnessValidator(int brightness)
         {
             if (brightness < MinBrightness)
                 brightness = MinBrightness;
@@ -20,7 +21,7 @@ namespace BlaisePascal.SmartHouse.Domain
             return brightness;
         }
 
-        public static int Value(int value)
+        public static int IsPositive(int value)
         {
             if (value <= 0 )
                 throw new ArgumentException("value must be greater than 0");
