@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BlaisePascal.SmartHouse.Domain.DevicesStatus;
+using BlaisePascal.SmartHouse.Domain.Validator;
 
 namespace BlaisePascal.SmartHouse.Domain
 {
@@ -15,6 +16,7 @@ namespace BlaisePascal.SmartHouse.Domain
         public int Temperature { get; protected set; }
         protected const int MaxTemperature = 50;
         protected const int MinTemperature = 0;
+        private int DefaultIncreaseValue = 10;
         public AirConditioner(string name)
         {
             Name = name;
@@ -30,13 +32,21 @@ namespace BlaisePascal.SmartHouse.Domain
         }
         public void IncreaseTemperature()
         {
-            int value = 10;
-            SetTemperature(Temperature + value);
+            SetTemperature(Temperature + DefaultIncreaseValue);
+        }
+
+        public void IncreaseTemperature(int value)
+        {
+            SetTemperature(Temperature + AirConditionerValidator.TemperatureValidator(value));
         }
         public void DecreaseTemperature()
         {
-            int value = 10;
-            SetTemperature(Temperature - value);
+            SetTemperature(Temperature - DefaultIncreaseValue);
         }
+        public void DecreaseTemperature(int value)
+        {
+            SetTemperature(Temperature - AirConditionerValidator.TemperatureValidator(value));
+        }
+
     }
 }
