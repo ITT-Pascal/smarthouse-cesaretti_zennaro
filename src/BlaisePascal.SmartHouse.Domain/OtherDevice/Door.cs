@@ -9,10 +9,10 @@ namespace BlaisePascal.SmartHouse.Domain
 {
     public class Door
     {
-        public string Name { get; protected set; }
-        public Guid Id { get; protected set; }
-        public DoorStatus Status { get; protected set; }
-        public string Password { get; protected set; }
+        public string Name { get; private set; }
+        public Guid Id { get; private set; }
+        public DoorStatus Status { get; private set; }
+        public string Password { get; private set; }
         public Door(string name, string password)
         {
             Name = name;
@@ -35,7 +35,7 @@ namespace BlaisePascal.SmartHouse.Domain
         public void LockDoor(string password)
         {
             if (!Password.Equals(password))
-                throw new InvalidOperationException("Wrong Password");
+                throw new ArgumentException("Wrong Password");
             if (Status != DoorStatus.Closed)
                 throw new InvalidOperationException("Door must be closed and unlocked");
             Status = DoorStatus.Locked;
@@ -43,7 +43,7 @@ namespace BlaisePascal.SmartHouse.Domain
         public void UnlockDoor(string password)
         {
             if (!Password.Equals(password))
-                throw new InvalidOperationException("Wrong Password");
+                throw new ArgumentException("Wrong Password");
             if (Status != DoorStatus.Locked)
                 throw new InvalidOperationException("Door must be locked");
             Status = DoorStatus.Closed;
