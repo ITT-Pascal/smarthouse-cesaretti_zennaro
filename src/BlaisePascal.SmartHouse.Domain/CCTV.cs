@@ -22,10 +22,22 @@ namespace BlaisePascal.SmartHouse.Domain
         public void Rotate(float degrees)
         {
             Rotation = CCTVValidator.RotationValidator(Rotation + degrees);
+            LastModified = DateTime.UtcNow;
         }
         public void Zoom(float zoom)
         {
             ZoomValue = CCTVValidator.ZoomValidator(ZoomValue + zoom);
+            LastModified = DateTime.UtcNow;
+        }
+        public void StartRecording()
+        {
+            IsRecording = true;
+            LastModified = DateTime.UtcNow;
+        }
+        public void StopRecording()
+        {
+            IsRecording = false;
+            LastModified = DateTime.UtcNow;
         }
     }
 }

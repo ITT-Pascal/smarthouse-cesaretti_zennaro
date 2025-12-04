@@ -36,6 +36,7 @@ namespace BlaisePascal.SmartHouse.Domain
             {
                 base.SwitchOff();
             }
+            LastModified = DateTime.UtcNow;
         }
 
         public void EcoSwitchOn(TimeSpan timer)
@@ -47,6 +48,7 @@ namespace BlaisePascal.SmartHouse.Domain
             {
                 base.SwitchOff();
             }
+            LastModified = DateTime.UtcNow;
         }
 
     }

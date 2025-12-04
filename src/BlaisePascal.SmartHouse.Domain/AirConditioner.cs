@@ -22,23 +22,28 @@ namespace BlaisePascal.SmartHouse.Domain
         public void SetTemperature(int temperature)
         {
             Temperature = AirConditionerValidator.SetTemperatureValueValidator(temperature);
+            LastModified = DateTime.UtcNow;
         }
         public void IncreaseTemperature()
         {
             SetTemperature(Temperature + DefaultIncreaseValue);
+            LastModified = DateTime.UtcNow;
         }
 
         public void IncreaseTemperature(int value)
         {
             SetTemperature(Temperature + AirConditionerValidator.IncreaseValueValidator(value));
+            LastModified = DateTime.UtcNow;
         }
         public void DecreaseTemperature()
         {
             SetTemperature(Temperature - DefaultIncreaseValue);
+            LastModified = DateTime.UtcNow;
         }
         public void DecreaseTemperature(int value)
         {
             SetTemperature(Temperature - AirConditionerValidator.IncreaseValueValidator(value));
+            LastModified = DateTime.UtcNow;
         }
 
         public int GetMaxTemperature() => MaxTemperature;
