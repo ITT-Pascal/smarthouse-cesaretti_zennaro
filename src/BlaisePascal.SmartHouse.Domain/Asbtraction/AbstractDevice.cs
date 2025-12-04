@@ -21,9 +21,10 @@ namespace BlaisePascal.SmartHouse.Domain.Asbtraction
             Id = Guid.NewGuid();
             CreationHour = DateTime.Now;
             Status = DeviceStatus.Off;
+            LastModified = DateTime.Now;
         }
 
-        public void SwitchOn()
+        public virtual void SwitchOn()
         {
             if (Status == DeviceStatus.On)
                 throw new InvalidOperationException($"{Name} is alrady on");
@@ -32,7 +33,7 @@ namespace BlaisePascal.SmartHouse.Domain.Asbtraction
             LastModified = DateTime.Now;
         }
 
-        public void SwitchOff()
+        public virtual void SwitchOff()
         {
             if (Status == DeviceStatus.Off)
                 throw new InvalidOperationException($"{Name} is alrady off");

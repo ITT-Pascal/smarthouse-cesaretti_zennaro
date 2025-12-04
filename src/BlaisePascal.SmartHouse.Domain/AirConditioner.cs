@@ -3,32 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BlaisePascal.SmartHouse.Domain.Asbtraction;
 using BlaisePascal.SmartHouse.Domain.DevicesStatus;
 using BlaisePascal.SmartHouse.Domain.Validator;
 
 namespace BlaisePascal.SmartHouse.Domain
 {
-    public class AirConditioner
+    public class AirConditioner: AbstractDevice
     {
-        public string Name { get; protected set; }
-        public Guid Id { get; protected set; }
-        public DeviceStatus Status { get; protected set; }
         public int Temperature { get; protected set; }
-        protected const int MaxTemperature = 50;
-        protected const int MinTemperature = 0;
-        private int DefaultIncreaseValue = 10;
-        public AirConditioner(string name)
-        {
-            Name = name;
-            Id = Guid.NewGuid();
-            Status = DeviceStatus.Off;
-            Temperature = 18;
-        }
-        // TODO: clean
+        private const int MaxTemperature = 50;
+        private const int MinTemperature = 0;
+        public const int DefaultIncreaseValue = 10;
+
+        public AirConditioner(string name): base(name) { Temperature = 18; }
+        public AirConditioner(string name, int temperature): base(name) { Temperature = temperature; }
+
         public void SetTemperature(int temperature)
         {
-            Temperature = Math.Max(temperature, MinTemperature);
-            Temperature = Math.Min(temperature, MaxTemperature);
+            Temperature = AirConditionerValidator.SetTemperatureValueValidator(temperature);
         }
         public void IncreaseTemperature()
         {
@@ -37,7 +30,7 @@ namespace BlaisePascal.SmartHouse.Domain
 
         public void IncreaseTemperature(int value)
         {
-            SetTemperature(Temperature + AirConditionerValidator.TemperatureValidator(value));
+            SetTemperature(Temperature + AirConditionerValidator.IncreaseValueValidator(value));
         }
         public void DecreaseTemperature()
         {
@@ -45,8 +38,12 @@ namespace BlaisePascal.SmartHouse.Domain
         }
         public void DecreaseTemperature(int value)
         {
-            SetTemperature(Temperature - AirConditionerValidator.TemperatureValidator(value));
+            SetTemperature(Temperature - AirConditionerValidator.IncreaseValueValidator(value));
         }
+
+        public int GetMaxTemperature() => MaxTemperature;
+        public int GetMinTemperature() => MinTemperature;
+        public int GetDefaultIncreaseValue() => DefaultIncreaseValue;
 
     }
 }
