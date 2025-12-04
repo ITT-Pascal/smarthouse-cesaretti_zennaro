@@ -8,7 +8,7 @@ namespace BlaisePascal.SmartHouse.Domain.Validator
 {
     public static class ThermostatValidator
     {
-        private const int MaxTemperature = 30;
+        private const int MaxTemperature = 50;
         private const int MinTemperature = 10;
         public static int TemperatureValidator(int temperature)
         {

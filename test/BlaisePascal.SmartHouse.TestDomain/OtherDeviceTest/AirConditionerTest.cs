@@ -14,7 +14,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.OtherDeviceTest
         {
             AirConditioner airConditioner = new ("condizionatore");
             airConditioner.SetTemperature(-1);
-            Assert.Equal(airConditioner.GetMinTemperature(), airConditioner.Temperature);
+            Assert.Equal(airConditioner.MinTemperature, airConditioner.Temperature);
         }
 
         [Fact]
@@ -22,7 +22,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.OtherDeviceTest
         {
             AirConditioner airConditioner = new("condizionatore");
             airConditioner.SetTemperature(100);
-            Assert.Equal(airConditioner.GetMaxTemperature(), airConditioner.Temperature);
+            Assert.Equal(airConditioner.MaxTemperature, airConditioner.Temperature);
         }
 
         [Fact]
@@ -46,7 +46,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.OtherDeviceTest
         {
             AirConditioner airConditioner = new("condizionatore", 50);
             airConditioner.IncreaseTemperature();
-            Assert.Equal(airConditioner.GetMaxTemperature(), airConditioner.Temperature);
+            Assert.Equal(airConditioner.MaxTemperature, airConditioner.Temperature);
         }
 
         [Fact]
@@ -61,7 +61,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.OtherDeviceTest
         {
             AirConditioner airConditioner = new("condizionatore", 20);
             airConditioner.IncreaseTemperature(70);
-            Assert.Equal(airConditioner.GetMaxTemperature(), airConditioner.Temperature);
+            Assert.Equal(airConditioner.MaxTemperature, airConditioner.Temperature);
         }
 
         [Fact]
@@ -85,7 +85,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.OtherDeviceTest
         {
             AirConditioner airConditioner = new("condizionatore", 0);
             airConditioner.DecreaseTemperature();
-            Assert.Equal(airConditioner.GetMinTemperature(), airConditioner.Temperature);
+            Assert.Equal(airConditioner.MinTemperature, airConditioner.Temperature);
         }
 
         [Fact]
@@ -100,7 +100,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.OtherDeviceTest
         {
             AirConditioner airConditioner = new("condizionatore", 20);
             airConditioner.DecreaseTemperature(70);
-            Assert.Equal(airConditioner.GetMinTemperature(), airConditioner.Temperature);
+            Assert.Equal(airConditioner.MinTemperature, airConditioner.Temperature);
         }
 
         [Fact]

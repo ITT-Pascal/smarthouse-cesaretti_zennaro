@@ -12,9 +12,9 @@ namespace BlaisePascal.SmartHouse.Domain
     public class AirConditioner: AbstractDevice
     {
         public int Temperature { get; protected set; }
-        private const int MaxTemperature = 50;
-        private const int MinTemperature = 0;
-        public const int DefaultIncreaseValue = 10;
+        public int MaxTemperature { get; private set; } = 50;
+        public int MinTemperature{ get; protected set; } = 0;
+        public int DefaultIncreaseValue { get; protected set; }= 10;
 
         public AirConditioner(string name): base(name) { Temperature = 18; }
         public AirConditioner(string name, int temperature): base(name) { Temperature = temperature; }
@@ -45,10 +45,5 @@ namespace BlaisePascal.SmartHouse.Domain
             SetTemperature(Temperature - AirConditionerValidator.IncreaseValueValidator(value));
             LastModified = DateTime.UtcNow;
         }
-
-        public int GetMaxTemperature() => MaxTemperature;
-        public int GetMinTemperature() => MinTemperature;
-        public int GetDefaultIncreaseValue() => DefaultIncreaseValue;
-
     }
 }

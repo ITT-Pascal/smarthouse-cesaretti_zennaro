@@ -10,23 +10,27 @@ namespace BlaisePascal.SmartHouse.Domain
 {
     public class CCTV : AbstractDevice
     {
-        public bool IsRecording { get; set; }
-        public float ZoomValue {  get; set; }
-        public float Rotation {  get; set; }
+        public float MaxRotationDegrees { get; private set; } = 90;
+        public float MinRotationDegrees { get; private set; } = -90;
+        public float MaxZoom { get; private set; } = 10;
+        public float MinZoom { get; private set; } = 0.5f;
+        public bool IsRecording { get; private set; }
+        public float ZoomValue {  get; private set; }
+        public float Rotation {  get; private set; }
         public CCTV(string name) : base(name)
         {
             ZoomValue = 1;
             Rotation = 0;
             IsRecording = false;
         }
-        public void Rotate(float degrees)
+        public void SetRotationDegrees(float degrees)
         {
-            Rotation = CCTVValidator.RotationValidator(Rotation + degrees);
+            Rotation = CCTVValidator.RotationValidator(degrees);
             LastModified = DateTime.UtcNow;
         }
-        public void Zoom(float zoom)
+        public void SetZoom(float zoom)
         {
-            ZoomValue = CCTVValidator.ZoomValidator(ZoomValue + zoom);
+            ZoomValue = CCTVValidator.ZoomValidator(zoom);
             LastModified = DateTime.UtcNow;
         }
         public void StartRecording()
