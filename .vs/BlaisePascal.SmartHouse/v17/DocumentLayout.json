@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\zenna\\Desktop\\SmartHouse\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BD3CE539-BB8C-42C5-BED9-B633FB38BCC7}|test\\BlaisePascal.SmartHouse.TestDomain\\BlaisePascal.SmartHouse.TestDomain.csproj|c:\\users\\zenna\\desktop\\smarthouse\\test\\blaisepascal.smarthouse.testdomain\\illuminationtest\\twolampdevicetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD3CE539-BB8C-42C5-BED9-B633FB38BCC7}|test\\BlaisePascal.SmartHouse.TestDomain\\BlaisePascal.SmartHouse.TestDomain.csproj|solutionrelative:test\\blaisepascal.smarthouse.testdomain\\illuminationtest\\twolampdevicetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD3CE539-BB8C-42C5-BED9-B633FB38BCC7}|test\\BlaisePascal.SmartHouse.TestDomain\\BlaisePascal.SmartHouse.TestDomain.csproj|c:\\users\\zenna\\desktop\\smarthouse\\test\\blaisepascal.smarthouse.testdomain\\otherdevicetest\\thermostattest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD3CE539-BB8C-42C5-BED9-B633FB38BCC7}|test\\BlaisePascal.SmartHouse.TestDomain\\BlaisePascal.SmartHouse.TestDomain.csproj|solutionrelative:test\\blaisepascal.smarthouse.testdomain\\otherdevicetest\\thermostattest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BD3CE539-BB8C-42C5-BED9-B633FB38BCC7}|test\\BlaisePascal.SmartHouse.TestDomain\\BlaisePascal.SmartHouse.TestDomain.csproj|c:\\users\\zenna\\desktop\\smarthouse\\test\\blaisepascal.smarthouse.testdomain\\otherdevicetest\\cctvtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD3CE539-BB8C-42C5-BED9-B633FB38BCC7}|test\\BlaisePascal.SmartHouse.TestDomain\\BlaisePascal.SmartHouse.TestDomain.csproj|solutionrelative:test\\blaisepascal.smarthouse.testdomain\\otherdevicetest\\cctvtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{30EB9C6B-CB6C-4F77-8B1C-2D21AA339C3C}|src\\BlaisePascal.SmartHouse.Domain\\BlaisePascal.SmartHouse.Domain.csproj|c:\\users\\zenna\\desktop\\smarthouse\\src\\blaisepascal.smarthouse.domain\\validator\\cctvvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{30EB9C6B-CB6C-4F77-8B1C-2D21AA339C3C}|src\\BlaisePascal.SmartHouse.Domain\\BlaisePascal.SmartHouse.Domain.csproj|solutionrelative:src\\blaisepascal.smarthouse.domain\\validator\\cctvvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD3CE539-BB8C-42C5-BED9-B633FB38BCC7}|test\\BlaisePascal.SmartHouse.TestDomain\\BlaisePascal.SmartHouse.TestDomain.csproj|c:\\users\\zenna\\desktop\\smarthouse\\test\\blaisepascal.smarthouse.testdomain\\otherdevicetest\\thermostattest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD3CE539-BB8C-42C5-BED9-B633FB38BCC7}|test\\BlaisePascal.SmartHouse.TestDomain\\BlaisePascal.SmartHouse.TestDomain.csproj|solutionrelative:test\\blaisepascal.smarthouse.testdomain\\otherdevicetest\\thermostattest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{30EB9C6B-CB6C-4F77-8B1C-2D21AA339C3C}|src\\BlaisePascal.SmartHouse.Domain\\BlaisePascal.SmartHouse.Domain.csproj|c:\\users\\zenna\\desktop\\smarthouse\\src\\blaisepascal.smarthouse.domain\\validator\\thermostatvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -59,6 +63,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "TwoLampDeviceTest.cs",
+              "DocumentMoniker": "C:\\Users\\zenna\\Desktop\\SmartHouse\\test\\BlaisePascal.SmartHouse.TestDomain\\IlluminationTest\\TwoLampDeviceTest.cs",
+              "RelativeDocumentMoniker": "test\\BlaisePascal.SmartHouse.TestDomain\\IlluminationTest\\TwoLampDeviceTest.cs",
+              "ToolTip": "C:\\Users\\zenna\\Desktop\\SmartHouse\\test\\BlaisePascal.SmartHouse.TestDomain\\IlluminationTest\\TwoLampDeviceTest.cs",
+              "RelativeToolTip": "test\\BlaisePascal.SmartHouse.TestDomain\\IlluminationTest\\TwoLampDeviceTest.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAmwDgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T22:34:26.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "CCTVTest.cs",
               "DocumentMoniker": "C:\\Users\\zenna\\Desktop\\SmartHouse\\test\\BlaisePascal.SmartHouse.TestDomain\\OtherDeviceTest\\CCTVTest.cs",
               "RelativeDocumentMoniker": "test\\BlaisePascal.SmartHouse.TestDomain\\OtherDeviceTest\\CCTVTest.cs",
@@ -71,7 +88,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Lamp.cs",
               "DocumentMoniker": "C:\\Users\\zenna\\Desktop\\SmartHouse\\src\\BlaisePascal.SmartHouse.Domain\\Illumination\\Lamp.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Domain\\Illumination\\Lamp.cs",
@@ -84,7 +101,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "EcoLampTest.cs",
               "DocumentMoniker": "C:\\Users\\zenna\\Desktop\\SmartHouse\\test\\BlaisePascal.SmartHouse.TestDomain\\IlluminationTest\\EcoLampTest.cs",
               "RelativeDocumentMoniker": "test\\BlaisePascal.SmartHouse.TestDomain\\IlluminationTest\\EcoLampTest.cs",
@@ -97,7 +114,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "DoorStatus.cs",
               "DocumentMoniker": "C:\\Users\\zenna\\Desktop\\SmartHouse\\src\\BlaisePascal.SmartHouse.Domain\\ObjectStatus\\DoorStatus.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Domain\\ObjectStatus\\DoorStatus.cs",
@@ -110,7 +127,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "DeviceStatus.cs",
               "DocumentMoniker": "C:\\Users\\zenna\\Desktop\\SmartHouse\\src\\BlaisePascal.SmartHouse.Domain\\ObjectStatus\\DeviceStatus.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Domain\\ObjectStatus\\DeviceStatus.cs",
@@ -123,20 +140,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "ThermostatTest.cs",
               "DocumentMoniker": "C:\\Users\\zenna\\Desktop\\SmartHouse\\test\\BlaisePascal.SmartHouse.TestDomain\\OtherDeviceTest\\ThermostatTest.cs",
               "RelativeDocumentMoniker": "test\\BlaisePascal.SmartHouse.TestDomain\\OtherDeviceTest\\ThermostatTest.cs",
               "ToolTip": "C:\\Users\\zenna\\Desktop\\SmartHouse\\test\\BlaisePascal.SmartHouse.TestDomain\\OtherDeviceTest\\ThermostatTest.cs",
               "RelativeToolTip": "test\\BlaisePascal.SmartHouse.TestDomain\\OtherDeviceTest\\ThermostatTest.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAjwGgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwGgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-04T21:19:04.104Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "CCTVValidator.cs",
               "DocumentMoniker": "C:\\Users\\zenna\\Desktop\\SmartHouse\\src\\BlaisePascal.SmartHouse.Domain\\Validator\\CCTVValidator.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Domain\\Validator\\CCTVValidator.cs",
@@ -149,7 +166,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Thermostat.cs",
               "DocumentMoniker": "C:\\Users\\zenna\\Desktop\\SmartHouse\\src\\BlaisePascal.SmartHouse.Domain\\OtherDevice\\Thermostat.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Domain\\OtherDevice\\Thermostat.cs",
@@ -162,7 +179,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "AbstractDevice.cs",
               "DocumentMoniker": "C:\\Users\\zenna\\Desktop\\SmartHouse\\src\\BlaisePascal.SmartHouse.Domain\\Asbtraction\\AbstractDevice.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Domain\\Asbtraction\\AbstractDevice.cs",
@@ -175,7 +192,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ThermostatValidator.cs",
               "DocumentMoniker": "C:\\Users\\zenna\\Desktop\\SmartHouse\\src\\BlaisePascal.SmartHouse.Domain\\Validator\\ThermostatValidator.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Domain\\Validator\\ThermostatValidator.cs",
@@ -188,7 +205,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "EcoLamp.cs",
               "DocumentMoniker": "C:\\Users\\zenna\\Desktop\\SmartHouse\\src\\BlaisePascal.SmartHouse.Domain\\Illumination\\EcoLamp.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Domain\\Illumination\\EcoLamp.cs",
