@@ -7,7 +7,7 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using BlaisePascal.SmartHouse.Domain.DevicesStatus;
+using BlaisePascal.SmartHouse.Domain.ObjectStatus;
 using BlaisePascal.SmartHouse.Domain.Validator;
 
 namespace BlaisePascal.SmartHouse.Domain.Asbtraction

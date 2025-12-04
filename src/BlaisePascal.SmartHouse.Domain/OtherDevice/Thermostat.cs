@@ -1,4 +1,5 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Asbtraction;
+using BlaisePascal.SmartHouse.Domain.Validator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,26 +8,43 @@ using System.Threading.Tasks;
 
 namespace BlaisePascal.SmartHouse.Domain
 {
-    // TODO: finish.
     public class Thermostat : AbstractDevice
     {
-        public float CurrentTemperature { get; private set; }
-        public float MinTemperature { get; private set; } = 0;
-        public float MaxTemperature { get; private set; } = 40;
-        public Thermostat(string name, float initialTemperature) : base(name)
+        public int Temperature { get; private set; }
+        public const int DefaultStep = 1;
+        public int Step { get; private set; }
+        public const int DefaultTemperature = 20;
+        public Thermostat(string name, int initialTemperature) : base(name)
         {
-            CurrentTemperature = initialTemperature;
-            Status = DevicesStatus.DeviceStatus.On;
+            Temperature = ThermostatValidator.TemperatureValidator(initialTemperature);
+            Status = ObjectStatus.DeviceStatus.On;
+            Step = DefaultStep;
         }
-        public void SetTargetTemperature(float temperature)
+        public Thermostat(string name) : this(name, DefaultTemperature) { }
+        public void IncreaseTemperature()
         {
-            TargetTemperature = temperature;
-            LastModified = DateTime.Now;
+            Temperature = ThermostatValidator.TemperatureValidator(Temperature + DefaultStep);
+            LastModified = DateTime.UtcNow;
         }
-        public void UpdateCurrentTemperature(float temperature)
+        public void DecreaseTemperature()
         {
-            CurrentTemperature = temperature;
-            LastModified = DateTime.Now;
+            Temperature = ThermostatValidator.TemperatureValidator(Temperature - DefaultStep);
+            LastModified = DateTime.UtcNow;
+        }
+        public void SetTemperature(int temperature)
+        {
+            Temperature = ThermostatValidator.TemperatureValidator(temperature);
+            LastModified = DateTime.UtcNow;
+        }
+        public void IncreaseTemperature(int step)
+        {
+            Temperature = ThermostatValidator.TemperatureValidator(Temperature + step);
+            LastModified = DateTime.UtcNow;
+        }
+        public void DecreaseTemperature(int step)
+        {
+            Temperature = ThermostatValidator.TemperatureValidator(Temperature - step);
+            LastModified = DateTime.UtcNow;
         }
     }
 }

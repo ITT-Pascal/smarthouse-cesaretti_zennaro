@@ -1,4 +1,4 @@
-﻿using BlaisePascal.SmartHouse.Domain.DevicesStatus;
+﻿using BlaisePascal.SmartHouse.Domain.ObjectStatus;
 using System;
 using System.Collections.Generic;
 using System.Linq;

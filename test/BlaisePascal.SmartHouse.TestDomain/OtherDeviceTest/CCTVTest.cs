@@ -10,19 +10,17 @@ namespace BlaisePascal.SmartHouse.TestDomain
     public class CCTVTest
     {
         [Fact]
-        public void SetRotationDegrees_WhenDegreesAreUnderTheMinRotationIsSetAtMin()
+        public void SetRotationDegrees_CannotGoBeyondMinRotation()
         {
             CCTV CCTV = new("telecamera");
-            CCTV.SetRotationDegrees(-100);
-            Assert.Equal(CCTV.MinRotationDegrees, CCTV.Rotation);
+            Assert.Throws<ArgumentOutOfRangeException>(() => CCTV.SetRotationDegrees(-100));
         }
 
         [Fact]
-        public void SetRotationDeegrees_WhenDegreesAreOverTheMaxROtationIsSetAtMax()
+        public void SetRotationDeegrees_CannotGoBeyondMaxRotation()
         {
             CCTV CCTV = new("telecamera");
-            CCTV.SetRotationDegrees(100);
-            Assert.Equal(CCTV.MaxRotationDegrees, CCTV.Rotation);
+            Assert.Throws<ArgumentOutOfRangeException>(() => CCTV.SetRotationDegrees(200));
         }
 
         [Fact]
@@ -34,19 +32,17 @@ namespace BlaisePascal.SmartHouse.TestDomain
         }
 
         [Fact]
-        public void SetZoom_WhenNewZoomIsUnderTheMinZoomIsSetAtMin()
+        public void SetZoom_CannotGoBeyondMinZoom()
         {
             CCTV CCTV = new("telecamera");
-            CCTV.SetZoom(-100);
-            Assert.Equal(CCTV.MinZoom, CCTV.ZoomValue);
+            Assert.Throws<ArgumentOutOfRangeException>(() => CCTV.SetZoom(-1));
         }
 
         [Fact]
-        public void SetZoom_WhenNewZoomIsOverTheMaxTheZoomIsSetAtMax() 
+        public void SetZoom_CannotGoBeyondMaxZoom() 
         { 
             CCTV CCTV = new("telecamera");
-            CCTV.SetZoom(100);
-            Assert.Equal(CCTV.MaxZoom, CCTV.ZoomValue);
+            Assert.Throws<ArgumentOutOfRangeException>(() => CCTV.SetZoom(101));
         }
 
         [Fact]

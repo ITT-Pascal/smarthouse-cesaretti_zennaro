@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BlaisePascal.SmartHouse.Domain.Asbtraction;
-using BlaisePascal.SmartHouse.Domain.Lamps;
+using BlaisePascal.SmartHouse.Domain.Illumination;
 
 namespace BlaisePascal.SmartHouse.Domain.Validator
 {

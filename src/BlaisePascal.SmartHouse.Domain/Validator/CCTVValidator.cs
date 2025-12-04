@@ -14,18 +14,14 @@ namespace BlaisePascal.SmartHouse.Domain.Validator
         private const float minZoom = 0.5f;
         public static float RotationValidator (float rotation)
         {
-            if (rotation < minRotationDegrees)
-                rotation = minRotationDegrees;
-            else if (rotation > maxRotationDegrees)
-                rotation = maxRotationDegrees;
+            if (rotation < minRotationDegrees || rotation > maxRotationDegrees)
+                throw new ArgumentOutOfRangeException($"Rotation must be between {minRotationDegrees} and {maxRotationDegrees} degrees.");
             return rotation;
         }
         public static float ZoomValidator (float zoom)
         {
-            if (zoom < minZoom)
-                zoom = minZoom;
-            else if (zoom > maxZoom)
-                zoom = maxZoom;
+            if (zoom < minZoom || zoom > maxZoom)
+                throw new ArgumentOutOfRangeException($"Zoom must be between {minZoom} and {maxZoom}.");
             return zoom;
         }
     }
