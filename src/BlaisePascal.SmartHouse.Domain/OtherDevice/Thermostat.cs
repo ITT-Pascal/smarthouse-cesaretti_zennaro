@@ -11,11 +11,11 @@ namespace BlaisePascal.SmartHouse.Domain
     public class Thermostat : AbstractDevice
     {
         public float CurrentTemperature { get; private set; }
-        public float TargetTemperature { get; private set; }
+        public float MinTemperature { get; private set; } = 0;
+        public float MaxTemperature { get; private set; } = 40;
         public Thermostat(string name, float initialTemperature) : base(name)
         {
             CurrentTemperature = initialTemperature;
-            TargetTemperature = initialTemperature;
             Status = DevicesStatus.DeviceStatus.On;
         }
         public void SetTargetTemperature(float temperature)
