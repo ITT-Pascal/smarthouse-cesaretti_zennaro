@@ -1,4 +1,5 @@
-﻿using BlaisePascal.SmartHouse.Domain.Illumination;
+﻿using BlaisePascal.SmartHouse.Domain;
+using BlaisePascal.SmartHouse.Domain.Illumination;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,6 +55,40 @@ namespace BlaisePascal.SmartHouse.TestDomain.IlluminationTest
             Lamp secondLamp = new("lamp2");
             TwoLampDevice twoLampDevice = new(firstLamp, secondLamp);
             Assert.Throws<ArgumentException>(() => twoLampDevice.TurnLampsOn(Guid.NewGuid()));
+        }
+        [Fact]
+        public void EcoTurnLampsOn_ById_TurnsSpecifiedEcoLampOn()
+        {
+            EcoLamp firstLamp = new("ecolamp1");
+            Lamp secondLamp = new("ecoLamp2");
+            TwoLampDevice twoLampDevice = new(firstLamp, secondLamp);
+            twoLampDevice.EcoTurnLampsOn(firstLamp.Id);
+            Assert.Equal(Domain.ObjectStatus.DeviceStatus.On, firstLamp.Status);
+        }
+        [Fact]
+        public void EcoTurnLampsOn_ById_CannotTurnOnStandardLamp()
+        {
+            EcoLamp firstLamp = new("ecolamp1");
+            Lamp secondLamp = new("ecoLamp2");
+            TwoLampDevice twoLampDevice = new(firstLamp, secondLamp);
+            Assert.Throws<ArgumentException>(() => twoLampDevice.EcoTurnLampsOn(secondLamp.Id));
+        }
+        [Fact]
+        public void EcoTurnLampsOn_ByName_TurnSpecifiedEcoLampOn()
+        {
+            EcoLamp firstLamp = new("ecolamp1");
+            Lamp secondLamp = new("ecoLamp2");
+            TwoLampDevice twoLampDevice = new(firstLamp, secondLamp);
+            twoLampDevice.EcoTurnLampsOn(firstLamp.Name);
+            Assert.Equal(Domain.ObjectStatus.DeviceStatus.On, firstLamp.Status);
+        }
+        [Fact]
+        public void EcoTurnLampsOn_ByName_CannotTurnOnStandardLamp()
+        {
+            EcoLamp firstLamp = new("ecolamp1");
+            Lamp secondLamp = new("ecoLamp2");
+            TwoLampDevice twoLampDevice = new(firstLamp, secondLamp);
+            Assert.Throws<ArgumentException>(() => twoLampDevice.EcoTurnLampsOn(secondLamp.Name));
         }
     }
 }
