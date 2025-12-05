@@ -29,24 +29,24 @@ namespace BlaisePascal.SmartHouse.Domain
 
         public void EcoSwitchOn()
         {
-            base.SwitchOn();
+            SwitchOn();
             EndHour = DateTime.Now.Add(DefaultTimer);
 
             if (DateTime.Now >= EndHour)
             {
-                base.SwitchOff();
+                SwitchOff();
             }
             LastModified = DateTime.UtcNow;
         }
 
         public void EcoSwitchOn(TimeSpan timer)
         {
-            base.SwitchOn();
+            SwitchOn();
             EndHour = DateTime.Now.Add(timer);
 
             if (DateTime.Now >= EndHour)
             {
-                base.SwitchOff();
+                SwitchOff();
             }
             LastModified = DateTime.UtcNow;
         }
