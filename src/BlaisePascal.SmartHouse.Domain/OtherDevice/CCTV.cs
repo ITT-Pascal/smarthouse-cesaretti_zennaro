@@ -1,4 +1,5 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Asbtraction;
+using BlaisePascal.SmartHouse.Domain.ObjectStatus;
 using BlaisePascal.SmartHouse.Domain.Validator;
 using System;
 using System.Collections.Generic;
@@ -25,9 +26,16 @@ namespace BlaisePascal.SmartHouse.Domain
         }
         public void SetRotationDegrees(float degrees)
         {
-            Rotation = CCTVValidator.RotationValidator(degrees);
-            LastModified = DateTime.UtcNow;
+            if (Status == DeviceStatus.On)
+            {
+                Rotation = CCTVValidator.RotationValidator(degrees);
+                LastModified = DateTime.UtcNow;
+            } else
+            {
+                throw new InvalidOperationException("cannot set CCTV when it is off");
+            }
         }
+
         public void SetZoom(float zoom)
         {
             ZoomValue = CCTVValidator.ZoomValidator(zoom);
