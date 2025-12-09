@@ -13,14 +13,13 @@ namespace BlaisePascal.SmartHouse.TestDomain.OtherDeviceTest
         public void SetTemperature_CannotSetTemperatureWhenDeviceIsOff()
         {
             AirConditioner airConditioner = new("condizionatore");
-            airConditioner.SwitchOff();
             Assert.Throws<InvalidOperationException>(() => airConditioner.SetTemperature(-1));
         }
         
         [Fact]
         public void SetTemperature_WhenNewTemperatureIsLowerThanMinTemperatureIsSetAtMin()
         {
-            AirConditioner airConditioner = new ("condizionatore");
+            AirConditioner airConditioner = new ("condizionatore", 10);
             airConditioner.SetTemperature(-1);
             Assert.Equal(airConditioner.MinTemperature, airConditioner.Temperature);
         }
@@ -28,7 +27,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.OtherDeviceTest
         [Fact]
         public void SetTemperature_WhenNewTemperatureIsGreaterThanMaxTemperatureIsSetAtMax()
         {
-            AirConditioner airConditioner = new("condizionatore");
+            AirConditioner airConditioner = new("condizionatore", 10);
             airConditioner.SetTemperature(100);
             Assert.Equal(airConditioner.MaxTemperature, airConditioner.Temperature);
         }
@@ -36,7 +35,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.OtherDeviceTest
         [Fact]
         public void SetTemperature_WhenTemperatureIsInMinMaxItIsSetCorrectly()
         {
-            AirConditioner airConditioner = new("condizionatore");
+            AirConditioner airConditioner = new("condizionatore", 10);
             airConditioner.SetTemperature(35);
             Assert.Equal(35, airConditioner.Temperature);
         }
@@ -60,7 +59,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.OtherDeviceTest
         [Fact]
         public void IncreaseTemperature_ValueCannotBeNegative()
         {
-            AirConditioner airConditioner = new("condizionatore");
+            AirConditioner airConditioner = new("condizionatore", 10);
             Assert.Throws<ArgumentException>(() => airConditioner.IncreaseTemperature(-1));
         }
 
@@ -83,7 +82,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.OtherDeviceTest
         [Fact]
         public void IncreaseTemperature_CannotIncreaseTemperatureWhenDeviceIsOff()
         {
-            AirConditioner airConditioner = new("condizionatore");
+            AirConditioner airConditioner = new("condizionatore", 10);
             airConditioner.SwitchOff();
             Assert.Throws<InvalidOperationException>(() => airConditioner.IncreaseTemperature(1));
         }
@@ -107,7 +106,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.OtherDeviceTest
         [Fact]
         public void DecreaseTemperature_ValueCannotBeNegative()
         {
-            AirConditioner airConditioner = new("condizionatore");
+            AirConditioner airConditioner = new("condizionatore", 10);
             Assert.Throws<ArgumentException>(() => airConditioner.DecreaseTemperature(-1));
         }
 
@@ -130,7 +129,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.OtherDeviceTest
         [Fact]
         public void DecreaseTemperature_CannotIncreaseTemperatureWhenDeviceIsOff()
         {
-            AirConditioner airConditioner = new("condizionatore");
+            AirConditioner airConditioner = new("condizionatore", 10);
             airConditioner.SwitchOff();
             Assert.Throws<InvalidOperationException>(() => airConditioner.DecreaseTemperature(1));
         }

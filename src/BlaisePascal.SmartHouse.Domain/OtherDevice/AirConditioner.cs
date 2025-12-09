@@ -22,7 +22,11 @@ namespace BlaisePascal.SmartHouse.Domain
             Temperature = temperature;
             Status = DeviceStatus.On;
         }
-        public AirConditioner(string name) : this(name, 18) { }
+        public AirConditioner(string name) : base(name) 
+        {
+            Temperature = DefaultTemperature; 
+            Status = DeviceStatus.On;
+        }
 
         public void SetTemperature(int temperature)
         {

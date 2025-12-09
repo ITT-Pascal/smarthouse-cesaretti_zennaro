@@ -13,6 +13,7 @@ namespace BlaisePascal.SmartHouse.TestDomain
         public void SetRotationDegrees_CannotGoBeyondMinRotation()
         {
             CCTV CCTV = new("telecamera");
+            CCTV.SwitchOn();
             Assert.Throws<ArgumentOutOfRangeException>(() => CCTV.SetRotationDegrees(-100));
         }
 
@@ -20,6 +21,7 @@ namespace BlaisePascal.SmartHouse.TestDomain
         public void SetRotationDeegrees_CannotGoBeyondMaxRotation()
         {
             CCTV CCTV = new("telecamera");
+            CCTV.SwitchOn();
             Assert.Throws<ArgumentOutOfRangeException>(() => CCTV.SetRotationDegrees(200));
         }
 
@@ -27,6 +29,7 @@ namespace BlaisePascal.SmartHouse.TestDomain
         public void SetRotationDegrees_WhenDegreesValueIsRightRotationIsSetCorrectly()
         {
             CCTV CCTV = new("telecamera");
+            CCTV.SwitchOn();
             CCTV.SetRotationDegrees(50);
             Assert.Equal(50, CCTV.Rotation);
         }
@@ -35,13 +38,17 @@ namespace BlaisePascal.SmartHouse.TestDomain
         public void SetZoom_CannotGoBeyondMinZoom()
         {
             CCTV CCTV = new("telecamera");
+            CCTV.SwitchOn();
             Assert.Throws<ArgumentOutOfRangeException>(() => CCTV.SetZoom(-1));
         }
+
+
 
         [Fact]
         public void SetZoom_CannotGoBeyondMaxZoom() 
         { 
             CCTV CCTV = new("telecamera");
+            CCTV.SwitchOn();
             Assert.Throws<ArgumentOutOfRangeException>(() => CCTV.SetZoom(101));
         }
 
@@ -49,6 +56,7 @@ namespace BlaisePascal.SmartHouse.TestDomain
         public void SetZoom_WhenNewZoomIsRightTheZoomIsSetCOrrectly()
         {
             CCTV CCTV = new("telecamera");
+            CCTV.SwitchOn();
             CCTV.SetZoom(3);
             Assert.Equal(3, CCTV.ZoomValue);
         }
@@ -57,6 +65,7 @@ namespace BlaisePascal.SmartHouse.TestDomain
         public void StartRecordind_SetIsRecordingAtTrue()
         {
             CCTV CCTV = new("telecamera");
+            CCTV.SwitchOn();
             CCTV.StartRecording();
             Assert.True(CCTV.IsRecording);
         }
@@ -65,6 +74,7 @@ namespace BlaisePascal.SmartHouse.TestDomain
         public void StopRecordind_SetIsRecordingAtFalse()
         {
             CCTV CCTV = new("telecamera");
+            CCTV.SwitchOn();
             CCTV.StartRecording();
             CCTV.StopRecording();
             Assert.False(CCTV.IsRecording);

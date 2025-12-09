@@ -27,27 +27,68 @@ namespace BlaisePascal.SmartHouse.Domain
         public void SetRotationDegrees(float degrees)
         {
             if (Status == DeviceStatus.On)
-            {
-                Rotation = CCTVValidator.RotationValidator(degrees);
-                LastModified = DateTime.UtcNow;
-            } else
-            {
                 throw new InvalidOperationException("cannot set CCTV when it is off");
-            }
+        
+            Rotation = CCTVValidator.RotationValidator(degrees);
+            LastModified = DateTime.UtcNow;
+        }
+
+        public void IncreaseRotationDegrees(int value)
+        {
+            if (Status == DeviceStatus.On)
+                throw new InvalidOperationException("cannot set CCTV when it is off");
+
+            Rotation = Math.Min(MaxRotationDegrees, Rotation + CCTVValidator.IsValuePositive(value));
+        }
+
+        public void DecreaseRotationDegrees(int value)
+        {
+            if (Status == DeviceStatus.On)
+                throw new InvalidOperationException("cannot set CCTV when it is off");
+
+            Rotation = Math.Max(MinRotationDegrees, Rotation - CCTVValidator.IsValuePositive(value));
+            LastModified = DateTime.Now;
         }
 
         public void SetZoom(float zoom)
         {
+            if (Status == DeviceStatus.On)
+                throw new InvalidOperationException("cannot set CCTV when it is off");
+
             ZoomValue = CCTVValidator.ZoomValidator(zoom);
             LastModified = DateTime.UtcNow;
         }
+
+        public void IncreaseZoom(int value)
+        {
+            if (Status == DeviceStatus.On)
+                throw new InvalidOperationException("cannot set CCTV when it is off");
+
+            Rotation = Math.Min(MaxZoom, ZoomValue + CCTVValidator.IsValuePositive(value));
+            LastModified = DateTime.Now;
+        }
+
+        public void DecreaseZoom(int value)
+        {
+            if (Status == DeviceStatus.On)
+                throw new InvalidOperationException("cannot set CCTV when it is off");
+
+            Rotation = Math.Max(MinZoom, ZoomValue - CCTVValidator.IsValuePositive(value));
+            LastModified = DateTime.Now;
+        }
         public void StartRecording()
         {
+            if (Status == DeviceStatus.On)
+                throw new InvalidOperationException("cannot set CCTV when it is off");
+
             IsRecording = true;
             LastModified = DateTime.UtcNow;
         }
         public void StopRecording()
         {
+            if (Status == DeviceStatus.On)
+                throw new InvalidOperationException("cannot set CCTV when it is off");
+
             IsRecording = false;
             LastModified = DateTime.UtcNow;
         }

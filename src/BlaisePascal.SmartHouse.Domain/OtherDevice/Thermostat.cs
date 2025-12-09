@@ -11,16 +11,22 @@ namespace BlaisePascal.SmartHouse.Domain
     public class Thermostat : AbstractDevice
     {
         public int Temperature { get; private set; }
-        public const int DefaultStep = 1;
+        public int DefaultStep { get; private set; } = 1;
         public int Step { get; private set; }
-        public const int DefaultTemperature = 20;
+        public int DefaultTemperature { get; private set; } = 18;
+
         public Thermostat(string name, int initialTemperature) : base(name)
         {
             Temperature = ThermostatValidator.TemperatureValidator(initialTemperature);
             Status = ObjectStatus.DeviceStatus.On;
             Step = DefaultStep;
         }
-        public Thermostat(string name) : this(name, DefaultTemperature) { }
+
+        public Thermostat(string name) : base(name)
+        {
+            Temperature = DefaultTemperature;
+            Status = ObjectStatus.DeviceStatus.On;
+        }
         public void IncreaseTemperature()
         {
             Temperature = ThermostatValidator.TemperatureValidator(Temperature + DefaultStep);

@@ -24,5 +24,13 @@ namespace BlaisePascal.SmartHouse.Domain.Validator
                 throw new ArgumentOutOfRangeException($"Zoom must be between {minZoom} and {maxZoom}.");
             return zoom;
         }
+
+        public static int IsValuePositive(int value)
+        {
+            if (value < minZoom || value > maxZoom)
+                throw new ArgumentOutOfRangeException($"Zoom must be between {minZoom} and {maxZoom}.");
+            
+            return value;
+        }
     }
 }
