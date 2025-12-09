@@ -14,8 +14,8 @@ namespace BlaisePascal.SmartHouse.Domain.Asbtraction
 {
     public abstract class AbstractLamp: AbstractDevice
     {
-        public int MinBrigthness { get; protected set; } = LampValidator.MinBrightness;
-        public int MaxBrightness { get; protected set; } = LampValidator.MaxBrightness;
+        public int MinBrigthness { get; protected set; } = 0;
+        public int MaxBrightness { get; protected set; } = 100;
         public int Brightness { get; protected set; }
 
         public AbstractLamp(string name) : base(name) { }

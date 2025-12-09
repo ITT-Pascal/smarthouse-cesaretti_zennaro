@@ -10,8 +10,8 @@ namespace BlaisePascal.SmartHouse.Domain.Validator
 {
     public static class LampValidator
     {
-        public const int MaxBrightness = 100;
-        public const int MinBrightness = 0;
+        private const int MaxBrightness = 100;
+        private const int MinBrightness = 0;
 
         public static int BrightnessValidator(int brightness)
         {
