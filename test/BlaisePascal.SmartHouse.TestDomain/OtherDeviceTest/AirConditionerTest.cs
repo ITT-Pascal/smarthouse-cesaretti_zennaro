@@ -13,6 +13,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.OtherDeviceTest
         public void SetTemperature_CannotSetTemperatureWhenDeviceIsOff()
         {
             AirConditioner airConditioner = new("condizionatore");
+            airConditioner.SwitchOff();
             Assert.Throws<InvalidOperationException>(() => airConditioner.SetTemperature(1));
         }
         
