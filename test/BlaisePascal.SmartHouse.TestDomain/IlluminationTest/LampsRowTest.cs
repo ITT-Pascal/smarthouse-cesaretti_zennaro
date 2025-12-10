@@ -2,7 +2,6 @@
 using BlaisePascal.SmartHouse.Domain.Asbtraction;
 using BlaisePascal.SmartHouse.Domain.ObjectStatus;
 using BlaisePascal.SmartHouse.Domain.Illumination;
-using BlaisePascal.SmartHouse.Domain.Illumination;
 using System;
 using System.Collections.Generic;
 using System.Linq;
