@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using BlaisePascal.SmartHouse.Domain.Asbtraction;
 using BlaisePascal.SmartHouse.Domain.Illumination;
 
-namespace BlaisePascal.SmartHouse.Domain.Validator
+namespace BlaisePascal.SmartHouse.Domain.Illumination
 {
     public static class LampValidator
     {

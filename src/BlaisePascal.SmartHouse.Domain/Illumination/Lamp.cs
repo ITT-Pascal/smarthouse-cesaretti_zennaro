@@ -1,7 +1,5 @@
 ﻿using System.Xml.Linq;
 using BlaisePascal.SmartHouse.Domain.Asbtraction;
-using BlaisePascal.SmartHouse.Domain.ObjectStatus;
-using BlaisePascal.SmartHouse.Domain.Validator;
 
 namespace BlaisePascal.SmartHouse.Domain.Illumination
 {

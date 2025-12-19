@@ -7,10 +7,11 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using BlaisePascal.SmartHouse.Domain.ObjectStatus;
-using BlaisePascal.SmartHouse.Domain.Validator;
+using BlaisePascal.SmartHouse.Domain.Asbtraction;
+using BlaisePascal.SmartHouse.Domain;
 
-namespace BlaisePascal.SmartHouse.Domain.Asbtraction
+namespace BlaisePascal.SmartHouse.Domain.Illumination
+
 {
     public abstract class AbstractLamp: AbstractDevice
     {

@@ -4,10 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BlaisePascal.SmartHouse.Domain.Asbtraction;
-using BlaisePascal.SmartHouse.Domain.ObjectStatus;
-using BlaisePascal.SmartHouse.Domain.Validator;
 
-namespace BlaisePascal.SmartHouse.Domain
+namespace BlaisePascal.SmartHouse.Domain.AirConditioner
 {
     public class AirConditioner: AbstractDevice
     {

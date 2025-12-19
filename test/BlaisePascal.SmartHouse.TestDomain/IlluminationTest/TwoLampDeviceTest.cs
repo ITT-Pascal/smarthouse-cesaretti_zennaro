@@ -1,4 +1,5 @@
 ﻿using BlaisePascal.SmartHouse.Domain;
+using BlaisePascal.SmartHouse.Domain.Asbtraction;
 using BlaisePascal.SmartHouse.Domain.Illumination;
 using System;
 using System.Collections.Generic;
@@ -17,8 +18,8 @@ namespace BlaisePascal.SmartHouse.TestDomain.IlluminationTest
             Lamp secondLamp = new("lamp2");
             TwoLampDevice twoLampDevice = new(firstLamp, secondLamp);
             twoLampDevice.TurnLampsOn();
-            Assert.Equal(Domain.ObjectStatus.DeviceStatus.On, firstLamp.Status);
-            Assert.Equal(Domain.ObjectStatus.DeviceStatus.On, secondLamp.Status);
+            Assert.Equal(DeviceStatus.On, firstLamp.Status);
+            Assert.Equal(DeviceStatus.On, secondLamp.Status);
         }
         [Fact]
         public void TurnLampsOn_ById_TurnsSpecifiedLampOn()
@@ -27,8 +28,8 @@ namespace BlaisePascal.SmartHouse.TestDomain.IlluminationTest
             Lamp secondLamp = new("lamp2");
             TwoLampDevice twoLampDevice = new(firstLamp, secondLamp);
             twoLampDevice.TurnLampsOn(firstLamp.Id);
-            Assert.Equal(Domain.ObjectStatus.DeviceStatus.On, firstLamp.Status);
-            Assert.Equal(Domain.ObjectStatus.DeviceStatus.Off, secondLamp.Status);
+            Assert.Equal(DeviceStatus.On, firstLamp.Status);
+            Assert.Equal(DeviceStatus.Off, secondLamp.Status);
         }
         [Fact]
         public void TurnLampsOn_ByName_TurnsSpecifiedLampOn()
@@ -37,8 +38,8 @@ namespace BlaisePascal.SmartHouse.TestDomain.IlluminationTest
             Lamp secondLamp = new("lamp2");
             TwoLampDevice twoLampDevice = new(firstLamp, secondLamp);
             twoLampDevice.TurnLampsOn("lamp2");
-            Assert.Equal(Domain.ObjectStatus.DeviceStatus.Off, firstLamp.Status);
-            Assert.Equal(Domain.ObjectStatus.DeviceStatus.On, secondLamp.Status);
+            Assert.Equal(DeviceStatus.Off, firstLamp.Status);
+            Assert.Equal(DeviceStatus.On, secondLamp.Status);
         }
         [Fact]
         public void TurnLampsOnByName_NonValidName_ThrowsArgumentException()
@@ -63,7 +64,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.IlluminationTest
             Lamp secondLamp = new("ecoLamp2");
             TwoLampDevice twoLampDevice = new(firstLamp, secondLamp);
             twoLampDevice.EcoTurnLampsOn(firstLamp.Id);
-            Assert.Equal(Domain.ObjectStatus.DeviceStatus.On, firstLamp.Status);
+            Assert.Equal(DeviceStatus.On, firstLamp.Status);
         }
         [Fact]
         public void EcoTurnLampsOn_ById_CannotTurnOnStandardLamp()
@@ -80,7 +81,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.IlluminationTest
             Lamp secondLamp = new("ecoLamp2");
             TwoLampDevice twoLampDevice = new(firstLamp, secondLamp);
             twoLampDevice.EcoTurnLampsOn(firstLamp.Name);
-            Assert.Equal(Domain.ObjectStatus.DeviceStatus.On, firstLamp.Status);
+            Assert.Equal(DeviceStatus.On, firstLamp.Status);
         }
         [Fact]
         public void EcoTurnLampsOn_ByName_CannotTurnOnStandardLamp()

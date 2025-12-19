@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlaisePascal.SmartHouse.Domain.Validator
+namespace BlaisePascal.SmartHouse.Domain.Thermostat
 {
     public static class ThermostatValidator
     {

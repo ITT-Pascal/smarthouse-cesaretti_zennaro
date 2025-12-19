@@ -1,4 +1,5 @@
-﻿using BlaisePascal.SmartHouse.Domain;
+﻿using BlaisePascal.SmartHouse.Domain.Asbtraction;
+using BlaisePascal.SmartHouse.Domain.Thermostat;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.OtherDeviceTest
         public void Constructor_WhenCreatingThermostat_ItSetTheStatusToDeviceStatusOn()
         {
             Thermostat thermostat = new("Thermo1");
-            Assert.Equal(Domain.ObjectStatus.DeviceStatus.On, thermostat.Status);
+            Assert.Equal(DeviceStatus.On, thermostat.Status);
         }
         [Fact]
         public void Constructor_WhenCreatingThermostatWithoutInitialTemperature_ItSetTheDefaultTemperature()

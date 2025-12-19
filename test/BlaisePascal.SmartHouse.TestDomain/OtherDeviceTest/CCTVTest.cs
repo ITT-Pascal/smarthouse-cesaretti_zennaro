@@ -1,4 +1,4 @@
-﻿using BlaisePascal.SmartHouse.Domain;
+﻿using BlaisePascal.SmartHouse.Domain.CCTV;
 using System;
 using System.Collections.Generic;
 using System.Linq;

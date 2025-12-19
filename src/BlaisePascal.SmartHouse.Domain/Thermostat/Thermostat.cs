@@ -1,12 +1,11 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Asbtraction;
-using BlaisePascal.SmartHouse.Domain.Validator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlaisePascal.SmartHouse.Domain
+namespace BlaisePascal.SmartHouse.Domain.Thermostat
 {
     public class Thermostat : AbstractDevice
     {
@@ -18,47 +17,47 @@ namespace BlaisePascal.SmartHouse.Domain
         public Thermostat(string name, int initialTemperature) : base(name)
         {
             Temperature = ThermostatValidator.TemperatureValidator(initialTemperature);
-            Status = ObjectStatus.DeviceStatus.On;
+            Status = DeviceStatus.On;
             Step = DefaultStep;
         }
 
         public Thermostat(string name) : base(name)
         {
             Temperature = DefaultTemperature;
-            Status = ObjectStatus.DeviceStatus.On;
+            Status = DeviceStatus.On;
             Step = DefaultStep;
         }
         public void IncreaseTemperature()
         {
-            if (Status == ObjectStatus.DeviceStatus.Off)
+            if (Status == DeviceStatus.Off)
                 throw new InvalidOperationException("cannot set thermostat when it is off");
             Temperature = ThermostatValidator.TemperatureValidator(Temperature + DefaultStep);
             LastModified = DateTime.UtcNow;
         }
         public void DecreaseTemperature()
         {
-            if (Status == ObjectStatus.DeviceStatus.Off)
+            if (Status == DeviceStatus.Off)
                 throw new InvalidOperationException("cannot set thermostat when it is off");
             Temperature = ThermostatValidator.TemperatureValidator(Temperature - DefaultStep);
             LastModified = DateTime.UtcNow;
         }
         public void SetTemperature(int temperature)
         {
-            if (Status == ObjectStatus.DeviceStatus.Off)
+            if (Status == DeviceStatus.Off)
                 throw new InvalidOperationException("cannot set thermostat when it is off");
             Temperature = ThermostatValidator.TemperatureValidator(temperature);
             LastModified = DateTime.UtcNow;
         }
         public void IncreaseTemperature(int step)
         {
-            if (Status == ObjectStatus.DeviceStatus.Off)
+            if (Status == DeviceStatus.Off)
                 throw new InvalidOperationException("cannot set thermostat when it is off");
             Temperature = ThermostatValidator.TemperatureValidator(Temperature + step);
             LastModified = DateTime.UtcNow;
         }
         public void DecreaseTemperature(int step)
         {
-            if (Status == ObjectStatus.DeviceStatus.Off)
+            if (Status == DeviceStatus.Off)
                 throw new InvalidOperationException("cannot set thermostat when it is off");
             Temperature = ThermostatValidator.TemperatureValidator(Temperature - step);
             LastModified = DateTime.UtcNow;

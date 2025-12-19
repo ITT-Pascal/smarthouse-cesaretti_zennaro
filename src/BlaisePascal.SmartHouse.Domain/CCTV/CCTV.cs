@@ -1,13 +1,12 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Asbtraction;
-using BlaisePascal.SmartHouse.Domain.ObjectStatus;
-using BlaisePascal.SmartHouse.Domain.Validator;
+using BlaisePascal.SmartHouse.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlaisePascal.SmartHouse.Domain
+namespace BlaisePascal.SmartHouse.Domain.CCTV
 {
     public class CCTV : AbstractDevice
     {

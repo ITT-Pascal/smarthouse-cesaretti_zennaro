@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BlaisePascal.SmartHouse.Domain.Asbtraction;
-using BlaisePascal.SmartHouse.Domain.ObjectStatus;
-using BlaisePascal.SmartHouse.Domain.Validator;
+using BlaisePascal.SmartHouse.Domain.Illumination;
 
-namespace BlaisePascal.SmartHouse.Domain
+namespace BlaisePascal.SmartHouse.Domain.Illumination
 {
     public class EcoLamp: AbstractLamp
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlaisePascal.SmartHouse.Domain.ObjectStatus
+namespace BlaisePascal.SmartHouse.Domain.Asbtraction
 {
     public enum DeviceStatus
     {

@@ -1,4 +1,4 @@
-﻿using BlaisePascal.SmartHouse.Domain;
+﻿using BlaisePascal.SmartHouse.Domain.AirConditioner;
 using System;
 using System.Collections.Generic;
 using System.Linq;

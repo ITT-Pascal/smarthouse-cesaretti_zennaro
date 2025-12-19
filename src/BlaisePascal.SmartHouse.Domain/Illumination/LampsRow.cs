@@ -5,8 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using BlaisePascal.SmartHouse.Domain.Asbtraction;
-using BlaisePascal.SmartHouse.Domain.ObjectStatus;
-using BlaisePascal.SmartHouse.Domain.Validator;
 
 namespace BlaisePascal.SmartHouse.Domain.Illumination
 {
@@ -238,20 +236,17 @@ namespace BlaisePascal.SmartHouse.Domain.Illumination
         {
             AbstractLamp? maxLamp;
             if (Lamps.Count == 0)
-            {
                 maxLamp = null;
-            } else
+            
+            maxLamp = Lamps[0];
+            foreach (AbstractLamp lamp in Lamps)
             {
-                maxLamp = Lamps[0];
-                foreach (AbstractLamp lamp in Lamps)
+                if (lamp.Brightness > maxLamp.Brightness)
                 {
-                    if (lamp.Brightness > maxLamp.Brightness)
-                    {
-                        maxLamp = lamp;
-                    }
+                    maxLamp = lamp;
                 }
-
             }
+
             return maxLamp;
         }
 
