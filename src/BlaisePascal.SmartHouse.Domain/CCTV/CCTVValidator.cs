@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlaisePascal.SmartHouse.Domain.Asbtraction;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,16 +9,22 @@ namespace BlaisePascal.SmartHouse.Domain.CCTV
 {
     public static class CCTVValidator
     {
-        private const float maxRotationDegrees = 90;
-        private const float minRotationDegrees = -90;
-        private const float maxZoom = 10;
-        private const float minZoom = 0.5f;
+        public const float maxRotationDegrees = 90;
+        public const float minRotationDegrees = -90;
+        public const float maxZoom = 10;
+        public const float minZoom = 0.5f;
+
+        public static void CheckIsOn(DeviceStatus status)
+        {
+            if (status != DeviceStatus.On)
+                throw new InvalidOperationException("Cannot modify CCTV when device is off");
         public static float RotationValidator (float rotation)
         {
             if (rotation < minRotationDegrees || rotation > maxRotationDegrees)
                 throw new ArgumentOutOfRangeException($"Rotation must be between {minRotationDegrees} and {maxRotationDegrees} degrees.");
             return rotation;
         }
+
         public static float ZoomValidator (float zoom)
         {
             if (zoom < minZoom || zoom > maxZoom)

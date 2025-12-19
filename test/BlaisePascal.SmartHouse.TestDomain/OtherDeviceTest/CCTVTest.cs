@@ -31,7 +31,7 @@ namespace BlaisePascal.SmartHouse.TestDomain
             CCTV CCTV = new("telecamera");
             CCTV.SwitchOn();
             CCTV.SetRotationDegrees(50);
-            Assert.Equal(50, CCTV.Rotation);
+            Assert.Equal(50, CCTV.RotationValue);
         }
 
         [Fact]
