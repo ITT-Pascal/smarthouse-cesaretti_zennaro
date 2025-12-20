@@ -18,6 +18,13 @@ namespace BlaisePascal.SmartHouse.Domain.CCTV
         {
             if (status != DeviceStatus.On)
                 throw new InvalidOperationException("Cannot modify CCTV when device is off");
+        }
+
+        public static int CheckIsPositive(int value)
+        {
+            if(value <= 0)
+                throw new ArgumentOutOfRangeException("value must be positive");
+        }
         public static float RotationValidator (float rotation)
         {
             if (rotation < minRotationDegrees || rotation > maxRotationDegrees)

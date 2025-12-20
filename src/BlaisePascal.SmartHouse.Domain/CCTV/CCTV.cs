@@ -13,18 +13,19 @@ namespace BlaisePascal.SmartHouse.Domain.CCTV
         public bool IsRecording { get; private set; }
         public float ZoomValue {  get; private set; }
         public float RotationValue {  get; private set; }
-        public CCTV(string name) : base(name)
-        {
-            ZoomValue = 0;
-            RotationValue = 0;
-            IsRecording = false;
-        }
-
+        
         public CCTV(string name, bool isRecording, float zoomValue, float rotation): base(name)
         {
             IsRecording = isRecording;
             ZoomValue = zoomValue;
             RotationValue = rotation;
+        }
+
+        public CCTV(string name): this(name, false, 0, 0)
+        {
+            ZoomValue = 0;
+            RotationValue = 0;
+            IsRecording = false;
         }
 
         public void SetRotationDegrees(float degrees)
@@ -37,59 +38,71 @@ namespace BlaisePascal.SmartHouse.Domain.CCTV
         public void IncreaseRotationDegrees(int value)
         {
             CCTVValidator.CheckIsOn(Status);
-            RotationValue = Math.Min(CCTVValidator.RotationValidator(value));
+            float newRotationValue = CCTVValidator.RotationValidator(value) + RotationValue;
+            RotationValue = Math.Min(newRotationValue, CCTVValidator.maxRotationDegrees);
         } 
 
         public void DecreaseRotationDegrees(int value)
         {
-            if (Status == DeviceStatus.Off)
-                throw new InvalidOperationException("cannot set CCTV when it is off");
-
-            RotationValue = Math.Max(MinRotationDegrees, RotationValue - CCTVValidator.IsValuePositive(value));
+            CCTVValidator.CheckIsOn(Status);
+            float newRotationValue = RotationValue - CCTVValidator.RotationValidator(value);
+            RotationValue = Math.Max(CCTVValidator.minRotationDegrees, newRotationValue);
             LastModified = DateTime.Now;
         }
 
         public void SetZoom(float zoom)
         {
-            if (Status == DeviceStatus.Off)
-                throw new InvalidOperationException("cannot set CCTV when it is off");
-
+            CCTVValidator.CheckIsOn(Status);
             ZoomValue = CCTVValidator.ZoomValidator(zoom);
             LastModified = DateTime.UtcNow;
         }
 
         public void IncreaseZoom(int value)
         {
-            if (Status == DeviceStatus.Off)
-                throw new InvalidOperationException("cannot set CCTV when it is off");
-
-            RotationValue = Math.Min(MaxZoom, ZoomValue + CCTVValidator.IsValuePositive(value));
+            CCTVValidator.CheckIsOn(Status);
+            float newZoomValue = CCTVValidator.RotationValidator(value) + ZoomValue;
+            RotationValue = Math.Min(CCTVValidator.maxZoom, newZoomValue);
             LastModified = DateTime.Now;
         }
 
         public void DecreaseZoom(int value)
         {
-            if (Status == DeviceStatus.Off)
-                throw new InvalidOperationException("cannot set CCTV when it is off");
-
-            RotationValue = Math.Max(MinZoom, ZoomValue - CCTVValidator.IsValuePositive(value));
+            CCTVValidator.CheckIsOn(Status);
+            float newZoomValue = ZoomValue - CCTVValidator.IsValuePositive(value);
+            RotationValue = Math.Max(CCTVValidator.minZoom, ZoomValue);
             LastModified = DateTime.Now;
         }
         public void StartRecording()
         {
-            if (Status == DeviceStatus.Off)
-                throw new InvalidOperationException("cannot set CCTV when it is off");
-
+            CCTVValidator.CheckIsOn(Status);
             IsRecording = true;
             LastModified = DateTime.UtcNow;
         }
         public void StopRecording()
         {
-            if (Status == DeviceStatus.Off)
-                throw new InvalidOperationException("cannot set CCTV when it is off");
-
+            CCTVValidator.CheckIsOn(Status);
             IsRecording = false;
             LastModified = DateTime.UtcNow;
+        }
+
+        public float GetMaxZoom()
+        {
+            return CCTVValidator.maxZoom;
+        }
+
+        public float GetMinZoom()
+        {
+            return CCTVValidator.minZoom;
+        }
+
+        public float GetMaxRotationDegrees()
+        {
+            return CCTVValidator.maxRotationDegrees;
+        }
+
+        public float GetMinRotationDegrees()
+        {
+            return CCTVValidator.minRotationDegrees;
         }
     }
 }
