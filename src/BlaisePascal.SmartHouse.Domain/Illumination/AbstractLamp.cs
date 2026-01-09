@@ -13,7 +13,7 @@ using BlaisePascal.SmartHouse.Domain;
 namespace BlaisePascal.SmartHouse.Domain.Illumination
 
 {
-    public abstract class AbstractLamp: AbstractDevice
+    public abstract class AbstractLamp: AbstractDevice, IAbstractLamp
     {
         public int MinBrigthness { get; protected set; } = 0;
         public int MaxBrightness { get; protected set; } = 100;

@@ -9,63 +9,63 @@ namespace BlaisePascal.SmartHouse.Domain.AirConditioner
 {
     public class AirConditioner: AbstractDevice
     {
+        public AirStatus AirStatus { get; private set; }
         public int Temperature { get; protected set; }
-        public int MaxTemperature { get; private set; } = 50;
-        public int DefaultTemperature { get; private set; } = 18;
-        public int MinTemperature{ get; protected set; } = 0;
+        public int MaxTemperature { get; private set; } = AirConditionerValidator.MaxTemperature;
+        public int DefaultTemperature { get; private set; } = AirConditionerValidator.DefaultTemperature;
+        public int MinTemperature{ get; protected set; } = AirConditionerValidator.MinTemperature;
         public int DefaultIncreaseValue { get; protected set; }= 10;
 
-        public AirConditioner(string name, int temperature): base(name)
-        { 
-            Temperature = temperature;
+        public AirConditioner(string name, int temperature) : base(name)
+        {
+            SetTemperature(temperature);
             Status = DeviceStatus.On;
         }
-        public AirConditioner(string name) : base(name) 
+
+        public AirConditioner(string name) : base(name)
         {
-            Temperature = DefaultTemperature; 
+            SetTemperature();
             Status = DeviceStatus.On;
         }
 
         public void SetTemperature(int temperature)
         {
-            if (Status == DeviceStatus.Off)
-                throw new InvalidOperationException("cannot modify air conditioner when it is off");
-
+            AirConditionerValidator.IsOn(Status);
             Temperature = AirConditionerValidator.SetTemperatureValueValidator(temperature);
             LastModified = DateTime.UtcNow;
         }
+
+        public void SetTemperature()
+        {
+            AirConditionerValidator.IsOn(Status);
+            Temperature = DefaultTemperature;
+        }
+
         public void IncreaseTemperature()
         {
-            if (Status == DeviceStatus.Off)
-                throw new InvalidOperationException("cannot modify air conditioner when it is off");
-
+            AirConditionerValidator.IsOn(Status);
             SetTemperature(Temperature + DefaultIncreaseValue);
             LastModified = DateTime.UtcNow;
         }
 
         public void IncreaseTemperature(int value)
         {
-            if (Status == DeviceStatus.Off)
-                throw new InvalidOperationException("cannot modify air conditioner when it is off");
-
+            AirConditionerValidator.IsOn(Status);
             SetTemperature(Temperature + AirConditionerValidator.IncreaseValueValidator(value));
             LastModified = DateTime.UtcNow;
         }
         public void DecreaseTemperature()
         {
-            if (Status == DeviceStatus.Off)
-                throw new InvalidOperationException("cannot modify air conditioner when it is off");
-
+            AirConditionerValidator.IsOn(Status);
             SetTemperature(Temperature - DefaultIncreaseValue);
             LastModified = DateTime.UtcNow;
         }
         public void DecreaseTemperature(int value)
         {
-            if (Status == DeviceStatus.Off)
-                throw new InvalidOperationException("cannot modify air conditioner when it is off");
-
+            AirConditionerValidator.IsOn(Status);
             SetTemperature(Temperature - AirConditionerValidator.IncreaseValueValidator(value));
             LastModified = DateTime.UtcNow;
         }
+
     }
 }
