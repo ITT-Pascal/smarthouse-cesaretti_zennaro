@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlaisePascal.SmartHouse.TestDomain.OtherDeviceTest
+namespace BlaisePascal.SmartHouse.TestDomain.AirConditionerTest
 {
     public class AirConditionerTest
     {
@@ -134,9 +134,6 @@ namespace BlaisePascal.SmartHouse.TestDomain.OtherDeviceTest
             airConditioner.SwitchOff();
             Assert.Throws<InvalidOperationException>(() => airConditioner.DecreaseTemperature(1));
         }
-
-
-
 
     }
 

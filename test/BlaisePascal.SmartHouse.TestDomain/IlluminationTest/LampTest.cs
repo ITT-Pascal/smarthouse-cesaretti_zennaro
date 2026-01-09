@@ -11,7 +11,6 @@ namespace BlaisePascal.SmartHouse.TestDomain
 {
     public class LampTest
     {
-        
         [Fact]
         public void SwitchOn_SwitchOnTheLamp()
         {

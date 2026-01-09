@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlaisePascal.SmartHouse.TestDomain.OtherDeviceTest
+namespace BlaisePascal.SmartHouse.TestDomain.ThermostatTest
 {
     public class ThermostatTest
     {
