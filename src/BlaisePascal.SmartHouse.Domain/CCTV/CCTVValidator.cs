@@ -9,10 +9,10 @@ namespace BlaisePascal.SmartHouse.Domain.CCTV
 {
     public static class CCTVValidator
     {
-        public const float maxRotationDegrees = 90;
-        public const float minRotationDegrees = -90;
-        public const float maxZoom = 10;
-        public const float minZoom = 0.5f;
+        public const float MaxRotationDegrees = 90;
+        public const float MinRotationDegrees = -90;
+        public const float MaxZoom = 10;
+        public const float MinZoom = 0.5f;
 
         public static void CheckIsOn(DeviceStatus status)
         {
@@ -20,29 +20,29 @@ namespace BlaisePascal.SmartHouse.Domain.CCTV
                 throw new InvalidOperationException("Cannot modify CCTV when device is off");
         }
 
-        public static int CheckIsPositive(int value)
+        public static void CheckIsPositive(int value)
         {
             if(value <= 0)
                 throw new ArgumentOutOfRangeException("value must be positive");
         }
         public static float RotationValidator (float rotation)
         {
-            if (rotation < minRotationDegrees || rotation > maxRotationDegrees)
-                throw new ArgumentOutOfRangeException($"Rotation must be between {minRotationDegrees} and {maxRotationDegrees} degrees.");
+            if (rotation < MinRotationDegrees || rotation > MaxRotationDegrees)
+                throw new ArgumentOutOfRangeException($"Rotation must be between {MinRotationDegrees} and {MaxRotationDegrees} degrees.");
             return rotation;
         }
 
         public static float ZoomValidator (float zoom)
         {
-            if (zoom < minZoom || zoom > maxZoom)
-                throw new ArgumentOutOfRangeException($"Zoom must be between {minZoom} and {maxZoom}.");
+            if (zoom < MinZoom || zoom > MaxZoom)
+                throw new ArgumentOutOfRangeException($"Zoom must be between {MinZoom} and {MaxZoom}.");
             return zoom;
         }
 
         public static int IsValuePositive(int value)
         {
-            if (value < minZoom || value > maxZoom)
-                throw new ArgumentOutOfRangeException($"Zoom must be between {minZoom} and {maxZoom}.");
+            if (value < MinZoom || value > MaxZoom)
+                throw new ArgumentOutOfRangeException($"Zoom must be between {MinZoom} and {MaxZoom}.");
             
             return value;
         }

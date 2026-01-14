@@ -10,6 +10,6 @@ namespace BlaisePascal.SmartHouse.Domain.Illumination
     {
         void Brighten(int step);
         void Dimmer(int step);
-        void SetBrightness(int brightness)
+        void SetBrightness(int brightness);
     }
 }
