@@ -12,7 +12,7 @@ namespace BlaisePascal.SmartHouse.Domain.CCTV
         public const float MaxRotationDegrees = 90;
         public const float MinRotationDegrees = -90;
         public const float MaxZoom = 10;
-        public const float MinZoom = 0.5f;
+        public const float MinZoom = 1;
 
         public static void CheckIsOn(DeviceStatus status)
         {
@@ -20,15 +20,19 @@ namespace BlaisePascal.SmartHouse.Domain.CCTV
                 throw new InvalidOperationException("Cannot modify CCTV when device is off");
         }
 
-        public static void CheckIsPositive(int value)
+        public static float CheckIsPositive(float value)
         {
             if(value <= 0)
-                throw new ArgumentOutOfRangeException("value must be positive");
+                throw new ArgumentException("value must be positive");
+
+            return value;
         }
+
         public static float RotationValidator (float rotation)
         {
             if (rotation < MinRotationDegrees || rotation > MaxRotationDegrees)
                 throw new ArgumentOutOfRangeException($"Rotation must be between {MinRotationDegrees} and {MaxRotationDegrees} degrees.");
+
             return rotation;
         }
 
@@ -36,15 +40,8 @@ namespace BlaisePascal.SmartHouse.Domain.CCTV
         {
             if (zoom < MinZoom || zoom > MaxZoom)
                 throw new ArgumentOutOfRangeException($"Zoom must be between {MinZoom} and {MaxZoom}.");
-            return zoom;
-        }
 
-        public static int IsValuePositive(int value)
-        {
-            if (value < MinZoom || value > MaxZoom)
-                throw new ArgumentOutOfRangeException($"Zoom must be between {MinZoom} and {MaxZoom}.");
-            
-            return value;
+            return zoom;
         }
     }
 }

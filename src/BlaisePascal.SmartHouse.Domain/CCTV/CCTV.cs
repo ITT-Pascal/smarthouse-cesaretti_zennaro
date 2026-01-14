@@ -43,7 +43,7 @@ namespace BlaisePascal.SmartHouse.Domain.CCTV
         public void IncreaseRotationDegrees(int value)
         {
             CCTVValidator.CheckIsOn(Status);
-            float newRotationValue = CCTVValidator.RotationValidator(value) + RotationValue;
+            float newRotationValue = RotationValue + CCTVValidator.CheckIsPositive(value);
             SetRotationDegrees(newRotationValue);
             LastModified = DateTime.Now; 
         } 
@@ -51,7 +51,7 @@ namespace BlaisePascal.SmartHouse.Domain.CCTV
         public void DecreaseRotationDegrees(int value)
         {
             CCTVValidator.CheckIsOn(Status);
-            float newRotationValue = RotationValue - CCTVValidator.RotationValidator(value);
+            float newRotationValue = RotationValue - CCTVValidator.CheckIsPositive(value);
             SetRotationDegrees(newRotationValue);
             LastModified = DateTime.Now;
         }
@@ -66,7 +66,7 @@ namespace BlaisePascal.SmartHouse.Domain.CCTV
         public void IncreaseZoom(int value)
         {
             CCTVValidator.CheckIsOn(Status);
-            float newZoomValue = CCTVValidator.RotationValidator(value) + ZoomValue;
+            float newZoomValue = ZoomValue + CCTVValidator.RotationValidator(value);
             SetZoom(newZoomValue);  
             LastModified = DateTime.Now;
         }
@@ -74,7 +74,7 @@ namespace BlaisePascal.SmartHouse.Domain.CCTV
         public void DecreaseZoom(int value)
         {
             CCTVValidator.CheckIsOn(Status);
-            float newZoomValue = ZoomValue - CCTVValidator.IsValuePositive(value);
+            float newZoomValue = ZoomValue - CCTVValidator.CheckIsPositive(value);
             SetZoom(newZoomValue);
             LastModified = DateTime.Now;
         }
