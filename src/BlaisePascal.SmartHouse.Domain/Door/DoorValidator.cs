@@ -11,7 +11,7 @@ namespace BlaisePascal.SmartHouse.Domain.Door
     {
         public static void CheckIsOn(DeviceStatus status)
         {
-            if (status == DeviceStatus.Off)
+            if (status != DeviceStatus.On)
                 throw new InvalidOperationException("Cannot modify the door when device is off");
         }
 

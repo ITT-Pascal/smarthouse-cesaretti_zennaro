@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BlaisePascal.SmartHouse.Domain.Door
 {
-    public class Door: AbstractDevice
+    public class Door: AbstractDevice, IDoor
     {
 
         public DoorStatus DoorStatus { get; private set; }

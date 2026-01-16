@@ -7,60 +7,84 @@ using System.Threading.Tasks;
 
 namespace BlaisePascal.SmartHouse.Domain.Thermostat
 {
-    public class Thermostat : AbstractDevice
+    public class Thermostat : AbstractDevice, IThermostat
     {
         public int Temperature { get; private set; }
-        public int DefaultStep { get; private set; } = 1;
+        private int DefaultStep { get; set; } = 1;
         public int Step { get; private set; }
-        public int DefaultTemperature { get; private set; } = 18;
+        private int DefaultTemperature { get; set; } = 18;
+        private int MinTemperature { get; set; } = ThermostatValidator.MinTemperature;
+        private int MaxTemperature { get; set; } = ThermostatValidator.MaxTemperature;
 
         public Thermostat(string name, int initialTemperature) : base(name)
         {
-            Temperature = ThermostatValidator.TemperatureValidator(initialTemperature);
+            SetTemperature(initialTemperature);
             Status = DeviceStatus.On;
             Step = DefaultStep;
         }
 
-        public Thermostat(string name) : base(name)
+        public Thermostat(string name) : this(name, DefaultTemperature)
         {
-            Temperature = DefaultTemperature;
+            SetTemperature(DefaultTemperature);
             Status = DeviceStatus.On;
             Step = DefaultStep;
         }
+
         public void IncreaseTemperature()
         {
-            if (Status == DeviceStatus.Off)
-                throw new InvalidOperationException("cannot set thermostat when it is off");
-            Temperature = ThermostatValidator.TemperatureValidator(Temperature + DefaultStep);
+            ThermostatValidator.CheckIsOn(Status);
+            SetTemperature(Temperature + DefaultStep);
             LastModified = DateTime.UtcNow;
         }
+
         public void DecreaseTemperature()
         {
-            if (Status == DeviceStatus.Off)
-                throw new InvalidOperationException("cannot set thermostat when it is off");
-            Temperature = ThermostatValidator.TemperatureValidator(Temperature - DefaultStep);
+            ThermostatValidator.CheckIsOn(Status);
+            SetTemperature(Temperature - DefaultStep);
             LastModified = DateTime.UtcNow;
         }
+
         public void SetTemperature(int temperature)
         {
-            if (Status == DeviceStatus.Off)
-                throw new InvalidOperationException("cannot set thermostat when it is off");
+            ThermostatValidator.CheckIsOn(Status);
             Temperature = ThermostatValidator.TemperatureValidator(temperature);
             LastModified = DateTime.UtcNow;
         }
+
         public void IncreaseTemperature(int step)
         {
-            if (Status == DeviceStatus.Off)
-                throw new InvalidOperationException("cannot set thermostat when it is off");
-            Temperature = ThermostatValidator.TemperatureValidator(Temperature + step);
+            ThermostatValidator.CheckIsOn(Status);
+            ThermostatValidator.CheckIsPositive(step);
+            SetTemperature(Temperature +  step);
             LastModified = DateTime.UtcNow;
         }
+
         public void DecreaseTemperature(int step)
         {
-            if (Status == DeviceStatus.Off)
-                throw new InvalidOperationException("cannot set thermostat when it is off");
-            Temperature = ThermostatValidator.TemperatureValidator(Temperature - step);
+            ThermostatValidator.CheckIsOn(Status);
+            ThermostatValidator.CheckIsPositive(step);
+            SetTemperature(Temperature - step);
             LastModified = DateTime.UtcNow;
+        }
+
+        public int GetDefaultStep()
+        {
+            return DefaultStep;
+        }
+
+        public int GetDefaultTemperature()
+        {
+            return DefaultTemperature;
+        }
+
+        public int GetMinTemperature()
+        {
+            return MinTemperature;
+        }
+
+        public int GetMaxTemperature()
+        {
+            return MaxTemperature;
         }
     }
 }

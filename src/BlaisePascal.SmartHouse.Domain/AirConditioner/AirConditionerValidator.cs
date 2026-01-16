@@ -13,7 +13,7 @@ namespace BlaisePascal.SmartHouse.Domain.AirConditioner
         public const int MinTemperature = 0;
         public const int DefaultTemperature = 18;
 
-        public static void IsOn(DeviceStatus status)
+        public static void CheckIsOn(DeviceStatus status)
         {
             if (status != DeviceStatus.On)
                 throw new InvalidOperationException("cannot modify air conditioner when it is off");
@@ -28,7 +28,7 @@ namespace BlaisePascal.SmartHouse.Domain.AirConditioner
                 return value;
         }
 
-        public static int IncreaseValueValidator(int value)
+        public static int CheckIsPositive(int value)
         {
             if (value <= 0)
                 throw new ArgumentException("value must be greater than 0");

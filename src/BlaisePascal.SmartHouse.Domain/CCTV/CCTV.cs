@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BlaisePascal.SmartHouse.Domain.CCTV
 {
-    public class CCTV : AbstractDevice
+    public class CCTV : AbstractDevice, ICCTV
     {
         public bool IsRecording { get; private set; }
         public float ZoomValue {  get; private set; }

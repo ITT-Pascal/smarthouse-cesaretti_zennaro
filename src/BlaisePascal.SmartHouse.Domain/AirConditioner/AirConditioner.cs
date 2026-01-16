@@ -30,40 +30,40 @@ namespace BlaisePascal.SmartHouse.Domain.AirConditioner
 
         public void SetTemperature(int temperature)
         {
-            AirConditionerValidator.IsOn(Status);
+            AirConditionerValidator.CheckIsOn(Status);
             Temperature = AirConditionerValidator.SetTemperatureValueValidator(temperature);
             LastModified = DateTime.UtcNow;
         }
 
         public void SetTemperature()
         {
-            AirConditionerValidator.IsOn(Status);
+            AirConditionerValidator.CheckIsOn(Status);
             Temperature = DefaultTemperature;
         }
 
         public void IncreaseTemperature()
         {
-            AirConditionerValidator.IsOn(Status);
+            AirConditionerValidator.CheckIsOn(Status);
             SetTemperature(Temperature + DefaultIncreaseValue);
             LastModified = DateTime.UtcNow;
         }
 
         public void IncreaseTemperature(int value)
         {
-            AirConditionerValidator.IsOn(Status);
-            SetTemperature(Temperature + AirConditionerValidator.IncreaseValueValidator(value));
+            AirConditionerValidator.CheckIsOn(Status);
+            SetTemperature(Temperature + AirConditionerValidator.CheckIsPositive(value));
             LastModified = DateTime.UtcNow;
         }
         public void DecreaseTemperature()
         {
-            AirConditionerValidator.IsOn(Status);
+            AirConditionerValidator.CheckIsOn(Status);
             SetTemperature(Temperature - DefaultIncreaseValue);
             LastModified = DateTime.UtcNow;
         }
         public void DecreaseTemperature(int value)
         {
-            AirConditionerValidator.IsOn(Status);
-            SetTemperature(Temperature - AirConditionerValidator.IncreaseValueValidator(value));
+            AirConditionerValidator.CheckIsOn(Status);
+            SetTemperature(Temperature - AirConditionerValidator.CheckIsPositive(value));
             LastModified = DateTime.UtcNow;
         }
 
