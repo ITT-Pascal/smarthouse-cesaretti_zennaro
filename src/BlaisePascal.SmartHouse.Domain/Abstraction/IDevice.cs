@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlaisePascal.SmartHouse.Domain.DeviceAbstraction
+namespace BlaisePascal.SmartHouse.Domain.Abstraction
 {
     public interface IDevice
     {

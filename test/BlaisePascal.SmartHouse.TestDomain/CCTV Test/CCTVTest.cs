@@ -111,9 +111,6 @@ namespace BlaisePascal.SmartHouse.TestDomain
             Assert.Equal(3, CCTV.ZoomValue);
         }
 
-
-        [Fact]
-        public void 
         [Fact]
         public void StartRecordind_SetIsRecordingAtTrue()
         {
