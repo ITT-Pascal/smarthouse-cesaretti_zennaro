@@ -9,13 +9,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BlaisePascal.SmartHouse.Domain.CCTV
 {
+    //FINISHED
     public class CCTV : AbstractDevice, ICCTV
     {
         public bool IsRecording { get; private set; }
         public float ZoomValue {  get; private set; }
         private const float MinZoomValue = CCTVValidator.MaxZoom;
         private const float MaxZoomValue = CCTVValidator.MinZoom;
-        public float RotationValue {  get; private set; }
+        public float RotationDegrees {  get; private set; }
         private const float MinRotationDegrees = CCTVValidator.MinRotationDegrees;
         private const float MaxRotationDegrees = CCTVValidator.MaxRotationDegrees;
         
@@ -23,36 +24,36 @@ namespace BlaisePascal.SmartHouse.Domain.CCTV
         {
             IsRecording = isRecording;
             ZoomValue = zoomValue;
-            RotationValue = rotation;
+            RotationDegrees = rotation;
         }
 
         public CCTV(string name): this(name, false, 0, 0)
         {
             ZoomValue = 0;
-            RotationValue = 0;
+            RotationDegrees = 0;
             IsRecording = false;
         }
 
         public void SetRotationDegrees(float degrees)
         {
             CCTVValidator.CheckIsOn(Status);
-            RotationValue = CCTVValidator.RotationValidator(degrees);
+            RotationDegrees = CCTVValidator.RotationValidator(degrees);
             LastModified = DateTime.UtcNow;
         }
 
         public void IncreaseRotationDegrees(int value)
         {
             CCTVValidator.CheckIsOn(Status);
-            float newRotationValue = RotationValue + CCTVValidator.CheckIsPositive(value);
-            SetRotationDegrees(newRotationValue);
+            CCTVValidator.CheckIsPositive(value);
+            SetRotationDegrees(RotationDegrees + value);
             LastModified = DateTime.Now; 
         } 
 
         public void DecreaseRotationDegrees(int value)
         {
             CCTVValidator.CheckIsOn(Status);
-            float newRotationValue = RotationValue - CCTVValidator.CheckIsPositive(value);
-            SetRotationDegrees(newRotationValue);
+            CCTVValidator.CheckIsPositive(value);
+            SetRotationDegrees(RotationDegrees - value);
             LastModified = DateTime.Now;
         }
 
@@ -66,16 +67,16 @@ namespace BlaisePascal.SmartHouse.Domain.CCTV
         public void IncreaseZoom(int value)
         {
             CCTVValidator.CheckIsOn(Status);
-            float newZoomValue = ZoomValue + CCTVValidator.RotationValidator(value);
-            SetZoom(newZoomValue);  
+            CCTVValidator.RotationValidator(value);
+            SetZoom(ZoomValue + value);  
             LastModified = DateTime.Now;
         }
 
         public void DecreaseZoom(int value)
         {
             CCTVValidator.CheckIsOn(Status);
-            float newZoomValue = ZoomValue - CCTVValidator.CheckIsPositive(value);
-            SetZoom(newZoomValue);
+            CCTVValidator.CheckIsPositive(value);
+            SetZoom(ZoomValue - value);
             LastModified = DateTime.Now;
         }
         public void StartRecording()

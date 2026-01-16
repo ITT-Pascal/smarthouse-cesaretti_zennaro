@@ -7,6 +7,7 @@ using BlaisePascal.SmartHouse.Domain.Asbtraction;
 
 namespace BlaisePascal.SmartHouse.Domain.AirConditioner
 {
+    //FINISHED
     public class AirConditioner: AbstractDevice
     {
         public AirStatus AirStatus { get; private set; }
@@ -51,7 +52,8 @@ namespace BlaisePascal.SmartHouse.Domain.AirConditioner
         public void IncreaseTemperature(int value)
         {
             AirConditionerValidator.CheckIsOn(Status);
-            SetTemperature(Temperature + AirConditionerValidator.CheckIsPositive(value));
+            AirConditionerValidator.CheckIsPositive(value);
+            SetTemperature(Temperature + value);
             LastModified = DateTime.UtcNow;
         }
         public void DecreaseTemperature()
@@ -63,7 +65,8 @@ namespace BlaisePascal.SmartHouse.Domain.AirConditioner
         public void DecreaseTemperature(int value)
         {
             AirConditionerValidator.CheckIsOn(Status);
-            SetTemperature(Temperature - AirConditionerValidator.CheckIsPositive(value));
+            AirConditionerValidator.CheckIsPositive(value);
+            SetTemperature(Temperature - value);
             LastModified = DateTime.UtcNow;
         }
 

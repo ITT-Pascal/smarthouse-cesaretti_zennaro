@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace BlaisePascal.SmartHouse.Domain.Thermostat
 {
+    //FINISHED
     public class Thermostat : AbstractDevice, IThermostat
     {
         public int Temperature { get; private set; }
@@ -23,7 +24,7 @@ namespace BlaisePascal.SmartHouse.Domain.Thermostat
             Step = DefaultStep;
         }
 
-        public Thermostat(string name) : this(name, DefaultTemperature)
+        public Thermostat(string name) : this(name, 18)
         {
             SetTemperature(DefaultTemperature);
             Status = DeviceStatus.On;
