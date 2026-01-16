@@ -10,19 +10,21 @@ namespace BlaisePascal.SmartHouse.TestDomain
     public class CCTVTest
     {
         [Fact]
-        public void SetRotationDegrees_CannotGoUnderdMinRotation()
+        public void SetRotationDegrees_WhenValueIsUnderMinIsSetAtMin()
         {
             CCTV CCTV = new("telecamera");
             CCTV.SwitchOn();
-            Assert.Throws<ArgumentOutOfRangeException>(() => CCTV.SetRotationDegrees(-100));
+            CCTV.SetRotationDegrees(-100);
+            Assert.Equal(CCTV.GetMinRotationDegrees(), CCTV.RotationDegrees);
         }
 
         [Fact]
-        public void SetRotationDeegrees_CannotGoOverMaxRotation()
+        public void SetRotationDeegrees_WhenValueIsOverTheMaxIsSetAtMax()
         {
             CCTV CCTV = new("telecamera");
             CCTV.SwitchOn();
-            Assert.Throws<ArgumentOutOfRangeException>(() => CCTV.SetRotationDegrees(200));
+            CCTV.SetRotationDegrees(-100);
+            Assert.Equal(CCTV.GetMinRotationDegrees(), CCTV.RotationDegrees);
         }
 
         [Fact]

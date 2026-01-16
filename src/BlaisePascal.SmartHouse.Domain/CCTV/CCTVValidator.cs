@@ -20,26 +20,30 @@ namespace BlaisePascal.SmartHouse.Domain.CCTV
                 throw new InvalidOperationException("Cannot modify CCTV when device is off");
         }
 
-        public static float CheckIsPositive(float value)
+        public static void CheckIsPositive(float value)
         {
             if(value <= 0)
                 throw new ArgumentException("value must be positive");
-
-            return value;
         }
 
         public static float RotationValidator (float rotation)
         {
-            if (rotation < MinRotationDegrees || rotation > MaxRotationDegrees)
-                throw new ArgumentOutOfRangeException($"Rotation must be between {MinRotationDegrees} and {MaxRotationDegrees} degrees.");
+            if (rotation < MinRotationDegrees)
+                return MinRotationDegrees;
+
+            if (rotation > MaxRotationDegrees)
+                return MaxRotationDegrees;
 
             return rotation;
         }
 
         public static float ZoomValidator (float zoom)
         {
-            if (zoom < MinZoom || zoom > MaxZoom)
-                throw new ArgumentOutOfRangeException($"Zoom must be between {MinZoom} and {MaxZoom}.");
+            if (zoom < MinZoom)
+                return MinZoom;
+
+            if (zoom > MaxZoom)
+                return MaxZoom;
 
             return zoom;
         }

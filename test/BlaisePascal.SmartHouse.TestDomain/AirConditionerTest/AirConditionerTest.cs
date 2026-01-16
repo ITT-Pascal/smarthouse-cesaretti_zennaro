@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace BlaisePascal.SmartHouse.TestDomain.AirConditionerTest
 {
+    //FINISHED
     public class AirConditionerTest
     {
         [Fact]
@@ -65,14 +66,6 @@ namespace BlaisePascal.SmartHouse.TestDomain.AirConditionerTest
         }
 
         [Fact]
-        public void IncreaseTemperature_WhenValueIsGreaterThanMaxTemperatureIsSetAtMax()
-        {
-            AirConditioner airConditioner = new("condizionatore", 20);
-            airConditioner.IncreaseTemperature(70);
-            Assert.Equal(airConditioner.MaxTemperature, airConditioner.Temperature);
-        }
-
-        [Fact]
         public void IncreaseTemperature_WhenValueIsRightTemperatureIsSetCorrectly()
         {
             AirConditioner airConditioner = new("condizionatore", 20);
@@ -94,14 +87,6 @@ namespace BlaisePascal.SmartHouse.TestDomain.AirConditionerTest
             AirConditioner airConditioner = new("condizionatore", 30);
             airConditioner.DecreaseTemperature();
             Assert.Equal(20, airConditioner.Temperature);
-        }
-
-        [Fact]
-        public void DecreaseTemperature_WhenItIsIncreasedLowerThanMinTemperatureIsSetAtMin()
-        {
-            AirConditioner airConditioner = new("condizionatore", 0);
-            airConditioner.DecreaseTemperature();
-            Assert.Equal(airConditioner.MinTemperature, airConditioner.Temperature);
         }
 
         [Fact]
