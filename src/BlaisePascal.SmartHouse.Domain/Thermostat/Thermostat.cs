@@ -11,7 +11,7 @@ namespace BlaisePascal.SmartHouse.Domain.Thermostat
     public class Thermostat : AbstractDevice, IThermostat
     {
         public int Temperature { get; private set; }
-        private int DefaultStep { get; set; } = 1;
+        private int DefaultStep { get; set; } = 4;
         public int DefaultTemperature { get; private set; } = 18;
         public int MinTemperature { get; private set; } = ThermostatValidator.MinTemperature;
         public int MaxTemperature { get; private set; } = ThermostatValidator.MaxTemperature;
@@ -30,6 +30,12 @@ namespace BlaisePascal.SmartHouse.Domain.Thermostat
         {
             ThermostatValidator.CheckIsOn(Status);
             Temperature = ThermostatValidator.TemperatureValidator(temperature);
+            LastModified = DateTime.UtcNow;
+        }
+
+        public void SetTemperature()
+        {
+            Temperature = DefaultTemperature;
             LastModified = DateTime.UtcNow;
         }
 
