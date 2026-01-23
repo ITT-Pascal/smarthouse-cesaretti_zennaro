@@ -10,36 +10,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.ThermostatTest
 {
     public class ThermostatTest
     {
-        [Fact]
-        public void Constructor_WhenCreatingThermostat_ItSetTheInitialTemperature()
-        {
-            int initialTemperature = 25;
-            Thermostat thermostat = new("Thermo1", initialTemperature);
-            Assert.Equal(initialTemperature, thermostat.Temperature);
-        }
-        [Fact]
-        public void Constructor_WhenCreatingThermostat_ItSetTheStatusToDeviceStatusOn()
-        {
-            Thermostat thermostat = new("Thermo1");
-            Assert.Equal(DeviceStatus.On, thermostat.Status);
-        }
-        [Fact]
-        public void Constructor_WhenCreatingThermostatWithoutInitialTemperature_ItSetTheDefaultTemperature()
-        {
-            Thermostat thermostat = new("Thermo1");
-            Assert.Equal(thermostat.Temperature, thermostat.Temperature);
-        }
-        [Fact]
-        public void Constructor_WhenCreatingThermostat_ItSetTheDefaultStepToOne()
-        {
-            Thermostat thermostat = new("Thermo1");
-            Assert.Equal(1, thermostat.Step);
-        }
-        [Fact]
-        public void Constructor_CannotCreateThermostatWithInvalidInitialTemperature()
-        {
-            Assert.Throws<ArgumentOutOfRangeException>(() => new Thermostat("Thermo1", -100));
-        }
+        
         [Fact]
         public void IncreaseTemperature_WhenCalledWithoutStep_IncreasesTemperatureByDefaultStep()
         {

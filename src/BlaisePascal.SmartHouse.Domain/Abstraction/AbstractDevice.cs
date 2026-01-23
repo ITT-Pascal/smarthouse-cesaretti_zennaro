@@ -20,7 +20,7 @@ namespace BlaisePascal.SmartHouse.Domain.Asbtraction
             Name = name;
             Id = Guid.NewGuid();
             CreationHour = DateTime.Now;
-            Status = DeviceStatus.Off;
+            Status = DeviceStatus.On;
             LastModified = DateTime.Now;
         }
 

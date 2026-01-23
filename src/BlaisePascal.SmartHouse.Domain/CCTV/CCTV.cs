@@ -14,8 +14,8 @@ namespace BlaisePascal.SmartHouse.Domain.CCTV
     {
         public bool IsRecording { get; private set; }
         public float ZoomValue {  get; private set; }
-        public float MinZoomValue { get; private set; } = CCTVValidator.MaxZoom;
-        public float MaxZoomValue { get; private set; } = CCTVValidator.MinZoom;
+        public float MinZoomValue { get; private set; } = CCTVValidator.MinZoom;
+        public float MaxZoomValue { get; private set; } = CCTVValidator.MaxZoom;
         public float RotationDegrees {  get; private set; }
         public float MinRotationDegrees { get; private set; } = CCTVValidator.MinRotationDegrees;
         public float MaxRotationDegrees { get; private set; } = CCTVValidator.MaxRotationDegrees;
@@ -29,9 +29,7 @@ namespace BlaisePascal.SmartHouse.Domain.CCTV
 
         public CCTV(string name): this(name, false, 0, 0)
         {
-            ZoomValue = 0;
-            RotationDegrees = 0;
-            IsRecording = false;
+
         }
 
         public void SetRotationDegrees(float degrees)

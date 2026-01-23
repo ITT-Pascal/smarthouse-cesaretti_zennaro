@@ -51,6 +51,14 @@ namespace BlaisePascal.SmartHouse.TestDomain.AirConditionerTest
         }
 
         [Fact]
+        public void IncreaseTemperatura_WhenDefaultValueGoesOverTheMaxTemperatureIsSetAtMax()
+        {
+            AirConditioner airConditioner = new("condizionatore", 45);
+            airConditioner.IncreaseTemperature();
+            Assert.Equal(airConditioner.MaxTemperature, airConditioner.Temperature);
+        }
+
+        [Fact]
         public void IncreaseTemperature_WhenItIsIncreasedOverTheMaxTemperatureIsSetAtMax()
         {
             AirConditioner airConditioner = new("condizionatore", 50);
@@ -87,6 +95,14 @@ namespace BlaisePascal.SmartHouse.TestDomain.AirConditionerTest
             AirConditioner airConditioner = new("condizionatore", 30);
             airConditioner.DecreaseTemperature();
             Assert.Equal(20, airConditioner.Temperature);
+        }
+
+        [Fact]
+        public void DecreaseTemperature_WhenDefaultValueGoesUnderTheMinTemperatureIsSetAtMin()
+        {
+            AirConditioner airConditioner = new("condizionatore", 5);
+            airConditioner.DecreaseTemperature();
+            Assert.Equal(airConditioner.MinTemperature, airConditioner.Temperature);
         }
 
         [Fact]
