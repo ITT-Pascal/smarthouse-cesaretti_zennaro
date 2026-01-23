@@ -22,10 +22,11 @@ namespace BlaisePascal.SmartHouse.Domain.AirConditioner
         {
             if (value < MinTemperature)
                 return MinTemperature;
-            else if (value > MaxTemperature)
+
+            if (value > MaxTemperature)
                 return MaxTemperature;
-            else 
-                return value;
+
+            return value;
         }
 
         public static int CheckIsPositive(int value)

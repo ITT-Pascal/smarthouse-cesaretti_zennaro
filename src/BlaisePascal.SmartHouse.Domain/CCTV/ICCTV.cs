@@ -17,9 +17,5 @@ namespace BlaisePascal.SmartHouse.Domain.CCTV
         void DecreaseZoom(int value);
         void StartRecording();
         void StopRecording();
-        float GetMaxZoom();
-        float GetMinZoom();
-        float GetMaxRotationDegrees();
-        float GetMinRotationDegrees();
     }
 }

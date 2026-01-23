@@ -11,11 +11,11 @@ namespace BlaisePascal.SmartHouse.Domain.AirConditioner
     public class AirConditioner: AbstractDevice
     {
         public AirStatus AirStatus { get; private set; }
-        public int Temperature { get; protected set; }
+        public int Temperature { get; private set; }
         public int MaxTemperature { get; private set; } = AirConditionerValidator.MaxTemperature;
         public int DefaultTemperature { get; private set; } = AirConditionerValidator.DefaultTemperature;
         public int MinTemperature{ get; protected set; } = AirConditionerValidator.MinTemperature;
-        public int DefaultIncreaseValue { get; protected set; }= 10;
+        public int DefaultIncreaseValue { get; private set; }= 10;
 
         public AirConditioner(string name, int temperature) : base(name)
         {
