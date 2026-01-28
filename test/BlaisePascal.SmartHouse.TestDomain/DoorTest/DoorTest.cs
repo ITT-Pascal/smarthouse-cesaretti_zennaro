@@ -1,10 +1,4 @@
-﻿using BlaisePascal.SmartHouse.Domain;
-using BlaisePascal.SmartHouse.Domain.Door;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BlaisePascal.SmartHouse.Domain.Door;
 
 namespace BlaisePascal.SmartHouse.TestDomain.DoorTest
 {

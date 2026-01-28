@@ -1,9 +1,4 @@
 ﻿using BlaisePascal.SmartHouse.Domain.AirConditioner;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BlaisePascal.SmartHouse.TestDomain.AirConditionerTest
 {
@@ -113,6 +108,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.AirConditionerTest
             Assert.Equal(airConditioner.MinTemperature, airConditioner.Temperature);
         }
 
+        [Fact]
         public void DecreaseTemperature_CannotDecreaseByDefaultValueWhenDeviceIsOff()
         {
             AirConditioner airConditioner = new("condizionatore", 10);

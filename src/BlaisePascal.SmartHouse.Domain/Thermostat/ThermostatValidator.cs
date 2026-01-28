@@ -21,12 +21,16 @@ namespace BlaisePascal.SmartHouse.Domain.Thermostat
         public static void CheckIsPositive(int value)
         {
             if (value <= 0)
-                throw new InvalidOperationException("value must be greater than 0");
+                throw new ArgumentException("value must be greater than 0");
         } 
         public static int TemperatureValidator(int temperature)
         {
-            if (temperature < MinTemperature || temperature > MaxTemperature)
-                throw new ArgumentOutOfRangeException($"Temperature must be between {MinTemperature} and {MaxTemperature} degrees Celsius.");
+            if(temperature > MaxTemperature)
+                return MaxTemperature;
+
+            if (temperature < MinTemperature)
+                return MinTemperature;
+
             return temperature;
         }
     }

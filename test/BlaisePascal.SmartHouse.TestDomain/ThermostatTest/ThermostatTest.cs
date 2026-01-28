@@ -1,15 +1,17 @@
-﻿using BlaisePascal.SmartHouse.Domain.Asbtraction;
-using BlaisePascal.SmartHouse.Domain.Thermostat;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BlaisePascal.SmartHouse.Domain.Thermostat;
 
 namespace BlaisePascal.SmartHouse.TestDomain.ThermostatTest
 {
+    //FINISHED
     public class ThermostatTest
     {
+        [Fact]
+        public void SetTemperature_CannotSetTemperatureWhenDeviceIsOff()
+        {
+            Thermostat thermostat = new("Thermo1");
+            thermostat.SwitchOff();
+            Assert.Throws<InvalidOperationException>(() => thermostat.SetTemperature(100));
+        }
         [Fact]
         public void SetTemperature_WhenValueGoesOverTheMaxTemperatureIsSetAtMax()
         {
@@ -43,6 +45,13 @@ namespace BlaisePascal.SmartHouse.TestDomain.ThermostatTest
         }
 
         [Fact]
+        public void SetTemperature_CannotSetDefaultTemperatureWhenDeviceIsOff()
+        {
+            Thermostat thermostat = new("Thermo1");
+            thermostat.SwitchOff();
+            Assert.Throws<InvalidOperationException>(() => thermostat.SetTemperature());
+        }
+        [Fact]
         public void IncreaseTemperature_WithoutParametersTemperatureIsIncreasedByDefaultValue()
         {
             Thermostat thermostat = new("Thermo1");
@@ -62,14 +71,15 @@ namespace BlaisePascal.SmartHouse.TestDomain.ThermostatTest
         public void IncreaseTemperature_CannotIncreaseTemperatureByDefaultValueWhenDeviceIsOff()
         {
             Thermostat thermostat = new("Thermo1");
-            Assert.Throws<InvalidOperationException> (() => thermostat.IncreaseTemperature());
+            thermostat.SwitchOff();
+            Assert.Throws<InvalidOperationException>(() => thermostat.IncreaseTemperature());
         }
 
         [Fact]
         public void IncreaseTemperature_ValueCannotBeNegative()
         {
             Thermostat thermostat = new("Thermo1");
-            Assert.Throws<ArgumentException> (() => thermostat.IncreaseTemperature(-1));
+            Assert.Throws<ArgumentException>(() => thermostat.IncreaseTemperature(-1));
         }
         [Fact]
         public void IncreaseTemperature_WhenValueGoesOverTheMaxTemperatureIsSetAtMax()
@@ -90,10 +100,12 @@ namespace BlaisePascal.SmartHouse.TestDomain.ThermostatTest
         [Fact]
         public void IncreaseTemperature_CannotIncreaseTemperatureWhenDeviceIsOff()
         {
-            Thermostat Thermostat = new("Thermo1");
-            Assert.Throws<InvalidOperationException>(() => Thermostat.IncreaseTemperature(7));
+            Thermostat thermostat = new("Thermo1");
+            thermostat.SwitchOff();
+            Assert.Throws<InvalidOperationException>(() => thermostat.IncreaseTemperature(7));
         }
-        
+
+        [Fact]
         public void DecreaseTemperture_WithoutParametersTemperatureIsDecreasedByDefaultValue()
         {
             Thermostat thermostat = new("Thermo1");
@@ -102,19 +114,50 @@ namespace BlaisePascal.SmartHouse.TestDomain.ThermostatTest
         }
 
         [Fact]
-        public void DecreaseTemperature_WhenCalledWithStep_DecreasesTemperatureByStep()
+        public void DecreaseTemperature_WhenDefaultValueGoesUnderTheMinTemperatureIsSetAtMin()
         {
-            Thermostat thermostat = new("Thermo1");
-            int expectedStep = 5;
-            int expectedTemperature = thermostat.Temperature - expectedStep;
-            thermostat.DecreaseTemperature(expectedStep);
-            Assert.Equal(expectedTemperature, thermostat.Temperature);
+            Thermostat thermostat = new("Thermo1", 1);
+            thermostat.DecreaseTemperature();
+            Assert.Equal(thermostat.MinTemperature, thermostat.Temperature);
         }
+
         [Fact]
-        public void DecreaseTemperature_CannotDecreaseTemperatureBeyondMinLimit()
+        public void DecreaseTemperature_CannotDecreaseByDefaultValueWhenDeviceIsOff()
         {
-            Thermostat thermostat = new("Thermo1");
-            Assert.Throws<ArgumentOutOfRangeException>(() => thermostat.DecreaseTemperature(100));
+            Thermostat thermostat = new("Thermo");
+            thermostat.SwitchOff();
+            Assert.Throws<InvalidOperationException>(() => thermostat.DecreaseTemperature());
+        }
+
+        [Fact]
+        public void DecreaseTemperature_WhenValueGoesUnderTheMinTemperatureIsSetAtMin()
+        {
+            Thermostat thermostat = new("Thermo");
+            thermostat.DecreaseTemperature(40);
+            Assert.Equal(thermostat.MinTemperature, thermostat.Temperature);
+        }
+
+        [Fact]
+        public void DecreaseTemperature_ValueCannotBeNegative()
+        {
+            Thermostat thermostat = new("Thermo");
+            Assert.Throws<ArgumentException>(() => thermostat.DecreaseTemperature(-1));
+        }
+
+        [Fact]
+        public void DecreaseTemperature_CannotDecreaseTemperatureWhenDeviceIsOff()
+        {
+            Thermostat thermostat = new("Thermo");
+            thermostat.SwitchOff();
+            Assert.Throws<InvalidOperationException>(() => thermostat.DecreaseTemperature(8));
+        }
+
+        [Fact]
+        public void DecreaseTemperature_WhenValueDoesNotOverFlowTheRangeTemperatureIsSetCorrectly()
+        {
+            Thermostat thermostat = new("Thermo");
+            thermostat.DecreaseTemperature(2);
+            Assert.Equal(16, thermostat.Temperature);
         }
     }
 }

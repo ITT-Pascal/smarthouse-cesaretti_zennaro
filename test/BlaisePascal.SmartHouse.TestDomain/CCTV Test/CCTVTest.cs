@@ -1,11 +1,6 @@
 ﻿using BlaisePascal.SmartHouse.Domain.CCTV;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BlaisePascal.SmartHouse.TestDomain
+namespace BlaisePascal.SmartHouse.TestDomain.CCTVTest
 {
     public class CCTVTest
     {

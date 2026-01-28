@@ -35,6 +35,7 @@ namespace BlaisePascal.SmartHouse.Domain.Thermostat
 
         public void SetTemperature()
         {
+            ThermostatValidator.CheckIsOn(Status);
             Temperature = DefaultTemperature;
             LastModified = DateTime.UtcNow;
         }

@@ -1,13 +1,7 @@
-﻿using BlaisePascal.SmartHouse.Domain;
-using BlaisePascal.SmartHouse.Domain.Illumination;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BlaisePascal.SmartHouse.Domain.Illumination;
 using BlaisePascal.SmartHouse.Domain.Asbtraction;
 
-namespace BlaisePascal.SmartHouse.TestDomain
+namespace BlaisePascal.SmartHouse.TestDomain.IlluminationTest
 {
     public class LampTest
     {
