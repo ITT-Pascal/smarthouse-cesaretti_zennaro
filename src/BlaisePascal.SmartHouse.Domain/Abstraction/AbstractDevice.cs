@@ -1,15 +1,10 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Abstraction;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BlaisePascal.SmartHouse.Domain.Asbtraction
 {
     public abstract class AbstractDevice: IDevice
     {
-        public string Name { get; protected set; }
+        public Name Name { get; protected set; }
         public Guid Id { get; protected set; }
         public DeviceStatus Status { get; protected set; }
         public DateTime CreationHour { get; protected set; }
@@ -17,7 +12,7 @@ namespace BlaisePascal.SmartHouse.Domain.Asbtraction
 
         public AbstractDevice(string name)
         {
-            Name = name;
+            Name = Name.CreateNew(name);
             Id = Guid.NewGuid();
             CreationHour = DateTime.Now;
             Status = DeviceStatus.On;
@@ -26,18 +21,14 @@ namespace BlaisePascal.SmartHouse.Domain.Asbtraction
 
         public virtual void SwitchOn()
         {
-            if (Status == DeviceStatus.On)
-                throw new InvalidOperationException($"{Name} is alrady on");
-
+            AbstractDeviceValidator.CheckIsOn(Status);
             Status = DeviceStatus.On;
             LastModified = DateTime.Now;
         }
 
         public virtual void SwitchOff()
         {
-            if (Status == DeviceStatus.Off)
-                throw new InvalidOperationException($"{Name} is alrady off");
-
+            AbstractDeviceValidator.CheckIsOff(Status);
             Status = DeviceStatus.Off;
             LastModified = DateTime.Now;
         }
