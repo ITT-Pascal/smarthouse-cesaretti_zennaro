@@ -2,14 +2,14 @@
 {
     public sealed record Name
     {
-        public string name { get; init; }
+        public string value { get; init; }
 
         public Name(string name)
         {
             if (string.IsNullOrEmpty(name))
                 throw new ArgumentException("name cannot be null, empty or with empty spaces");
 
-            this.name = name;
+            this.value = name;
         }
 
         public static Name CreateNew(string name)

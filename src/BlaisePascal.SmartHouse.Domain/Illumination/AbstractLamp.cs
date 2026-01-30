@@ -1,29 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using BlaisePascal.SmartHouse.Domain.Asbtraction;
-using BlaisePascal.SmartHouse.Domain;
+﻿using BlaisePascal.SmartHouse.Domain.Asbtraction;
 
 namespace BlaisePascal.SmartHouse.Domain.Illumination
 
 {
     public abstract class AbstractLamp: AbstractDevice, IAbstractLamp
     {
-        public int MinBrigthness { get; protected set; } = 0;
-        public int MaxBrightness { get; protected set; } = 100;
-        public int Brightness { get; protected set; }
+        public Brightness MinBrigthness { get; protected set; } = Brightness.CreateNew(0);
+        public Brightness MaxBrightness { get; protected set; } = Brightness.CreateNew(100);
+        public Brightness Brightness { get; protected set; }
 
-        public AbstractLamp(string name) : base(name) { }
+        public AbstractLamp(string name) : base(name) 
+        {
+            Brightness = Brightness.CreateNew(50);
+        }
         public AbstractLamp(int brightness, string name) : base(name) 
         {
-            Status = DeviceStatus.On;
-            SetBrightness(brightness);
+            Brightness = Brightness.CreateNew(brightness);
         }
         
         public void Brighten(int step)
