@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using BlaisePascal.SmartHouse.Domain.Asbtraction;
+using BlaisePascal.SmartHouse.Domain.Illumination.Abstraction;
 
 namespace BlaisePascal.SmartHouse.Domain.Illumination
 {
@@ -21,16 +22,17 @@ namespace BlaisePascal.SmartHouse.Domain.Illumination
                 if (Lamps.Count == 0)
                 {
                     lampsStatus = null;
-                } else
+                }
+                
+                foreach (AbstractLamp lamp in Lamps)
                 {
-                    foreach (AbstractLamp lamp in Lamps)
+                    if (lamp.Status == DeviceStatus.On)
                     {
-                        if (lamp.Status == DeviceStatus.On)
-                        {
-                            lampsStatus = DeviceStatus.On;
-                        }
+                        lampsStatus = DeviceStatus.On;
+                        break;
                     }
                 }
+                
                 return lampsStatus;
             }
             private set { }

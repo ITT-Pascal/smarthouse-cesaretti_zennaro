@@ -1,5 +1,6 @@
 ﻿using System.Xml.Linq;
 using BlaisePascal.SmartHouse.Domain.Asbtraction;
+using BlaisePascal.SmartHouse.Domain.Illumination.Abstraction;
 
 namespace BlaisePascal.SmartHouse.Domain.Illumination
 {
@@ -7,10 +8,6 @@ namespace BlaisePascal.SmartHouse.Domain.Illumination
     {
         public Lamp(string name) : base(name) { }
         public Lamp(int brightness, string name) : base(brightness, name) { }
-        //- namespaces: sistemare ->
-        //- struttura: sistemare in components
-        //- UML: ripensare door
-        //- EcoLampTest TODO
     } 
 }
 

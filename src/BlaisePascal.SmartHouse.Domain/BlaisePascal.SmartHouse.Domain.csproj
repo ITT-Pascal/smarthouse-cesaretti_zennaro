@@ -8,11 +8,8 @@
 
   <ItemGroup>
     <Compile Remove="Illumination\Nuova cartella1\**" />
-    <Compile Remove="Illumination\Nuova cartella\**" />
     <EmbeddedResource Remove="Illumination\Nuova cartella1\**" />
-    <EmbeddedResource Remove="Illumination\Nuova cartella\**" />
     <None Remove="Illumination\Nuova cartella1\**" />
-    <None Remove="Illumination\Nuova cartella\**" />
   </ItemGroup>
 
 </Project>

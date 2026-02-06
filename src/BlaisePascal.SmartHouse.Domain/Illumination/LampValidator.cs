@@ -13,23 +13,6 @@ namespace BlaisePascal.SmartHouse.Domain.Illumination
         private const int MaxBrightness = 100;
         private const int MinBrightness = 0;
 
-        public static int BrightnessValidator(int brightness)
-        {
-            if (brightness < MinBrightness)
-                brightness = MinBrightness;
-            else if (brightness > MaxBrightness)
-                brightness = MaxBrightness;
-            return brightness;
-        }
-
-        public static int IsStepValid(int value)
-        {
-            if (value <= 0 )
-                throw new ArgumentException("step must be greater than 0");
-            
-            return value;
-        }
-
         public static int IsPositionValid(int value)
         {
             if(value < 0)
@@ -46,12 +29,5 @@ namespace BlaisePascal.SmartHouse.Domain.Illumination
 
             return value;
         }
-       
-
-     
-
-
-
-      
     }
 }

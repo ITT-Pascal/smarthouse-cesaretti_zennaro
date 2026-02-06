@@ -1,6 +1,6 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Abstraction;
 
-namespace BlaisePascal.SmartHouse.Domain.Illumination
+namespace BlaisePascal.SmartHouse.Domain.Illumination.Abstraction
 {
     public interface IAbstractLamp: IDevice
     {

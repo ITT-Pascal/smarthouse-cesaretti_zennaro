@@ -4,17 +4,25 @@
     {
         public string value { get; init; }
 
-        public Name(string name)
+        private Name(string name)
         {
-            if (string.IsNullOrEmpty(name))
-                throw new ArgumentException("name cannot be null, empty or with empty spaces");
-
             this.value = name;
         }
 
         public static Name CreateNew(string name)
         {
+            NameValidator.Validator(name);
             return new Name(name);
+        }
+
+        public static bool operator ==(Name name, string value)
+        {
+            return name.value == value;
+        }
+
+        public static bool operator !=(Name name, string value)
+        {
+            return name.value != value;
         }
     }
 }
