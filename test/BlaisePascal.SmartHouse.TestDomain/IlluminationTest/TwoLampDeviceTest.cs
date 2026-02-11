@@ -1,5 +1,5 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Asbtraction;
-using BlaisePascal.SmartHouse.Domain.Illumination;
+using BlaisePascal.SmartHouse.Domain.Devices.Illumination;
 
 namespace BlaisePascal.SmartHouse.TestDomain.IlluminationTest
 {

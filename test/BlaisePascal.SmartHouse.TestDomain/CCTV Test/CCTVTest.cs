@@ -1,4 +1,4 @@
-﻿using BlaisePascal.SmartHouse.Domain.CCTV;
+﻿using BlaisePascal.SmartHouse.Domain.Devices.CCTV;
 
 namespace BlaisePascal.SmartHouse.TestDomain.CCTVTest
 {

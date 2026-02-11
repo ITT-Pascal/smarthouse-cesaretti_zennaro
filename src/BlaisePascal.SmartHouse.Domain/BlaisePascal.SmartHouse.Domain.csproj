@@ -7,9 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Illumination\Nuova cartella1\**" />
-    <EmbeddedResource Remove="Illumination\Nuova cartella1\**" />
-    <None Remove="Illumination\Nuova cartella1\**" />
+    <Compile Remove="Devices\Illumination\Nuova cartella1\**" />
+    <EmbeddedResource Remove="Devices\Illumination\Nuova cartella1\**" />
+    <None Remove="Devices\Illumination\Nuova cartella1\**" />
   </ItemGroup>
 
 </Project>

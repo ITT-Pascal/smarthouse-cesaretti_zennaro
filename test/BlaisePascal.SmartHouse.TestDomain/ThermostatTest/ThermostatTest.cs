@@ -1,4 +1,4 @@
-﻿using BlaisePascal.SmartHouse.Domain.Thermostat;
+﻿using BlaisePascal.SmartHouse.Domain.Devices.Thermostat;
 
 namespace BlaisePascal.SmartHouse.TestDomain.ThermostatTest
 {

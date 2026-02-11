@@ -1,4 +1,4 @@
-﻿using BlaisePascal.SmartHouse.Domain.AirConditioner;
+﻿using BlaisePascal.SmartHouse.Domain.Devices.AirConditioner;
 
 namespace BlaisePascal.SmartHouse.TestDomain.AirConditionerTest
 {
