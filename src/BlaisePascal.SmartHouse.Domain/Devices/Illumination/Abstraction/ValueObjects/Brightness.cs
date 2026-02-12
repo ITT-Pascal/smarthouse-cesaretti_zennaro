@@ -16,7 +16,9 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction
 
         public static Brightness CreateNew(int brightness)
         {
-            BrightnessValidator.Validator(brightness);
+            if(brightness < 0)
+                throw new ArgumentException("Brightness cannot be negative");
+
             return new Brightness(brightness);
         }
 
@@ -25,11 +27,11 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction
             return brightness.value + value;
         }
 
+
         public static int operator -(Brightness brightness, int value)
         {
             return brightness.value - value;
         }
-
 
 
         public static bool operator >(Brightness brightness1, Brightness brightness2)
@@ -42,13 +44,15 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction
         }
 
 
-        public static bool operator ==(Brightness brightness1, int brightness2)
+
+        public static bool operator >=(Brightness brightness1, int value)
         {
-            return brightness1.value == brightness2;
+            return brightness1.value >= value;
         }
-        public static bool operator !=(Brightness brightness1, int brightness2)
+
+        public static bool operator <=(Brightness brightness1, int value)
         {
-            return brightness1.value != brightness2;
+            return brightness1.value <= value;
         }
     }
 }

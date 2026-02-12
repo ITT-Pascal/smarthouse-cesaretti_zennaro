@@ -1,24 +1,25 @@
-﻿using BlaisePascal.SmartHouse.Domain.Asbtraction;
+﻿using BlaisePascal.SmartHouse.Domain.Devices.Abstraction;
 
 namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction
 
 {
     public abstract class AbstractLamp: AbstractDevice, IAbstractLamp
     {
-        public Brightness MinBrigthness { get; protected set; } = Brightness.CreateNew(0);
-        public Brightness MaxBrightness { get; protected set; } = Brightness.CreateNew(100);
+        public  Brightness MinBrigthness { get; protected set; } = Brightness.CreateNew(0);
+        public abstract Brightness DefaultBrigthness { get; protected set; }
+        public abstract Brightness MaxBrightness { get; protected set; }
         public Brightness Brightness { get; protected set; }
 
         public AbstractLamp(string name) : base(name) 
         {
-            Brightness = Brightness.CreateNew(50);
+            Brightness = DefaultBrigthness;
         }
         public AbstractLamp(int brightness, string name) : base(name) 
         {
             Brightness = Brightness.CreateNew(brightness);
         }
         
-        public void Brighten(int value)
+        public virtual void Brighten(int value)
         {
             AbstractLampValidator.CheckIsOn(Status);
             AbstractLampValidator.IsPositive(value);
@@ -26,7 +27,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction
             LastModified = DateTime.UtcNow;
         }
 
-        public void Dimmer(int value)
+        public virtual void Dimmer(int value)
         {
             AbstractLampValidator.CheckIsOn(Status);
             AbstractLampValidator.IsPositive(value);
@@ -34,7 +35,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction
             LastModified = DateTime.UtcNow;
         }
 
-        public void SetBrightness(int brightness)
+        public virtual void SetBrightness(int brightness)
         {
             AbstractLampValidator.CheckIsOn(Status);
             Brightness = Brightness.CreateNew(brightness);

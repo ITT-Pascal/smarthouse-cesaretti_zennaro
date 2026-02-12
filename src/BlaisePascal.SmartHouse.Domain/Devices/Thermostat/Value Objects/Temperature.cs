@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlaisePascal.SmartHouse.Domain.Devices.Thermostat;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,20 +9,19 @@ namespace BlaisePascal.SmartHouse.Domain.Thermostat
 {
     public sealed record Temperature
     {
-        public const int MaxTemperature = 30;
-        public const int MinTemperature = 10;
-
         public int value { get; init; }
 
-        private Temperature(int value)
+        private Temperature(int temperature)
         {
-            this.value = value;
+            this.value = temperature;
         }
         
-        public static Temperature CreateNew(int value)
+        public static Temperature CreateNew(int temperature)
         {
-            TemperatureValidator.Validator(value);
-            return new Temperature(value);
+            if(temperature < ThermostatValidator.MinTemperature || temperature > ThermostatValidator.MaxTemperature)
+                throw new ArgumentException($"Temperature must be between {ThermostatValidator.MinTemperature} and {ThermostatValidator.MaxTemperature}");
+
+            return new Temperature(temperature);
         }
 
         public static int operator +(Temperature temperature, int value)

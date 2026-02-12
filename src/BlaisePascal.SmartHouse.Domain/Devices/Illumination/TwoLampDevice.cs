@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BlaisePascal.SmartHouse.Domain.Asbtraction;
+using BlaisePascal.SmartHouse.Domain.Devices.Abstraction;
 using BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction;
 
 namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
@@ -102,7 +103,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
             }
         }
 
-        public void EcoTurnLampsOn(Guid id, TimeSpan timer)
+        public void EcoTurnLampsOn(Guid id, int timer)
         {
             if (FirstLamp.Id == id && FirstLamp is EcoLamp firstLamp)
             {
@@ -118,7 +119,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
             }
         }
 
-        public void EcoTurnLampsOn(string name, TimeSpan timer)
+        public void EcoTurnLampsOn(string name, int timer)
         {
             if (FirstLamp.Name == name && FirstLamp is EcoLamp firstLamp)
             {
@@ -289,11 +290,5 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
                 throw new ArgumentException("not valid name");
             }
         }
-
-      
-
-
-
-
     }
 }

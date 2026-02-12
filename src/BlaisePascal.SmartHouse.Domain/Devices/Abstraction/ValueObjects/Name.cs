@@ -1,4 +1,4 @@
-﻿namespace BlaisePascal.SmartHouse.Domain.Devices.Abstraction
+﻿namespace BlaisePascal.SmartHouse.Domain.Devices.Abstraction.ValueObjects
 {
     public sealed record Name
     {
@@ -11,7 +11,9 @@
 
         public static Name CreateNew(string name)
         {
-            NameValidator.Validator(name);
+            if (string.IsNullOrWhiteSpace(name))
+                throw new ArgumentException("Name cannot be null or whitespace");
+
             return new Name(name);
         }
 

@@ -1,54 +1,89 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BlaisePascal.SmartHouse.Domain.Asbtraction;
+﻿using BlaisePascal.SmartHouse.Domain.Devices.Abstraction;
 using BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction;
 
 namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
 {
-    public class EcoLamp: AbstractLamp
+    public class EcoLamp : AbstractLamp
     {
+        public override Brightness MaxBrightness { get; protected set; } = Brightness.CreateNew(70);
+        public override Brightness DefaultBrigthness { get; protected set; } = Brightness.CreateNew(35);
+        private const int DefaultAutoOffMinutes = 10;
+        private const int MinAutoOffMinutes = 1;
 
-        public DateTime EndHour { get; private set; }
-        public TimeSpan DefaultTimer { get; private set; } = TimeSpan.FromMinutes(15);
-
-
-        public EcoLamp(string name) : base(name)
-        {
-            EndHour = new DateTime();
-
-        }
+        private DateTime? autoOffAtUtc;
 
         public EcoLamp(int brightness, string name) : base(brightness, name)
         {
-            EndHour = new DateTime();
+
+        }
+        public EcoLamp(string name) : base(name)
+        {
+
+        }
+
+         
+
+        public override void SwitchOn()
+        {
+            EcoSwitchOn(enableAutoOff: false);
+        }
+
+        public void EcoSwitchOn(bool enableAutoOff)
+        {
+            base.SwitchOn();
+            autoOffAtUtc = enableAutoOff
+                ? DateTime.UtcNow.AddMinutes(DefaultAutoOffMinutes)
+                : null;
+        }
+
+        public void EcoSwitchOn(int autoOffMinutes)
+        {
+            if (autoOffMinutes < MinAutoOffMinutes)
+                throw new ArgumentOutOfRangeException(nameof(autoOffMinutes));
+
+            base.SwitchOn();
+            autoOffAtUtc = DateTime.UtcNow.AddMinutes(autoOffMinutes);
+        }
+
+        public override void SetBrightness(int value)
+        {
+            base.SetBrightness(value);
+            ResetAutoOffIfNeeded();
+        }
+
+        public override void Dimmer(int value)
+        {
+            base.Dimmer(value);
+            ResetAutoOffIfNeeded();
+        }
+
+        public override void Brighten(int value)
+        {
+            base.Brighten(value);
+            ResetAutoOffIfNeeded();
+        }
+
+        public override void SwitchOff()
+        {
+            base.SwitchOff();
+            autoOffAtUtc = null;
         }
 
         public void EcoSwitchOn()
         {
-            SwitchOn();
-            EndHour = DateTime.Now.Add(DefaultTimer);
-
-            if (DateTime.Now >= EndHour)
+            if (Status == DeviceStatus.On &&
+                autoOffAtUtc.HasValue &&
+                DateTime.UtcNow >= autoOffAtUtc.Value)
             {
                 SwitchOff();
             }
-            LastModified = DateTime.UtcNow;
         }
 
-        public void EcoSwitchOn(TimeSpan timer)
+        private void ResetAutoOffIfNeeded()
         {
-            SwitchOn();
-            EndHour = DateTime.Now.Add(timer);
-
-            if (DateTime.Now >= EndHour)
-            {
-                SwitchOff();
-            }
-            LastModified = DateTime.UtcNow;
+            if (autoOffAtUtc.HasValue)
+                autoOffAtUtc = DateTime.UtcNow.AddMinutes(DefaultAutoOffMinutes);
         }
-
     }
+}
 }

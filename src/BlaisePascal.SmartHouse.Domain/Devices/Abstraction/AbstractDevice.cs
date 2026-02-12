@@ -1,4 +1,6 @@
-﻿namespace BlaisePascal.SmartHouse.Domain.Devices.Abstraction
+﻿using BlaisePascal.SmartHouse.Domain.Devices.Abstraction.ValueObjects;
+
+namespace BlaisePascal.SmartHouse.Domain.Devices.Abstraction
 {
     public abstract class AbstractDevice: IDevice
     {
@@ -30,7 +32,5 @@
             Status = DeviceStatus.Off;
             LastModified = DateTime.Now;
         }
-
-
     }
 }

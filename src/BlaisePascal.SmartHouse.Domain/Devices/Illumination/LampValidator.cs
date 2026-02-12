@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BlaisePascal.SmartHouse.Domain.Asbtraction;
-
-namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
+﻿namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
 {
     public static class LampValidator
     {

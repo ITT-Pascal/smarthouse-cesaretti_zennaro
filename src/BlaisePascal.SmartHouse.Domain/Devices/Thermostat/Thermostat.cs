@@ -1,4 +1,6 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Asbtraction;
+using BlaisePascal.SmartHouse.Domain.Devices.Abstraction;
+using BlaisePascal.SmartHouse.Domain.Devices.AirConditioner.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +22,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Thermostat
             Temperature = Temperature.CreateNew(initialTemperature);
         }
 
-        public Thermostat(string name) : this(name, 18)
+        public Thermostat(string name) : base(name)
         {
             Temperature = DefaultTemperature;
         }
@@ -28,6 +30,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Thermostat
         public void SetTemperature(int temperature)
         {
             ThermostatValidator.CheckIsOn(Status);
+            temperature = ThermostatValidator.TemperatureValueValidator(temperature);
             Temperature = Temperature.CreateNew(temperature);
             LastModified = DateTime.UtcNow;
         }
@@ -42,14 +45,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Thermostat
         public void IncreaseTemperature()
         {
             ThermostatValidator.CheckIsOn(Status);
-            SetTemperature(Temperature + DefaultStep);
-            LastModified = DateTime.UtcNow;
-        }
-
-        public void DecreaseTemperature()
-        {
-            ThermostatValidator.CheckIsOn(Status);
-            SetTemperature(Temperature - DefaultStep);
+            Temperature = Temperature.CreateNew(Temperature + DefaultStep);
             LastModified = DateTime.UtcNow;
         }
 
@@ -57,15 +53,23 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Thermostat
         {
             ThermostatValidator.CheckIsOn(Status);
             ThermostatValidator.CheckIsPositive(step);
-            SetTemperature(Temperature +  step);
+            Temperature = Temperature.CreateNew(Temperature + step);
             LastModified = DateTime.UtcNow;
         }
+
+        public void DecreaseTemperature()
+        {
+            ThermostatValidator.CheckIsOn(Status);
+            Temperature = Temperature.CreateNew(Temperature - DefaultStep);
+            LastModified = DateTime.UtcNow;
+        }
+
 
         public void DecreaseTemperature(int step)
         {
             ThermostatValidator.CheckIsOn(Status);
             ThermostatValidator.CheckIsPositive(step);
-            SetTemperature(Temperature - step);
+            Temperature = Temperature.CreateNew(Temperature - step);
             LastModified = DateTime.UtcNow;
         }
     }

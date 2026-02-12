@@ -1,9 +1,4 @@
-﻿using BlaisePascal.SmartHouse.Domain.Asbtraction;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BlaisePascal.SmartHouse.Domain.Devices.Abstraction;
 
 namespace BlaisePascal.SmartHouse.Domain.Devices.Thermostat
 {
@@ -12,6 +7,17 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Thermostat
         public const int MaxTemperature = 30;
         public const int MinTemperature = 10;
 
+
+        public static int TemperatureValueValidator(int value)
+        {
+            if (value < MinTemperature)
+                return MinTemperature;
+
+            if(value > MaxTemperature)
+                return MaxTemperature;
+
+            return value;
+        }
         public static void CheckIsOn(DeviceStatus deviceStatus)
         {
             if (deviceStatus != DeviceStatus.On)

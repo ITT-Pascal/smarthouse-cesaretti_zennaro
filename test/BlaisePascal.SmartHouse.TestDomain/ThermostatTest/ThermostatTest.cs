@@ -1,4 +1,5 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Devices.Thermostat;
+using BlaisePascal.SmartHouse.Domain.Thermostat;
 
 namespace BlaisePascal.SmartHouse.TestDomain.ThermostatTest
 {
@@ -33,7 +34,8 @@ namespace BlaisePascal.SmartHouse.TestDomain.ThermostatTest
         {
             Thermostat thermostat = new("Thermo1");
             thermostat.SetTemperature(20);
-            Assert.Equal(20, thermostat.Temperature);
+            Temperature expected = Temperature.CreateNew(20);
+            Assert.Equal(expected, thermostat.Temperature);
         }
 
         [Fact]

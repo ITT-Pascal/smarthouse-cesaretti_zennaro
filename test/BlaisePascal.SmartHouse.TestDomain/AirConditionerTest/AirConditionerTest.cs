@@ -1,4 +1,5 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Devices.AirConditioner;
+using static BlaisePascal.SmartHouse.Domain.Devices.AirConditioner.ValueObjects.Temperature;
 
 namespace BlaisePascal.SmartHouse.TestDomain.AirConditionerTest
 {
@@ -34,6 +35,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.AirConditionerTest
         {
             AirConditioner airConditioner = new("condizionatore", 10);
             airConditioner.SetTemperature(35);
+            Temperature expected = Temperature.CreateNew(35);
             Assert.Equal(35, airConditioner.Temperature);
         }
 

@@ -1,4 +1,5 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Asbtraction;
+using BlaisePascal.SmartHouse.Domain.Devices.Abstraction;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.AirConditioner
             if (status != DeviceStatus.On)
                 throw new InvalidOperationException("cannot modify air conditioner when it is off");
         }
-        public static int SetTemperatureValueValidator(int value)
+        public static int TemperatureValueValidator(int value)
         {
             if (value < MinTemperature)
                 return MinTemperature;

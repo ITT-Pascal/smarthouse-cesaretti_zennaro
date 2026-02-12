@@ -1,4 +1,5 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Devices.Abstraction;
+using BlaisePascal.SmartHouse.Domain.Devices.Door.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +33,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Door
             CanOpen(doorStatus);
         }
 
-        public static void IsPasswordRight(string rightPassword, string password)
+        public static void IsPasswordRight(Password rightPassword, string password)
         {
             if (!password.Equals(rightPassword))
                 throw new ArgumentException("the password is wrong");
