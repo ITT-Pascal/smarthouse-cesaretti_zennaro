@@ -10,9 +10,9 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Abstraction
         public DateTime CreationHour { get; protected set; }
         public DateTime LastModified { get; protected set; }
 
-        public AbstractDevice(string name)
-        {
-            Name = Name.CreateNew(name);
+        public AbstractDevice(Name name)
+        {            
+            Name = name;
             Id = Guid.NewGuid();
             CreationHour = DateTime.Now;
             Status = DeviceStatus.On;
