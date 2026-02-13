@@ -1,6 +1,6 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Devices.Abstraction;
 
-namespace BlaisePascal.SmartHouse.Domain.Devices.Thermostat
+namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.Thermostat
 {
     public static class ThermostatValidator
     {

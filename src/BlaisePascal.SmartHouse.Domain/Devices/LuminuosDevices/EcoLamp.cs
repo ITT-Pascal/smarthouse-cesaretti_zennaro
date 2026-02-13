@@ -21,7 +21,6 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
 
         }
 
-         
 
         public override void SwitchOn()
         {
@@ -86,4 +85,4 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
         }
     }
 }
-}
+

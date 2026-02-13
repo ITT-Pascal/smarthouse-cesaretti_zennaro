@@ -19,28 +19,28 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Door
             Password = Password.CreateNew(password);
             DoorStatus = DoorStatus.Closed;
         }
-        public void OpenDoor()
+        public void Open()
         {
             DoorValidator.CheckIsOn(Status);
             DoorValidator.CanOpen(DoorStatus);
             DoorStatus = DoorStatus.Open;
             LastModified = DateTime.Now;
         }
-        public void CloseDoor()
+        public void Close()
         {
             DoorValidator.CheckIsOn(Status);
             DoorValidator.CanClose(DoorStatus);
             DoorStatus = DoorStatus.Closed;
             LastModified = DateTime.Now;
         }
-        public void LockDoor()
+        public void Lock()
         {
             DoorValidator.CheckIsOn(Status);
             DoorValidator.CanLock(DoorStatus);
             DoorStatus = DoorStatus.Locked;
             LastModified = DateTime.Now;
         }
-        public void UnlockDoor(string password)
+        public void Unlock(string password)
         {
             DoorValidator.CheckIsOn(Status);
             DoorValidator.CanUnlock(DoorStatus);

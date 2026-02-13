@@ -7,9 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Devices\LuminuosDevices\Nuova cartella1\**" />
-    <EmbeddedResource Remove="Devices\LuminuosDevices\Nuova cartella1\**" />
-    <None Remove="Devices\LuminuosDevices\Nuova cartella1\**" />
+    <ProjectReference Include="..\BlaisePascal.SmartHouse.Domain\BlaisePascal.SmartHouse.Domain.csproj" />
   </ItemGroup>
 
 </Project>

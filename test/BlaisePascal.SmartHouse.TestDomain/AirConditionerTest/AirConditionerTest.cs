@@ -1,5 +1,5 @@
-﻿using BlaisePascal.SmartHouse.Domain.Devices.AirConditioner;
-using static BlaisePascal.SmartHouse.Domain.Devices.AirConditioner.ValueObjects.Temperature;
+﻿using BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner;
+using BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.ValueObjects;
 
 namespace BlaisePascal.SmartHouse.TestDomain.AirConditionerTest
 {
@@ -9,7 +9,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.AirConditionerTest
         [Fact]
         public void SetTemperature_CannotSetTemperatureWhenDeviceIsOff()
         {
-            AirConditioner airConditioner = new("condizionatore");
+            Domain.Devices.HeatDevices.AirConditioner.AirConditioner airConditioner = new("condizionatore");
             airConditioner.SwitchOff();
             Assert.Throws<InvalidOperationException>(() => airConditioner.SetTemperature(1));
         }
@@ -17,7 +17,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.AirConditionerTest
         [Fact]
         public void SetTemperature_WhenNewTemperatureIsLowerThanMinTemperatureIsSetAtMin()
         {
-            AirConditioner airConditioner = new ("condizionatore", 10);
+            Domain.Devices.HeatDevices.AirConditioner.AirConditioner airConditioner = new ("condizionatore", 10);
             airConditioner.SetTemperature(-1);
             Assert.Equal(airConditioner.MinTemperature, airConditioner.Temperature);
         }
@@ -25,7 +25,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.AirConditionerTest
         [Fact]
         public void SetTemperature_WhenNewTemperatureIsGreaterThanMaxTemperatureIsSetAtMax()
         {
-            AirConditioner airConditioner = new("condizionatore", 10);
+            Domain.Devices.HeatDevices.AirConditioner.AirConditioner airConditioner = new("condizionatore", 10);
             airConditioner.SetTemperature(100);
             Assert.Equal(airConditioner.MaxTemperature, airConditioner.Temperature);
         }
@@ -33,102 +33,122 @@ namespace BlaisePascal.SmartHouse.TestDomain.AirConditionerTest
         [Fact]
         public void SetTemperature_WhenTemperatureIsInMinMaxItIsSetCorrectly()
         {
-            AirConditioner airConditioner = new("condizionatore", 10);
+            Domain.Devices.HeatDevices.AirConditioner.AirConditioner airConditioner = new("condizionatore", 10);
             airConditioner.SetTemperature(35);
-            Temperature expected = Temperature.CreateNew(35);
-            Assert.Equal(35, airConditioner.Temperature);
-        }
-
-        [Fact]
-        public void IncreaseTemperature_WithoutParameterTemperatureWillBeIncreaseByDefaultValue()
-        {
-            AirConditioner airConditioner = new("condizionatore", 30);
-            airConditioner.IncreaseTemperature();
-            Assert.Equal(40, airConditioner.Temperature);
-        }
-
-        [Fact]
-        public void IncreaseTemperatura_WhenDefaultValueGoesOverTheMaxTemperatureIsSetAtMax()
-        {
-            AirConditioner airConditioner = new("condizionatore", 45);
-            airConditioner.IncreaseTemperature();
-            Assert.Equal(airConditioner.MaxTemperature, airConditioner.Temperature);
+            Domain.Devices.HeatDevices.ValueObjects.AirConditionerTemperature expected = Domain.Devices.HeatDevices.ValueObjects.AirConditionerTemperature.CreateNew(35);
+            Assert.Equal(expected, airConditioner.Temperature);
         }
 
         [Fact]
         public void IncreaseTemperature_CannotIncreaseByDefaultValueWhenDeviceIsOff()
         {
-            AirConditioner airConditioner = new("condizionatore");
+            Domain.Devices.HeatDevices.AirConditioner.AirConditioner airConditioner = new("condizionatore");
             airConditioner.SwitchOff();
             Assert.Throws<InvalidOperationException>(() => airConditioner.IncreaseTemperature());
         }
 
         [Fact]
-        public void IncreaseTemperature_WhenItIsIncreasedOverTheMaxTemperatureIsSetAtMax()
+        public void IncreaseTemperatura_WhenDefaultValueGoesOverTheMaxTemperatureIsSetAtMax()
         {
-            AirConditioner airConditioner = new("condizionatore", 50);
+            Domain.Devices.HeatDevices.AirConditioner.AirConditioner airConditioner = new("condizionatore", 45);
             airConditioner.IncreaseTemperature();
             Assert.Equal(airConditioner.MaxTemperature, airConditioner.Temperature);
         }
 
         [Fact]
-        public void IncreaseTemperature_ValueCannotBeNegative()
+        public void IncreaseTemperature_WithoutParameterTemperatureWillBeIncreaseByDefaultValue()
         {
-            AirConditioner airConditioner = new("condizionatore", 10);
-            Assert.Throws<ArgumentException>(() => airConditioner.IncreaseTemperature(-1));
+            Domain.Devices.HeatDevices.AirConditioner.AirConditioner airConditioner = new("condizionatore", 30);
+            airConditioner.IncreaseTemperature();
+            Domain.Devices.HeatDevices.ValueObjects.AirConditionerTemperature expected = Domain.Devices.HeatDevices.ValueObjects.AirConditionerTemperature.CreateNew(40);
+            Assert.Equal(expected, airConditioner.Temperature);
         }
 
+
         [Fact]
-        public void IncreaseTemperature_WhenValueIsRightTemperatureIsSetCorrectly()
+        public void IncreaseTemperature_WhenItIsIncreasedOverTheMaxTemperatureIsSetAtMax()
         {
-            AirConditioner airConditioner = new("condizionatore", 20);
-            airConditioner.IncreaseTemperature(10);
-            Assert.Equal(30, airConditioner.Temperature);
+            Domain.Devices.HeatDevices.AirConditioner.AirConditioner airConditioner = new("condizionatore", 50);
+            airConditioner.IncreaseTemperature();
+            Assert.Equal(airConditioner.MaxTemperature, airConditioner.Temperature);
         }
 
         [Fact]
         public void IncreaseTemperature_CannotIncreaseTemperatureWhenDeviceIsOff()
         {
-            AirConditioner airConditioner = new("condizionatore", 10);
+            Domain.Devices.HeatDevices.AirConditioner.AirConditioner airConditioner = new("condizionatore", 10);
             airConditioner.SwitchOff();
             Assert.Throws<InvalidOperationException>(() => airConditioner.IncreaseTemperature(1));
         }
 
         [Fact]
-        public void DecreaseTemperature_WithoutParameterTemperatureWillBeDecreaseByDefaultValue()
+        public void IncreaseTemperature_ValueCannotBeNegative()
         {
-            AirConditioner airConditioner = new("condizionatore", 30);
-            airConditioner.DecreaseTemperature();
-            Assert.Equal(20, airConditioner.Temperature);
+            Domain.Devices.HeatDevices.AirConditioner.AirConditioner airConditioner = new("condizionatore", 10);
+            Assert.Throws<ArgumentException>(() => airConditioner.IncreaseTemperature(-1));
         }
 
         [Fact]
-        public void DecreaseTemperature_WhenDefaultValueGoesUnderTheMinTemperatureIsSetAtMin()
+        public void IncreaseTemperature_WhenValueGoesOverTheMaxTemperatureIsSetAtMax()
         {
-            AirConditioner airConditioner = new("condizionatore", 5);
-            airConditioner.DecreaseTemperature();
-            Assert.Equal(airConditioner.MinTemperature, airConditioner.Temperature);
+            Domain.Devices.HeatDevices.AirConditioner.AirConditioner airConditioner = new("condizionatore", 45);
+            airConditioner.IncreaseTemperature(10);
+            Assert.Equal(airConditioner.MaxTemperature, airConditioner.Temperature);
+        }
+
+        [Fact]
+        public void IncreaseTemperature_WhenValueIsRightTemperatureIsSetCorrectly()
+        {
+            Domain.Devices.HeatDevices.AirConditioner.AirConditioner airConditioner = new("condizionatore", 20);
+            airConditioner.IncreaseTemperature(10);
+            Domain.Devices.HeatDevices.ValueObjects.AirConditionerTemperature expected = Domain.Devices.HeatDevices.ValueObjects.AirConditionerTemperature.CreateNew(30);
+            Assert.Equal(expected, airConditioner.Temperature);
         }
 
         [Fact]
         public void DecreaseTemperature_CannotDecreaseByDefaultValueWhenDeviceIsOff()
         {
-            AirConditioner airConditioner = new("condizionatore", 10);
+            Domain.Devices.HeatDevices.AirConditioner.AirConditioner airConditioner = new("condizionatore", 10);
             airConditioner.SwitchOff();
             Assert.Throws<InvalidOperationException>(() => airConditioner.DecreaseTemperature());
         }
 
         [Fact]
+        public void DecreaseTemperature_WhenDefaultValueGoesUnderTheMinTemperatureIsSetAtMin()
+        {
+            Domain.Devices.HeatDevices.AirConditioner.AirConditioner airConditioner = new("condizionatore", 5);
+            airConditioner.DecreaseTemperature();
+            Assert.Equal(airConditioner.MinTemperature, airConditioner.Temperature);
+        }
+
+        [Fact]
+        public void DecreaseTemperature_WithoutParameterTemperatureWillBeDecreaseByDefaultValue()
+        {
+            Domain.Devices.HeatDevices.AirConditioner.AirConditioner airConditioner = new("condizionatore", 30);
+            airConditioner.DecreaseTemperature();
+            Domain.Devices.HeatDevices.ValueObjects.AirConditionerTemperature expected = Domain.Devices.HeatDevices.ValueObjects.AirConditionerTemperature.CreateNew(20);
+            Assert.Equal(expected, airConditioner.Temperature);
+        }
+
+        [Fact]
+        public void DecreaseTemperature_CannotIncreaseTemperatureWhenDeviceIsOff()
+        {
+            Domain.Devices.HeatDevices.AirConditioner.AirConditioner airConditioner = new("condizionatore", 10);
+            airConditioner.SwitchOff();
+            Assert.Throws<InvalidOperationException>(() => airConditioner.DecreaseTemperature(1));
+        }
+
+        [Fact]
         public void DecreaseTemperature_ValueCannotBeNegative()
         {
-            AirConditioner airConditioner = new("condizionatore", 10);
+            Domain.Devices.HeatDevices.AirConditioner.AirConditioner airConditioner = new("condizionatore", 10);
             Assert.Throws<ArgumentException>(() => airConditioner.DecreaseTemperature(-1));
         }
 
         [Fact]
         public void DecreaseTemperature_WhenValueIsLowerThanMinTemperatureIsSetAtMin()
         {
-            AirConditioner airConditioner = new("condizionatore", 20);
+            Domain.Devices.HeatDevices.AirConditioner.AirConditioner airConditioner = new("condizionatore", 20);
             airConditioner.DecreaseTemperature(70);
             Assert.Equal(airConditioner.MinTemperature, airConditioner.Temperature);
         }
@@ -136,19 +156,10 @@ namespace BlaisePascal.SmartHouse.TestDomain.AirConditionerTest
         [Fact]
         public void DecreaseTemperature_WhenValueIsRightTemperatureIsSetCorrectly()
         {
-            AirConditioner airConditioner = new("condizionatore", 20);
+            Domain.Devices.HeatDevices.AirConditioner.AirConditioner airConditioner = new("condizionatore", 20);
             airConditioner.DecreaseTemperature(10);
-            Assert.Equal(10, airConditioner.Temperature);
+            Domain.Devices.HeatDevices.ValueObjects.AirConditionerTemperature expected = Domain.Devices.HeatDevices.ValueObjects.AirConditionerTemperature.CreateNew(10);
+            Assert.Equal(expected, airConditioner.Temperature);
         }
-
-        [Fact]
-        public void DecreaseTemperature_CannotIncreaseTemperatureWhenDeviceIsOff()
-        {
-            AirConditioner airConditioner = new("condizionatore", 10);
-            airConditioner.SwitchOff();
-            Assert.Throws<InvalidOperationException>(() => airConditioner.DecreaseTemperature(1));
-        }
-
     }
-
 }

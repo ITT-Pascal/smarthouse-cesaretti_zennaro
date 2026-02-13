@@ -1,35 +1,35 @@
-﻿using BlaisePascal.SmartHouse.Domain.Devices.Thermostat;
+﻿using BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.Thermostat;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlaisePascal.SmartHouse.Domain.Thermostat
+namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices
 {
-    public sealed record Temperature
+    public sealed record ThermostatTemperature
     {
         public int value { get; init; }
 
-        private Temperature(int temperature)
+        private ThermostatTemperature(int temperature)
         {
-            this.value = temperature;
+            value = temperature;
         }
         
-        public static Temperature CreateNew(int temperature)
+        public static ThermostatTemperature CreateNew(int temperature)
         {
             if(temperature < ThermostatValidator.MinTemperature || temperature > ThermostatValidator.MaxTemperature)
                 throw new ArgumentException($"Temperature must be between {ThermostatValidator.MinTemperature} and {ThermostatValidator.MaxTemperature}");
 
-            return new Temperature(temperature);
+            return new ThermostatTemperature(temperature);
         }
 
-        public static int operator +(Temperature temperature, int value)
+        public static int operator +(ThermostatTemperature temperature, int value)
         {
             return temperature.value + value;
         }
 
-        public static int operator -(Temperature temperature, int value)
+        public static int operator -(ThermostatTemperature temperature, int value)
         {
             return temperature.value - value;
         }

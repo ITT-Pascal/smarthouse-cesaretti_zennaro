@@ -1,12 +1,6 @@
-﻿using BlaisePascal.SmartHouse.Domain.Asbtraction;
-using BlaisePascal.SmartHouse.Domain.Devices.Abstraction;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BlaisePascal.SmartHouse.Domain.Devices.Abstraction;
 
-namespace BlaisePascal.SmartHouse.Domain.Devices.AirConditioner
+namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner
 {
     public static class AirConditionerValidator
     {

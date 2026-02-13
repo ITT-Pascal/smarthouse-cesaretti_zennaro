@@ -1,11 +1,4 @@
-﻿using BlaisePascal.SmartHouse.Domain.Asbtraction;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
-using BlaisePascal.SmartHouse.Domain.Devices.Abstraction;
+﻿using BlaisePascal.SmartHouse.Domain.Devices.Abstraction;
 using BlaisePascal.SmartHouse.Domain.Devices.CCTV.ValueObjects;
 
 namespace BlaisePascal.SmartHouse.Domain.Devices.CCTV
@@ -42,12 +35,13 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.CCTV
         }
 
 
-        public void SetRotationSegrees()
+        public void SetRotationDegrees()
         {
             CCTVValidator.CheckIsOn(Status);
             RotationDegrees = DefaultRotationDegrees;
             LastModified = DateTime.UtcNow;
         }
+
         public void SetRotationDegrees(float rotationDegrees)
         {
             CCTVValidator.CheckIsOn(Status);
