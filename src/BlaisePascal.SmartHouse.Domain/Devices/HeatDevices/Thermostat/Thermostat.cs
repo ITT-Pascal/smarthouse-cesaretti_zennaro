@@ -1,30 +1,32 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Devices.Abstraction;
+using BlaisePascal.SmartHouse.Domain.Devices.Abstraction.ValueObjects;
+using BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner.ValueObjects;
+using BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.Interfaces;
 
 namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.Thermostat
 {
     //FINISHED
-    public class Thermostat : AbstractDevice, IHeatDevices
+    public class Thermostat : AbstractDevice, IThermostat
     {
         public ThermostatTemperature Temperature { get; private set; }
         private int DefaultStep { get; set; } = 4;
-        public ThermostatTemperature DefaultTemperature { get; private set; } = ValueObjects.AirConditionerTemperature.CreateNew(18);
-        public ThermostatTemperature MinTemperature { get; private set; } = ValueObjects.AirConditionerTemperature.CreateNew(10);
-        public ThermostatTemperature MaxTemperature { get; private set; } = ValueObjects.AirConditionerTemperature.CreateNew(30);
-        public Thermostat(string name, int initialTemperature) : base(name)
+        public ThermostatTemperature DefaultTemperature { get; private set; } = Temperature.CreateNew(18);
+        public ThermostatTemperature MinTemperature { get; private set; } = AirConditionerTemperature.CreateNew(10);
+        public ThermostatTemperature MaxTemperature { get; private set; } = AirConditionerTemperature.CreateNew(30);
+        public Thermostat(Name name, ThermostatTemperature initialTemperature) : base(name)
         {
-            Temperature = ThermostatTemperature.CreateNew(initialTemperature);
+            Temperature = initialTemperature;
         }
 
-        public Thermostat(string name) : base(name)
+        public Thermostat(Name name) : base(name)
         {
             Temperature = DefaultTemperature;
         }
 
-        public void SetTemperature(int temperature)
+        public void SetTemperature(ThermostatTemperature temperature)
         {
             ThermostatValidator.CheckIsOn(Status);
-            temperature = ThermostatValidator.TemperatureValueValidator(temperature);
-            Temperature = ThermostatTemperature.CreateNew(temperature);
+            Temperature = temperature;
             LastModified = DateTime.UtcNow;
         }
 

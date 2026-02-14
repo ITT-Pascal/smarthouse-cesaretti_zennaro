@@ -9,10 +9,6 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Door
 {
     public interface IDoor: IDevice
     {
-        void Open();
-        void Close();
-        void Lock();
-        void Unlock(string password);
-        void ChangePassword(string oldPassword, string newPassword);
+        
     }
 }

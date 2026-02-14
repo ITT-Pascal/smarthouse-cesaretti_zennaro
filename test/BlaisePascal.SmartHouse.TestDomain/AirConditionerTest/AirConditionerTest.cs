@@ -1,5 +1,5 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner;
-using BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.ValueObjects;
+using BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner.ValueObjects;
 
 namespace BlaisePascal.SmartHouse.TestDomain.AirConditionerTest
 {
@@ -35,7 +35,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.AirConditionerTest
         {
             Domain.Devices.HeatDevices.AirConditioner.AirConditioner airConditioner = new("condizionatore", 10);
             airConditioner.SetTemperature(35);
-            Domain.Devices.HeatDevices.ValueObjects.AirConditionerTemperature expected = Domain.Devices.HeatDevices.ValueObjects.AirConditionerTemperature.CreateNew(35);
+            AirConditionerTemperature expected = AirConditionerTemperature.CreateNew(35);
             Assert.Equal(expected, airConditioner.Temperature);
         }
 
@@ -60,7 +60,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.AirConditionerTest
         {
             Domain.Devices.HeatDevices.AirConditioner.AirConditioner airConditioner = new("condizionatore", 30);
             airConditioner.IncreaseTemperature();
-            Domain.Devices.HeatDevices.ValueObjects.AirConditionerTemperature expected = Domain.Devices.HeatDevices.ValueObjects.AirConditionerTemperature.CreateNew(40);
+            AirConditionerTemperature expected = AirConditionerTemperature.CreateNew(40);
             Assert.Equal(expected, airConditioner.Temperature);
         }
 
@@ -101,7 +101,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.AirConditionerTest
         {
             Domain.Devices.HeatDevices.AirConditioner.AirConditioner airConditioner = new("condizionatore", 20);
             airConditioner.IncreaseTemperature(10);
-            Domain.Devices.HeatDevices.ValueObjects.AirConditionerTemperature expected = Domain.Devices.HeatDevices.ValueObjects.AirConditionerTemperature.CreateNew(30);
+            AirConditionerTemperature expected = AirConditionerTemperature.CreateNew(30);
             Assert.Equal(expected, airConditioner.Temperature);
         }
 
@@ -126,7 +126,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.AirConditionerTest
         {
             Domain.Devices.HeatDevices.AirConditioner.AirConditioner airConditioner = new("condizionatore", 30);
             airConditioner.DecreaseTemperature();
-            Domain.Devices.HeatDevices.ValueObjects.AirConditionerTemperature expected = Domain.Devices.HeatDevices.ValueObjects.AirConditionerTemperature.CreateNew(20);
+            AirConditionerTemperature expected = AirConditionerTemperature.CreateNew(20);
             Assert.Equal(expected, airConditioner.Temperature);
         }
 
@@ -158,7 +158,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.AirConditionerTest
         {
             Domain.Devices.HeatDevices.AirConditioner.AirConditioner airConditioner = new("condizionatore", 20);
             airConditioner.DecreaseTemperature(10);
-            Domain.Devices.HeatDevices.ValueObjects.AirConditionerTemperature expected = Domain.Devices.HeatDevices.ValueObjects.AirConditionerTemperature.CreateNew(10);
+            AirConditionerTemperature expected = AirConditionerTemperature.CreateNew(10);
             Assert.Equal(expected, airConditioner.Temperature);
         }
     }

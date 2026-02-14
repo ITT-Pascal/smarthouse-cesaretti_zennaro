@@ -21,7 +21,6 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
 
         }
 
-
         public override void SwitchOn()
         {
             EcoSwitchOn(enableAutoOff: false);

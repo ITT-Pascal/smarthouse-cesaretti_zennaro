@@ -15,9 +15,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.CCTV.ValueObjects
         }
         public static Rotation CreateNew(float rotation)
         {
-            if(rotation < CCTVValidator.MinRotationDegrees || rotation > CCTVValidator.MaxRotationDegrees)
-                throw new ArgumentException($"Rotation must be between {CCTVValidator.MinRotationDegrees} and {CCTVValidator.MaxRotationDegrees}");
-            
+            CCTVValidator.RotationValidator(rotation);
             return new Rotation(rotation);
         }
 

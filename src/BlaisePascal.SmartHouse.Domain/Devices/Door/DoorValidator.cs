@@ -33,7 +33,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Door
             CanOpen(doorStatus);
         }
 
-        public static void IsPasswordRight(Password rightPassword, string password)
+        public static void IsPasswordRight(Password rightPassword, Password password)
         {
             if (!password.Equals(rightPassword))
                 throw new ArgumentException("the password is wrong");

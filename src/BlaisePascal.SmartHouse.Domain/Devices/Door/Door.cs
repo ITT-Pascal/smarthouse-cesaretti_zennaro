@@ -1,4 +1,5 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Devices.Abstraction;
+using BlaisePascal.SmartHouse.Domain.Devices.Abstraction.ValueObjects;
 using BlaisePascal.SmartHouse.Domain.Devices.Door.ValueObjects;
 using System;
 using System.Collections.Generic;
@@ -14,9 +15,9 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Door
 
         public DoorStatus DoorStatus { get; private set; }
         public Password Password { get; private set; }
-        public Door(string name, string password) : base(name)
+        public Door(Name name, Password password) : base(name)
         {
-            Password = Password.CreateNew(password);
+            Password = password;
             DoorStatus = DoorStatus.Closed;
         }
         public void Open()
@@ -40,7 +41,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Door
             DoorStatus = DoorStatus.Locked;
             LastModified = DateTime.Now;
         }
-        public void Unlock(string password)
+        public void Unlock(Password password)
         {
             DoorValidator.CheckIsOn(Status);
             DoorValidator.CanUnlock(DoorStatus);
@@ -49,11 +50,11 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Door
             LastModified = DateTime.Now;
         }
 
-        public void ChangePassword(string oldPassword, string newPassword)
+        public void ChangePassword(Password oldPassword, Password newPassword)
         {
             DoorValidator.CheckIsOn(Status);
             DoorValidator.IsPasswordRight(Password, oldPassword);
-            Password = Password.CreateNew(newPassword);
+            Password = newPassword;
             LastModified = DateTime.Now;
         }
     }

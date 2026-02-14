@@ -1,9 +1,9 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Devices.Abstraction;
+using BlaisePascal.SmartHouse.Domain.Devices.Abstraction.ValueObjects;
 using BlaisePascal.SmartHouse.Domain.Devices.CCTV.ValueObjects;
 
 namespace BlaisePascal.SmartHouse.Domain.Devices.CCTV
 {
-    //FINISHED
     public class CCTV : AbstractDevice, ICCTV
     {
         public bool IsRecording { get; private set; }
@@ -20,14 +20,14 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.CCTV
         public Rotation MaxRotationDegrees { get; private set; } = Rotation.CreateNew(CCTVValidator.MaxRotationDegrees);
         public Rotation DefaultRotationDegrees { get; private set; } = Rotation.CreateNew(0);
 
-        public CCTV(string name, bool isRecording, float zoomValue, float rotation): base(name)
+        public CCTV(Name name, bool isRecording, float zoomValue, float rotation): base(name)
         {
             IsRecording = isRecording;
             ZoomValue = Zoom.CreateNew(zoomValue);
             RotationDegrees = Rotation.CreateNew(rotation);
         }
 
-        public CCTV(string name): base(name)
+        public CCTV(Name name): base(name)
         {
             IsRecording = true;
             ZoomValue = DefaultZoomValue;
@@ -42,11 +42,10 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.CCTV
             LastModified = DateTime.UtcNow;
         }
 
-        public void SetRotationDegrees(float rotationDegrees)
+        public void SetRotationDegrees(Rotation rotationDegrees)
         {
             CCTVValidator.CheckIsOn(Status);
-            rotationDegrees = CCTVValidator.RotationValidator(rotationDegrees);
-            RotationDegrees = Rotation.CreateNew(rotationDegrees);
+            RotationDegrees = rotationDegrees;
             LastModified = DateTime.UtcNow;
         }
 
@@ -85,11 +84,10 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.CCTV
             LastModified = DateTime.UtcNow;
         }
 
-        public void SetZoom(float zoom)
+        public void SetZoom(Zoom zoom)
         {
             CCTVValidator.CheckIsOn(Status);
-            zoom = CCTVValidator.ZoomValidator(zoom);
-            ZoomValue = Zoom.CreateNew(zoom);
+            ZoomValue = zoom;
             LastModified = DateTime.UtcNow;
         }
 

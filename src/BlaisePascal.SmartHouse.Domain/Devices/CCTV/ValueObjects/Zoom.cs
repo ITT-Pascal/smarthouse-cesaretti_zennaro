@@ -17,9 +17,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.CCTV.ValueObjects
 
         public static Zoom CreateNew(float zoom)
         {
-            if(zoom < CCTVValidator.MinZoom || zoom > CCTVValidator.MaxZoom)
-                throw new ArgumentException($"Zoom must be between {CCTVValidator.MinZoom} and {CCTVValidator.MaxZoom}");
-            
+            CCTVValidator.ZoomValidator(zoom);
             return new Zoom(zoom);
         }
 

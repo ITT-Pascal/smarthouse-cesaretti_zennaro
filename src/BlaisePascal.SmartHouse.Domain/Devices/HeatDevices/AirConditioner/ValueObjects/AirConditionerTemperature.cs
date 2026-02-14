@@ -1,6 +1,6 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner;
 
-namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.ValueObjects
+namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner.ValueObjects
 {
     public sealed record AirConditionerTemperature
     {
@@ -13,9 +13,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.ValueObjects
 
         public static AirConditionerTemperature CreateNew(int temperature)
         {
-           if(temperature < AirConditionerValidator.MinTemperature || temperature > AirConditionerValidator.MaxTemperature)
-                throw new ArgumentException($"Temperature must be between {AirConditionerValidator.MinTemperature} and {AirConditionerValidator.MaxTemperature}");
-            
+           AirConditionerValidator.TemperatureValueValidator(temperature);
             return new AirConditionerTemperature(temperature);
         }
 

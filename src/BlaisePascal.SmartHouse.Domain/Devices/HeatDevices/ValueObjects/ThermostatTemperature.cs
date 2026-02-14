@@ -18,9 +18,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices
         
         public static ThermostatTemperature CreateNew(int temperature)
         {
-            if(temperature < ThermostatValidator.MinTemperature || temperature > ThermostatValidator.MaxTemperature)
-                throw new ArgumentException($"Temperature must be between {ThermostatValidator.MinTemperature} and {ThermostatValidator.MaxTemperature}");
-
+            ThermostatValidator.TemperatureValueValidator(temperature); 
             return new ThermostatTemperature(temperature);
         }
 
