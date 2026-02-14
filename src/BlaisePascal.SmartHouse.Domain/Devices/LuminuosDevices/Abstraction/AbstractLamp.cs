@@ -1,4 +1,5 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Devices.Abstraction;
+using BlaisePascal.SmartHouse.Domain.Devices.Abstraction.ValueObjects;
 
 namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction
 
@@ -10,13 +11,13 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction
         public abstract Brightness MaxBrightness { get; protected set; }
         public Brightness Brightness { get; protected set; }
 
-        public AbstractLamp(string name) : base(name) 
+        public AbstractLamp(Name name) : base(name) 
         {
             Brightness = DefaultBrigthness;
         }
-        public AbstractLamp(int brightness, string name) : base(name) 
+        public AbstractLamp(Brightness brightness, Name name) : base(name) 
         {
-            Brightness = Brightness.CreateNew(brightness);
+            Brightness = brightness;
         }
         
         public virtual void Brighten(int value)

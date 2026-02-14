@@ -1,4 +1,5 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Devices.Abstraction;
+using BlaisePascal.SmartHouse.Domain.Devices.Abstraction.ValueObjects;
 using BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction;
 
 namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
@@ -12,11 +13,11 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
 
         private DateTime? autoOffAtUtc;
 
-        public EcoLamp(int brightness, string name) : base(brightness, name)
+        public EcoLamp(Brightness brightness, Name name) : base(brightness, name)
         {
 
         }
-        public EcoLamp(string name) : base(name)
+        public EcoLamp(Name name) : base(name)
         {
 
         }

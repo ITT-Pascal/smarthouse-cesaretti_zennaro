@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 
 namespace BlaisePascal.SmartHouse.Domain.Devices.Door
 {
-    //FINISHED
     public class Door : AbstractDevice, IDoor
     {
 

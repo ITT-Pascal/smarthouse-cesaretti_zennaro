@@ -21,7 +21,7 @@ namespace BlaisePascal.SmartHouse.Application.Devices.Luminuos.Lamps.Commands
 
         public void Execute(string lampName)
         {
-            _repository.Add(new Lamp(lampName));
+            _repository.Add(new Lamp(Name.CreateNew(lampName)));
         }
     }
 }
