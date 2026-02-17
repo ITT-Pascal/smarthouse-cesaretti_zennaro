@@ -6,7 +6,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction
 {
     public abstract class AbstractLamp: AbstractDevice, IAbstractLamp
     {
-        public  Brightness MinBrigthness { get; protected set; } = Brightness.CreateNew(0);
+        public Brightness MinBrigthness { get; protected set; } = Brightness.CreateNew(0);
         public abstract Brightness DefaultBrigthness { get; protected set; }
         public abstract Brightness MaxBrightness { get; protected set; }
         public Brightness Brightness { get; protected set; }

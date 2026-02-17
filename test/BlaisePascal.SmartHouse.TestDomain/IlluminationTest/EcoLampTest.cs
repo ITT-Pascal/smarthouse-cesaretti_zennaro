@@ -1,5 +1,7 @@
-﻿using BlaisePascal.SmartHouse.Domain.Asbtraction;
+﻿using BlaisePascal.SmartHouse.Domain.Devices.Abstraction;
+using BlaisePascal.SmartHouse.Domain.Devices.Abstraction.ValueObjects;
 using BlaisePascal.SmartHouse.Domain.Devices.Illumination;
+using BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction;
 
 namespace BlaisePascal.SmartHouse.TestDomain.IlluminationTest
 {
@@ -8,21 +10,21 @@ namespace BlaisePascal.SmartHouse.TestDomain.IlluminationTest
         [Fact]
         public void SwitchOn_SwitchOnTheLamp()
         {
-            EcoLamp ecoLamp = new(50, "lamp1");
+            EcoLamp ecoLamp = new(Brightness.CreateNewEco(50), Name.CreateNew("ecolamp1"));
             Assert.Equal(DeviceStatus.On, ecoLamp.Status);
         }
 
         [Fact]
         public void SwitchOn_CannotSwitchOnWhenLampIsAlradyOn()
         {
-            EcoLamp ecoLamp = new(50, "lamp1");
+            EcoLamp ecoLamp = new(Brightness.CreateNewEco(50), Name.CreateNew("ecolamp1"));
             Assert.Throws<InvalidOperationException>(() => ecoLamp.SwitchOn());
         }
 
         [Fact]
         public void SwitchOff_SwitchOffTheLamp()
         {
-            EcoLamp ecoLamp = new(50, "lamp1");
+            EcoLamp ecoLamp = new(Brightness.CreateNewEco(50), Name.CreateNew("ecolamp1"));
             ecoLamp.SwitchOff();
             Assert.Equal(DeviceStatus.Off, ecoLamp.Status);
         }
@@ -30,7 +32,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.IlluminationTest
         [Fact]
         public void SwitchOff_CannotSwitchOffWhenLampIsAlradyOff()
         {
-            EcoLamp ecoLamp = new("lamp1");
+            EcoLamp ecoLamp = new(Name.CreateNew("ecolamp1"));
             Assert.Throws<InvalidOperationException>(() => ecoLamp.SwitchOff());
         }
 

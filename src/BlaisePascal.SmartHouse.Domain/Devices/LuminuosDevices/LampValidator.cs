@@ -2,9 +2,18 @@
 {
     public static class LampValidator
     {
-        private const int MaxBrightness = 100;
-        private const int MinBrightness = 0;
+        public const int MinBrightness = 0;
+        public const int MaxBrightness = 100;
+        public static int BrightnessValidator(int value)
+        {
+            if (value < MinBrightness)
+                return MinBrightness;
 
+            if (value > MaxBrightness)
+                return MaxBrightness;
+
+            return value;
+        }
         public static int IsPositionValid(int value)
         {
             if(value < 0)

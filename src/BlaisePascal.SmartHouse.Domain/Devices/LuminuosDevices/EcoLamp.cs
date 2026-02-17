@@ -1,13 +1,14 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Devices.Abstraction;
 using BlaisePascal.SmartHouse.Domain.Devices.Abstraction.ValueObjects;
 using BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction;
+using BlaisePascal.SmartHouse.Domain.Devices.LuminuosDevices;
 
 namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
 {
     public class EcoLamp : AbstractLamp
     {
-        public override Brightness MaxBrightness { get; protected set; } = Brightness.CreateNew(70);
-        public override Brightness DefaultBrigthness { get; protected set; } = Brightness.CreateNew(35);
+        public override Brightness MaxBrightness { get; protected set; } = Brightness.CreateNewEco(EcoLampValidator.MaxBrightness);
+        public override Brightness DefaultBrigthness { get; protected set; } = Brightness.CreateNewEco(35);
         private const int DefaultAutoOffMinutes = 10;
         private const int MinAutoOffMinutes = 1;
 

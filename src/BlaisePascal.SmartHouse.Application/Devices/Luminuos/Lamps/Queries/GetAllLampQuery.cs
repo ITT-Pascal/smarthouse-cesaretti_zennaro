@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BlaisePascal.SmartHouse.Domain.Devices.Illumination;
+using BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction;
+using BlaisePascal.SmartHouse.Domain.Devices.Illumination.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +9,19 @@ using System.Threading.Tasks;
 
 namespace BlaisePascal.SmartHouse.Application.Devices.Luminuos.Lamps.Queries
 {
-    internal class GetAllLampQuery
+    public class GetAllLampQuery
     {
+        private readonly ILampRepository _repository;
+
+        public GetAllLampQuery(ILampRepository lampRepository)
+        {
+            _repository = lampRepository;
+        }
+
+        public List<Lamp> Execute()
+        {
+            return _repository.GetAll();
+        }
+
     }
 }

@@ -7,5 +7,6 @@
         void Remove(Guid id);
         Door GetById(Guid id);
         List<Door> GetAll();
+        void Add(SmartHouse.Application.Devices.Door door);
     }
 }

@@ -3,5 +3,8 @@
     public interface IThermostatRepositories
     {
         void Add(Thermostat thermostat);
+        void Remove(Guid id);
+        Thermostat GetById(Guid id);
+        List<Thermostat> GetAll();
     }
 }

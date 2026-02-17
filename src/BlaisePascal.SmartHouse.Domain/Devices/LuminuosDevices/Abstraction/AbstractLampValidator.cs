@@ -4,9 +4,6 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction
 {
     public static class AbstractLampValidator
     {
-        public const int MinBrightness = 0;
-        public const int MaxBrightness = 100;
-
         public static void CheckIsOn(DeviceStatus status)
         {
             if (status != DeviceStatus.On)

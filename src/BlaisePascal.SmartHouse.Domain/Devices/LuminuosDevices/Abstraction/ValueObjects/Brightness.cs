@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BlaisePascal.SmartHouse.Domain.Devices.LuminuosDevices;
 
 namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction
 {
@@ -14,12 +10,14 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction
             value = brightness;
         }
 
-        public static Brightness CreateNew(int brightness)
+        public static Brightness CreateNewNormal(int brightness)
         {
-            if(brightness < 0)
-                throw new ArgumentException("Brightness cannot be negative");
+            return new Brightness(LampValidator.BrightnessValidator(brightness));
+        }
 
-            return new Brightness(brightness);
+        public static Brightness CreateNewEco(int brightness)
+        {
+            return new Brightness(EcoLampValidator.BrightnessValidator(brightness));
         }
 
         public static int operator +(Brightness brightness, int value)
@@ -42,7 +40,6 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction
         {
             return brightness1.value < brightness2.value;
         }
-
 
 
         public static bool operator >=(Brightness brightness1, int value)
