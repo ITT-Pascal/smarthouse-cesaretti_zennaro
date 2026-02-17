@@ -17,8 +17,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.CCTV.ValueObjects
 
         public static Zoom CreateNew(float zoom)
         {
-            CCTVValidator.ZoomValidator(zoom);
-            return new Zoom(zoom);
+            return new Zoom(CCTVValidator.ZoomValidator(zoom));
         }
 
         public static float operator +(Zoom zoom, float value)

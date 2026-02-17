@@ -1,11 +1,4 @@
-﻿using BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.Thermostat;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.Thermostat.ValueObjects
+﻿namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.Thermostat.ValueObjects
 {
     public sealed record ThermostatTemperature
     {
@@ -18,8 +11,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.Thermostat.ValueObj
         
         public static ThermostatTemperature CreateNew(int temperature)
         {
-            ThermostatValidator.TemperatureValueValidator(temperature); 
-            return new ThermostatTemperature(temperature);
+            return new ThermostatTemperature(ThermostatValidator.TemperatureValueValidator(temperature));
         }
 
         public static int operator +(ThermostatTemperature temperature, int value)

@@ -4,13 +4,14 @@ using BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.Thermostat.ValueObjects
 
 namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.Thermostat
 {
-    public class Thermostat : AbstractDevice, IThermostat
+    public class Thermostat : AbstractDevice
     {
         public ThermostatTemperature Temperature { get; private set; }
-        private int DefaultStep { get; set; } = 4;
         public ThermostatTemperature DefaultTemperature { get; private set; } = ThermostatTemperature.CreateNew(18);
         public ThermostatTemperature MinTemperature { get; private set; } = ThermostatTemperature.CreateNew(10);
         public ThermostatTemperature MaxTemperature { get; private set; } = ThermostatTemperature.CreateNew(30);
+        public int DefaultStep { get; private set; } = 4;
+
         public Thermostat(Name name, ThermostatTemperature initialTemperature) : base(name)
         {
             Temperature = initialTemperature;
@@ -56,7 +57,6 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.Thermostat
             Temperature = ThermostatTemperature.CreateNew(Temperature - DefaultStep);
             LastModified = DateTime.UtcNow;
         }
-
 
         public void DecreaseTemperature(int value)
         {

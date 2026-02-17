@@ -17,11 +17,11 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.CCTV
 
         public static void CheckIsPositive(float value)
         {
-            if(value <= 0)
+            if (value <= 0)
                 throw new ArgumentException("value must be positive");
         }
 
-        public static float RotationValidator (float rotation)
+        public static float RotationValidator(float rotation)
         {
             if (rotation < MinRotationDegrees)
                 return MinRotationDegrees;
@@ -32,7 +32,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.CCTV
             return rotation;
         }
 
-        public static float ZoomValidator (float zoom)
+        public static float ZoomValidator(float zoom)
         {
             if (zoom < MinZoom)
                 return MinZoom;
@@ -41,6 +41,18 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.CCTV
                 return MaxZoom;
 
             return zoom;
+        }
+
+        public static void CheckIsRecording(bool isRecording)
+        {
+            if (isRecording)
+                throw new InvalidOperationException("CCTV is already recording");
+        }
+
+        public static void CheckIsNotRecording(bool isRecording)
+        {
+            if (!isRecording)
+                throw new InvalidOperationException("CCTV is already not recording");
         }
     }
 }

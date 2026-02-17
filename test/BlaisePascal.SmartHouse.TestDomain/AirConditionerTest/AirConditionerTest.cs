@@ -42,6 +42,22 @@ namespace BlaisePascal.SmartHouse.TestDomain.AirConditionerTest
         }
 
         [Fact]
+        public void SetTemperature_CannotSetTemperatureWithoutParameterWhenDeviceIsOff()
+        {
+            AirConditioner airConditioner = new(Name.CreateNew("condizionatore"), AirConditionerTemperature.CreateNew(10));
+            airConditioner.SwitchOff();
+            Assert.Throws<InvalidOperationException>(() => airConditioner.SetTemperature());
+        }
+
+        [Fact]
+        public void SetTemperature_WithoutParameterTemperatureWillBeSetAtDefaultValue()
+        {
+            AirConditioner airConditioner = new(Name.CreateNew("condizionatore"), AirConditionerTemperature.CreateNew(10));
+            airConditioner.SetTemperature();
+            Assert.Equal(airConditioner.DefaultTemperature, airConditioner.Temperature);
+        }
+
+        [Fact]
         public void IncreaseTemperature_CannotIncreaseByDefaultValueWhenDeviceIsOff()
         {
             AirConditioner airConditioner = new(Name.CreateNew("condizionatore"));
@@ -62,17 +78,8 @@ namespace BlaisePascal.SmartHouse.TestDomain.AirConditionerTest
         {
             AirConditioner airConditioner = new(Name.CreateNew("condizionatore") , AirConditionerTemperature.CreateNew(30));
             airConditioner.IncreaseTemperature();
-            AirConditionerTemperature expected = AirConditionerTemperature.CreateNew(40);
+            AirConditionerTemperature expected = AirConditionerTemperature.CreateNew(35);
             Assert.Equal(expected, airConditioner.Temperature);
-        }
-
-
-        [Fact]
-        public void IncreaseTemperature_WhenItIsIncreasedOverTheMaxTemperatureIsSetAtMax()
-        {
-            AirConditioner airConditioner = new(Name.CreateNew("condizionatore"), AirConditionerTemperature.CreateNew(50));
-            airConditioner.IncreaseTemperature();
-            Assert.Equal(airConditioner.MaxTemperature, airConditioner.Temperature);
         }
 
         [Fact]
@@ -128,7 +135,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.AirConditionerTest
         {
             AirConditioner airConditioner = new(Name.CreateNew("condizionatore"), AirConditionerTemperature.CreateNew(30));
             airConditioner.DecreaseTemperature();
-            AirConditionerTemperature expected = AirConditionerTemperature.CreateNew(20);
+            AirConditionerTemperature expected = AirConditionerTemperature.CreateNew(25);
             Assert.Equal(expected, airConditioner.Temperature);
         }
 

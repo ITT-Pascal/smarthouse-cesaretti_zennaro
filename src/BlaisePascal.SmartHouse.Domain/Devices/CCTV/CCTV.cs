@@ -55,7 +55,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.CCTV
             RotationDegrees = Rotation.CreateNew(RotationDegrees + RotationDefaultStep);
             LastModified = DateTime.Now;
         }
-        public void IncreaseRotationDegrees(int value)
+        public void IncreaseRotationDegrees(float value)
         {
             CCTVValidator.CheckIsOn(Status);
             CCTVValidator.CheckIsPositive(value);
@@ -69,11 +69,11 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.CCTV
             RotationDegrees = Rotation.CreateNew(RotationDegrees - RotationDefaultStep);
             LastModified = DateTime.Now;
         }
-        public void DecreaseRotationDegrees(int value)
+        public void DecreaseRotationDegrees(float value)
         {
             CCTVValidator.CheckIsOn(Status);
             CCTVValidator.CheckIsPositive(value);
-            Rotation Degrees = Rotation.CreateNew(RotationDegrees - value);
+            RotationDegrees = Rotation.CreateNew(RotationDegrees - value);
             LastModified = DateTime.Now;
         }
 
@@ -97,10 +97,10 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.CCTV
             ZoomValue = Zoom.CreateNew(ZoomValue + ZoomDefaultStep);
             LastModified = DateTime.Now;
         }
-        public void IncreaseZoom(int value)
+        public void IncreaseZoom(float value)
         {
             CCTVValidator.CheckIsOn(Status);
-            CCTVValidator.RotationValidator(value);
+            CCTVValidator.CheckIsPositive(value);
             ZoomValue = Zoom.CreateNew(ZoomValue + value);
             LastModified = DateTime.Now;
         }
@@ -112,7 +112,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.CCTV
             LastModified = DateTime.Now;
         }
 
-        public void DecreaseZoom(int value)
+        public void DecreaseZoom(float value)
         {
             CCTVValidator.CheckIsOn(Status);
             CCTVValidator.CheckIsPositive(value);
@@ -122,12 +122,14 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.CCTV
         public void StartRecording()
         {
             CCTVValidator.CheckIsOn(Status);
+            CCTVValidator.CheckIsRecording(IsRecording);
             IsRecording = true;
             LastModified = DateTime.UtcNow;
         }
         public void StopRecording()
         {
             CCTVValidator.CheckIsOn(Status);
+            CCTVValidator.CheckIsNotRecording(IsRecording);
             IsRecording = false;
             LastModified = DateTime.UtcNow;
         }

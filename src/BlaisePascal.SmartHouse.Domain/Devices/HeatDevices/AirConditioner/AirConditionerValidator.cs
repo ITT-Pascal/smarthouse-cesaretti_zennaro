@@ -5,8 +5,8 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner
 {
     public static class AirConditionerValidator
     {
-        public static AirConditionerTemperature MaxTemperature = AirConditionerTemperature.CreateNew(50);
-        public static AirConditionerTemperature MinTemperature = 0;
+        public const int MaxTemperature = 50;
+        public const int MinTemperature = 0;
         public const int DefaultTemperature = 18;
 
         public static void CheckIsOn(DeviceStatus status)
@@ -14,15 +14,15 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner
             if (status != DeviceStatus.On)
                 throw new InvalidOperationException("cannot modify air conditioner when it is off");
         }
-        public static AirConditionerTemperature TemperatureValueValidator(AirConditionerTemperature temperature)
+        public static int TemperatureValueValidator(int temperature)
         {
-            if (value < MinTemperature)
+            if (temperature < MinTemperature)
                 return MinTemperature;
 
-            if (value > MaxTemperature)
+            if (temperature > MaxTemperature)
                 return MaxTemperature;
 
-            return value;
+            return temperature;
         }
 
         public static int CheckIsPositive(int value)

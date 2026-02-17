@@ -4,7 +4,7 @@ using BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner.ValueObj
 
 namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner
 {
-    public sealed class AirConditioner: AbstractDevice, IAirConditioner
+    public sealed class AirConditioner: AbstractDevice
     {
         public AirConditionerTemperature Temperature { get; private set; }
         public AirConditionerTemperature MaxTemperature { get; private set; } = AirConditionerTemperature.CreateNew(AirConditionerValidator.MaxTemperature);
@@ -24,8 +24,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner
 
         public void SetTemperature(AirConditionerTemperature temperature)
         {
-            AirConditionerValidator.CheckIsOn(Status);
-            temperature = AirConditionerValidator.TemperatureValueValidator(temperature);   
+            AirConditionerValidator.CheckIsOn(Status);   
             Temperature = temperature;
             LastModified = DateTime.UtcNow;
         }
@@ -34,6 +33,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner
         {
             AirConditionerValidator.CheckIsOn(Status);
             Temperature = DefaultTemperature;
+            LastModified = DateTime.UtcNow;
         }
 
         public void IncreaseTemperature()

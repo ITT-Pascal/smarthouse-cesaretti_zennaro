@@ -15,15 +15,14 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.CCTV.ValueObjects
         }
         public static Rotation CreateNew(float rotation)
         {
-            CCTVValidator.RotationValidator(rotation);
-            return new Rotation(rotation);
+            return new Rotation(CCTVValidator.RotationValidator(rotation));
         }
 
-        public static float operator +(Rotation rotation, int value)
+        public static float operator +(Rotation rotation, float value)
         {
             return rotation.value + value;
         }
-        public static float operator -(Rotation rotation, int value)
+        public static float operator -(Rotation rotation, float value)
         {
             return rotation.value - value;
         }

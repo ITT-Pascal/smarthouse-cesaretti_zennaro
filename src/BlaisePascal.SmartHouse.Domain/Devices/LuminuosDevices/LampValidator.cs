@@ -9,7 +9,6 @@
         {
             if(value < 0)
                 throw new ArgumentException("position must be almost 0");
-            
 
             return value;
         }
@@ -21,5 +20,7 @@
 
             return value;
         }
+
+        
     }
 }

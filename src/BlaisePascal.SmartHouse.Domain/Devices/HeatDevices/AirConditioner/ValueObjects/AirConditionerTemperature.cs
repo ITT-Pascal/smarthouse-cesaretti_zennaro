@@ -13,8 +13,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner.Valu
 
         public static AirConditionerTemperature CreateNew(int temperature)
         {
-           AirConditionerValidator.TemperatureValueValidator(temperature);
-            return new AirConditionerTemperature(temperature);
+            return new AirConditionerTemperature(AirConditionerValidator.TemperatureValueValidator(temperature));
         }
 
 
@@ -26,16 +25,6 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner.Valu
         public static int operator -(AirConditionerTemperature temperature, int value)
         {
             return temperature.value - value;
-        }
-
-
-        public static bool operator ==(int value,AirConditionerTemperature temperature)
-        {
-            return value == temperature.value;
-        }
-        public static bool operator !=(int value, AirConditionerTemperature temperature)
-        {
-            return value != temperature.value;
         }
     }
 }

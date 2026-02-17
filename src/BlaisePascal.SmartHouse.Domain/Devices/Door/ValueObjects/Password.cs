@@ -25,7 +25,6 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Door.ValueObjects
             return password.value == value;
 
         }
-
         public static bool operator !=(Password password, string value)
         {
             return password.value != value;
