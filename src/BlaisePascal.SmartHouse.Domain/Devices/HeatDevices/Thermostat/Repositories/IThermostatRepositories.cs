@@ -4,6 +4,7 @@
     {
         void Add(Thermostat thermostat);
         void Remove(Guid id);
+        void Update(Thermostat thermostat);
         Thermostat GetById(Guid id);
         List<Thermostat> GetAll();
     }

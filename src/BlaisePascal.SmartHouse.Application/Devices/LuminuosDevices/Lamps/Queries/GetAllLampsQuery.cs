@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace BlaisePascal.SmartHouse.Application.Devices.Luminuos.Lamps.Queries
 {
-    public class GetAllLampQuery
+    public class GetAllLampsQuery
     {
         private readonly ILampRepository _repository;
 
-        public GetAllLampQuery(ILampRepository lampRepository)
+        public GetAllLampsQuery(ILampRepository lampRepository)
         {
             _repository = lampRepository;
         }

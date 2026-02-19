@@ -1,14 +1,11 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Devices.Abstraction;
 using BlaisePascal.SmartHouse.Domain.Devices.Abstraction.ValueObjects;
 using BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction;
-using BlaisePascal.SmartHouse.Domain.Devices.LuminuosDevices;
 
 namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
 {
     public class EcoLamp : AbstractLamp
     {
-        public override Brightness MaxBrightness { get; protected set; } = Brightness.CreateNewEco(EcoLampValidator.MaxBrightness);
-        public override Brightness DefaultBrigthness { get; protected set; } = Brightness.CreateNewEco(35);
         private const int DefaultAutoOffMinutes = 10;
         private const int MinAutoOffMinutes = 1;
 
@@ -45,9 +42,9 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
             autoOffAtUtc = DateTime.UtcNow.AddMinutes(autoOffMinutes);
         }
 
-        public override void SetBrightness(int value)
+        public override void SetBrightness(Brightness brightness)
         {
-            base.SetBrightness(value);
+            base.SetBrightness(brightness);
             ResetAutoOffIfNeeded();
         }
 

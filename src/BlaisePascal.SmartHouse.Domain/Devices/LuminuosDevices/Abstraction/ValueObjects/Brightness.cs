@@ -1,6 +1,4 @@
-﻿using BlaisePascal.SmartHouse.Domain.Devices.LuminuosDevices;
-
-namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction
+﻿namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction
 {
     public sealed record Brightness
     {
@@ -10,14 +8,9 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction
             value = brightness;
         }
 
-        public static Brightness CreateNewNormal(int brightness)
+        public static Brightness CreateNew(int brightness)
         {
             return new Brightness(LampValidator.BrightnessValidator(brightness));
-        }
-
-        public static Brightness CreateNewEco(int brightness)
-        {
-            return new Brightness(EcoLampValidator.BrightnessValidator(brightness));
         }
 
         public static int operator +(Brightness brightness, int value)

@@ -144,6 +144,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.DoorTest
         public void ChangePassword_CannotChangePasswordWhenDeviceIsOff()
         {
             Door door = new(Name.CreateNew("porta"), Password.CreateNew("1234"));
+            door.SwitchOff();
             Assert.Throws<InvalidOperationException>(() => door.ChangePassword(Password.CreateNew("1234"), Password.CreateNew("5678")));
         }
 

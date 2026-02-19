@@ -17,11 +17,9 @@ namespace BlaisePascal.SmartHouse.Application.Devices.Luminuos.Lamps.Queries
             _repository = lampRepository;
         }
 
-        //TODO: refactor with DTO
         public Lamp Execute(Guid id)
         {
-            var l = _repository.GetById(id);
-            return l;
+            return _repository.GetById(id);
         }
     }
 }

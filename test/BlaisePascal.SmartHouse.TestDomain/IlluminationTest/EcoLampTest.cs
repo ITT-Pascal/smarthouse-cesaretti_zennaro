@@ -8,23 +8,9 @@ namespace BlaisePascal.SmartHouse.TestDomain.IlluminationTest
     public class EcoLampTest
     {
         [Fact]
-        public void SwitchOn_SwitchOnTheLamp()
-        {
-            EcoLamp ecoLamp = new(Brightness.CreateNewEco(50), Name.CreateNew("ecolamp1"));
-            Assert.Equal(DeviceStatus.On, ecoLamp.Status);
-        }
-
-        [Fact]
-        public void SwitchOn_CannotSwitchOnWhenLampIsAlradyOn()
-        {
-            EcoLamp ecoLamp = new(Brightness.CreateNewEco(50), Name.CreateNew("ecolamp1"));
-            Assert.Throws<InvalidOperationException>(() => ecoLamp.SwitchOn());
-        }
-
-        [Fact]
         public void SwitchOff_SwitchOffTheLamp()
         {
-            EcoLamp ecoLamp = new(Brightness.CreateNewEco(50), Name.CreateNew("ecolamp1"));
+            EcoLamp ecoLamp = new(Brightness.CreateNew(50), Name.CreateNew("ecolamp1"));
             ecoLamp.SwitchOff();
             Assert.Equal(DeviceStatus.Off, ecoLamp.Status);
         }
@@ -33,98 +19,119 @@ namespace BlaisePascal.SmartHouse.TestDomain.IlluminationTest
         public void SwitchOff_CannotSwitchOffWhenLampIsAlradyOff()
         {
             EcoLamp ecoLamp = new(Name.CreateNew("ecolamp1"));
+            ecoLamp.SwitchOff();
             Assert.Throws<InvalidOperationException>(() => ecoLamp.SwitchOff());
         }
 
         [Fact]
-        public void Brighten_StepCannotBeNegative()
+        public void SwitchOn_SwitchOnTheLamp()
         {
-            EcoLamp ecoLamp = new(20, "Lamp1");
-            Assert.Throws<ArgumentException>(() => ecoLamp.Brighten(-1));
+            EcoLamp ecoLamp = new(Brightness.CreateNew(50), Name.CreateNew("ecolamp"));
+            Assert.Equal(DeviceStatus.On, ecoLamp.Status);
         }
 
         [Fact]
-        public void Brightnes_CannotBrightenWhenLampIsOff()
+        public void SwitchOn_CannotSwitchOnWhenLampIsAlradyOn()
         {
-            EcoLamp ecoLamp = new("Lamp1");
-            Assert.Throws<InvalidOperationException>(() => ecoLamp.Brighten(80));
-        }
-
-        [Fact]
-        public void Brighten_WhenStepIsGreaterThanMaxBrightnessIsSetAtMax()
-        {
-            EcoLamp ecoLamp = new(20, "Lamp1");
-            ecoLamp.Brighten(100);
-            Assert.Equal(100, ecoLamp.Brightness);
-        }
-
-        [Fact]
-        public void Brighten_WhenStepIsInMinMaxLampIsBrightnenCorrectly()
-        {
-            EcoLamp ecoLamp = new(20, "Lamp1");
-            ecoLamp.Brighten(10);
-            Assert.Equal(30, ecoLamp.Brightness);
-        }
-
-        [Fact]
-        public void Dimmer_StepCannotBeNegative()
-        {
-            EcoLamp ecoLamp = new(20, "Lamp1");
-            Assert.Throws<ArgumentException>(() => ecoLamp.Dimmer(-1));
-        }
-
-        [Fact]
-        public void Dimmer_CannotDimmerWhenLampIsOff()
-        {
-            EcoLamp ecoLamp = new("Lamp1");
-            Assert.Throws<InvalidOperationException>(() => ecoLamp.Dimmer(80));
-        }
-
-        [Fact]
-        public void Dimmer_WhenStepIsLowerThanMinBrightnessIsSetAtMin()
-        {
-            EcoLamp ecoLamp = new(20, "Lamp1");
-            ecoLamp.Dimmer(100);
-            Assert.Equal(0, ecoLamp.Brightness);
-        }
-
-        [Fact]
-        public void Dimmer_WhenStepIsInMinMaxLampIsDimmerCorrectly()
-        {
-            EcoLamp ecoLamp = new(20, "Lamp1");
-            ecoLamp.Dimmer(10);
-            Assert.Equal(10, ecoLamp.Brightness);
+            EcoLamp ecoLamp = new(Brightness.CreateNew(50), Name.CreateNew("ecolamp1"));
+            Assert.Throws<InvalidOperationException>(() => ecoLamp.SwitchOn());
         }
 
         [Fact]
         public void SetBrightness_CannotSetBrightnessWhenLampIsOff()
         {
-            EcoLamp ecoLamp = new("Lamp1");
+            EcoLamp ecoLamp = new(Name.CreateNew("ecolamp"));
+            ecoLamp.SwitchOff();
             Assert.Throws<InvalidOperationException>(() => ecoLamp.SetBrightness(10));
         }
 
         [Fact]
         public void SetBrightness_WhenValueIsGreaterThanMaxBrightnessIsSetAtMax()
         {
-            EcoLamp ecoLamp = new(20, "Lamp1");
-            ecoLamp.SetBrightness(500);
+            EcoLamp ecoLamp = new(Brightness.CreateNew(20), Name.CreateNew("ecolamp"));
+            ecoLamp.SetBrightness(Brightness.CreateNew(500));
             Assert.Equal(ecoLamp.MaxBrightness, ecoLamp.Brightness);
         }
 
         [Fact]
         public void SetBrightness_WhenValueIsLowerThanMinBrightnessIsSetAtMin()
         {
-            EcoLamp ecoLamp = new(20, "Lamp1");
-            ecoLamp.SetBrightness(-1);
+            EcoLamp ecoLamp = new(Brightness.CreateNew(20), Name.CreateNew("ecolamp"));
+            ecoLamp.SetBrightness(Brightness.CreateNew(-1));
             Assert.Equal(ecoLamp.MinBrigthness, ecoLamp.Brightness);
         }
 
         [Fact]
         public void SetBrightness_WhenValueIsRightBrightnessIsSetCorrectly()
         {
-            EcoLamp ecoLamp = new(20, "Lamp1");
-            ecoLamp.SetBrightness(50);
-            Assert.Equal(50, ecoLamp.Brightness);
+            EcoLamp ecoLamp = new(Brightness.CreateNew(20), Name.CreateNew("ecolamp"));
+            ecoLamp.SetBrightness(Brightness.CreateNew(50));
+            Brightness expected = Brightness.CreateNew(50);
+            Assert.Equal(expected, ecoLamp.Brightness);
+        }
+
+        [Fact]
+        public void Brighten_CannotBrightenWhenLampIsOff()
+        {
+            EcoLamp ecoLamp = new(Name.CreateNew("ecolamp"));
+            ecoLamp.SwitchOff();
+            Assert.Throws<InvalidOperationException>(() => ecoLamp.Brighten(80));
+        }
+
+        [Fact]
+        public void Brighten_StepCannotBeNegative()
+        {
+            EcoLamp ecoLamp = new(Brightness.CreateNew(20), Name.CreateNew("ecolamp"));
+            Assert.Throws<ArgumentException>(() => ecoLamp.Brighten(-1));
+        }
+
+        [Fact]
+        public void Brighten_WhenStepIsGreaterThanMaxBrightnessIsSetAtMax()
+        {
+            EcoLamp ecoLamp = new(Brightness.CreateNew(20), Name.CreateNew("ecolamp"));
+            ecoLamp.Brighten(100);
+            Assert.Equal(ecoLamp.MaxBrightness, ecoLamp.Brightness);
+        }
+
+        [Fact]
+        public void Brighten_WhenStepIsInMinMaxLampIsBrightnenCorrectly()
+        {
+            EcoLamp ecoLamp = new(Brightness.CreateNew(20), Name.CreateNew("ecolamp"));
+            ecoLamp.Brighten(10);
+            Brightness expected = Brightness.CreateNew(30);
+            Assert.Equal(expected, ecoLamp.Brightness);
+        }
+
+        [Fact]
+        public void Dimmer_CannotDimmerWhenLampIsOff()
+        {
+            EcoLamp ecoLamp = new(Name.CreateNew("ecolamp"));
+            ecoLamp.SwitchOff();
+            Assert.Throws<InvalidOperationException>(() => ecoLamp.Dimmer(80));
+        }
+
+        [Fact]
+        public void Dimmer_StepCannotBeNegative()
+        {
+            EcoLamp ecoLamp = new(Brightness.CreateNew(20), Name.CreateNew("ecolamp"));
+            Assert.Throws<ArgumentException>(() => ecoLamp.Dimmer(-1));
+        }
+
+        [Fact]
+        public void Dimmer_WhenStepIsLowerThanMinBrightnessIsSetAtMin()
+        {
+            EcoLamp ecoLamp = new(Brightness.CreateNew(20), Name.CreateNew("ecolamp"));
+            ecoLamp.Dimmer(100);
+            Assert.Equal(ecoLamp.MinBrigthness, ecoLamp.Brightness);
+        }
+
+        [Fact]
+        public void Dimmer_WhenStepIsInMinMaxLampIsDimmerCorrectly()
+        {
+            EcoLamp ecoLamp = new(Brightness.CreateNew(20), Name.CreateNew("ecolamp"));
+            ecoLamp.Dimmer(10);
+            Brightness expected = Brightness.CreateNew(10);
+            Assert.Equal(expected, ecoLamp.Brightness);
         }
     }
 }

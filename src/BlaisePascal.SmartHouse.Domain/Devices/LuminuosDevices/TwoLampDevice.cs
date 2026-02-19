@@ -1,9 +1,10 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Devices.Abstraction;
+using BlaisePascal.SmartHouse.Domain.Devices.Abstraction.ValueObjects;
 using BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction;
 
 namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
 {
-    public class TwoLampDevice
+    public class TwoLampDevice: AbstractDevice
     {
         public AbstractLamp FirstLamp { get; private set; }
         public AbstractLamp SecondLamp { get; private set; }
@@ -13,7 +14,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
             {
                 DeviceStatus Status = DeviceStatus.Off;
                 
-                if (FirstLamp.Status == DeviceStatus.On || SecondLamp.Status == DeviceStatus.Off)
+                if (FirstLamp.Status == DeviceStatus.On || SecondLamp.Status == DeviceStatus.On)
                     return DeviceStatus.On;
 
                 return Status;
@@ -23,20 +24,23 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
         }
 
 
-        public TwoLampDevice(AbstractLamp firstLamp, AbstractLamp secondLamp)
+        public TwoLampDevice(AbstractLamp firstLamp, AbstractLamp secondLamp, Name name): base(name)
         {
             FirstLamp = firstLamp;
             SecondLamp = secondLamp;
         }
 
 
-        public void TurnLampsOn()
+        public override void SwitchOn()
         {
-            FirstLamp.SwitchOn();
-            SecondLamp.SwitchOn();  
+            if(FirstLamp.Status == DeviceStatus.Off)
+                FirstLamp.SwitchOn();
+
+            if(SecondLamp.Status == DeviceStatus.Off)
+                SecondLamp.SwitchOn();  
         }
 
-        public void TurnLampsOn(Guid id)
+        public void SwitchLampOn(Guid id)
         {
             if (FirstLamp.Id == id) 
             {
@@ -52,7 +56,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
             }
         }
 
-        public void TurnLampsOn(string name)
+        public void SwitchLampOn(string name)
         {
             if (FirstLamp.Name == name)
             {
@@ -67,7 +71,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
             }
         }
 
-        public void EcoTurnLampsOn(Guid id)
+        public void EcoSwitchOn(Guid id)
         {
             if (FirstLamp.Id == id && FirstLamp is EcoLamp firstLamp)
             {
@@ -81,7 +85,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
             }
         }
 
-        public void EcoTurnLampsOn(string name)
+        public void EcoSwitchOnLamp(string name)
         {
             if (FirstLamp.Name == name && FirstLamp is EcoLamp firstLamp)
             {
@@ -97,7 +101,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
             }
         }
 
-        public void EcoTurnLampsOn(Guid id, int timer)
+        public void EcoSwitchOnLamp(Guid id, int timer)
         {
             if (FirstLamp.Id == id && FirstLamp is EcoLamp firstLamp)
             {
@@ -113,7 +117,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
             }
         }
 
-        public void EcoTurnLampsOn(string name, int timer)
+        public void EcoSwitchOnLamp(string name, int timer)
         {
             if (FirstLamp.Name == name && FirstLamp is EcoLamp firstLamp)
             {
@@ -128,13 +132,17 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
                 throw new ArgumentException("not valid name");
             }
         }
-        public void TurnLampsOff()
+
+        public override void SwitchOff()
         {
-            FirstLamp.SwitchOff();
-            SecondLamp.SwitchOff();
+            if(FirstLamp.Status == DeviceStatus.On)
+                FirstLamp.SwitchOff();
+
+            if(SecondLamp.Status == DeviceStatus.On)
+                SecondLamp.SwitchOff();
         }
 
-        public void TurnLampsOff(Guid id)
+        public void SwitchLampOff(Guid id)
         {
             if (FirstLamp.Id == id)
             {
@@ -150,7 +158,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
             }
         }
 
-        public void TurnLampsOff(string name)
+        public void SwitchLampOff(string name)
         {
             if (FirstLamp.Name == name)
             {
@@ -166,13 +174,13 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
             }
         }
 
-        public void ChangeBothLampsBrightness(int newBrightness)
+        public void SetBothLampsBrightness(Brightness newBrightness)
         {
             FirstLamp.SetBrightness(newBrightness);
             SecondLamp.SetBrightness(newBrightness);
         }
 
-        public void ChangeLampBrightness(Guid id, int newBrightness)
+        public void SetLampBrightness(Guid id, Brightness newBrightness)
         {
             if(FirstLamp.Id == id)
             {
@@ -187,7 +195,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
             }
         }
 
-        public void ChangeLampBrightness(string name, int newBrightness)
+        public void SetLampBrightness(string name, int newBrightness)
         {
             if (FirstLamp.Name == name)
             {
@@ -203,10 +211,10 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
             }
         }
 
-        public void IncreaseLampBrightness(int step)
+        public void BrightenLamp(int value)
         {
-            FirstLamp.Brighten(step);
-            SecondLamp.Brighten(step);
+            FirstLamp.Brighten(value);
+            SecondLamp.Brighten(value);
         }
 
         public void IncreaseLampBrightness(Guid id, int step)

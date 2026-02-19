@@ -7,19 +7,20 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction
     public abstract class AbstractLamp: AbstractDevice, IAbstractLamp
     {
         public Brightness MinBrigthness { get; protected set; } = Brightness.CreateNew(0);
-        public abstract Brightness DefaultBrigthness { get; protected set; }
-        public abstract Brightness MaxBrightness { get; protected set; }
+        public Brightness DefaultBrigthness { get; protected set; } = Brightness.CreateNew(50);
+        public Brightness MaxBrightness { get; protected set; } = Brightness.CreateNew(100);
         public Brightness Brightness { get; protected set; }
 
         public AbstractLamp(Name name) : base(name) 
         {
             Brightness = DefaultBrigthness;
         }
-        public AbstractLamp(Brightness brightness, Name name) : base(name) 
+
+        public AbstractLamp(Brightness brightness, Name name) : base(name)
         {
             Brightness = brightness;
         }
-        
+
         public virtual void Brighten(int value)
         {
             AbstractLampValidator.CheckIsOn(Status);
@@ -36,24 +37,11 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction
             LastModified = DateTime.UtcNow;
         }
 
-        public virtual void SetBrightness(int brightness)
+        public virtual void SetBrightness(Brightness brightness)
         {
             AbstractLampValidator.CheckIsOn(Status);
-            Brightness = Brightness.CreateNew(brightness);
+            Brightness = brightness;
             LastModified = DateTime.UtcNow;
         }
-
-        
-
-
-
-
-
-
-
-
-
-
-
     }
 }
