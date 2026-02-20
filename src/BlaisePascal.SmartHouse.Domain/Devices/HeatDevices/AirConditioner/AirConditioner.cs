@@ -4,7 +4,7 @@ using BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner.ValueObj
 
 namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner
 {
-    public sealed class AirConditioner: AbstractDevice
+    public sealed class AirConditioner: AbstractDevice, IHeatDevices
     {
         public AirConditionerTemperature Temperature { get; private set; }
         public AirConditionerTemperature MaxTemperature { get; private set; } = AirConditionerTemperature.CreateNew(AirConditionerValidator.MaxTemperature);

@@ -8,10 +8,10 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Door.ValueObjects
 {
     public sealed record Password
     {
-        public string value { get; init; }
+        public string Value { get; init; }
         private Password(string password)
         {
-            value = password;
+            Value = password;
         }
         public static Password CreateNew(string password)
         {
@@ -22,12 +22,12 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Door.ValueObjects
 
         public static bool operator ==(Password password, string value)
         {
-            return password.value == value;
+            return password.Value == value;
 
         }
         public static bool operator !=(Password password, string value)
         {
-            return password.value != value;
+            return password.Value != value;
         }
     }
 }

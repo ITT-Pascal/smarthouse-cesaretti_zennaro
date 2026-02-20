@@ -2,6 +2,7 @@
 {
     public interface IHeatDevices
     {
+        void SetTemperature(ITemperature temperature);
         void SetTemperature();
         void IncreaseTemperature();
         void IncreaseTemperature(int value);

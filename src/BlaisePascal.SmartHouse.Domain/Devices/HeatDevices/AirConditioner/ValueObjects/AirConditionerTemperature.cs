@@ -6,11 +6,11 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner.Valu
     {
         public const int MaxTemperature = 50;
         public const int MinTemperature = 0;
-        public int value { get; init; }
+        public int Value { get; init; }
 
         private AirConditionerTemperature(int temperature)
         {
-            value = temperature;
+            Value = temperature;
         }
 
         public static AirConditionerTemperature CreateNew(int temperature)
@@ -27,12 +27,12 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner.Valu
 
         public static int operator +(AirConditionerTemperature temperature, int value)
         {
-            return temperature.value + value;
+            return temperature.Value + value;
         }
 
         public static int operator -(AirConditionerTemperature temperature, int value)
         {
-            return temperature.value - value;
+            return temperature.Value - value;
         }
     }
 }

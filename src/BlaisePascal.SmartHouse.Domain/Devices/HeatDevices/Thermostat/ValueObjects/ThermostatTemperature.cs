@@ -4,11 +4,11 @@
     {
         public const int MaxTemperature = 30;
         public const int MinTemperature = 10;
-        public int value { get; init; }
+        public int Value { get; init; }
 
         private ThermostatTemperature(int temperature)
         {
-            value = temperature;
+            Value = temperature;
         }
         
         public static ThermostatTemperature CreateNew(int temperature)
@@ -24,12 +24,12 @@
 
         public static int operator +(ThermostatTemperature temperature, int value)
         {
-            return temperature.value + value;
+            return temperature.Value + value;
         }
 
         public static int operator -(ThermostatTemperature temperature, int value)
         {
-            return temperature.value - value;
+            return temperature.Value - value;
         }
     }
 }

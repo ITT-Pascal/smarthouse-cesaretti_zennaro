@@ -16,12 +16,12 @@ namespace BlaisePascal.SmartHouse.Application.Devices.LuminuosDevices.Lamps.Comm
             _repository = lampRepository;
         }
 
-        public void Execute(Guid id, int brightnessIncrease)
+        public void Execute(Guid id, int brightness)
         {
             var lamp = _repository.GetById(id);
             if (lamp != null)
             {
-                lamp.Brighten(brightnessIncrease);
+                lamp.Brighten(brightness);
                 _repository.Update(lamp);
             }
         }

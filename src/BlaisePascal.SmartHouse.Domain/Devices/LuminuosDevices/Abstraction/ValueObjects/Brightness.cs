@@ -2,10 +2,10 @@
 {
     public sealed record Brightness
     {
-        public int value { get; init; }
+        public int Value { get; init; }
         private Brightness(int brightness)
         {
-            value = brightness;
+            Value = brightness;
         }
 
         public static Brightness CreateNew(int brightness)
@@ -15,34 +15,34 @@
 
         public static int operator +(Brightness brightness, int value)
         {
-            return brightness.value + value;
+            return brightness.Value + value;
         }
 
 
         public static int operator -(Brightness brightness, int value)
         {
-            return brightness.value - value;
+            return brightness.Value - value;
         }
 
 
         public static bool operator >(Brightness brightness1, Brightness brightness2)
         {
-            return brightness1.value > brightness2.value;
+            return brightness1.Value > brightness2.Value;
         }
         public static bool operator <(Brightness brightness1, Brightness brightness2)
         {
-            return brightness1.value < brightness2.value;
+            return brightness1.Value < brightness2.Value;
         }
 
 
         public static bool operator >=(Brightness brightness1, int value)
         {
-            return brightness1.value >= value;
+            return brightness1.Value >= value;
         }
 
         public static bool operator <=(Brightness brightness1, int value)
         {
-            return brightness1.value <= value;
+            return brightness1.Value <= value;
         }
     }
 }

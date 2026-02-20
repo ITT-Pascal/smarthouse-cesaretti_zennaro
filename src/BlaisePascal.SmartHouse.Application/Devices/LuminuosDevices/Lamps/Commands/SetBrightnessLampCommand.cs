@@ -1,17 +1,13 @@
-﻿using BlaisePascal.SmartHouse.Domain.Devices.Illumination.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction;
+using BlaisePascal.SmartHouse.Domain.Devices.Illumination.Repositories;
 
 namespace BlaisePascal.SmartHouse.Application.Devices.LuminuosDevices.Lamps.Commands
 {
-    public class DimmerLampCommand
+    public class SetBrightnessLampCommand
     {
         private readonly ILampRepository _repository;
 
-        public DimmerLampCommand(ILampRepository lampRepository)
+        public SetBrightnessLampCommand(ILampRepository lampRepository)
         {
             _repository = lampRepository;
         }
@@ -21,9 +17,9 @@ namespace BlaisePascal.SmartHouse.Application.Devices.LuminuosDevices.Lamps.Comm
             var lamp = _repository.GetById(id);
             if (lamp != null)
             {
-                lamp.Dimmer(brightness);
+                lamp.SetBrightness(Brightness.CreateNew(brightness));
                 _repository.Update(lamp);
             }
-        }
+        } 
     }
 }

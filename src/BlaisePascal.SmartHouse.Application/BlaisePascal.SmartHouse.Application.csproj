@@ -7,11 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Devices\DoorDevice\Commands\**" />
+    <EmbeddedResource Remove="Devices\DoorDevice\Commands\**" />
+    <None Remove="Devices\DoorDevice\Commands\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BlaisePascal.SmartHouse.Domain\BlaisePascal.SmartHouse.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Devices\DoorDevice\Commands\" />
+    <Folder Include="Devices\Dto\" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,6 @@
-﻿using BlaisePascal.SmartHouse.Domain.Devices.Illumination;
+﻿using BlaisePascal.SmartHouse.Application.Devices.LuminuosDevices.Lamps.Dto;
+using BlaisePascal.SmartHouse.Application.Devices.LuminuosDevices.Lamps.LampMapper;
+using BlaisePascal.SmartHouse.Domain.Devices.Illumination;
 using BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction;
 using BlaisePascal.SmartHouse.Domain.Devices.Illumination.Repositories;
 using System;
@@ -18,9 +20,15 @@ namespace BlaisePascal.SmartHouse.Application.Devices.Luminuos.Lamps.Queries
             _repository = lampRepository;
         }
 
-        public List<Lamp> Execute()
+        public List<LampDto> Execute()
         {
-            return _repository.GetAll();
+            var result = new List<LampDto>();
+
+            foreach (var lamp in _repository.GetAll())
+            {
+                result.Add(LampMapper.ToDto(lamp));
+            }
+            return result;
         }
 
     }

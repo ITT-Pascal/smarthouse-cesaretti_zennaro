@@ -8,10 +8,10 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.CCTV.ValueObjects
 {
     public sealed record Rotation
     {
-        public float value { get; init; }
+        public float Value { get; init; }
         private Rotation(float rotation)
         {
-            value = rotation;
+            Value = rotation;
         }
         public static Rotation CreateNew(float rotation)
         {
@@ -20,11 +20,11 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.CCTV.ValueObjects
 
         public static float operator +(Rotation rotation, float value)
         {
-            return rotation.value + value;
+            return rotation.Value + value;
         }
         public static float operator -(Rotation rotation, float value)
         {
-            return rotation.value - value;
+            return rotation.Value - value;
         }
     }
 }

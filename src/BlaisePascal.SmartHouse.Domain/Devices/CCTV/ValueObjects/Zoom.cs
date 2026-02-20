@@ -8,11 +8,11 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.CCTV.ValueObjects
 {
     public sealed record Zoom
     {
-        public float value { get; init; }
+        public float Value { get; init; }
 
         private Zoom(float zoom)
         {
-            value = zoom;
+            Value = zoom;
         }   
 
         public static Zoom CreateNew(float zoom)
@@ -22,11 +22,11 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.CCTV.ValueObjects
 
         public static float operator +(Zoom zoom, float value)
         {
-            return zoom.value + value;
+            return zoom.Value + value;
         }
         public static float operator -(Zoom zoom, float value)
         {
-            return zoom.value - value;
+            return zoom.Value - value;
         }
     }
 }

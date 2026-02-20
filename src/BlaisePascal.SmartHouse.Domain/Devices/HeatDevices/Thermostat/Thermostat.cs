@@ -4,7 +4,7 @@ using BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.Thermostat.ValueObjects
 
 namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.Thermostat
 {
-    public class Thermostat : AbstractDevice
+    public class Thermostat : AbstractDevice, IHeatDevices
     {
         public ThermostatTemperature Temperature { get; private set; }
         public ThermostatTemperature DefaultTemperature { get; private set; } = ThermostatTemperature.CreateNew(18);
