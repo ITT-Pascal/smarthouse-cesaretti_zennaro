@@ -1,11 +1,14 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Devices.Abstraction;
 using BlaisePascal.SmartHouse.Domain.Devices.Abstraction.ValueObjects;
 using BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction;
+using BlaisePascal.SmartHouse.Domain.Devices.LuminuosDevices.Abstraction.ValueObjects;
 
 namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
 {
     public class EcoLamp : AbstractLamp
     {
+        public override Brightness DefaultBrigthness { get; protected set; } = Brightness.CreateNew(35);
+        public override Brightness MaxBrightness { get; protected set; } = Brightness.CreateNew(75);
         private const int DefaultAutoOffMinutes = 10;
         private const int MinAutoOffMinutes = 1;
 
@@ -44,19 +47,26 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
 
         public override void SetBrightness(Brightness brightness)
         {
-            base.SetBrightness(brightness);
-            ResetAutoOffIfNeeded();
-        }
-
-        public override void Dimmer(int value)
-        {
-            base.Dimmer(value);
+            Brightness newBrightness = Brightness.CreateNewEco(brightness.Value);
+            base.SetBrightness(newBrightness);
             ResetAutoOffIfNeeded();
         }
 
         public override void Brighten(int value)
         {
-            base.Brighten(value);
+            AbstractLampValidator.CheckIsOn(Status);
+            AbstractLampValidator.IsPositive(value);
+            Brightness = Brightness.CreateNewEco(Brightness + value);
+            LastModified = DateTime.UtcNow;
+            ResetAutoOffIfNeeded();
+        }
+
+        public override void Dimmer(int value)
+        {
+            AbstractLampValidator.CheckIsOn(Status);
+            AbstractLampValidator.IsPositive(value);
+            Brightness = Brightness.CreateNewEco(Brightness - value);
+            LastModified = DateTime.UtcNow;
             ResetAutoOffIfNeeded();
         }
 

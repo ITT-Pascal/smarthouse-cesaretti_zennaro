@@ -1,4 +1,6 @@
-﻿namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
+﻿using BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction;
+
+namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
 {
     public static class LampValidator
     {
@@ -22,14 +24,12 @@
             return value;
         }
 
-        public static int IsValueInMinMax(int value, int min, int max)
+        public static int IsInMinMax(int value, int min, int max)
         {
             if(value < min || value > max)
                 throw new ArgumentException("value must be in min, max");
 
             return value;
         }
-
-        
     }
 }

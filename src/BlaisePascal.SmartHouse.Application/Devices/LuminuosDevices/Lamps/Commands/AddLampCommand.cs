@@ -24,11 +24,4 @@ namespace BlaisePascal.SmartHouse.Application.Devices.Luminuos.Lamps.Commands
             _repository.Add(new Lamp(Name.CreateNew(lampName)));
         }
     }
-
-    /* chiedi pulga:
-     * questione della doppia brightness in Lamp ed EcoLamp
-     * stessa cosa termostato ed airConditioner
-     * interfaccia come tipo 
-    */
-
 }

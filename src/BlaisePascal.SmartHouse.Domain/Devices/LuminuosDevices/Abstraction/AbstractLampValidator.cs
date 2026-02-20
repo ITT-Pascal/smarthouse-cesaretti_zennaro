@@ -17,7 +17,5 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction
 
             return value;
         }
-
-     
     }
 }

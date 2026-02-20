@@ -15,6 +15,7 @@ namespace BlaisePascal.SmartHouse.Application.Devices.DeviceStatusMapper
             {
                 DeviceStatus.On => "ON",
                 DeviceStatus.Off => "OFF",
+                _ => throw new ArgumentException("error")
             };
         }
 

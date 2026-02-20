@@ -1,18 +1,18 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Devices.Abstraction;
 using BlaisePascal.SmartHouse.Domain.Devices.Abstraction.ValueObjects;
-using BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.Thermostat.ValueObjects;
+using BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner.ValueObjects;
 
 namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.Thermostat
 {
     public class Thermostat : AbstractDevice, IHeatDevices
     {
-        public ThermostatTemperature Temperature { get; private set; }
-        public ThermostatTemperature DefaultTemperature { get; private set; } = ThermostatTemperature.CreateNew(18);
-        public ThermostatTemperature MinTemperature { get; private set; } = ThermostatTemperature.CreateNew(10);
-        public ThermostatTemperature MaxTemperature { get; private set; } = ThermostatTemperature.CreateNew(30);
+        public Temperature Temperature { get; private set; }
+        public Temperature MinTemperature { get; private set; } = Temperature.CreateNew(10);
+        public Temperature MaxTemperature { get; private set; } = Temperature.CreateNew(30);
+        public Temperature DefaultTemperature { get; private set; } = Temperature.CreateNew(18);
         public int DefaultStep { get; private set; } = 4;
 
-        public Thermostat(Name name, ThermostatTemperature initialTemperature) : base(name)
+        public Thermostat(Name name, Temperature initialTemperature) : base(name)
         {
             Temperature = initialTemperature;
         }
@@ -22,7 +22,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.Thermostat
             Temperature = DefaultTemperature;
         }
 
-        public void SetTemperature(ThermostatTemperature temperature)
+        public void SetTemperature(Temperature temperature)
         {
             ThermostatValidator.CheckIsOn(Status);
             Temperature = temperature;
@@ -39,7 +39,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.Thermostat
         public void IncreaseTemperature()
         {
             ThermostatValidator.CheckIsOn(Status);
-            Temperature = ThermostatTemperature.CreateNew(Temperature + DefaultStep);
+            Temperature = Temperature.CreateNew(Temperature + DefaultStep);
             LastModified = DateTime.UtcNow;
         }
 
@@ -47,14 +47,14 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.Thermostat
         {
             ThermostatValidator.CheckIsOn(Status);
             ThermostatValidator.CheckIsPositive(value);
-            Temperature = ThermostatTemperature.CreateNew(Temperature + value);
+            Temperature = Temperature.CreateNew(Temperature + value);
             LastModified = DateTime.UtcNow;
         }
 
         public void DecreaseTemperature()
         {
             ThermostatValidator.CheckIsOn(Status);
-            Temperature = ThermostatTemperature.CreateNew(Temperature - DefaultStep);
+            Temperature = Temperature.CreateNew(Temperature - DefaultStep);
             LastModified = DateTime.UtcNow;
         }
 
@@ -62,7 +62,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.Thermostat
         {
             ThermostatValidator.CheckIsOn(Status);
             ThermostatValidator.CheckIsPositive(value);
-            Temperature = ThermostatTemperature.CreateNew(Temperature - value);
+            Temperature = Temperature.CreateNew(Temperature - value);
             LastModified = DateTime.UtcNow;
         }
     }
