@@ -4,6 +4,8 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner.Valu
 {
     public sealed record AirConditionerTemperature
     {
+        public const int MaxTemperature = 50;
+        public const int MinTemperature = 0;
         public int value { get; init; }
 
         private AirConditionerTemperature(int temperature)
@@ -13,7 +15,13 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner.Valu
 
         public static AirConditionerTemperature CreateNew(int temperature)
         {
-            return new AirConditionerTemperature(AirConditionerValidator.TemperatureValueValidator(temperature));
+            if(temperature < MinTemperature)
+                temperature = MinTemperature;
+
+            if(temperature > MaxTemperature)
+                temperature = MaxTemperature;
+
+            return new AirConditionerTemperature(temperature);
         }
 
 

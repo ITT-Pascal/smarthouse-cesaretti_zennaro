@@ -1,7 +1,7 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Devices.Door.Repositories;
 using BlaisePascal.SmartHouse.Domain.Devices.Door;
 
-namespace BlaisePascal.SmartHouse.Application.Devices.Door.Queries
+namespace BlaisePascal.SmartHouse.Application.Devices.DoorDevice.Queries
 {
     public class GetDoorByIdQuery
     {

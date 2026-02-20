@@ -2,6 +2,8 @@
 {
     public sealed record ThermostatTemperature
     {
+        public const int MaxTemperature = 30;
+        public const int MinTemperature = 10;
         public int value { get; init; }
 
         private ThermostatTemperature(int temperature)
@@ -11,7 +13,13 @@
         
         public static ThermostatTemperature CreateNew(int temperature)
         {
-            return new ThermostatTemperature(ThermostatValidator.TemperatureValueValidator(temperature));
+            if(temperature < MinTemperature)
+                temperature = MinTemperature;
+
+            if (temperature > MaxTemperature)
+                temperature = MaxTemperature;
+            
+            return new ThermostatTemperature(temperature);
         }
 
         public static int operator +(ThermostatTemperature temperature, int value)

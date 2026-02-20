@@ -4,23 +4,10 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.Thermostat
 {
     public static class ThermostatValidator
     {
-        public const int MaxTemperature = 30;
-        public const int MinTemperature = 10;
         public static void CheckIsOn(DeviceStatus deviceStatus)
         {
             if (deviceStatus != DeviceStatus.On)
                 throw new InvalidOperationException("cannot modify thermostat when it is off");
-        }
-
-        public static int TemperatureValueValidator(int value)
-        {
-            if (value < MinTemperature)
-                return MinTemperature;
-
-            if(value > MaxTemperature)
-                return MaxTemperature;
-
-            return value;
         }
         
         public static void CheckIsPositive(int value)
