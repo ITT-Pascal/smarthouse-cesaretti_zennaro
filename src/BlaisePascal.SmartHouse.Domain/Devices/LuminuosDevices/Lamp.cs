@@ -1,4 +1,5 @@
-﻿using BlaisePascal.SmartHouse.Domain.Devices.Abstraction.ValueObjects;
+﻿using BlaisePascal.SmartHouse.Domain.Devices.Abstraction;
+using BlaisePascal.SmartHouse.Domain.Devices.Abstraction.ValueObjects;
 using BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction;
 
 namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
@@ -13,7 +14,13 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
         {
 
         }
+
         public Lamp(Brightness brightness, Name name) : base(brightness, name) 
+        {
+
+        }
+
+        public Lamp(Guid id, Name name, DeviceStatus status, DateTime creationHour, DateTime lastModified, Brightness brightness) : base(id, name, status, creationHour, lastModified, brightness) 
         {
 
         }

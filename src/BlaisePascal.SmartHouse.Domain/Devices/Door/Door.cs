@@ -14,30 +14,37 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Door
             Password = password;
             DoorStatus = DoorStatus.Closed;
         }
+
+        public Door(Guid id, Name name, DeviceStatus deviceStatus, DateTime creationHour, DateTime lastModified, DoorStatus doorStatus, Password password) : base(id, name, deviceStatus, creationHour, lastModified)
+        {
+            DoorStatus = doorStatus;
+            Password = password;
+        }
+
         public void Open()
         {
-            DoorValidator.CheckIsOn(Status);
+            DoorValidator.CheckIsOn(DeviceStatus);
             DoorValidator.CanOpen(DoorStatus);
             DoorStatus = DoorStatus.Open;
             LastModified = DateTime.Now;
         }
         public void Close()
         {
-            DoorValidator.CheckIsOn(Status);
+            DoorValidator.CheckIsOn(DeviceStatus);
             DoorValidator.CanClose(DoorStatus);
             DoorStatus = DoorStatus.Closed;
             LastModified = DateTime.Now;
         }
         public void Lock()
         {
-            DoorValidator.CheckIsOn(Status);
+            DoorValidator.CheckIsOn(DeviceStatus);
             DoorValidator.CanLock(DoorStatus);
             DoorStatus = DoorStatus.Locked;
             LastModified = DateTime.Now;
         }
         public void Unlock(Password password)
         {
-            DoorValidator.CheckIsOn(Status);
+            DoorValidator.CheckIsOn(DeviceStatus);
             DoorValidator.CanUnlock(DoorStatus);
             DoorValidator.IsPasswordRight(Password, password);
             DoorStatus = DoorStatus.Closed;
@@ -46,7 +53,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Door
 
         public void ChangePassword(Password oldPassword, Password newPassword)
         {
-            DoorValidator.CheckIsOn(Status);
+            DoorValidator.CheckIsOn(DeviceStatus);
             DoorValidator.IsPasswordRight(Password, oldPassword);
             Password = newPassword;
             LastModified = DateTime.Now;

@@ -1,8 +1,6 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Devices.Abstraction.ValueObjects;
-using BlaisePascal.SmartHouse.Domain.Devices.HeatDevices;
 using BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner.ValueObjects;
 using BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.Thermostat;
-using BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.Thermostat.ValueObjects;
 
 namespace BlaisePascal.SmartHouse.TestDomain.ThermostatTest
 {
@@ -13,13 +11,14 @@ namespace BlaisePascal.SmartHouse.TestDomain.ThermostatTest
         {
             Thermostat thermostat = new(Name.CreateNew("Thermo1"));
             thermostat.SwitchOff();
-            Assert.Throws<InvalidOperationException>(() => thermostat.SetTemperature(Domain.Devices.HeatDevices.Thermostat.ValueObjects.Temperature.CreateNew(100)));
+            Assert.Throws<InvalidOperationException>(() => thermostat.SetTemperature(Temperature.CreateNew(100)));
         }
+
         [Fact]
         public void SetTemperature_WhenValueGoesOverTheMaxTemperatureIsSetAtMax()
         {
             Thermostat thermostat = new(Name.CreateNew("Thermo1"));
-            thermostat.SetTemperature(Domain.Devices.HeatDevices.Thermostat.ValueObjects.Temperature.CreateNew(200));
+            thermostat.SetTemperature(Temperature.CreateNew(200));
             Assert.Equal(thermostat.MaxTemperature, thermostat.Temperature);
         }
 
@@ -27,7 +26,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.ThermostatTest
         public void SetTemperature_WhenValueGoesUnderTheMinTemperatureIsSetAtMin()
         {
             Thermostat thermostat = new(Name.CreateNew("Thermo1"));
-            thermostat.SetTemperature(Domain.Devices.HeatDevices.Thermostat.ValueObjects.Temperature.CreateNew(-200));
+            thermostat.SetTemperature(Temperature.CreateNew(-200));
             Assert.Equal(thermostat.MinTemperature, thermostat.Temperature);
         }
 
@@ -35,8 +34,8 @@ namespace BlaisePascal.SmartHouse.TestDomain.ThermostatTest
         public void SetTemperature_WhenValueDoesNotOverFLowTheRangeTemperatureIsSetCorrectly()
         {
             Thermostat thermostat = new(Name.CreateNew("Thermo1"));
-            thermostat.SetTemperature(Domain.Devices.HeatDevices.Thermostat.ValueObjects.Temperature.CreateNew(20));
-            Domain.Devices.HeatDevices.Thermostat.ValueObjects.Temperature expected = Domain.Devices.HeatDevices.Thermostat.ValueObjects.Temperature.CreateNew(20);
+            thermostat.SetTemperature(Temperature.CreateNew(20));
+           Temperature expected = Temperature.CreateNew(20);
             Assert.Equal(expected, thermostat.Temperature);
         }
 
@@ -51,7 +50,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.ThermostatTest
         [Fact]
         public void SetTemperature_WithoutParametersTemperatureIsSetAtDefaultValue()
         {
-            Thermostat thermostat = new(Name.CreateNew("Thermo1"), Domain.Devices.HeatDevices.Thermostat.ValueObjects.Temperature.CreateNew(30));
+            Thermostat thermostat = new(Name.CreateNew("Thermo1"), Temperature.CreateNew(30));
             thermostat.SetTemperature();
             Assert.Equal(thermostat.DefaultTemperature, thermostat.Temperature);
         }
@@ -67,16 +66,16 @@ namespace BlaisePascal.SmartHouse.TestDomain.ThermostatTest
         [Fact]
         public void IncreaseTemperature_WithoutParametersTemperatureIsIncreasedByDefaultValue()
         {
-            Thermostat thermostat = new(Name.CreateNew("Thermo1"), Domain.Devices.HeatDevices.Thermostat.ValueObjects.Temperature.CreateNew(10));
+            Thermostat thermostat = new(Name.CreateNew("Thermo1"), Temperature.CreateNew(10));
             thermostat.IncreaseTemperature();
-            Domain.Devices.HeatDevices.Thermostat.ValueObjects.Temperature expected = Domain.Devices.HeatDevices.Thermostat.ValueObjects.Temperature.CreateNew(14);
+             Temperature expected = Temperature.CreateNew(14);
             Assert.Equal(expected, thermostat.Temperature);
         }
 
         [Fact]
         public void IncreaseTemperature_WhenDefaultValueGoesOverTheMaxTemperatureIsSetAtMax()
         {
-            Thermostat thermostat = new(Name.CreateNew("Thermo1"), Domain.Devices.HeatDevices.Thermostat.ValueObjects.Temperature.CreateNew(29));
+            Thermostat thermostat = new(Name.CreateNew("Thermo1"), Temperature.CreateNew(29));
             thermostat.IncreaseTemperature();
             Assert.Equal(thermostat.MaxTemperature, thermostat.Temperature);
         }
@@ -106,9 +105,9 @@ namespace BlaisePascal.SmartHouse.TestDomain.ThermostatTest
         [Fact]
         public void IncreaseTemperature_WhenValueDoesNotOverFlowTheRangeTemperatureIsSetCorrectly()
         {
-            Thermostat thermostat = new(Name.CreateNew("Thermo1"), Domain.Devices.HeatDevices.Thermostat.ValueObjects.Temperature.CreateNew(20));
+            Thermostat thermostat = new(Name.CreateNew("Thermo1"), Temperature.CreateNew(20));
             thermostat.IncreaseTemperature(5);
-            Domain.Devices.HeatDevices.Thermostat.ValueObjects.Temperature expected = Domain.Devices.HeatDevices.Thermostat.ValueObjects.Temperature.CreateNew(25);
+            Temperature expected = Temperature.CreateNew(25);
             Assert.Equal(expected, thermostat.Temperature);
         }
 
@@ -123,7 +122,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.ThermostatTest
         [Fact]
         public void DecreaseTemperature_WhenDefaultValueGoesUnderTheMinTemperatureIsSetAtMin()
         {
-            Thermostat thermostat = new(Name.CreateNew("Thermo1"), Domain.Devices.HeatDevices.Thermostat.ValueObjects.Temperature.CreateNew(1));
+            Thermostat thermostat = new(Name.CreateNew("Thermo1"), Temperature.CreateNew(1));
             thermostat.DecreaseTemperature();
             Assert.Equal(thermostat.MinTemperature, thermostat.Temperature);
         }
@@ -133,7 +132,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.ThermostatTest
         {
             Thermostat thermostat = new(Name.CreateNew("Thermo1"));
             thermostat.DecreaseTemperature();
-            Domain.Devices.HeatDevices.Thermostat.ValueObjects.Temperature expected = Domain.Devices.HeatDevices.Thermostat.ValueObjects.Temperature.CreateNew(14);
+            Temperature expected = Temperature.CreateNew(14);
             Assert.Equal(expected, thermostat.Temperature);
         }
 
@@ -165,7 +164,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.ThermostatTest
         {
             Thermostat thermostat = new(Name.CreateNew("Thermo1"));
             thermostat.DecreaseTemperature(2);
-            Domain.Devices.HeatDevices.Thermostat.ValueObjects.Temperature expected = Domain.Devices.HeatDevices.Thermostat.ValueObjects.Temperature.CreateNew(16);
+            Temperature expected = Temperature.CreateNew(16);
             Assert.Equal(expected, thermostat.Temperature);
         }
     }

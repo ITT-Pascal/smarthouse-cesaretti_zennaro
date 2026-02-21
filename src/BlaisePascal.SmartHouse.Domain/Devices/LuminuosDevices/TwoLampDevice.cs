@@ -14,7 +14,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
             {
                 DeviceStatus Status = DeviceStatus.Off;
                 
-                if (FirstLamp.Status == DeviceStatus.On || SecondLamp.Status == DeviceStatus.On)
+                if (FirstLamp.DeviceStatus == DeviceStatus.On || SecondLamp.DeviceStatus == DeviceStatus.On)
                     return DeviceStatus.On;
 
                 return Status;
@@ -33,10 +33,10 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
 
         public override void SwitchOn()
         {
-            if(FirstLamp.Status == DeviceStatus.Off)
+            if(FirstLamp.DeviceStatus == DeviceStatus.Off)
                 FirstLamp.SwitchOn();
 
-            if(SecondLamp.Status == DeviceStatus.Off)
+            if(SecondLamp.DeviceStatus == DeviceStatus.Off)
                 SecondLamp.SwitchOn();  
         }
 
@@ -135,10 +135,10 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
 
         public override void SwitchOff()
         {
-            if(FirstLamp.Status == DeviceStatus.On)
+            if(FirstLamp.DeviceStatus == DeviceStatus.On)
                 FirstLamp.SwitchOff();
 
-            if(SecondLamp.Status == DeviceStatus.On)
+            if(SecondLamp.DeviceStatus == DeviceStatus.On)
                 SecondLamp.SwitchOff();
         }
 
@@ -158,7 +158,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
             }
         }
 
-        public void SwitchLampOff(string name)
+        public void SwitchLampOff(Name name)
         {
             if (FirstLamp.Name == name)
             {
@@ -195,7 +195,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
             }
         }
 
-        public void SetLampBrightness(string name, int newBrightness)
+        public void SetLampBrightness(Name name, Brightness newBrightness)
         {
             if (FirstLamp.Name == name)
             {
@@ -211,13 +211,13 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
             }
         }
 
-        public void BrightenLamp(int value)
+        public void BrightenBothLamps(int value)
         {
             FirstLamp.Brighten(value);
             SecondLamp.Brighten(value);
         }
 
-        public void IncreaseLampBrightness(Guid id, int step)
+        public void BrightenLamp(Guid id, int step)
         {
 
             if (FirstLamp.Id == id)
@@ -235,7 +235,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
         }
 
 
-        public void IncreaseLampBrightness(string name, int step)
+        public void BrightenLamp(Name name, int step)
         {
 
             if (FirstLamp.Name == name)
@@ -252,13 +252,13 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
         }
 
 
-        public void DecreaseBothLampsBrightness(int step)
+        public void DimmerBothLamps(int step)
         {
             FirstLamp.Dimmer(step);
             SecondLamp.Dimmer(step);
         }
 
-        public void DecreaseLampBrightness(Guid id, int step)
+        public void DimmerLamp(Guid id, int step)
         {
 
             if (FirstLamp.Id == id)
@@ -276,7 +276,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
         }
 
 
-        public void DecreaseLampBrightness(string name, int step)
+        public void DimmerLamp(Name name, int step)
         {
 
             if (FirstLamp.Name == name)

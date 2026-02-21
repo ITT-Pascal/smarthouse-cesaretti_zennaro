@@ -13,7 +13,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.IlluminationTest
         {
             Lamp lamp = new(Brightness.CreateNew(50), Name.CreateNew("lamp"));
             lamp.SwitchOff();
-            Assert.Equal(DeviceStatus.Off, lamp.Status);
+            Assert.Equal(DeviceStatus.Off, lamp.DeviceStatus);
         }
 
         [Fact]
@@ -30,7 +30,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.IlluminationTest
             Lamp lamp = new(Name.CreateNew("lamp"));
             lamp.SwitchOff();
             lamp.SwitchOn();
-            Assert.Equal(DeviceStatus.On, lamp.Status);
+            Assert.Equal(DeviceStatus.On, lamp.DeviceStatus);
         }
 
         [Fact]
@@ -45,7 +45,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.IlluminationTest
         {
             Lamp lamp = new(Name.CreateNew("lamp"));
             lamp.SwitchOff();
-            Assert.Throws<InvalidOperationException>(() => lamp.SetBrightness(10));
+            Assert.Throws<InvalidOperationException>(() => lamp.SetBrightness(Brightness.CreateNew(10)));
         }
 
         [Fact]

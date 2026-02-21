@@ -21,13 +21,24 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner.Valu
             return new Temperature(temperature);
         }
 
-        public static Temperature CreateNew(int temperature, int min, int max)
+        public static Temperature AirConditionerCreateNew(int temperature)
         {
-            if(temperature < min) 
-                temperature = min;
+            if(temperature < MinAirConditionerTemperature) 
+                temperature = MinAirConditionerTemperature;
 
-            if(temperature > max)
-                temperature = max;
+            if(temperature > MaxAirConditionerTemperature)
+                temperature = MaxAirConditionerTemperature;
+
+            return new Temperature(temperature);
+        }
+
+        public static Temperature ThermostatCreateNew(int temperature)
+        {
+            if(temperature < MinThermostatTemperature) 
+                temperature = MinThermostatTemperature;
+
+            if(temperature > MaxThermostatTemperature)
+                temperature = MaxThermostatTemperature;
 
             return new Temperature(temperature);
         }

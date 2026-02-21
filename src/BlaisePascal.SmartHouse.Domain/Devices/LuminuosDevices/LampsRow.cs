@@ -20,7 +20,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
                 
                 foreach (AbstractLamp lamp in Lamps)
                 {
-                    if (lamp.Status == DeviceStatus.On)
+                    if (lamp.DeviceStatus == DeviceStatus.On)
                     {
                         lampsStatus = DeviceStatus.On;
                         break;
@@ -185,10 +185,10 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
 
         public void RemoveInPosition(int position)
         {
-            Lamps.RemoveAt(LampValidator.IsValueInMinMax(position, 0, Lamps.Count - 1));
+            Lamps.RemoveAt(LampValidator.IsInMinMax(position, 0, Lamps.Count - 1));
         }
 
-        public void SetIntensityForAllLamps(int newBrightness)
+        public void SetIntensityForAllLamps(Brightness newBrightness)
         {
             foreach (AbstractLamp lamp in Lamps)
             {
@@ -196,14 +196,14 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
             }
         }
 
-        public void SetIntensityForLamp(Guid id, int intensity)
+        public void SetIntensityForLamp(Guid id, Brightness brightness)
         {
             bool foundLamp = false;
             foreach (AbstractLamp lamp in Lamps)
             {
                 if (lamp.Id == id)
                 {
-                    lamp.SetBrightness(intensity);
+                    lamp.SetBrightness(brightness);
                     foundLamp = true;
                 }
             }
@@ -212,14 +212,14 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
                 throw new ArgumentException("not valid id");
         }
 
-        public void SetIntensityForLamp(string name, int intensity)
+        public void SetIntensityForLamp(string name, Brightness brightness)
         {
             bool foundLamp = false;
             foreach (AbstractLamp lamp in Lamps)
             {
                 if (lamp.Name == name)
                 {
-                    lamp.SetBrightness(intensity);
+                    lamp.SetBrightness(brightness);
                     foundLamp = true;
                 }
             }
@@ -300,8 +300,8 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
         {
             List<AbstractLamp> lampsInIntensityRange = new List<AbstractLamp>();
 
-            LampValidator.IsValueInMinMax(min, 0, 100);
-            LampValidator.IsValueInMinMax(max, 0, 100);
+            LampValidator.IsInMinMax(min, 0, 100);
+            LampValidator.IsInMinMax(max, 0, 100);
 
             if(min >=  max || max <= min)            
                 throw new ArgumentException("value cannot be equal, min cannot be greater than max and max cannot be smaller than min");
@@ -324,7 +324,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
             {
                 foreach(AbstractLamp lamp in Lamps)
                 {
-                    if(lamp.Status == DeviceStatus.On)
+                    if(lamp.DeviceStatus == DeviceStatus.On)
                     {
                         lampsOn.Add(lamp);
                     }
@@ -340,7 +340,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
             {
                 foreach (AbstractLamp lamp in Lamps)
                 {
-                    if (lamp.Status == DeviceStatus.Off)
+                    if (lamp.DeviceStatus == DeviceStatus.Off)
                     {
                         lampsOff.Add(lamp);
                     }

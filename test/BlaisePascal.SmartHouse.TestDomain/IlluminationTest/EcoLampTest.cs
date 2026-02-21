@@ -12,7 +12,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.IlluminationTest
         {
             EcoLamp ecoLamp = new(Brightness.CreateNew(50), Name.CreateNew("ecolamp1"));
             ecoLamp.SwitchOff();
-            Assert.Equal(DeviceStatus.Off, ecoLamp.Status);
+            Assert.Equal(DeviceStatus.Off, ecoLamp.DeviceStatus);
         }
 
         [Fact]
@@ -27,7 +27,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.IlluminationTest
         public void SwitchOn_SwitchOnTheLamp()
         {
             EcoLamp ecoLamp = new(Brightness.CreateNew(50), Name.CreateNew("ecolamp"));
-            Assert.Equal(DeviceStatus.On, ecoLamp.Status);
+            Assert.Equal(DeviceStatus.On, ecoLamp.DeviceStatus);
         }
 
         [Fact]
@@ -42,7 +42,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.IlluminationTest
         {
             EcoLamp ecoLamp = new(Name.CreateNew("ecolamp"));
             ecoLamp.SwitchOff();
-            Assert.Throws<InvalidOperationException>(() => ecoLamp.SetBrightness(10));
+            Assert.Throws<InvalidOperationException>(() => ecoLamp.SetBrightness(Brightness.CreateNew(10)));
         }
 
         [Fact]

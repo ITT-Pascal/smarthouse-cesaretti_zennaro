@@ -1,11 +1,6 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Devices.Abstraction;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BlaisePascal.SmartHouse.Application.Devices.DeviceStatusMapper
+namespace BlaisePascal.SmartHouse.Application.Devices.StatusMapper
 {
     public class DeviceStatusMapper
     {
@@ -13,9 +8,9 @@ namespace BlaisePascal.SmartHouse.Application.Devices.DeviceStatusMapper
         {
             return status switch
             {
-                DeviceStatus.On => "ON",
-                DeviceStatus.Off => "OFF",
-                _ => throw new ArgumentException("error")
+                DeviceStatus.On => "On",
+                DeviceStatus.Off => "Off",
+                _ => throw new ArgumentException("Invalid status value")
             };
         }
 
@@ -23,11 +18,15 @@ namespace BlaisePascal.SmartHouse.Application.Devices.DeviceStatusMapper
         {
             return status switch
             {
-                "ON" => DeviceStatus.On,
-                "OFF" => DeviceStatus.Off,
-                _ => throw new ArgumentException("non valid status")
+                "On" => DeviceStatus.On,
+                "Off" => DeviceStatus.Off,
+                _ => throw new ArgumentException("Invalid status value")
             };
         }
 
+        internal static string ToDto(object status)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

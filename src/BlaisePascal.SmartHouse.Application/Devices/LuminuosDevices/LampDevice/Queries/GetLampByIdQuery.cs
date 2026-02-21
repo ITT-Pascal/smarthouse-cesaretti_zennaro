@@ -1,10 +1,6 @@
-﻿using BlaisePascal.SmartHouse.Domain.Devices.Illumination;
+﻿using BlaisePascal.SmartHouse.Application.Devices.LuminuosDevices.LampDevice.DeviceMapper;
+using BlaisePascal.SmartHouse.Application.Devices.LuminuosDevices.Lamps.Dto;
 using BlaisePascal.SmartHouse.Domain.Devices.Illumination.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BlaisePascal.SmartHouse.Application.Devices.Luminuos.Lamps.Queries
 {
@@ -17,9 +13,9 @@ namespace BlaisePascal.SmartHouse.Application.Devices.Luminuos.Lamps.Queries
             _repository = lampRepository;
         }
 
-        public Lamp Execute(Guid id)
+        public LampDto Execute(Guid id)
         {
-            return _repository.GetById(id);
+            return LampMapper.ToDto(_repository.GetById(id));
         }
     }
 }

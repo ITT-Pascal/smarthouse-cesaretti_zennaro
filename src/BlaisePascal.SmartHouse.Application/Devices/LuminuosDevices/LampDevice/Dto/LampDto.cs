@@ -13,7 +13,7 @@ namespace BlaisePascal.SmartHouse.Application.Devices.LuminuosDevices.Lamps.Dto
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public string Status { get; set; }
+        public string DeviceStatus { get; set; }
         public int Brightness { get; set; }
         public DateTime CreationHour { get; set; }
         public DateTime LastModified { get; set; }

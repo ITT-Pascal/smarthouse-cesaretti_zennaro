@@ -1,6 +1,4 @@
-﻿using BlaisePascal.SmartHouse.Domain.Devices.LuminuosDevices.Abstraction.ValueObjects;
-
-namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction
+﻿namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction
 {
     public sealed record Brightness
     {

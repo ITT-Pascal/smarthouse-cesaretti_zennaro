@@ -12,9 +12,9 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner
         public Temperature DefaultTemperature { get; private set; } = Temperature.CreateNew(18);
         public int DefaultStep { get; private set; }= 5;
 
-        public AirConditioner(Name name, Temperature temperature) : base(name)
+        public AirConditioner(Name name, Temperature initialTemperature) : base(name)
         {
-            Temperature = temperature;
+            Temperature = Temperature.AirConditionerCreateNew(initialTemperature.Value);
         }
 
         public AirConditioner(Name name) : base(name)
@@ -24,43 +24,43 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner
 
         public void SetTemperature(Temperature temperature)
         {
-            AirConditionerValidator.CheckIsOn(Status);   
-            Temperature = temperature;
+            AirConditionerValidator.CheckIsOn(DeviceStatus);   
+            Temperature = Temperature.AirConditionerCreateNew(temperature.Value);
             LastModified = DateTime.UtcNow;
         }
 
         public void SetTemperature()
         {
-            AirConditionerValidator.CheckIsOn(Status);
+            AirConditionerValidator.CheckIsOn(DeviceStatus);
             Temperature = DefaultTemperature;
             LastModified = DateTime.UtcNow;
         }
 
         public void IncreaseTemperature()
         {
-            AirConditionerValidator.CheckIsOn(Status);
-            Temperature = Temperature.CreateNew(Temperature + DefaultStep);
+            AirConditionerValidator.CheckIsOn(DeviceStatus);
+            Temperature = Temperature.AirConditionerCreateNew(Temperature + DefaultStep);
             LastModified = DateTime.UtcNow;
         }
 
         public void IncreaseTemperature(int value)
         {
-            AirConditionerValidator.CheckIsOn(Status);
+            AirConditionerValidator.CheckIsOn(DeviceStatus);
             AirConditionerValidator.CheckIsPositive(value);
-            Temperature = Temperature.CreateNew(Temperature + value);
+            Temperature = Temperature.AirConditionerCreateNew(Temperature + value);
             LastModified = DateTime.UtcNow;
         }
         public void DecreaseTemperature()
         {
-            AirConditionerValidator.CheckIsOn(Status);
-            Temperature = Temperature.CreateNew(Temperature - DefaultStep);
+            AirConditionerValidator.CheckIsOn(DeviceStatus);
+            Temperature = Temperature.AirConditionerCreateNew(Temperature - DefaultStep);
             LastModified = DateTime.UtcNow;
         }
         public void DecreaseTemperature(int value)
         {
-            AirConditionerValidator.CheckIsOn(Status);
+            AirConditionerValidator.CheckIsOn(DeviceStatus);
             AirConditionerValidator.CheckIsPositive(value);
-            Temperature = Temperature.CreateNew(Temperature - value);
+            Temperature = Temperature.AirConditionerCreateNew(Temperature - value);
             LastModified = DateTime.UtcNow;
         }
 

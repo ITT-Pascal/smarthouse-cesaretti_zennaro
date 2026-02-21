@@ -6,7 +6,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Abstraction
     {
         public Name Name { get; protected set; }
         public Guid Id { get; protected set; }
-        public DeviceStatus Status { get; protected set; }
+        public DeviceStatus DeviceStatus { get; protected set; }
         public DateTime CreationHour { get; protected set; }
         public DateTime LastModified { get; protected set; }
 
@@ -15,21 +15,32 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Abstraction
             Name = name;
             Id = Guid.NewGuid();
             CreationHour = DateTime.Now;
-            Status = DeviceStatus.On;
+            DeviceStatus = DeviceStatus.On;
             LastModified = DateTime.Now;
         }
 
+        public AbstractDevice(Guid id, Name name, DeviceStatus status, DateTime creationHour, DateTime lastModified)
+        {
+            Id = id;
+            Name = name;
+            DeviceStatus = status;
+            CreationHour = creationHour;
+            LastModified = lastModified;
+        }
+
+        public AbstractDevice() { }
+
         public virtual void SwitchOn()
         {
-            AbstractDeviceValidator.CheckIsOn(Status);
-            Status = DeviceStatus.On;
+            AbstractDeviceValidator.CheckIsOn(DeviceStatus);
+            DeviceStatus = DeviceStatus.On;
             LastModified = DateTime.Now;
         }
 
         public virtual void SwitchOff()
         {
-            AbstractDeviceValidator.CheckIsOff(Status);
-            Status = DeviceStatus.Off;
+            AbstractDeviceValidator.CheckIsOff(DeviceStatus);
+            DeviceStatus = DeviceStatus.Off;
             LastModified = DateTime.Now;
         }
     }

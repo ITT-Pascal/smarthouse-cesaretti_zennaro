@@ -1,7 +1,6 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Devices.Abstraction;
 using BlaisePascal.SmartHouse.Domain.Devices.Abstraction.ValueObjects;
 using BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction;
-using BlaisePascal.SmartHouse.Domain.Devices.LuminuosDevices.Abstraction.ValueObjects;
 
 namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
 {
@@ -14,15 +13,20 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
 
         private DateTime? autoOffAtUtc;
 
-        public EcoLamp(Brightness brightness, Name name) : base(brightness, name)
-        {
-
-        }
         public EcoLamp(Name name) : base(name)
         {
 
         }
 
+        public EcoLamp(Brightness brightness, Name name) : base(brightness, name)
+        {
+
+        }
+
+        public EcoLamp(Guid id, Name name, DeviceStatus status, DateTime creationHour, DateTime lastModified, Brightness brightness) : base(id, name, status, creationHour, lastModified, brightness)
+        {
+
+        }
         public override void SwitchOn()
         {
             EcoSwitchOn(enableAutoOff: false);
@@ -54,7 +58,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
 
         public override void Brighten(int value)
         {
-            AbstractLampValidator.CheckIsOn(Status);
+            AbstractLampValidator.CheckIsOn(DeviceStatus);
             AbstractLampValidator.IsPositive(value);
             Brightness = Brightness.CreateNewEco(Brightness + value);
             LastModified = DateTime.UtcNow;
@@ -63,7 +67,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
 
         public override void Dimmer(int value)
         {
-            AbstractLampValidator.CheckIsOn(Status);
+            AbstractLampValidator.CheckIsOn(DeviceStatus);
             AbstractLampValidator.IsPositive(value);
             Brightness = Brightness.CreateNewEco(Brightness - value);
             LastModified = DateTime.UtcNow;
@@ -78,7 +82,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
 
         public void EcoSwitchOn()
         {
-            if (Status == DeviceStatus.On &&
+            if (DeviceStatus == DeviceStatus.On &&
                 autoOffAtUtc.HasValue &&
                 DateTime.UtcNow >= autoOffAtUtc.Value)
             {
