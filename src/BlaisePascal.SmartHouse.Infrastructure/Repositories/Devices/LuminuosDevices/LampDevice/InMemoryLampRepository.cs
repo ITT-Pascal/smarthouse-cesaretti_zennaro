@@ -33,13 +33,13 @@ namespace BlaisePascal.SmartHouse.Infrastructure.Repositories.InMemory.Devices.L
                     return lamp;
             }
 
-            throw new ArgumentException("Lamp not found");
+            return null;
         }
 
         public void Add(Lamp lamp)
         {
             if(lamp == null)
-                throw new ArgumentNullException(nameof(lamp));
+                throw new ArgumentNullException("cannot add a null lamp");
 
             _lamps.Add(lamp);
         }

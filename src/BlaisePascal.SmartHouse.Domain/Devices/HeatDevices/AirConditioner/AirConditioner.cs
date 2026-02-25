@@ -22,6 +22,11 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner
             Temperature = DefaultTemperature;
         }
 
+        public AirConditioner(Guid id, Name name, DeviceStatus deviceStatus, DateTime creationHour, DateTime lastModified, Temperature initialTemperature) : base(id, name, deviceStatus, creationHour, lastModified)
+        {
+            Temperature = Temperature.AirConditionerCreateNew(initialTemperature.Value);
+        }
+
         public void SetTemperature(Temperature temperature)
         {
             AirConditionerValidator.CheckIsOn(DeviceStatus);   

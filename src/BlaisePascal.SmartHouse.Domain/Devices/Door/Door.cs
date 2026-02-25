@@ -9,6 +9,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Door
 
         public DoorStatus DoorStatus { get; private set; }
         public Password Password { get; private set; }
+
         public Door(Name name, Password password) : base(name)
         {
             Password = password;

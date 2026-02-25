@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace BlaisePascal.SmartHouse.Application.Devices.LuminuosDevices.Lamps.Commands
 {
-    public class SwitchOffCommand
+    public class SwitchOffLampCommand
     {
         private readonly ILampRepository _repository;
     
-        public SwitchOffCommand(ILampRepository lampRepository)
+        public SwitchOffLampCommand(ILampRepository lampRepository)
         {
                 _repository = lampRepository;
         }

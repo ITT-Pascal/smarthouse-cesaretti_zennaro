@@ -1,5 +1,7 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Devices.Abstraction;
 using BlaisePascal.SmartHouse.Domain.Devices.Abstraction.ValueObjects;
+using BlaisePascal.SmartHouse.Domain.Devices.Door;
+using BlaisePascal.SmartHouse.Domain.Devices.Door.ValueObjects;
 using BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner.ValueObjects;
 
 namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.Thermostat
@@ -20,6 +22,11 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.Thermostat
         public Thermostat(Name name) : base(name)
         {
             Temperature = DefaultTemperature;
+        }
+
+        public Thermostat(Guid id, Name name, DeviceStatus deviceStatus, DateTime creationHour, DateTime lastModified, Temperature initialTemperature) : base(id, name, deviceStatus, creationHour, lastModified)
+        {
+            Temperature = Temperature.ThermostatCreateNew(initialTemperature.Value);
         }
 
         public void SetTemperature(Temperature temperature)
