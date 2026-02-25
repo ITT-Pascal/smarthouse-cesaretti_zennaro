@@ -32,4 +32,5 @@ namespace BlaisePascal.SmartHouse.Application.Devices.LuminuosDevices.LampDevice
                 Brightness.CreateNew(lampDto.Brightness)
             );
         }
+    }   
 }
