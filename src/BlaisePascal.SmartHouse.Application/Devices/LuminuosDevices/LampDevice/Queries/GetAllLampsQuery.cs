@@ -1,14 +1,6 @@
 ﻿using BlaisePascal.SmartHouse.Application.Devices.LuminuosDevices.LampDevice.DeviceMapper;
 using BlaisePascal.SmartHouse.Application.Devices.LuminuosDevices.Lamps.Dto;
-using BlaisePascal.SmartHouse.Application.Devices.LuminuosDevices.Lamps.LampMapper;
-using BlaisePascal.SmartHouse.Domain.Devices.Illumination;
-using BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction;
 using BlaisePascal.SmartHouse.Domain.Devices.Illumination.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BlaisePascal.SmartHouse.Application.Devices.Luminuos.Lamps.Queries
 {

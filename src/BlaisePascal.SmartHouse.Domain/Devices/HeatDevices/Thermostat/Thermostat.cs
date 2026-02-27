@@ -3,15 +3,16 @@ using BlaisePascal.SmartHouse.Domain.Devices.Abstraction.ValueObjects;
 using BlaisePascal.SmartHouse.Domain.Devices.Door;
 using BlaisePascal.SmartHouse.Domain.Devices.Door.ValueObjects;
 using BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner.ValueObjects;
+using BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.ValueObjects;
 
 namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.Thermostat
 {
     public class Thermostat : AbstractDevice, IHeatDevices
     {
         public Temperature Temperature { get; private set; }
-        public Temperature MinTemperature { get; private set; } = Temperature.CreateNew(10);
-        public Temperature MaxTemperature { get; private set; } = Temperature.CreateNew(30);
-        public Temperature DefaultTemperature { get; private set; } = Temperature.CreateNew(18);
+        public Temperature MinTemperature { get; private set; } = Temperature.CreateNewMin(TemperatureType.THERMOSTAT);
+        public Temperature MaxTemperature { get; private set; } = Temperature.CreateNewMax(TemperatureType.THERMOSTAT);
+        public Temperature DefaultTemperature { get; private set; } = Temperature.CreateNewDefault(TemperatureType.THERMOSTAT);
         public int DefaultStep { get; private set; } = 4;
 
         public Thermostat(Name name, Temperature initialTemperature) : base(name)
