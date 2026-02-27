@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlaisePascal.SmartHouse.Domain.Devices.CCTV.Repositories
 {
-    public interface ICCTVRepositories
+    public interface ICCTVRepository
     {
         void Add(CCTV cctv);
         void Update(CCTV cctv);

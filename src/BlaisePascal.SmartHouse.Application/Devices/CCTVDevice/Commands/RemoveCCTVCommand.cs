@@ -10,9 +10,9 @@ namespace BlaisePascal.SmartHouse.Application.Devices.CCTVDevice.Commands
 {
     public class RemoveCCTVCommand
     {
-        private readonly ICCTVRepositories _repository;
+        private readonly ICCTVRepository _repository;
 
-        public RemoveCCTVCommand(ICCTVRepositories repository)
+        public RemoveCCTVCommand(ICCTVRepository repository)
         {
             _repository = repository;
         }
