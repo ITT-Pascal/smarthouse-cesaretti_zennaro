@@ -1,4 +1,5 @@
-﻿using BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner;
+﻿using BlaisePascal.SmartHouse.Domain.Devices.Abstraction.ValueObjects;
+using BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner;
 using BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner.Repositories;
 using System;
 using System.Collections.Generic;
@@ -17,9 +18,9 @@ namespace BlaisePascal.SmartHouse.Application.Devices.HeatDevices.AirConditioner
             _repository = repository;
         }
 
-        public void Execute(AirConditioner airConditioner)
+        public void Execute(string name)
         {
-            _repository.Add(airConditioner);
+            _repository.Add(new AirConditioner(Name.CreateNew(name)));
         }
     }
 }

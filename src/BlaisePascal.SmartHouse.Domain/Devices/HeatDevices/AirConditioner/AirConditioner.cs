@@ -10,7 +10,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner
         public Temperature MinTemperature { get; private set; } = Temperature.CreateNew(10);
         public Temperature MaxTemperature { get; private set; } = Temperature.CreateNew(50);
         public Temperature DefaultTemperature { get; private set; } = Temperature.CreateNew(18);
-        public int DefaultStep { get; private set; }= 5;
+        public int DefaultStep { get; private set; } = 5;
 
         public AirConditioner(Name name, Temperature initialTemperature) : base(name)
         {
@@ -68,6 +68,5 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner
             Temperature = Temperature.AirConditionerCreateNew(Temperature - value);
             LastModified = DateTime.UtcNow;
         }
-
     }
 }
