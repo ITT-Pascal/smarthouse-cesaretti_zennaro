@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\morgan.zennaro\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|c:\\users\\morgan.zennaro\\desktop\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\stoprecordingcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|solutionrelative:src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\stoprecordingcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|c:\\users\\morgan.zennaro\\desktop\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\startrecordingcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|solutionrelative:src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\startrecordingcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30EB9C6B-CB6C-4F77-8B1C-2D21AA339C3C}|src\\BlaisePascal.SmartHouse.Domain\\BlaisePascal.SmartHouse.Domain.csproj|c:\\users\\morgan.zennaro\\desktop\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.domain\\devices\\heatdevices\\thermostat\\thermostat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30EB9C6B-CB6C-4F77-8B1C-2D21AA339C3C}|src\\BlaisePascal.SmartHouse.Domain\\BlaisePascal.SmartHouse.Domain.csproj|solutionrelative:src\\blaisepascal.smarthouse.domain\\devices\\heatdevices\\thermostat\\thermostat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|c:\\users\\morgan.zennaro\\desktop\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\decreasezoomcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|solutionrelative:src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\decreasezoomcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -67,6 +79,45 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "StopRecordingCommand.cs",
+              "DocumentMoniker": "C:\\Users\\morgan.zennaro\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\StopRecordingCommand.cs",
+              "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\StopRecordingCommand.cs",
+              "ToolTip": "C:\\Users\\morgan.zennaro\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\StopRecordingCommand.cs",
+              "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\StopRecordingCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T08:29:35.799Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StartRecordingCommand.cs",
+              "DocumentMoniker": "C:\\Users\\morgan.zennaro\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\StartRecordingCommand.cs",
+              "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\StartRecordingCommand.cs",
+              "ToolTip": "C:\\Users\\morgan.zennaro\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\StartRecordingCommand.cs",
+              "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\StartRecordingCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T08:26:04.28Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Thermostat.cs",
+              "DocumentMoniker": "C:\\Users\\morgan.zennaro\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\HeatDevices\\Thermostat\\Thermostat.cs",
+              "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Domain\\Devices\\HeatDevices\\Thermostat\\Thermostat.cs",
+              "ToolTip": "C:\\Users\\morgan.zennaro\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\HeatDevices\\Thermostat\\Thermostat.cs",
+              "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Domain\\Devices\\HeatDevices\\Thermostat\\Thermostat.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T08:18:19.074Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "DecreaseZoomCommand.cs",
               "DocumentMoniker": "C:\\Users\\morgan.zennaro\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\DecreaseZoomCommand.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\DecreaseZoomCommand.cs",
@@ -79,7 +130,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "IncreaseZoomCommand.cs",
               "DocumentMoniker": "C:\\Users\\morgan.zennaro\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\IncreaseZoomCommand.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\IncreaseZoomCommand.cs",
@@ -92,7 +143,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "SetZoomCommand.cs",
               "DocumentMoniker": "C:\\Users\\morgan.zennaro\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\SetZoomCommand.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\SetZoomCommand.cs",
@@ -105,7 +156,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "DecreaseRotationDegreesCommand.cs",
               "DocumentMoniker": "C:\\Users\\morgan.zennaro\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\DecreaseRotationDegreesCommand.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\DecreaseRotationDegreesCommand.cs",
@@ -118,7 +169,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "IncreaseRotationDegreesCommand.cs",
               "DocumentMoniker": "C:\\Users\\morgan.zennaro\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\IncreaseRotationDegreesCommand.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\IncreaseRotationDegreesCommand.cs",
@@ -131,7 +182,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "SetRotationDegreesCommand.cs",
               "DocumentMoniker": "C:\\Users\\morgan.zennaro\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\SetRotationDegreesCommand.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\SetRotationDegreesCommand.cs",
@@ -144,7 +195,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "UpdateCCTVCommand.cs",
               "DocumentMoniker": "C:\\Users\\morgan.zennaro\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\UpdateCCTVCommand.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\UpdateCCTVCommand.cs",
@@ -157,7 +208,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "ICCTVRepository.cs",
               "DocumentMoniker": "C:\\Users\\morgan.zennaro\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\CCTV\\Repositories\\ICCTVRepository.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Domain\\Devices\\CCTV\\Repositories\\ICCTVRepository.cs",
@@ -182,7 +233,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "RemoveCCTVCommand.cs",
               "DocumentMoniker": "C:\\Users\\morgan.zennaro\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\RemoveCCTVCommand.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\RemoveCCTVCommand.cs",
@@ -195,7 +246,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "AddCCTVCommand.cs",
               "DocumentMoniker": "C:\\Users\\morgan.zennaro\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\AddCCTVCommand.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\AddCCTVCommand.cs",
@@ -208,7 +259,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "AirMode.cs",
               "DocumentMoniker": "C:\\Users\\morgan.zennaro\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\HeatDevices\\AirConditioner\\AirMode.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Domain\\Devices\\HeatDevices\\AirConditioner\\AirMode.cs",
@@ -220,7 +271,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "AirSpeed.cs",
               "DocumentMoniker": "C:\\Users\\morgan.zennaro\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\HeatDevices\\AirConditioner\\AirSpeed.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Domain\\Devices\\HeatDevices\\AirConditioner\\AirSpeed.cs",
@@ -232,7 +283,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "AirConditioner.cs",
               "DocumentMoniker": "C:\\Users\\morgan.zennaro\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\HeatDevices\\AirConditioner\\AirConditioner.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Domain\\Devices\\HeatDevices\\AirConditioner\\AirConditioner.cs",
@@ -240,7 +291,8 @@
               "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Domain\\Devices\\HeatDevices\\AirConditioner\\AirConditioner.cs",
               "ViewState": "AgIAABoAAAAAAAAAAAAAwBcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-27T07:02:44.408Z"
+              "WhenOpened": "2026-02-27T07:02:44.408Z",
+              "EditorCaption": ""
             }
           ]
         }
