@@ -23,5 +23,7 @@ namespace BlaisePascal.SmartHouse.Application.Devices.Luminuos.Lamps.Commands
         {
             _repository.Add(new Lamp(Name.CreateNew(lampName)));
         }
+
+        // TODO FINISH CONTROLLER FOR LAMP
     }
 }
