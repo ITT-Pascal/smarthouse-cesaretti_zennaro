@@ -1,69 +1,69 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\",
+  "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|c:\\users\\davide.cesaretti\\desktop\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.application\\devices\\luminuosdevices\\lampdevice\\commands\\addlampcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|solutionrelative:src\\blaisepascal.smarthouse.application\\devices\\luminuosdevices\\lampdevice\\commands\\addlampcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66683504-8271-4305-B957-BE731868FB7B}|src\\BlaisePascal.SmartHouse.Console\\BlaisePascal.SmartHouse.Console.csproj|c:\\users\\davide.cesaretti\\desktop\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.console\\devices\\controllers\\lampcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{66683504-8271-4305-B957-BE731868FB7B}|src\\BlaisePascal.SmartHouse.Console\\BlaisePascal.SmartHouse.Console.csproj|c:\\users\\user\\desktop\\blaisepascal\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.console\\devices\\controllers\\lampcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66683504-8271-4305-B957-BE731868FB7B}|src\\BlaisePascal.SmartHouse.Console\\BlaisePascal.SmartHouse.Console.csproj|solutionrelative:src\\blaisepascal.smarthouse.console\\devices\\controllers\\lampcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66683504-8271-4305-B957-BE731868FB7B}|src\\BlaisePascal.SmartHouse.Console\\BlaisePascal.SmartHouse.Console.csproj|c:\\users\\davide.cesaretti\\desktop\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.console\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{66683504-8271-4305-B957-BE731868FB7B}|src\\BlaisePascal.SmartHouse.Console\\BlaisePascal.SmartHouse.Console.csproj|c:\\users\\user\\desktop\\blaisepascal\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.console\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66683504-8271-4305-B957-BE731868FB7B}|src\\BlaisePascal.SmartHouse.Console\\BlaisePascal.SmartHouse.Console.csproj|solutionrelative:src\\blaisepascal.smarthouse.console\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|c:\\users\\davide.cesaretti\\desktop\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\decreasezoomcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|c:\\users\\user\\desktop\\blaisepascal\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.application\\devices\\luminuosdevices\\lampdevice\\commands\\addlampcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|solutionrelative:src\\blaisepascal.smarthouse.application\\devices\\luminuosdevices\\lampdevice\\commands\\addlampcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|c:\\users\\user\\desktop\\blaisepascal\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\decreasezoomcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|solutionrelative:src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\decreasezoomcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|c:\\users\\davide.cesaretti\\desktop\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\increasezoomcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|c:\\users\\user\\desktop\\blaisepascal\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\increasezoomcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|solutionrelative:src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\increasezoomcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|c:\\users\\davide.cesaretti\\desktop\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\setzoomcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|c:\\users\\user\\desktop\\blaisepascal\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\setzoomcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|solutionrelative:src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\setzoomcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|c:\\users\\davide.cesaretti\\desktop\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\setrotationdegreescommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|c:\\users\\user\\desktop\\blaisepascal\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\setrotationdegreescommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|solutionrelative:src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\setrotationdegreescommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|c:\\users\\davide.cesaretti\\desktop\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\decreaserotationdegreescommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|c:\\users\\user\\desktop\\blaisepascal\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\decreaserotationdegreescommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|solutionrelative:src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\decreaserotationdegreescommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|c:\\users\\davide.cesaretti\\desktop\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\increaserotationdegreescommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|c:\\users\\user\\desktop\\blaisepascal\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\increaserotationdegreescommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|solutionrelative:src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\increaserotationdegreescommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|c:\\users\\davide.cesaretti\\desktop\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\updatecctvcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|c:\\users\\user\\desktop\\blaisepascal\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\updatecctvcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|solutionrelative:src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\updatecctvcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|c:\\users\\davide.cesaretti\\desktop\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\removecctvcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|c:\\users\\user\\desktop\\blaisepascal\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\removecctvcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|solutionrelative:src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\removecctvcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|c:\\users\\davide.cesaretti\\desktop\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\addcctvcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|c:\\users\\user\\desktop\\blaisepascal\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\addcctvcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|solutionrelative:src\\blaisepascal.smarthouse.application\\devices\\cctvdevice\\commands\\addcctvcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{30EB9C6B-CB6C-4F77-8B1C-2D21AA339C3C}|src\\BlaisePascal.SmartHouse.Domain\\BlaisePascal.SmartHouse.Domain.csproj|c:\\users\\davide.cesaretti\\desktop\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.domain\\devices\\cctv\\repositories\\icctvrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{30EB9C6B-CB6C-4F77-8B1C-2D21AA339C3C}|src\\BlaisePascal.SmartHouse.Domain\\BlaisePascal.SmartHouse.Domain.csproj|c:\\users\\user\\desktop\\blaisepascal\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.domain\\devices\\cctv\\repositories\\icctvrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{30EB9C6B-CB6C-4F77-8B1C-2D21AA339C3C}|src\\BlaisePascal.SmartHouse.Domain\\BlaisePascal.SmartHouse.Domain.csproj|solutionrelative:src\\blaisepascal.smarthouse.domain\\devices\\cctv\\repositories\\icctvrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{30EB9C6B-CB6C-4F77-8B1C-2D21AA339C3C}|src\\BlaisePascal.SmartHouse.Domain\\BlaisePascal.SmartHouse.Domain.csproj|c:\\users\\davide.cesaretti\\desktop\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.domain\\devices\\heatdevices\\airconditioner\\airmode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{30EB9C6B-CB6C-4F77-8B1C-2D21AA339C3C}|src\\BlaisePascal.SmartHouse.Domain\\BlaisePascal.SmartHouse.Domain.csproj|c:\\users\\user\\desktop\\blaisepascal\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.domain\\devices\\heatdevices\\airconditioner\\airmode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{30EB9C6B-CB6C-4F77-8B1C-2D21AA339C3C}|src\\BlaisePascal.SmartHouse.Domain\\BlaisePascal.SmartHouse.Domain.csproj|solutionrelative:src\\blaisepascal.smarthouse.domain\\devices\\heatdevices\\airconditioner\\airmode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{30EB9C6B-CB6C-4F77-8B1C-2D21AA339C3C}|src\\BlaisePascal.SmartHouse.Domain\\BlaisePascal.SmartHouse.Domain.csproj|c:\\users\\davide.cesaretti\\desktop\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.domain\\devices\\heatdevices\\airconditioner\\airconditioner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{30EB9C6B-CB6C-4F77-8B1C-2D21AA339C3C}|src\\BlaisePascal.SmartHouse.Domain\\BlaisePascal.SmartHouse.Domain.csproj|c:\\users\\user\\desktop\\blaisepascal\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.domain\\devices\\heatdevices\\airconditioner\\airconditioner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{30EB9C6B-CB6C-4F77-8B1C-2D21AA339C3C}|src\\BlaisePascal.SmartHouse.Domain\\BlaisePascal.SmartHouse.Domain.csproj|solutionrelative:src\\blaisepascal.smarthouse.domain\\devices\\heatdevices\\airconditioner\\airconditioner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{30EB9C6B-CB6C-4F77-8B1C-2D21AA339C3C}|src\\BlaisePascal.SmartHouse.Domain\\BlaisePascal.SmartHouse.Domain.csproj|c:\\users\\davide.cesaretti\\desktop\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.domain\\devices\\heatdevices\\airconditioner\\airspeed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{30EB9C6B-CB6C-4F77-8B1C-2D21AA339C3C}|src\\BlaisePascal.SmartHouse.Domain\\BlaisePascal.SmartHouse.Domain.csproj|c:\\users\\user\\desktop\\blaisepascal\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.domain\\devices\\heatdevices\\airconditioner\\airspeed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{30EB9C6B-CB6C-4F77-8B1C-2D21AA339C3C}|src\\BlaisePascal.SmartHouse.Domain\\BlaisePascal.SmartHouse.Domain.csproj|solutionrelative:src\\blaisepascal.smarthouse.domain\\devices\\heatdevices\\airconditioner\\airspeed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -74,45 +74,57 @@
       "DocumentGroups": [
         {
           "DockedWidth": 183,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AddLampCommand.cs",
-              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\LuminuosDevices\\LampDevice\\Commands\\AddLampCommand.cs",
-              "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Application\\Devices\\LuminuosDevices\\LampDevice\\Commands\\AddLampCommand.cs",
-              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\LuminuosDevices\\LampDevice\\Commands\\AddLampCommand.cs",
-              "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Application\\Devices\\LuminuosDevices\\LampDevice\\Commands\\AddLampCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-27T08:38:36.166Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "AddLampCommand.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\LuminuosDevices\\LampDevice\\Commands\\AddLampCommand.cs",
+              "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Application\\Devices\\LuminuosDevices\\LampDevice\\Commands\\AddLampCommand.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\LuminuosDevices\\LampDevice\\Commands\\AddLampCommand.cs*",
+              "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Application\\Devices\\LuminuosDevices\\LampDevice\\Commands\\AddLampCommand.cs*",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAcwBgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T08:38:36.166Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "LampController.cs",
-              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Console\\Devices\\Controllers\\LampController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Console\\Devices\\Controllers\\LampController.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Console\\Devices\\Controllers\\LampController.cs",
-              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Console\\Devices\\Controllers\\LampController.cs",
-              "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Console\\Devices\\Controllers\\LampController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Console\\Devices\\Controllers\\LampController.cs*",
+              "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Console\\Devices\\Controllers\\LampController.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-27T08:27:51.888Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Console\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Console\\Program.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Console\\Program.cs",
-              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Console\\Program.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Console\\Program.cs",
               "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Console\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -123,22 +135,21 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "DecreaseZoomCommand.cs",
-              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\DecreaseZoomCommand.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\DecreaseZoomCommand.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\DecreaseZoomCommand.cs",
-              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\DecreaseZoomCommand.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\DecreaseZoomCommand.cs",
               "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\DecreaseZoomCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAwAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-27T08:13:10.377Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-27T08:13:10.377Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "IncreaseZoomCommand.cs",
-              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\IncreaseZoomCommand.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\IncreaseZoomCommand.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\IncreaseZoomCommand.cs",
-              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\IncreaseZoomCommand.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\IncreaseZoomCommand.cs",
               "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\IncreaseZoomCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -148,9 +159,9 @@
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "SetZoomCommand.cs",
-              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\SetZoomCommand.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\SetZoomCommand.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\SetZoomCommand.cs",
-              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\SetZoomCommand.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\SetZoomCommand.cs",
               "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\SetZoomCommand.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAB8AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -160,9 +171,9 @@
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "DecreaseRotationDegreesCommand.cs",
-              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\DecreaseRotationDegreesCommand.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\DecreaseRotationDegreesCommand.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\DecreaseRotationDegreesCommand.cs",
-              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\DecreaseRotationDegreesCommand.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\DecreaseRotationDegreesCommand.cs",
               "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\DecreaseRotationDegreesCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -172,9 +183,9 @@
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "IncreaseRotationDegreesCommand.cs",
-              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\IncreaseRotationDegreesCommand.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\IncreaseRotationDegreesCommand.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\IncreaseRotationDegreesCommand.cs",
-              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\IncreaseRotationDegreesCommand.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\IncreaseRotationDegreesCommand.cs",
               "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\IncreaseRotationDegreesCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -184,9 +195,9 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "SetRotationDegreesCommand.cs",
-              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\SetRotationDegreesCommand.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\SetRotationDegreesCommand.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\SetRotationDegreesCommand.cs",
-              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\SetRotationDegreesCommand.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\SetRotationDegreesCommand.cs",
               "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\SetRotationDegreesCommand.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAB8AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -196,9 +207,9 @@
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "UpdateCCTVCommand.cs",
-              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\UpdateCCTVCommand.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\UpdateCCTVCommand.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\UpdateCCTVCommand.cs",
-              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\UpdateCCTVCommand.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\UpdateCCTVCommand.cs",
               "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\UpdateCCTVCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -208,9 +219,9 @@
               "$type": "Document",
               "DocumentIndex": 12,
               "Title": "ICCTVRepository.cs",
-              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\CCTV\\Repositories\\ICCTVRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\CCTV\\Repositories\\ICCTVRepository.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Domain\\Devices\\CCTV\\Repositories\\ICCTVRepository.cs",
-              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\CCTV\\Repositories\\ICCTVRepository.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\CCTV\\Repositories\\ICCTVRepository.cs",
               "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Domain\\Devices\\CCTV\\Repositories\\ICCTVRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -220,9 +231,9 @@
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "RemoveCCTVCommand.cs",
-              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\RemoveCCTVCommand.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\RemoveCCTVCommand.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\RemoveCCTVCommand.cs",
-              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\RemoveCCTVCommand.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\RemoveCCTVCommand.cs",
               "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\RemoveCCTVCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -232,9 +243,9 @@
               "$type": "Document",
               "DocumentIndex": 11,
               "Title": "AddCCTVCommand.cs",
-              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\AddCCTVCommand.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\AddCCTVCommand.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\AddCCTVCommand.cs",
-              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\AddCCTVCommand.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\AddCCTVCommand.cs",
               "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Application\\Devices\\CCTVDevice\\Commands\\AddCCTVCommand.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAAABYAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -244,9 +255,9 @@
               "$type": "Document",
               "DocumentIndex": 13,
               "Title": "AirMode.cs",
-              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\HeatDevices\\AirConditioner\\AirMode.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\HeatDevices\\AirConditioner\\AirMode.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Domain\\Devices\\HeatDevices\\AirConditioner\\AirMode.cs",
-              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\HeatDevices\\AirConditioner\\AirMode.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\HeatDevices\\AirConditioner\\AirMode.cs",
               "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Domain\\Devices\\HeatDevices\\AirConditioner\\AirMode.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -256,9 +267,9 @@
               "$type": "Document",
               "DocumentIndex": 15,
               "Title": "AirSpeed.cs",
-              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\HeatDevices\\AirConditioner\\AirSpeed.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\HeatDevices\\AirConditioner\\AirSpeed.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Domain\\Devices\\HeatDevices\\AirConditioner\\AirSpeed.cs",
-              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\HeatDevices\\AirConditioner\\AirSpeed.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\HeatDevices\\AirConditioner\\AirSpeed.cs",
               "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Domain\\Devices\\HeatDevices\\AirConditioner\\AirSpeed.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -268,9 +279,9 @@
               "$type": "Document",
               "DocumentIndex": 14,
               "Title": "AirConditioner.cs",
-              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\HeatDevices\\AirConditioner\\AirConditioner.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\HeatDevices\\AirConditioner\\AirConditioner.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Domain\\Devices\\HeatDevices\\AirConditioner\\AirConditioner.cs",
-              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\HeatDevices\\AirConditioner\\AirConditioner.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\BlaisePascal\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\HeatDevices\\AirConditioner\\AirConditioner.cs",
               "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Domain\\Devices\\HeatDevices\\AirConditioner\\AirConditioner.cs",
               "ViewState": "AgIAABoAAAAAAAAAAAAAwBcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace BlaisePascal.SmartHouse.Application.Devices.DoorDevice.Commands
 {
-    public class RemoveLampCommand
+    public class RemoveDoorCommand
     {
         private readonly IDoorRepository _repository;
 
-        public RemoveLampCommand(IDoorRepository repository)
+        public RemoveDoorCommand(IDoorRepository repository)
         {
             _repository = repository;
         }

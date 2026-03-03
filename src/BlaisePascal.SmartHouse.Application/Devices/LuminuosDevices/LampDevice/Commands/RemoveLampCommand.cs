@@ -2,7 +2,7 @@
 
 namespace BlaisePascal.SmartHouse.Application.Devices.Luminuos.Lamps.Commands
 {
-    internal class RemoveLampCommand
+    public class RemoveLampCommand
     {
         private readonly ILampRepository _repository;
 
