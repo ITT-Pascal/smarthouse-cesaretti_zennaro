@@ -37,4 +37,5 @@ namespace BlaisePascal.SmartHouse.Application.Devices.HeatDevices.AirConditioner
                 Temperature.CreateNew(airConditionerDto.Temperature)
             );
         }
+    }
 }

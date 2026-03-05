@@ -22,7 +22,7 @@ public class LampController
 
         if (string.IsNullOrWhiteSpace(name))
         {
-            Console.WriteLine("Name not valid \n [Press a key to continue]");
+            Console.WriteLine("Name not valid \n[Press a key to continue]");
             Console.ReadKey();
         }
 
@@ -32,36 +32,53 @@ public class LampController
 
     public void RemoveLamp()
     {
+        if (_repository.GetAll().Count == 0)
+        {
+            Console.WriteLine("there are no lamps \n" +
+                "[Premere un tasto per continuare]");
+            Console.ReadKey();
+            return;
+        }
+
         Console.WriteLine("Lamp id: ");
         string id = Console.ReadLine();
 
         if (string.IsNullOrWhiteSpace(id))
         {
-            Console.WriteLine("Id not valid \n [Press a key to continue]");
+            Console.WriteLine("Id not valid \n[Press a key to continue]");
             Console.ReadKey();
+            return;
         }
 
         try
         {
-            Guid newId = new(id);
+            Guid.TryParse(id.Trim(), out Guid newId);
             new RemoveLampCommand(_repository).Execute(newId);
         }
 
         catch
         {
-            Console.WriteLine("Lamp not found \n [Press a key to continue]");
+            Console.WriteLine("Lamp not found \n[Press a key to continue]");
             Console.ReadKey();
         }
     }
 
     public void SwitchOn()
     {
+        if(_repository.GetAll().Count == 0)
+        {
+            Console.WriteLine("there are no lamps \n" +
+                "[Premere un tasto per continuare]");
+            Console.ReadKey();
+            return;
+        }
+
         Console.WriteLine("Lamp id: ");
         string id = Console.ReadLine();
 
         if (string.IsNullOrWhiteSpace(id))
         {
-            Console.WriteLine("Id not valid \n [Press a key to continue]");
+            Console.WriteLine("Id not valid \n[Press a key to continue]");
             Console.ReadKey();
         }
 
@@ -73,19 +90,29 @@ public class LampController
 
         catch
         {
-            Console.WriteLine("Lamp not found \n [Press a key to continue]");
+            Console.WriteLine("Lamp not found \n[Press a key to continue]");
             Console.ReadKey();
         }
     }
 
     public void SwitchOff()
     {
+
+        if (_repository.GetAll().Count == 0)
+        {
+            Console.WriteLine("there are no lamps \n" +
+                "[Press a key to continue]");
+            Console.ReadKey();
+            return;
+        }
+
+
         Console.WriteLine("Lamp id: ");
         string id = Console.ReadLine();
 
         if (string.IsNullOrWhiteSpace(id))
         {
-            Console.WriteLine("Id not valid \n [Press a key to continue]");
+            Console.WriteLine("Id not valid \n[Press a key to continue]");
             Console.ReadKey();
         }
 
@@ -97,29 +124,39 @@ public class LampController
 
         catch
         {
-            Console.WriteLine("Lamp not found \n [Press a key to continue]");
+            Console.WriteLine("Lamp not found \n[Press a key to continue]");
             Console.ReadKey();
         }
     }
 
     public void SetBrightness()
     {
+
+        if (_repository.GetAll().Count == 0)
+        {
+            Console.WriteLine("there are no lamps \n" +
+                "[Press a key to continue]");
+            Console.ReadKey();
+            return;
+        }
+
+
         Console.WriteLine("Lamp id: ");
         string id = Console.ReadLine();
 
         if (string.IsNullOrWhiteSpace(id))
         {
-            Console.WriteLine("Id not valid \n [Press a key to continue]");
+            Console.WriteLine("Id not valid \n[Press a key to continue]");
             Console.ReadKey();
         }
 
-        Console.WriteLine("Brightness");
+        Console.WriteLine("Brightness: ");
         string brightness = Console.ReadLine();
         Console.ReadLine();
 
         if (string.IsNullOrEmpty(brightness))
-        {
-            Console.WriteLine("Brightness not valid \n [Press a key to continue]");
+        { 
+            Console.WriteLine("Brightness not valid \n[Press a key to continue]");
             Console.ReadKey();
         }
 
@@ -132,42 +169,51 @@ public class LampController
 
         catch (Exception)
         {
-            Console.WriteLine("Error. Lamp not found or britness not valid \n [Press a key to continue]");
+            Console.WriteLine("Error. Lamp not found or britness not valid \n[Press a key to continue]");
             Console.ReadKey();
         } 
     }
 
     public void Brighten()
     {
+
+        if (_repository.GetAll().Count == 0)
+        {
+            Console.WriteLine("there are no lamps \n" +
+                "[Premere un tasto per continuare]");
+            Console.ReadKey();
+            return;
+        }
+
+
         Console.WriteLine("Lamp id: ");
         string id = Console.ReadLine();
 
         if (string.IsNullOrWhiteSpace(id))
         {
-            Console.WriteLine("Id not valid \n [Press a key to continue]");
+            Console.WriteLine("Id not valid \n[Press a key to continue]");
             Console.ReadKey();
         }
 
         Console.WriteLine("Brightness");
         string brightness = Console.ReadLine();
-        Console.ReadLine();
 
         if (string.IsNullOrEmpty(brightness))
         {
-            Console.WriteLine("Brightness not valid \n [Press a key to continue]");
+            Console.WriteLine("Brightness not valid \n[Press a key to continue]");
             Console.ReadKey();
         }
 
         try
         {
-            Guid newId = new(id);
+            Guid newId = new(id.Trim());
             int.TryParse(brightness, out int newBrightness);
             new BrightenLampCommand(_repository).Execute(newId, newBrightness);
         }
 
         catch (Exception)
         {
-            Console.WriteLine("Error. Lamp not found or britness not valid \n [Press a key to continue]");
+            Console.WriteLine("Error. Lamp not found or britness not valid \n[Press a key to continue]");
             Console.ReadKey();
         }
     }
@@ -175,35 +221,44 @@ public class LampController
 
     public void Dimmer()
     {
+
+        if (_repository.GetAll().Count == 0)
+        {
+            Console.WriteLine("there are no lamps \n" +
+                "[Premere un tasto per continuare]");
+            Console.ReadKey();
+            return;
+        }
+
+
         Console.WriteLine("Lamp id: ");
         string id = Console.ReadLine();
 
         if (string.IsNullOrWhiteSpace(id))
         {
-            Console.WriteLine("Id not valid \n [Press a key to continue]");
+            Console.WriteLine("Id not valid \n[Press a key to continue]");
             Console.ReadKey();
         }
 
         Console.WriteLine("Brightness");
         string brightness = Console.ReadLine();
-        Console.ReadLine();
 
         if (string.IsNullOrEmpty(brightness))
         {
-            Console.WriteLine("Brightness not valid \n [Press a key to continue]");
+            Console.WriteLine("Brightness not valid \n[Press a key to continue]");
             Console.ReadKey();
         }
 
         try
         {
-            Guid newId = new(id);
             int.TryParse(brightness, out int newBrightness);
+            Guid.TryParse(id, out Guid newId);
             new DimmerLampCommand(_repository).Execute(newId, newBrightness);
         }
 
         catch (Exception)
         {
-            Console.WriteLine("Error. Lamp not found or britness not valid \n [Press a key to continue]");
+            Console.WriteLine("Error. Lamp not found or britness not valid \n[Press a key to continue]");
             Console.ReadKey();
         }  
     }
@@ -215,14 +270,15 @@ public class LampController
             LampDto lampDto = LampMapper.ToDto(lamp);
 
             Console.WriteLine($"Lamp Id: {lamp.Id} \n" +
-                $"Lamp name: {lamp.Name} \n" +
+                $"Lamp name: {lamp.Name.Value} \n" +
                 $"Device status: {lamp.DeviceStatus} \n" +
-                $"Lamp brightness: {lamp.Brightness} \n" +
+                $"Lamp brightness: {lamp.Brightness.Value} \n" +
                 $"Creation hour: {lamp.CreationHour} \n" +
                 $"Last modified at: {lamp.LastModified} \n" + 
                 $"---------------------------------- \n");
         }
     }
+
 
     public void ShowAllLampName()
     {

@@ -1,14 +1,8 @@
-﻿using BlaisePascal.SmartHouse.Application.Devices.DeviceStatusMapper;
-using BlaisePascal.SmartHouse.Application.Devices.DoorDevice.Dto;
+﻿using BlaisePascal.SmartHouse.Application.Devices.DoorDevice.Dto;
 using BlaisePascal.SmartHouse.Application.Devices.StatusMapper;
 using BlaisePascal.SmartHouse.Domain.Devices.Abstraction.ValueObjects;
 using BlaisePascal.SmartHouse.Domain.Devices.Door;
 using BlaisePascal.SmartHouse.Domain.Devices.Door.ValueObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BlaisePascal.SmartHouse.Application.Devices.DoorDevice.DeviceMapper
 {
