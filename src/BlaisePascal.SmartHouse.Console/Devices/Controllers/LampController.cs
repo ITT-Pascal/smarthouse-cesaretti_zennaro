@@ -1,4 +1,5 @@
 ﻿using BlaisePascal.SmartHouse.Application.Devices.Luminuos.Lamps.Commands;
+using BlaisePascal.SmartHouse.Application.Devices.Luminuos.Lamps.Queries;
 using BlaisePascal.SmartHouse.Application.Devices.LuminuosDevices.LampDevice.DeviceMapper;
 using BlaisePascal.SmartHouse.Application.Devices.LuminuosDevices.Lamps.Commands;
 using BlaisePascal.SmartHouse.Application.Devices.LuminuosDevices.Lamps.Dto;
@@ -32,7 +33,9 @@ public class LampController
 
     public void RemoveLamp()
     {
-        if (_repository.GetAll().Count == 0)
+        List<LampDto> lampList = new GetAllLampsQuery(_repository).Execute();
+
+        if (lampList.Count == 0)
         {
             Console.WriteLine("there are no lamps \n" +
                 "[Premere un tasto per continuare]");
@@ -40,10 +43,10 @@ public class LampController
             return;
         }
 
-        Console.WriteLine("Lamp id: ");
-        string id = Console.ReadLine();
+        Console.WriteLine("Lamp number: ");
+        string number = Console.ReadLine();
 
-        if (string.IsNullOrWhiteSpace(id))
+        if (string.IsNullOrWhiteSpace(number))
         {
             Console.WriteLine("Id not valid \n[Press a key to continue]");
             Console.ReadKey();
@@ -52,11 +55,11 @@ public class LampController
 
         try
         {
-            Guid.TryParse(id.Trim(), out Guid newId);
-            new RemoveLampCommand(_repository).Execute(newId);
+            int.TryParse(number, out int lampNumber);
+            new RemoveLampCommand(_repository).Execute(lampList[lampNumber - 1].Id);
         }
 
-        catch
+        catch (Exception)
         {
             Console.WriteLine("Lamp not found \n[Press a key to continue]");
             Console.ReadKey();
@@ -88,7 +91,7 @@ public class LampController
             new SwitchOnLampCommand(_repository).Execute(newId);
         }
 
-        catch
+        catch (Exception) 
         {
             Console.WriteLine("Lamp not found \n[Press a key to continue]");
             Console.ReadKey();
@@ -116,13 +119,13 @@ public class LampController
             Console.ReadKey();
         }
 
-        try
+        try 
         {
             Guid newId = new(id);
             new SwitchOffLampCommand(_repository).Execute(newId);
         }
 
-        catch
+        catch (Exception)
         {
             Console.WriteLine("Lamp not found \n[Press a key to continue]");
             Console.ReadKey();
@@ -152,7 +155,6 @@ public class LampController
 
         Console.WriteLine("Brightness: ");
         string brightness = Console.ReadLine();
-        Console.ReadLine();
 
         if (string.IsNullOrEmpty(brightness))
         { 
@@ -224,8 +226,8 @@ public class LampController
 
         if (_repository.GetAll().Count == 0)
         {
-            Console.WriteLine("there are no lamps \n" +
-                "[Premere un tasto per continuare]");
+            Console.WriteLine("there are no lamps \n"+
+                "[Press a key to continue]");
             Console.ReadKey();
             return;
         }
@@ -258,34 +260,18 @@ public class LampController
 
         catch (Exception)
         {
-            Console.WriteLine("Error. Lamp not found or britness not valid \n[Press a key to continue]");
+            Console.WriteLine("Error. Lamp not found or brithness not valid \n[Press a key to continue]");
             Console.ReadKey();
         }  
     }
 
     public void ShowAll()
     {
-        foreach (Lamp lamp in _repository.GetAll())
+        List<LampDto> listDto = new GetAllLampsQuery(_repository).Execute();
+
+        for (int i = 0; i < listDto.Count; i++) 
         {
-            LampDto lampDto = LampMapper.ToDto(lamp);
-
-            Console.WriteLine($"Lamp Id: {lamp.Id} \n" +
-                $"Lamp name: {lamp.Name.Value} \n" +
-                $"Device status: {lamp.DeviceStatus} \n" +
-                $"Lamp brightness: {lamp.Brightness.Value} \n" +
-                $"Creation hour: {lamp.CreationHour} \n" +
-                $"Last modified at: {lamp.LastModified} \n" + 
-                $"---------------------------------- \n");
-        }
-    }
-
-
-    public void ShowAllLampName()
-    {
-        foreach(Lamp lamp in _repository.GetAll())
-        {
-            LampDto lampDto = LampMapper.ToDto(lamp);
-            Console.WriteLine($"1) {lamp.Name} \n" + "\n");
+            Console.WriteLine($"{i + 1})\n{listDto[i]}\n--------------------\n");
         }
     }
 }

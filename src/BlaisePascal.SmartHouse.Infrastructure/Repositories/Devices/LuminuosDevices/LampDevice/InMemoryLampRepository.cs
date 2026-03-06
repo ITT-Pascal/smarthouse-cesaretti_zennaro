@@ -8,16 +8,15 @@ namespace BlaisePascal.SmartHouse.Infrastructure.Repositories.InMemory.Devices.L
 {
     public class InMemoryLampRepository: ILampRepository
     {
-        private readonly List<Lamp> _lamps;
+        private readonly List<Lamp> _lamps = new List<Lamp>();
 
         public InMemoryLampRepository()
         {
-            _lamps = new List<Lamp>();
-            {
-                new Lamp(Name.CreateNew("Lamp 1"));
-                new Lamp(Name.CreateNew("Lamp 2"));
-                new Lamp(Name.CreateNew("Lamp 3"));
-            }
+            
+            //_lamps.Add(new Lamp(Name.CreateNew("Lamp 1")));
+            //_lamps.Add(new Lamp(Name.CreateNew("Lamp 2")));
+            //_lamps.Add(new Lamp(Name.CreateNew("Lamp 3")));
+
         }
 
         public List<Lamp> GetAll()
@@ -50,6 +49,7 @@ namespace BlaisePascal.SmartHouse.Infrastructure.Repositories.InMemory.Devices.L
             if(lamp != null)
             {
                 _lamps.Remove(lamp);
+                return;
             }
 
             throw new ArgumentException("Lamp not found");

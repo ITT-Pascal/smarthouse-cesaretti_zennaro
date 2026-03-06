@@ -17,5 +17,15 @@ namespace BlaisePascal.SmartHouse.Application.Devices.LuminuosDevices.Lamps.Dto
         public int Brightness { get; set; }
         public DateTime CreationHour { get; set; }
         public DateTime LastModified { get; set; }
+
+        public override string ToString()
+        {
+            return $"Lamp Id: {Id}\n"+
+                $"Lamp name: {Name}\n" +
+                $"Status: {DeviceStatus}\n" +
+                $"Brightness: {Brightness}\n" +
+                $"Creation hour: {CreationHour}\n" +
+                $"Last modified: {LastModified}"           ;
+        }
     }
 }
