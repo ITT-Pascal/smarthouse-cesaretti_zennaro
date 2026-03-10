@@ -28,7 +28,6 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Abstraction
             LastModified = lastModified;
         }
 
-        public AbstractDevice() { }
 
         public virtual void SwitchOn()
         {

@@ -2,7 +2,7 @@
 using BlaisePascal.SmartHouse.Domain.Devices.Abstraction.ValueObjects;
 using BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction;
 
-namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
+namespace BlaisePascal.SmartHouse.Domain.Devices.LuminuosDevices
 {
     public class EcoLamp : AbstractLamp
     {

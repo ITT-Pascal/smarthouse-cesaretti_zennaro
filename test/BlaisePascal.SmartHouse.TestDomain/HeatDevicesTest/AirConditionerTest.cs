@@ -3,7 +3,7 @@ using BlaisePascal.SmartHouse.Domain.Devices.Abstraction.ValueObjects;
 using BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner;
 using BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner.ValueObjects;
 
-namespace BlaisePascal.SmartHouse.TestDomain.AirConditionerTest
+namespace BlaisePascal.SmartHouse.TestDomain.HeatDevicesTest
 {
     public class AirConditionerTest
     {

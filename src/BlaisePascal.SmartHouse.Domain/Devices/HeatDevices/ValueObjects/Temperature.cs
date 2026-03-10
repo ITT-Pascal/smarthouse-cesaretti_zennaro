@@ -48,7 +48,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner.Valu
                 maxTemperature = CreateNew(MaxAirConditionerTemperature);
             } else
             {
-                maxTemperature = CreateNew(DefaultThermostatTemperature);
+                maxTemperature = CreateNew(MaxThermostatTemperature);
             }
 
             return maxTemperature;

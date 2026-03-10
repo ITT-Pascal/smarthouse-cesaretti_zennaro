@@ -21,7 +21,6 @@ namespace BlaisePascal.SmartHouse.Application.Devices.LuminuosDevices.Lamps.Dto
         public override string ToString()
         {
             return $"Lamp Id: {Id}\n"+
-                $"Lamp name: {Name}\n" +
                 $"Status: {DeviceStatus}\n" +
                 $"Brightness: {Brightness}\n" +
                 $"Creation hour: {CreationHour}\n" +

@@ -2,6 +2,7 @@
 using BlaisePascal.SmartHouse.Domain.Devices.Abstraction.ValueObjects;
 using BlaisePascal.SmartHouse.Domain.Devices.Illumination;
 using BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction;
+using BlaisePascal.SmartHouse.Domain.Devices.LuminuosDevices;
 
 namespace BlaisePascal.SmartHouse.TestDomain.IlluminationTest
 {

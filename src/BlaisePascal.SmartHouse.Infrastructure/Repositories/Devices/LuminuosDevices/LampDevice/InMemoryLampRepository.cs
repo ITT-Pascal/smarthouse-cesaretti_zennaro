@@ -1,6 +1,7 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Devices.Abstraction.ValueObjects;
 using BlaisePascal.SmartHouse.Domain.Devices.Illumination;
 using BlaisePascal.SmartHouse.Domain.Devices.Illumination.Repositories;
+using BlaisePascal.SmartHouse.Domain.Devices.LuminuosDevices;
 using System.Security.Cryptography.X509Certificates;
 
 
@@ -12,10 +13,10 @@ namespace BlaisePascal.SmartHouse.Infrastructure.Repositories.InMemory.Devices.L
 
         public InMemoryLampRepository()
         {
-            
-            //_lamps.Add(new Lamp(Name.CreateNew("Lamp 1")));
-            //_lamps.Add(new Lamp(Name.CreateNew("Lamp 2")));
-            //_lamps.Add(new Lamp(Name.CreateNew("Lamp 3")));
+
+            _lamps.Add(new Lamp(Name.CreateNew("Lamp 1")));
+            _lamps.Add(new Lamp(Name.CreateNew("Lamp 2")));
+            _lamps.Add(new Lamp(Name.CreateNew("Lamp 3")));
 
         }
 

@@ -2,7 +2,7 @@
 using BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.AirConditioner.ValueObjects;
 using BlaisePascal.SmartHouse.Domain.Devices.HeatDevices.Thermostat;
 
-namespace BlaisePascal.SmartHouse.TestDomain.ThermostatTest
+namespace BlaisePascal.SmartHouse.TestDomain.HeatDevicesTest
 {
     public class ThermostatTest
     {

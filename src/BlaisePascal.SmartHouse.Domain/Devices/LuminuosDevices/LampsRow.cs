@@ -1,10 +1,11 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Devices.Abstraction;
+using BlaisePascal.SmartHouse.Domain.Devices.Abstraction.ValueObjects;
 using BlaisePascal.SmartHouse.Domain.Devices.Illumination.Abstraction;
 
-namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
+namespace BlaisePascal.SmartHouse.Domain.Devices.LuminuosDevices
 {
 
-    public class LampsRow
+    public class LampsRow: AbstractDevice
     {
         public List<AbstractLamp> Lamps { get; private set; }
         public DeviceStatus? LampsStatus
@@ -34,24 +35,23 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
 
 
 
-        public LampsRow()
+        public LampsRow(Name name): base(name)
         {
             Lamps = new List<AbstractLamp>();
         }
 
-        public LampsRow(List<AbstractLamp> lamps)
+        public LampsRow(List<AbstractLamp> lamps, Name name): base(name)
         {
             Lamps = lamps;
         }
 
 
 
-        public void SwitchOn()
+        public override void SwitchOn()
         {
             foreach (AbstractLamp lamp in Lamps)
             {
                 lamp.SwitchOn();
-
             }
         }
 
@@ -89,13 +89,14 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
             }
         }
 
-        public void SwitchOff()
+        public override void SwitchOff()
         {
             foreach (AbstractLamp lamp in Lamps)
             {
                 lamp.SwitchOff();
             }
         }
+
         public void SwitchOff(Guid id)
         {
             bool foundLamp = false;
@@ -232,21 +233,25 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
         {
             AbstractLamp? maxLamp;
             if (Lamps.Count == 0)
-                maxLamp = null;
-            
-            maxLamp = Lamps[0];
-            foreach (AbstractLamp lamp in Lamps)
             {
-                if (lamp.Brightness > maxLamp.Brightness)
+                maxLamp = null;
+            }
+            else
+            {
+                maxLamp = Lamps[0];
+                foreach (AbstractLamp lamp in Lamps)
                 {
-                    maxLamp = lamp;
+                    if (lamp.Brightness > maxLamp.Brightness)
+                    {
+                        maxLamp = lamp;
+                    }
                 }
             }
 
             return maxLamp;
+
         }
 
-        
 
         public AbstractLamp? FindLampWithMinIntensity()
         {
@@ -288,6 +293,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Illumination
                     }
                 }
             }
+
             if(haveFoundedLamp == false)
             {
                 throw new ArgumentException("not valid id");

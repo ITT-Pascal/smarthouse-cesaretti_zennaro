@@ -1,4 +1,5 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Devices.Illumination;
+using BlaisePascal.SmartHouse.Domain.Devices.LuminuosDevices;
 using System;
 using System.Collections.Generic;
 using System.Linq;

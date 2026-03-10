@@ -12,7 +12,8 @@ class Program
         while (!finished)
         {
             Console.Clear();
-            controller.ShowAll();
+            Console.Write("\x1b[3J");
+            controller.ShowAllLamps();
             Console.WriteLine("Select a command: \n" +
                 "1 [Add lamp] \n" +
                 "2 [Remove lamp] \n" +
