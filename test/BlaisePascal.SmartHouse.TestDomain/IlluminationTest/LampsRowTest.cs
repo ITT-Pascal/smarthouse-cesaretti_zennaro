@@ -10,13 +10,13 @@ namespace BlaisePascal.SmartHouse.TestDomain.IlluminationTest
     public class LampsRowTest
     {
         [Fact]
-        public void LampsStatus_WhenListIsEmptyReturnsNull()
+        public void LampsStatus_WhenListIsEmptyReturnsOffl()
         {
             Lamp firstLamp = new(Name.CreateNew("lamp1"));
             Lamp secondLamp = new(Name.CreateNew("lamp2"));
             Lamp thirdLamp = new(Name.CreateNew("lamp3"));
             LampsRow row = new LampsRow(Name.CreateNew("row1"));
-            Assert.Null(row.LampsStatus);
+            Assert.Equal(DeviceStatus.Off, row.DeviceStatus);
         }
 
         [Fact]
@@ -28,7 +28,7 @@ namespace BlaisePascal.SmartHouse.TestDomain.IlluminationTest
             firstLamp.SwitchOff();
             secondLamp.SwitchOff();
             LampsRow row = new LampsRow(new List<AbstractLamp> { firstLamp, secondLamp, thirdLamp }, Name.CreateNew("row1"));
-            Assert.Equal(DeviceStatus.On, row.LampsStatus);
+            Assert.Equal(DeviceStatus.On, row.DeviceStatus);
         }
 
         [Fact]

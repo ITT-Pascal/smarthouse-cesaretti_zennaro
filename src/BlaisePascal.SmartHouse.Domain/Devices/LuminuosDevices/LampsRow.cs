@@ -8,15 +8,15 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.LuminuosDevices
     public class LampsRow: AbstractDevice
     {
         public List<AbstractLamp> Lamps { get; private set; }
-        public DeviceStatus? LampsStatus
-        {
+
+        public override DeviceStatus DeviceStatus {
             get
             {
-                DeviceStatus? lampsStatus = DeviceStatus.Off;
+                DeviceStatus lampsStatus = DeviceStatus.Off;
 
                 if (Lamps.Count == 0)
                 {
-                    lampsStatus = null;
+                    lampsStatus = DeviceStatus.Off;
                 }
                 
                 foreach (AbstractLamp lamp in Lamps)
@@ -30,7 +30,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.LuminuosDevices
                 
                 return lampsStatus;
             }
-            private set { }
+            protected set { }
         }
 
 

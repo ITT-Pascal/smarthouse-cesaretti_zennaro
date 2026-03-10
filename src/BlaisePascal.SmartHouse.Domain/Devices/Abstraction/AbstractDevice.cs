@@ -6,7 +6,7 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Abstraction
     {
         public Name Name { get; protected set; }
         public Guid Id { get; protected set; }
-        public DeviceStatus DeviceStatus { get; protected set; }
+        public virtual DeviceStatus DeviceStatus { get; protected set; }
         public DateTime CreationHour { get; protected set; }
         public DateTime LastModified { get; protected set; }
 
