@@ -1,7 +1,9 @@
 ﻿using BlaisePascal.SmartHouse.Application.Devices.Luminuos.Lamps.Commands;
 using BlaisePascal.SmartHouse.Application.Devices.Luminuos.Lamps.Queries;
+using BlaisePascal.SmartHouse.Application.Devices.LuminuosDevices.LampDevice.Commands;
 using BlaisePascal.SmartHouse.Application.Devices.LuminuosDevices.Lamps.Commands;
 using BlaisePascal.SmartHouse.Application.Devices.LuminuosDevices.Lamps.Dto;
+using BlaisePascal.SmartHouse.Domain.Devices.Abstraction.ValueObjects;
 using BlaisePascal.SmartHouse.Domain.Devices.Illumination.Repositories;
 
 
@@ -63,6 +65,40 @@ public class LampController
             Console.ReadKey();
             return;
         }
+    }
+
+    public void RenameLamp()
+    {
+        List<LampDto> lamps = new GetAllLampsQuery(_repository).Execute();
+
+        if (lamps.Count == 0)
+        {
+            Console.WriteLine("There are no lamps \n[Premere un tasto per continuare]");
+            Console.ReadKey();
+            return;
+        }
+
+        Console.WriteLine("Lamp number: ");
+        string number = Console.ReadLine();
+
+        if (string.IsNullOrWhiteSpace(number) || !int.TryParse(number, out int n))
+        {
+            Console.WriteLine("Number not valid \n[Press a key to continue]");
+            Console.ReadKey();
+            return;
+        }
+
+        Console.WriteLine("New name: ");
+        string newName = Console.ReadLine();
+
+        if (string.IsNullOrWhiteSpace(newName))
+        {
+            Console.WriteLine("Name not valid \n[Press a key to continue]");
+            Console.ReadKey();
+            return;
+        }
+
+        new RenameLampCommand(_repository).Execute(newName, lamps[n - 1].Id);
     }
 
     public void SwitchOn()
@@ -329,12 +365,13 @@ public class LampController
         Console.WriteLine("Select a command: \n" +
             "1 [Add lamp] \n" +
             "2 [Remove lamp] \n" +
-            "3 [Switch on lamp] \n" +
-            "4 [Switch off lamp] \n" +
-            "5 [Set lamp brightness] \n" +
-            "6 [Brighten lamp] \n" +
-            "7 [Dimmer lamp] \n" +
-            "8 [Exit] \n");
+            "3 [Rename lamp] \n" +
+            "4 [Switch on lamp] \n" +
+            "5 [Switch off lamp] \n" +
+            "6 [Set lamp brightness] \n" +
+            "7 [Brighten lamp] \n" +
+            "8 [Dimmer lamp] \n" +
+            "9 [Exit] \n");
 
         string input = Console.ReadLine();
 
@@ -347,27 +384,30 @@ public class LampController
                 RemoveLamp();
                 break;
             case "3":
-                SwitchOn();
+                RenameLamp();
                 break;
             case "4":
-                SwitchOff();
+                SwitchOn();
                 break;
             case "5":
-                SetBrightness();
+                SwitchOff();
                 break;
             case "6":
-                Brighten();
+                SetBrightness();
                 break;
             case "7":
-                Dimmer();
+                Brighten();
                 break;
             case "8":
+                Dimmer();
+                break;
+            case "9":
                 Console.Write("Press a key to exit");
                 Console.ReadKey();
                 Environment.Exit(0);
                 break;
             default:
-                Console.WriteLine("command not valid");
+                Console.WriteLine("Command not valid");
                 break;
         }
     } 

@@ -1,6 +1,7 @@
 ﻿using BlaisePascal.SmartHouse.Domain.Devices.Abstraction.ValueObjects;
 using BlaisePascal.SmartHouse.Domain.Devices.Illumination;
 using BlaisePascal.SmartHouse.Domain.Devices.Illumination.Repositories;
+using BlaisePascal.SmartHouse.Domain.Devices.LuminuosDevices;
 using System;
 using System.Collections.Generic;
 using System.Linq;

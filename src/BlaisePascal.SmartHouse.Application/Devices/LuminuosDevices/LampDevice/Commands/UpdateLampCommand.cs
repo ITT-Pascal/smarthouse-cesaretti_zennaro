@@ -1,5 +1,5 @@
-﻿using BlaisePascal.SmartHouse.Domain.Devices.Illumination;
-using BlaisePascal.SmartHouse.Domain.Devices.Illumination.Repositories;
+﻿using BlaisePascal.SmartHouse.Domain.Devices.Illumination.Repositories;
+using BlaisePascal.SmartHouse.Domain.Devices.LuminuosDevices;
 
 namespace BlaisePascal.SmartHouse.Application.Devices.LuminuosDevices.Lamps.Commands
 {

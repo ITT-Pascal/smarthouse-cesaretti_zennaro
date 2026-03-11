@@ -1,8 +1,10 @@
-﻿namespace BlaisePascal.SmartHouse.Domain.Devices.Abstraction
+﻿using BlaisePascal.SmartHouse.Domain.Devices.Abstraction.Interfaces;
+using BlaisePascal.SmartHouse.Domain.Devices.Abstraction.ValueObjects;
+
+namespace BlaisePascal.SmartHouse.Domain.Devices.Abstraction
 {
-    public interface IDevice
+    public interface IDevice: ISwitchable
     {
-        void SwitchOn();
-        void SwitchOff();
+        void Rename(Name name);
     }
 }

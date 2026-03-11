@@ -42,5 +42,15 @@ namespace BlaisePascal.SmartHouse.Domain.Devices.Abstraction
             DeviceStatus = DeviceStatus.Off;
             LastModified = DateTime.Now;
         }
+
+        public void Rename(Name name)
+        {
+            if (string.IsNullOrWhiteSpace(name.Value))
+            {
+                throw new ArgumentException("invalid name");
+            }
+
+            Name = name;
+        }
     }
 }

@@ -23,10 +23,5 @@ namespace BlaisePascal.SmartHouse.Application.Devices.StatusMapper
                 _ => throw new ArgumentException("Invalid status value")
             };
         }
-
-        internal static string ToDto(object status)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
