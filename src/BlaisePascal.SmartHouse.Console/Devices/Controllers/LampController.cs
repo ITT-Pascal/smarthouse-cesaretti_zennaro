@@ -231,6 +231,12 @@ public class LampController
             int.TryParse(number, out int lampNumber);
             new SetBrightnessLampCommand(_repository).Execute(lamps[lampNumber - 1].Id, newBrightness);
         }
+        catch (InvalidOperationException)
+        {
+            Console.WriteLine("Cannot change brightness when lamp is off.\n[Press a key to continue]");
+            Console.ReadKey();
+            return;
+        }
 
         catch (Exception)
         {
@@ -284,6 +290,13 @@ public class LampController
             int.TryParse(number, out int lampNumber);
             int.TryParse(value, out int newBrightness);
             new BrightenLampCommand(_repository).Execute(lamps[lampNumber - 1].Id, newBrightness);
+        }
+
+        catch (InvalidOperationException)
+        {
+            Console.WriteLine("Cannot change brightness when lamp is off.\n[Press a key to continue]");
+            Console.ReadKey();
+            return;
         }
 
         catch (Exception)
@@ -341,12 +354,30 @@ public class LampController
             new DimmerLampCommand(_repository).Execute(lamps[lampNumber - 1].Id, newBrightness);
         }
 
+        catch (InvalidOperationException)
+        {
+            Console.WriteLine("Cannot change brightness when lamp is off.\n[Press a key to continue]");
+            Console.ReadKey();
+            return;
+        }
+
         catch (Exception)
         {
             Console.WriteLine("Error.\n[Press a key to continue]");
             Console.ReadKey();
             return;
         }
+    }
+
+    public void ShowAdvises()
+    {
+        Console.Write("ADVISES:\n" +
+                    "- Cannot modify lamp when it is off\n" +
+                    "- Lamp brightness min value: 0\n" +
+                    "- Lamp brightness max value: 100\n" +
+                    "- Switch off does not change lamp brightness\n" +
+                    "- If you set value under the min or over the max, brightness will be set at min or max\n" +
+                    "\n");
     }
 
     public void ShowAllLamps()
@@ -361,7 +392,6 @@ public class LampController
 
     public void ShowMenu()
     {
-        ShowAllLamps();
         Console.WriteLine("Select a command: \n" +
             "1 [Add lamp] \n" +
             "2 [Remove lamp] \n" +
@@ -371,7 +401,10 @@ public class LampController
             "6 [Set lamp brightness] \n" +
             "7 [Brighten lamp] \n" +
             "8 [Dimmer lamp] \n" +
-            "9 [Exit] \n");
+            "9 [ShowAdvises] \n" +
+            "10 [Exit]\n" +
+            "\n" +
+            "Choose an option:");
 
         string input = Console.ReadLine();
 
@@ -402,6 +435,13 @@ public class LampController
                 Dimmer();
                 break;
             case "9":
+                Console.Clear();
+                Console.Write("\x1b[3J");
+                ShowAdvises();
+                Console.Write("Press a key to continue");
+                Console.ReadKey();
+                break;
+            case "10":
                 Console.Write("Press a key to exit");
                 Console.ReadKey();
                 Environment.Exit(0);
@@ -410,6 +450,8 @@ public class LampController
                 Console.WriteLine("Command not valid");
                 break;
         }
-    } 
+    }
+
+    
 }
 

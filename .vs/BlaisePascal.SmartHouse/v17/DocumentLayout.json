@@ -1,18 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\",
+  "WorkspaceRootPath": "C:\\Users\\davide.cesaretti\\Desktop\\smartHouse\\smarthouse-cesaretti_zennaro\\",
   "Documents": [
     {
       "AbsoluteMoniker": "D:0:0:{66683504-8271-4305-B957-BE731868FB7B}|src\\BlaisePascal.SmartHouse.Console\\BlaisePascal.SmartHouse.Console.csproj|c:\\users\\davide.cesaretti\\desktop\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.console\\devices\\controllers\\lampcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66683504-8271-4305-B957-BE731868FB7B}|src\\BlaisePascal.SmartHouse.Console\\BlaisePascal.SmartHouse.Console.csproj|solutionrelative:src\\blaisepascal.smarthouse.console\\devices\\controllers\\lampcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|c:\\users\\davide.cesaretti\\desktop\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.application\\devices\\statusmapper\\devicestatusmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|solutionrelative:src\\blaisepascal.smarthouse.application\\devices\\statusmapper\\devicestatusmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{66683504-8271-4305-B957-BE731868FB7B}|src\\BlaisePascal.SmartHouse.Console\\BlaisePascal.SmartHouse.Console.csproj|c:\\users\\davide.cesaretti\\desktop\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.console\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66683504-8271-4305-B957-BE731868FB7B}|src\\BlaisePascal.SmartHouse.Console\\BlaisePascal.SmartHouse.Console.csproj|solutionrelative:src\\blaisepascal.smarthouse.console\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|c:\\users\\davide.cesaretti\\desktop\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.application\\devices\\statusmapper\\devicestatusmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|solutionrelative:src\\blaisepascal.smarthouse.application\\devices\\statusmapper\\devicestatusmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7291A82D-A8D1-4ED2-953B-46C7F358D53C}|src\\BlaisePascal.SmartHouse.Application\\BlaisePascal.SmartHouse.Application.csproj|c:\\users\\davide.cesaretti\\desktop\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.application\\devices\\luminuosdevices\\lampdevice\\commands\\renamelampcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -54,17 +54,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 280,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "LampController.cs",
-              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Console\\Devices\\Controllers\\LampController.cs",
+              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\smartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Console\\Devices\\Controllers\\LampController.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Console\\Devices\\Controllers\\LampController.cs",
-              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Console\\Devices\\Controllers\\LampController.cs*",
-              "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Console\\Devices\\Controllers\\LampController.cs*",
-              "ViewState": "AgIAAGMBAAAAAAAAAAAgwG8BAAAfAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\smartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Console\\Devices\\Controllers\\LampController.cs",
+              "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Console\\Devices\\Controllers\\LampController.cs",
+              "ViewState": "AgIAAOIAAAAAAAAAAAAUwO4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-11T09:53:51.81Z",
               "EditorCaption": ""
@@ -73,24 +77,23 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "RenameLampCommand.cs",
-              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\LuminuosDevices\\LampDevice\\Commands\\RenameLampCommand.cs",
+              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\smartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\LuminuosDevices\\LampDevice\\Commands\\RenameLampCommand.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Application\\Devices\\LuminuosDevices\\LampDevice\\Commands\\RenameLampCommand.cs",
-              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\LuminuosDevices\\LampDevice\\Commands\\RenameLampCommand.cs",
+              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\smartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\LuminuosDevices\\LampDevice\\Commands\\RenameLampCommand.cs",
               "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Application\\Devices\\LuminuosDevices\\LampDevice\\Commands\\RenameLampCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-11T09:44:06.612Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-11T09:44:06.612Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Console\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\smartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Console\\Program.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Console\\Program.cs",
-              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Console\\Program.cs",
+              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\smartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Console\\Program.cs",
               "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Console\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-11T09:38:04.933Z",
               "EditorCaption": ""
@@ -99,105 +102,97 @@
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "ISwitchable.cs",
-              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\Abstraction\\Interfaces\\ISwitchable.cs",
+              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\smartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\Abstraction\\Interfaces\\ISwitchable.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Domain\\Devices\\Abstraction\\Interfaces\\ISwitchable.cs",
-              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\Abstraction\\Interfaces\\ISwitchable.cs",
+              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\smartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\Abstraction\\Interfaces\\ISwitchable.cs",
               "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Domain\\Devices\\Abstraction\\Interfaces\\ISwitchable.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-11T09:26:46.229Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-11T09:26:46.229Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "LampMapper.cs",
-              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\LuminuosDevices\\LampDevice\\DeviceMapper\\LampMapper.cs",
+              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\smartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\LuminuosDevices\\LampDevice\\DeviceMapper\\LampMapper.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Application\\Devices\\LuminuosDevices\\LampDevice\\DeviceMapper\\LampMapper.cs",
-              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\LuminuosDevices\\LampDevice\\DeviceMapper\\LampMapper.cs",
+              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\smartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\LuminuosDevices\\LampDevice\\DeviceMapper\\LampMapper.cs",
               "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Application\\Devices\\LuminuosDevices\\LampDevice\\DeviceMapper\\LampMapper.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-11T09:22:51.575Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-11T09:22:51.575Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "DeviceStatusMapper.cs",
-              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\StatusMapper\\DeviceStatusMapper.cs",
+              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\smartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\StatusMapper\\DeviceStatusMapper.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Application\\Devices\\StatusMapper\\DeviceStatusMapper.cs",
-              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\StatusMapper\\DeviceStatusMapper.cs",
+              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\smartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\StatusMapper\\DeviceStatusMapper.cs",
               "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Application\\Devices\\StatusMapper\\DeviceStatusMapper.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAgwBgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-11T09:22:27.148Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-11T09:22:27.148Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "LampDto.cs",
-              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\LuminuosDevices\\LampDevice\\Dto\\LampDto.cs",
+              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\smartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\LuminuosDevices\\LampDevice\\Dto\\LampDto.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Application\\Devices\\LuminuosDevices\\LampDevice\\Dto\\LampDto.cs",
-              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\LuminuosDevices\\LampDevice\\Dto\\LampDto.cs",
+              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\smartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Application\\Devices\\LuminuosDevices\\LampDevice\\Dto\\LampDto.cs",
               "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Application\\Devices\\LuminuosDevices\\LampDevice\\Dto\\LampDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-11T09:21:34.558Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-11T09:21:34.558Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "AbstractDeviceValidator.cs",
-              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\Abstraction\\AbstractDeviceValidator.cs",
+              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\smartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\Abstraction\\AbstractDeviceValidator.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Domain\\Devices\\Abstraction\\AbstractDeviceValidator.cs",
-              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\Abstraction\\AbstractDeviceValidator.cs",
+              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\smartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\Abstraction\\AbstractDeviceValidator.cs",
               "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Domain\\Devices\\Abstraction\\AbstractDeviceValidator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-11T09:15:52.655Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-11T09:15:52.655Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "DeviceStatus.cs",
-              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\Abstraction\\DeviceStatus.cs",
+              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\smartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\Abstraction\\DeviceStatus.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Domain\\Devices\\Abstraction\\DeviceStatus.cs",
-              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\Abstraction\\DeviceStatus.cs",
+              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\smartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\Abstraction\\DeviceStatus.cs",
               "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Domain\\Devices\\Abstraction\\DeviceStatus.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-11T09:15:51.485Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-11T09:15:51.485Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "IDevice.cs",
-              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\Abstraction\\Interfaces\\IDevice.cs",
+              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\smartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\Abstraction\\Interfaces\\IDevice.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Domain\\Devices\\Abstraction\\Interfaces\\IDevice.cs",
-              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\Abstraction\\Interfaces\\IDevice.cs",
+              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\smartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\Abstraction\\Interfaces\\IDevice.cs",
               "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Domain\\Devices\\Abstraction\\Interfaces\\IDevice.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-11T09:05:56.866Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-11T09:05:56.866Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "AbstractDevice.cs",
-              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\Abstraction\\AbstractDevice.cs",
+              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\smartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\Abstraction\\AbstractDevice.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Domain\\Devices\\Abstraction\\AbstractDevice.cs",
-              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\Abstraction\\AbstractDevice.cs",
+              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\smartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Domain\\Devices\\Abstraction\\AbstractDevice.cs",
               "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Domain\\Devices\\Abstraction\\AbstractDevice.cs",
               "ViewState": "AgIAABoAAAAAAAAAAAAuwDQAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-11T09:15:49.006Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-11T09:15:49.006Z"
             }
           ]
         }
