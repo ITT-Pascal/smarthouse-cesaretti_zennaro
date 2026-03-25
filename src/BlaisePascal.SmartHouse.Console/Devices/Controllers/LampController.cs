@@ -3,7 +3,6 @@ using BlaisePascal.SmartHouse.Application.Devices.Luminuos.Lamps.Queries;
 using BlaisePascal.SmartHouse.Application.Devices.LuminuosDevices.LampDevice.Commands;
 using BlaisePascal.SmartHouse.Application.Devices.LuminuosDevices.Lamps.Commands;
 using BlaisePascal.SmartHouse.Application.Devices.LuminuosDevices.Lamps.Dto;
-using BlaisePascal.SmartHouse.Domain.Devices.Abstraction.ValueObjects;
 using BlaisePascal.SmartHouse.Domain.Devices.Illumination.Repositories;
 
 
@@ -369,10 +368,9 @@ public class LampController
         }
     }
 
-    public void ShowAdvises()
+    public void ShowLampLogicRules()
     {
-        Console.Write("ADVISES:\n" +
-                    "- Cannot modify lamp when it is off\n" +
+        Console.Write("- Cannot modify lamp when it is off\n" +
                     "- Lamp brightness min value: 0\n" +
                     "- Lamp brightness max value: 100\n" +
                     "- Switch off does not change lamp brightness\n" +
@@ -392,6 +390,9 @@ public class LampController
 
     public void ShowMenu()
     {
+        Console.Clear();
+        Console.Write("\x1b[3J");
+        ShowAllLamps();
         Console.WriteLine("Select a command: \n" +
             "1 [Add lamp] \n" +
             "2 [Remove lamp] \n" +
@@ -401,7 +402,7 @@ public class LampController
             "6 [Set lamp brightness] \n" +
             "7 [Brighten lamp] \n" +
             "8 [Dimmer lamp] \n" +
-            "9 [ShowAdvises] \n" +
+            "9 [Show lamp logic rules] \n" +
             "10 [Exit]\n" +
             "\n" +
             "Choose an option:");
@@ -437,7 +438,7 @@ public class LampController
             case "9":
                 Console.Clear();
                 Console.Write("\x1b[3J");
-                ShowAdvises();
+                ShowLampLogicRules();
                 Console.Write("Press a key to continue");
                 Console.ReadKey();
                 break;

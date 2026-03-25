@@ -16,5 +16,10 @@ namespace BlaisePascal.SmartHouse.Application.Devices.DoorDevice.Dto
         public DateTime CreationHour { get; set; }
         public DateTime LastModified { get; set; }
 
+        public override string ToString()
+        {
+            return 
+        }
+
     }
 }

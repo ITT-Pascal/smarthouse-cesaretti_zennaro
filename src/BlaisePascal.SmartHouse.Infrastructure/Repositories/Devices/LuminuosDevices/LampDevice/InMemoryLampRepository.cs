@@ -14,10 +14,6 @@ namespace BlaisePascal.SmartHouse.Infrastructure.Repositories.InMemory.Devices.L
         public InMemoryLampRepository()
         {
 
-            _lamps.Add(new Lamp(Name.CreateNew("Lamp 1")));
-            _lamps.Add(new Lamp(Name.CreateNew("Lamp 2")));
-            _lamps.Add(new Lamp(Name.CreateNew("Lamp 3")));
-
         }
 
         public List<Lamp> GetAll()
