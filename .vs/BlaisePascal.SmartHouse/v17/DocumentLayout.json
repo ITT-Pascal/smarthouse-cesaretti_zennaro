@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{66683504-8271-4305-B957-BE731868FB7B}|src\\BlaisePascal.SmartHouse.Console\\BlaisePascal.SmartHouse.Console.csproj|c:\\users\\davide.cesaretti\\desktop\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.console\\devices\\controllers\\lampcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66683504-8271-4305-B957-BE731868FB7B}|src\\BlaisePascal.SmartHouse.Console\\BlaisePascal.SmartHouse.Console.csproj|solutionrelative:src\\blaisepascal.smarthouse.console\\devices\\controllers\\lampcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9EC82FCE-5F0A-47E8-9A11-0FF4213B4366}|src\\BlaisePascal.SmartHouse.Wpf\\BlaisePascal.SmartHouse.Wpf.csproj|c:\\users\\davide.cesaretti\\desktop\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.wpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9EC82FCE-5F0A-47E8-9A11-0FF4213B4366}|src\\BlaisePascal.SmartHouse.Wpf\\BlaisePascal.SmartHouse.Wpf.csproj|solutionrelative:src\\blaisepascal.smarthouse.wpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EC82FCE-5F0A-47E8-9A11-0FF4213B4366}|src\\BlaisePascal.SmartHouse.Wpf\\BlaisePascal.SmartHouse.Wpf.csproj|c:\\users\\davide.cesaretti\\desktop\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.wpf\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EC82FCE-5F0A-47E8-9A11-0FF4213B4366}|src\\BlaisePascal.SmartHouse.Wpf\\BlaisePascal.SmartHouse.Wpf.csproj|solutionrelative:src\\blaisepascal.smarthouse.wpf\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{408C94AC-5756-45F9-A98F-F99720E7B3B0}|src\\BlaisePascal.SmartHouse.Infrastructure\\BlaisePascal.SmartHouse.Infrastructure.csproj|c:\\users\\davide.cesaretti\\desktop\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.infrastructure\\repositories\\devices\\luminuosdevices\\lampdevice\\inmemorylamprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{408C94AC-5756-45F9-A98F-F99720E7B3B0}|src\\BlaisePascal.SmartHouse.Infrastructure\\BlaisePascal.SmartHouse.Infrastructure.csproj|solutionrelative:src\\blaisepascal.smarthouse.infrastructure\\repositories\\devices\\luminuosdevices\\lampdevice\\inmemorylamprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66683504-8271-4305-B957-BE731868FB7B}|src\\BlaisePascal.SmartHouse.Console\\BlaisePascal.SmartHouse.Console.csproj|c:\\users\\davide.cesaretti\\desktop\\smarthouse\\smarthouse-cesaretti_zennaro\\src\\blaisepascal.smarthouse.console\\devices\\controllers\\lampcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66683504-8271-4305-B957-BE731868FB7B}|src\\BlaisePascal.SmartHouse.Console\\BlaisePascal.SmartHouse.Console.csproj|solutionrelative:src\\blaisepascal.smarthouse.console\\devices\\controllers\\lampcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,16 +26,41 @@
       "DocumentGroups": [
         {
           "DockedWidth": 280,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Wpf\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Wpf\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Wpf\\MainWindow.xaml",
+              "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Wpf\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-01T08:19:25.938Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Wpf\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Wpf\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Wpf\\MainWindow.xaml.cs",
+              "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Wpf\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T08:19:25.403Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "InMemoryLampRepository.cs",
               "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Infrastructure\\Repositories\\Devices\\LuminuosDevices\\LampDevice\\InMemoryLampRepository.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Infrastructure\\Repositories\\Devices\\LuminuosDevices\\LampDevice\\InMemoryLampRepository.cs",
-              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Infrastructure\\Repositories\\Devices\\LuminuosDevices\\LampDevice\\InMemoryLampRepository.cs*",
-              "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Infrastructure\\Repositories\\Devices\\LuminuosDevices\\LampDevice\\InMemoryLampRepository.cs*",
+              "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Infrastructure\\Repositories\\Devices\\LuminuosDevices\\LampDevice\\InMemoryLampRepository.cs",
+              "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Infrastructure\\Repositories\\Devices\\LuminuosDevices\\LampDevice\\InMemoryLampRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-25T09:06:30.265Z",
@@ -35,13 +68,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "LampController.cs",
               "DocumentMoniker": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Console\\Devices\\Controllers\\LampController.cs",
               "RelativeDocumentMoniker": "src\\BlaisePascal.SmartHouse.Console\\Devices\\Controllers\\LampController.cs",
               "ToolTip": "C:\\Users\\davide.cesaretti\\Desktop\\SmartHouse\\smarthouse-cesaretti_zennaro\\src\\BlaisePascal.SmartHouse.Console\\Devices\\Controllers\\LampController.cs",
               "RelativeToolTip": "src\\BlaisePascal.SmartHouse.Console\\Devices\\Controllers\\LampController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAO4AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAO4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-11T09:53:51.81Z",
               "EditorCaption": ""
