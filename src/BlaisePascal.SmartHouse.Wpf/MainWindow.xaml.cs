@@ -20,5 +20,6 @@ namespace BlaisePascal.SmartHouse.Wpf
         {
             InitializeComponent();
         }
+
     }
 }

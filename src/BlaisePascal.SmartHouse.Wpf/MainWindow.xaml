@@ -7,6 +7,63 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
+            <Border
+                Grid.Column="1"
+                BorderBrush="Black"
+                BorderThickness="1,0,0,0"></Border>
+
+            <Border
+                Grid.Column="1"
+                Width="400"
+                Height="50"
+                BorderThickness="0,0,0,1"
+                BorderBrush="Black"
+                VerticalAlignment="Top">
+
+                <TextBlock
+                    Text="FUNCTIONS"
+                    FontSize="37"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"/>
+            </Border>
+
+
+            <Grid
+                Grid.Column="1"
+                Margin="0,50,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button
+                    Height="50"
+                    Width="100"
+                    VerticalAlignment="Top"
+                    Margin="0, 62.5"
+                    ></Button>
+
+                <Button
+                    Height="50"
+                    Width="100"
+                    VerticalAlignment="Top"
+                    Margin="50,175,50,0"
+                    ></Button>
+
+                <Button
+                    Height="50"
+                    Width="100"
+                    VerticalAlignment="Bottom"
+                    Margin="50,0,50,65"
+                    ></Button>
+            </Grid>
+
+        </Grid>
     </Grid>
 </Window>
