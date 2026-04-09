@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Devices\LuminuosDevices\Nuova cartella1\**" />
+    <EmbeddedResource Remove="Devices\LuminuosDevices\Nuova cartella1\**" />
+    <None Remove="Devices\LuminuosDevices\Nuova cartella1\**" />
+  </ItemGroup>
+
+</Project>
